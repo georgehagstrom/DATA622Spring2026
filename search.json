@@ -882,7 +882,7 @@
     "href": "course/schedule.html",
     "title": "DATA 622 Spring 2026",
     "section": "",
-    "text": "title: “DATA609 - Math Modeling Techniques” editor_options: chunk_output_type: console",
+    "text": "title: “DATA 622 - Machine Learning and Big Data” editor_options: chunk_output_type: console",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -893,7 +893,18 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nJan 27\n06:45PM\nIntroduction to Optimization Theory\nMeetup 1 Slides\nMeetup 1 Video\n\n\nFeb 3\n06:45PM\nLeast Squares Optimization\nMeetup 2 Slides\nMeetup 2 Video\n\n\nFeb 10\n06:45PM\nLeast Squares and Statistics\nMeetup 3 Slides\nMeetup 3 Video\n\n\nFeb 17\n06:45PM\nConstrained Least Squares and Applications\nMeetup 4 Slides\nMeetup 4 Video\n\n\nFeb 24\n06:45PM\nConvex Sets\nMeetup 5 Slides\nMeetup 5 Video\n\n\nMar 3\n06:45PM\nConvex Sets II\nMeetup 6 Slides\nMeetup 6 Video\n\n\nMar 10\n06:45PM\nConvex Functions\nMeetup 7 Slides\nMeetup 7 Video\n\n\nMar 17\n06:45PM\nConvex Functions II\nMeetup 8 Slides\nMeetup 8 Video\n\n\nMar 24\n06:45M\nConvex Optimization Problems\nMeetup 9 Slides\nMeetup 9 Video\n\n\nMar 31\n06:45PM\nData Fitting\nMeetup 10 Slides\nMeetup 10 Video\n\n\nApr 7\n06:45PM\nApplications to Statistics and Machine Learning\nMeetup 11 Slides\nMeetup 11 Video\n\n\nApr 14\n\nNo Meetup (Spring Break)\n\n\n\n\nApr 21\n06:45PM\nDuality\nMeetup 12 Slides\nMeetup 12 Video\n\n\nApr 28\n06:45PM\nGradient Descent and Neural Networks\nMeetup 13 Slides\nMeetup 13 Video\n\n\nMay 5\n06:45PM\nStochastic Gradient Descent\nMeetup 14 Slides\nMeetup 14 Video\n\n\nMay 12\n06:45PM\nTraining Deep Neural Networks\nMeetup 15 Slides\nMeetup 15 Video",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\n\n\n\n\nFeb 9\n06:45PM\nThe Linear Model\n\n\n\n\nFeb 16\n06:45PM\nClassification\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\nMay 11\n06:45PM\nPretrained Models",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html#links-to-vignettes-and-additional-videos",
+    "href": "course/schedule.html#links-to-vignettes-and-additional-videos",
+    "title": "DATA 622 Spring 2026",
+    "section": "Links to Vignettes and Additional Videos",
+    "text": "Links to Vignettes and Additional Videos\n\n\n\nWeek\nVideo Link\nAnnouncement Link\n\n\n\n\nWeek 1\nCourse Intro\nDetails",
     "crumbs": [
       "Course information",
       "Schedule"
