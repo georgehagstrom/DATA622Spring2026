@@ -1,0 +1,55 @@
+---
+title: "Module 13 - Deep Learning"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+During this week, we continue to learn about neural networks, moving from the basics of individual neurons to challenges that arise in deep architectures.
+We introduce recurrent neural networks, deep neural networks, and discuss some of the challenges with training deep neural networks. We explain backpropagation, 
+and show how to use ReLU layers to mitigate vanishing and/or exploding gradients, and talk about hyperparameter optimization in stochastic gradient descent.
+
+Lab 7 is due at the end of the week.
+
+
+### Learning Objectives
+
+* RNN Architectures
+* Challenges with Deep Learning: Vanishing and Exploding Gradients
+* ReLU Layers
+* Hyperparameter Choices for Stochastic Gradient Descent
+
+
+### Readings
+
+
+
+* __ISLP__ (Introduction to Statistical Learning): [10.5-10.8](https://www.statlearning.com/)
+
+### Videos
+
+
+
+

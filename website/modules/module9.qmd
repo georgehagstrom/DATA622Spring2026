@@ -1,0 +1,52 @@
+---
+title: "Module 9 - Ensemble Models"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+### Overview
+
+We continue with our study of tree-based methods by learning about a group of tools that allow for multiple trees to be combined into an ensemble to increase model performance.
+This family of techniques includes bagging, boosting, random forests, and BART. Ensemble methods turn trees into some of the most powerful and widely applicable machine learning
+models, and have applications through machine learning.
+
+Lab 5 is due at the end of the week.
+
+
+### Learning Objectives
+
+* Bagging, Boosting, Random Forests, and BART
+* Understanding hyperparameter choices for fitting these models
+
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning): [8.2](statlearning.com)
+
+
+### Videos
+
+

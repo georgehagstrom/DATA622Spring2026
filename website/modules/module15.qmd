@@ -1,0 +1,52 @@
+---
+title: "Module 15 - Pre-Trained Models"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+A recent development in deep learning has been the advent of pre-trained models based on something called the transformer architecture. Pre-trained models
+are extremely large neural network models that have been trained on enormous datasets, usually of images or text (in the text context, this is often a scrape of the entire internet). 
+The initial training of these models is laborious and state-of-the-art models can only be trained by very large and well funded organizations. However, it is possible to make use
+of pre-trained models for a variety of purposes, including the modification of them via transfer or reinforcement learning (i.e. fine tuning). This week we will discuss these models, the
+transformer architecture, and how to make use of them to solve problems.
+
+
+
+### Learning Objectives
+
+* Transformer architecture and pretrained models
+* Reinforcement learning and fine tuning
+* Applications and practical implementations
+
+
+### Readings
+
+* TBD
+
+### Videos
+
+
+

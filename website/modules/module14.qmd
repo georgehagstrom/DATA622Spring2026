@@ -1,0 +1,55 @@
+---
+title: "Module 14 - Unsupervised Learning"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+So far in this class we have focused primarily on supervised learning, which is the most heavily studied type of machine learning. Here we introduce unsupervised learning,
+a learning problem in which class labels do not exist and in which neither the number of classes nor their identities are known. Unsupervised learning involves
+using a distance metric and a learning algorithm to cluster nearby data points into clusters. Simple algorithms for clustering include k-means, and we have already seen 
+some dimensionality reduction techniques (PCA). We will further our study of PCA and then learn about matrix completion, which was key to the winning entry in the Netflix
+movie review prediction contest. Finally, we will show two methods for clustering, k-means and hierarchical clustering.
+
+
+
+
+### Learning Objectives
+
+* Unsupervised learning basics
+* PCA and Dimensionality Reduction
+* Matrix Completion and Missing Values
+* Hierarchical Clustering and k-means
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning): [12](https://www.statlearning.com/)
+
+### Videos
+
+
+
+

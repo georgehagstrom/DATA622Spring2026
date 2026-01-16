@@ -1,0 +1,58 @@
+---
+title: "Module 12 - Neural Networks"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+Neural Networks are a very old class of models that were developed in the 1950s to understand cognition. Recent developments in computational
+science and neural network architecture have unlocked them as one of the most useful neural network models that exists today. Neural Networks
+are exceptional at challenging classification problems such as image or speech recognition, and underlie the large language models that have
+been developed in the past few years. At the same time, they are some of the most challenging models to work with, due to the large freedom
+to select structures, the sensitivity of model fits to learning hyperparameters, and the sometimes extreme computational costs and data requirements.
+We dive into the theory of neural networks this week, introducing single and multi-layer perceptrons, convolutionary neural network architectures, 
+and stochastic gradient descent, the main algorithm that fits them. 
+
+
+
+### Learning Objectives
+
+* Defining neural networks
+* Single and multi-layer perceptrons
+* Why neural networks?
+* Activation functions
+* Convolutionarl Neural Networks
+* Basics of Stochastic Gradient Descent
+
+
+
+### Readings 
+
+
+* __ISLP__ (Introduction to Statistical Learning): [10.1-10.4](https://www.statlearning.com/)
+
+### Videos
+
+

@@ -1,0 +1,446 @@
+---
+title: "DATA 622 Meetup 1: What is Machine Learning?"
+format: revealjs
+logo: ../../images/CUNY_SPS_Logo_Wide.png 
+footer: "DATA 622"
+author: "George I. Hagstrom"
+date: "01/26/2026"
+jupyter: stan
+---
+
+```{python}
+import ISLP as islp
+import numpy as np
+import pandas as pd
+import sklearn as sklearn
+
+
+```
+
+## Welcome to DATA 622!
+
+## What to Expect
+
+## Course Software
+
+## LLM Use?
+
+## Course Outline
+
+## Learning from Data
+
+-   Goals Today:
+    1.  Examples of Machine Learning
+    2.  The Machine Learning Problem
+    3.  Types of ML
+    4.  Bias-Variance Tradeoff
+
+## Example: Transaction Fraud Detection
+
+Problem: Fraudulent transactions are costly
+
+Can be up several % of total revenue, billions of dollars
+
+![](../../images/paypal.jpg){width=1in}
+
+
+## Transaction Fraud Detection
+
+Problem: Fraudulent transactions are costly
+
+Solution: Fradulent transactions are different
+
+## Transaction Fraud Detection
+
+![](ML-diagram1.png)
+
+
+## Transaction Fraud Detection
+
+![](ML-diagram1.png)
+
+Can create a formula:
+$$
+y = f(\mathbf{x}) 
+$$
+
+
+## Transaction Fraud Detection
+
+![](ML-diagram1.png)
+
+Can create a formula:
+$$
+y = f(\mathbf{x}) = \mathrm{sign}\left(w_1x_1 + w_2x_2 + w_3x_3 + \cdots + w_n x_n \right)
+$$
+
+
+## Transaction Fraud Detection
+
+![](ML-diagram1.png)
+
+Can create a formula:
+$$
+y = f(\mathbf{x}) = \mathrm{sign}\sum_{i=1}^n w_ix_i
+$$
+
+
+## Transaction Fraud Detection
+
+- Where do the weights $w_i$ come from?
+- Could have an expert come up with them 
+- Machine Learning Idea: Find weights that minimize error
+
+
+## When to use Machine Learning?
+
+1. There is a pattern to learn
+
+```{python}
+from matplotlib.pyplot import subplots
+import seaborn as sns
+rng = np.random.default_rng(1303)
+x = rng.standard_normal((100,4))
+random_data = pd.DataFrame(x,columns = ['x1','x2','x3','y'])
+sns.pairplot(random_data)
+
+```
+
+
+2. There aren't mathematical formulas that give you the answer already
+3. You have data
+
+
+## When to use Machine Learning?
+
+1. There is a pattern to learn
+
+```{python}
+
+credit = islp.load_data('Credit')
+sns.pairplot(credit)
+
+```
+
+
+2. There aren't mathematical formulas that give you the answer already
+3. You have data
+
+
+
+
+## When to use Machine Learning?
+
+1. There is a pattern to learn
+2. There aren't mathematical formulas that give you the answer already
+
+![Statistical Rethinking](epicycle.png)
+
+3. You have data
+
+
+## When to use Machine Learning?
+
+1. There is a pattern to learn
+2. There aren't mathematical formulas that give you the answer already
+
+:::: {.columns}
+
+::: {.column width="50%}
+
+![](helicentric.png)
+
+:::
+
+::: {.column width="50%}
+$$
+\mathbf{F} = -\frac{Gm_1m_2\hat{\mathbf{r}}}{\|\mathbf{r}\|^2}
+$$
+:::
+
+::::
+
+
+3. You have data
+
+
+
+## When to use Machine Learning?
+
+1. There is a pattern to learn
+2. There aren't mathematical formulas that give you the answer already
+3. You have data
+
+This is the one dealbreaker here. Without data there is no possibility for machine learning.
+
+
+## Components of Supervised Learning
+
+- Supervised Learning:
+ - Input $\mathbf{x}$ (amount, location, time of day, transaction type)
+
+## Components of Supervised Learning
+
+::: {.incremental}
+
+ - Input $\mathbf{x}$  [[(amount, location, time of day, transaction type)]{style="color: blue;"}]{.fragment .fade-in-then-semi-out}
+    - [[Also called features, predictors, variables]{style="color: blue;"}]{.fragment .fade-in-then-semi-out}
+- Output $y$ [[(real or fraudulent transaction)]{style="color: blue;"}]{.fragment .fade-in-then-semi-out}
+- Target function $f: \mathcal{X}\mapsto \mathcal{Y}$ [[(ideal formula for detecting fraud)]{style="color: blue;"}]{.fragment .fade-in-then-semi-out}
+  - [**Unknown and unknowable**]{.fragment .fade-in-then-semi-out}
+- Data: $(\mathbf{x}_1,y_1),\, (\mathbf{x}_2,y_2),\, \cdots,(\mathbf{x}_n,y_n)$
+- Model $g: \mathcal{X}\mapsto \mathcal{Y}$ [[(also called hypothesis, find this to make predictions)]{style="color: blue;"}]{.fragment .fade-in-then-semi-out}
+:::
+
+
+## How the components fit together
+
+![](supevised-diagram1.png){width=50%}
+
+
+## How the components fit together
+
+![](supevised-diagram2.png){width=50%}
+
+
+## How the components fit together
+
+![](supevised-diagram3.png){width=50%}
+
+
+## Models
+
+- The set $\mathcal{G}$ can vary in complexity a lot
+- Linear Models $y=\mathbf{w}\cdot\mathbf{x}+x_0$
+
+```{python}
+
+
+x = np.linspace(0, 1, 2)
+w = np.random.randn(30)
+x0 = np.random.randn(30)
+
+fig, ax = subplots(figsize=(8, 6))
+
+for i in range(30):
+    alpha = .2 
+    if i == 29:
+        alpha = 1.0
+    ax.plot(x, w[i] * x + x0[i], 'r-', alpha=alpha, linewidth=2);
+
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Linear Models');
+
+```
+
+
+## Models
+
+- The set $\mathcal{G}$ can vary in complexity a lot
+- Decision Trees
+
+```{python}
+
+
+# This function randomly creates a tree-like function
+# Evaluated on a linspace vector
+
+def random_tree(x,num_splits):
+
+    # Define points at which decision tree splits
+    splits = np.sort(np.random.uniform(x.min(), x.max(),num_splits ))
+    # The value of each tree on each split is random
+    values = np.random.randn(num_splits + 1)
+    
+    # Create piecewise constant function
+    y = np.zeros_like(x)
+    y[x < splits[0]] = values[0] 
+    # We loop over each "split" and assign the value to value
+    for i in range(num_splits - 1):
+        mask = (x >= splits[i]) & (x < splits[i+1])
+        y[mask] = values[i + 1]
+    y[x >= splits[-1]] = values[-1]
+    
+    return y
+
+# Plot
+x = np.linspace(0, 1, 500)
+fig, ax = subplots(figsize=(8,6))
+
+# Create 30 random tree ensembles, average trees together like XGBoost
+for i in range(30):
+    
+    y = sum(random_tree(x, num_splits=4) for _ in range(10))
+    
+    alpha = 0.2
+    if i==29:
+        alpha = 1.0
+    ax.plot(x, y, 'r-', alpha=alpha, linewidth=2)
+
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Decision Tree Ensemble Model')
+
+
+```
+
+
+
+## Learning Algorithms
+
+- Learning algorithm selects final model $g$ from $\mathcal{G}$
+- Almost always minimization of a loss function:
+$$
+\mathrm{min}_{g\in\mathcal{G}} \sum_{i=1}^N \mathrm{loss}(y_i,g(\mathbf{x}_i))
+$$
+- Find the function that "best" fits the data
+
+## Learning Algorithms
+
+
+- [For some models (linear models, support vector machines, etc), 
+exact formula or guaranteed algorithms exist]{style="color: blue;"}
+- [For fancy models, decision trees, neural networks, Gaussian Processes, no guarantee exists and the algorithm is a dark art]{style="color: red;"}
+- We will learn what we need about optimization, but take DATA 609 to learn more
+
+## Examples of Supervised Learning
+
+- Predicting Credit Risk
+  - $\mathbf{x}$: Income, Age, Education, Debt
+  - $y$: Will they default on loan?
+  - $f(\mathbf{x})$ Credit approval formula
+  - $(\mathbf{x_i},y_i)$ past data on loan repayments
+
+
+## Examples of Supervised Learning
+
+- Predicting Movie Ratings
+  - $\mathbf{x}$: ratings of watched movies
+  - $y$: rating they would give a movie if they watched
+  - $f(\mathbf{x})$ ideal movie rating function
+  - $(\mathbf{x_i},y_i)$ data on user ratings
+
+
+
+## Examples of Supervised Learning
+
+- Predicting cancer diagnosis
+  - $\mathbf{x}$: gender, tumor location, size, and properties
+  - $y$: Type of tumor
+  - $f(\mathbf{x})$ Ideal diagnosis function
+  - $(\mathbf{x_i},y_i)$ data collected from patient brain scans and tumor biopsies
+
+
+
+## Goals of Modeling
+
+1. Prediction: What will $y$ be for a given set of $\mathbf{x}$?
+
+Your entire goal is maximizing the accuracy of your prediction of $y$. Understanding/insight about how $y$
+is determined by each variable in $x$ is not important
+
+Example: Image recognition, text translation, fraud detection
+
+
+## Goals of Modeling
+
+2. Inference/Understanding: Which of the predictors $\mathbf{x}$ influence or are associated with $y$, and how?
+
+Example: What is the relationship between having a doorman and rent?
+
+
+2b. Causal Inference: What will happen to $y$ if I take a certain action?
+
+Example: A/B testing, randomized controlled trials, if I hire a doorman for my building how much can I increase rent?
+
+
+## Goals of Modeling
+
+3. Decision Making or Management: If I observe $\mathbf{x}$ what should I do?
+
+Example: Based on the observed fish stocks, water temperature, and ocean productivity, what should be the allowable fish catch?
+
+
+
+
+
+
+## Regression and Classification
+
+1. Regression problems have continuous $y$
+    - Predicting income, temperature, cost
+    - Typical loss function $\mathrm{loss(y_1,g(x_1))} = (y_1-g(x_1))^2$
+
+## Regression and Classification
+
+2. Classification problems have discrete $y$
+    - Tumor type, fraud or real transaction, Default or not on loan
+    - Typical loss function is misclassification $\mathrm{loss}(y_1,g(x_1)) = 1-\delta(y_1,g(x_1))$
+
+
+
+
+
+
+
+
+
+## Unsupervised Learning
+
+- In some problems, the label $y$ is not known to us
+
+```{python}
+
+centers = np.array([[0.3, 0.2], [0.7, 0.9], [0.1, 0.6]])
+num_points = 100
+
+phyto_class = np.random.choice(3, size=num_points)
+x = np.zeros((num_points, 2))
+
+for i in range(num_points):
+    log_center = np.log(centers[phyto_class[i]])
+    cov = [[0.075, 0], [0, 0.075]]  
+    log_point = np.random.multivariate_normal(log_center, cov)
+    
+    
+    x[i] = np.exp(log_point)
+
+
+fig, ax = subplots(figsize=(8, 6))
+
+ax.scatter(x[:,0],x[:,1],s=50,alpha=0.5)
+ax.set_ylabel("Chlorophyll")
+ax.set_xlabel("Radius")
+ax.set_title("Phytoplankton Flow Cytometry")
+
+
+```
+
+
+## Unsupervised Learning
+
+- Algorithms exist to group points together or reduce dimension
+
+
+```{python}
+
+
+fig, ax = subplots(figsize=(8, 6))
+
+ax.scatter(x[:,0],x[:,1],s=50,alpha=0.5,c = phyto_class)
+ax.set_ylabel("Chlorophyll")
+ax.set_xlabel("Radius")
+ax.set_title("Phytoplankton Flow Cytometry")
+
+
+```
+
+
+## Reinforcement Learning
+
+
+
+
+
+## Thanks!

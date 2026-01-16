@@ -1,0 +1,48 @@
+---
+title: "Module 6 - Resampling and Cross Validation"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+In traditional statistical modeling, model fits are evaluated using test statistics, hypothesis tests, or examination of the posterior distribution. These statistical tools
+are often not available for machine learning models because of their complexity. Instead, computational methods based on resampling have been developed which allow for
+estimation of uncertainty, out of sample accuracy (generalization), and model comparison. During this week we will begin our exploration of these tools by studying resampling,
+the boostrap, and cross-validation, which is one of the most crucial techniques for evaluating machine learning models. 
+
+
+### Learning Objectives
+
+* Understand how to apply cross-validation to assess out of sample accuracy
+* Understand the trade-offs in different data splits
+* Apply the bootstrap to estimate uncertainty in predictions and parameters
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning): [Chapter 5](statlearning.com )
+
+### Videos### Videos### Videos
+

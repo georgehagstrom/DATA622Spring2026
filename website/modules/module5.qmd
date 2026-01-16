@@ -1,0 +1,55 @@
+---
+title: "Module 5 - Generative Classification Models and Imbalanced Data"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+During this week, we continue our exploration of classification models by introducing generative models such as linear discriminant analysis, and generalized linear models such as
+Poisson Regression, which enable more refined modeling of probabilities of discrete classes or count data. We also introduce an issue commonly encountered in real world data
+called _class imbalance_, which occurs when some classes occur at much lower frequency compared to the primary classes. Class imabalance can cause major challenges for modeling and
+we discuss some computational techniques that allow us to artificially "balance" our data.
+
+Lab 3 is due at the end of the week, as is your your group project proposal.
+
+### Learning Objectives
+
+* Techniques for dealing with imbalanced data: SMOTE, under- and over-sampling
+* Linear Discriminant Analysis
+* Genearlized Linear Models and Poisson Regression
+ 
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning): [Section 4.4-4.6](statlearning.com)
+
+
+### Videos
+
+
+
+
+

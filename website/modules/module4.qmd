@@ -1,0 +1,74 @@
+---
+title: "Module 4 - Classification"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+### Overview
+
+During this week, we will focus on methods that can be used to solve classification problems. We will start by talking about the basis for decision rules in classification, 
+which connects machine learning to statistics via likelihood ratio tests and loss functions. We will introduce the most basic classification model, which is called logistic
+regression, and which is in many ways the analog of linear regression for classification problems. We will go over a number of important instances of logistic regression and
+then discuss the intricacies of evaluating classification models.
+
+
+### Learning Objectives
+
+* Classification with Full Data: Likelihood Ratio Tests, Neymon-Pearson Lemma, and Loss-Functions
+* Logistic Regression: Multiple and Multinomial
+* Classification Metrics
+  
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning): [Sections 4.1-4.3](https://www.statlearning.com/) 
+
+
+### Additional Reading:
+
+If you want to go deeper into this topic:
+
+* __Hands on Machine Learning__ Chapter 3. This is a very practical take on classification
+* __Patterns, Predictions, and Actions__ [Chapter 2](https://mlstory.org/prediction.html) Very good exposition of the theory
+
+
+
+### Videos
+
+
+https://www.youtube.com/watch?v=ju3J7iRy6xI&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=15
+
+* [Section 4.1: Introduction to Classification](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=15)
+* [Section 4.2: Logistic Regression](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=16)
+* [Section 4.3: Multivariate Logistic Regression](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=17)
+* [Section 4.4: Logistic Regression Case Control Sampling and Multi-Class](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=17)
+
+### Coding Videos
+
+
+* [Section 4.1: Simple Linear Regression](https://www.youtube.com/watch?v=wOGBlLLuc4I&list=PLoROMvodv4rNHU1-iPeDRH-J0cL-CrIda&index=9)
+
+
+

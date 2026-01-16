@@ -1,0 +1,34 @@
+--
+title: "DATA609 - Math Modeling Techniques"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Meetup Link:
+
+[Click Here to Join the Meetups on Zoom](https://us02web.zoom.us/j/81858708616?pwd=eE9ZGJFco9iicq3BsmANIfWUVLwy0x.1#success)
+
+
+
+| Date  | Start Time  | Module    | Slides |  Video  | Main Deliverables |
+|--------|--------|------|------|------|
+| Jan 27 | 06:45PM | [Introduction to Optimization Theory](../modules/module1) | [Meetup 1 Slides](../meetups/Meetup-1/meetup-1.qmd)  | [Meetup 1 Video](https://youtu.be/Kt3OniP-p1M)  |    |
+| Feb 3 | 06:45PM | [Least Squares Optimization](../modules/module2) | [Meetup 2 Slides](../meetups/Meetup-2/meetup-2.qmd)   | [Meetup 2 Video](https://youtu.be/yAVULHxiIGE)   | [Lab 1](../assignments/labs/Lab1)   |
+| Feb 10 | 06:45PM | [Least Squares and Statistics](../modules/module3) | [Meetup 3 Slides](../meetups/Meetup-3/meetup-3.qmd) | [Meetup 3 Video](https://youtu.be/G-iZTEk_MMM)  |   |
+| Feb 17 | 06:45PM | [Constrained Least Squares and Applications ](../modules/module4) | [Meetup 4 Slides](../meetups/Meetup-4/meetup-4.qmd)  | [Meetup 4 Video](https://youtu.be/1i9mYY1Ca-k)  | [Lab 2](../assignments/labs/Lab2)  |
+| Feb 24 | 06:45PM | [Convex Sets](../modules/module5) | [Meetup 5 Slides](../meetups/Meetup-5/meetup-5.qmd)  | [Meetup 5 Video](https://youtu.be/_nWtA_iggOI)   |    |
+| Mar 3 | 06:45PM | [Convex Sets II ](../modules/module6) | [Meetup 6 Slides](../meetups/Meetup-6/meetup-6.qmd) | [Meetup 6 Video](https://youtu.be/iqcAtPE6Jus)   | [Lab 3](../assignments/labs/Lab3.qmd)  |
+| Mar 10 | 06:45PM | [Convex Functions](../modules/module7) | [Meetup 7 Slides](../meetups/Meetup7/meetup-7.qmd)  | [Meetup 7 Video](https://youtu.be/jvQgbxq4kkg)  |   |
+| Mar 17 | 06:45PM | [Convex Functions II](../modules/module8) | [Meetup 8 Slides](../meetups/Meetup-8/meetup-8.qmd)    |  [Meetup 8 Video](https://youtu.be/7-SENWMR9mU)  | [Lab 4](../assignments/labs/Lab4.qmd)  |
+| Mar 24 | 06:45M | [Convex Optimization Problems](../modules/module9) | [Meetup 9 Slides](../meetups/Meetup-9/meetup-9.qmd) | [Meetup 9 Video](https://youtu.be/58f3jss1pMU)  |    |
+| Mar 31 | 06:45PM | [Data Fitting](../modules/module10) | [Meetup 10 Slides](../meetups/Meetup-10/meetup-10.qmd)  | [Meetup 10 Video](https://youtu.be/Pssfxe2Xu-I)  | [Lab 5](../assignments/labs/Lab5.qmd) |
+| Apr 7 | 06:45PM | [Applications to Statistics and Machine Learning](../modules/module11) | [Meetup 11 Slides](../meetups/Meetup-11/meetup-11.qmd) | [Meetup 11 Video](https://youtu.be/YGjBmBpgUKQ) |   |
+| Apr 14 | | No Meetup (Spring Break) |   |   |   |
+| Apr 21 | 06:45PM | [Duality](../modules/module12) | [Meetup 12 Slides](../meetups/Meetup-12/meetup-12.qmd) | [Meetup 12 Video](https://youtu.be/YGjBmBpgUKQ)  | [Lab 6](../assignments/labs/Lab6)   |
+| Apr 28 | 06:45PM        | [Gradient Descent and Neural Networks](../modules/module13) | [Meetup 13 Slides](../meetups/Meetup-13/meetup-13.qmd)       |  [Meetup 13 Video](https://youtu.be/Eoc25ZYu75w) |     [Lab 7](../assignments/labs/Lab7)  | 
+| May 5  | 06:45PM | [Stochastic Gradient Descent](../modules/module14) | [Meetup 14 Slides](../meetups/Meetup-14/meetup-14.qmd)   | [Meetup 14 Video](https://youtu.be/HZNV5bBl5pY)   |   |
+| May 12  | 06:45PM | [Training Deep Neural Networks](../modules/module15)  | [Meetup 15 Slides](../meetups/Meetup-15/meetup-15.qmd) | [Meetup 15 Video](https://youtu.be/DgCVbUvdnkA)  | [Lab 7](../assignments/Lab7) [Final project](../assignments/project.qmd)  | 
+
+: Course Schedule {.striped .hover}
+
+

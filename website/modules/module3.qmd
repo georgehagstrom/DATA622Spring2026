@@ -1,0 +1,73 @@
+---
+title: "Module 3 - Linear Models"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview and Deliverables
+
+This week we will cover linear regression, a topic you are already quite familiar with from previous classes. We will take a different perspective on this subject, contextualizing
+it within machine learning as the default, baseline model that should be used for regression and also as the most interpretable model, 
+and also discussing it from the distinct goals of prediction and understanding.
+One conclusion will be that variable selection is very different depending on your goal.
+
+You should begin working on [Lab 2](../assignments/labs/lab2) and continue project brainstorming and group formation.
+
+### Learning Objectives
+
+* Ordinary Least Squares for Regression
+* Baseline Models
+* Intrepreting Regression Coefficients, Confounders and Colliders
+* Prediction versus Inference
+* Weighted Least Squares
+* Extending Regression using Feature Engineering and Nonlinear Transformations
+
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning): [Chapter 3](https://www.statlearning.com/)
+
+
+### Labs
+
+* __ISLP__ (Introduction to Statistical Learning): [Chapter 3 Lab](https://github.com/intro-stat-learning/ISLP_labs/blob/stable/Ch03-linreg-lab.Rmd)
+* [Ipython Notebook Version](https://github.com/intro-stat-learning/ISLP_labs/blob/stable/Ch03-linreg-lab.ipynb)
+
+
+### Videos
+
+* [Section 3.1: Simple Linear Regression](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=10)
+* [Section 3.2: Hypothesis Testing and Confidence Intervals](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=11)
+* [Section 3.3: Multiple Regression](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=12)
+* [Section 3.4: Some Important Questions](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=13)
+* [Section 3.5: Extensions of the Linear Model](https://www.youtube.com/watch?v=uFwbrdvrAJs&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=14)
+
+
+### Coding Videos
+
+* [Statsmodels Linear Regression](https://www.youtube.com/watch?v=mKalBNrxToU&list=PLoROMvodv4rNHU1-iPeDRH-J0cL-CrIda&index=6)
+* [Statsmodels Multiple Regression](https://www.youtube.com/watch?v=mKalBNrxToU&list=PLoROMvodv4rNHU1-iPeDRH-J0cL-CrIda&index=7)
+* [Statsmodels Features](https://www.youtube.com/watch?v=mKalBNrxToU&list=PLoROMvodv4rNHU1-iPeDRH-J0cL-CrIda&index=8)
+

@@ -1,0 +1,539 @@
+---
+title: "DATA 622 Meetup 2: The Bias-Variance Tradeoff"
+format: revealjs
+logo: ../../images/CUNY_SPS_Logo_Wide.png 
+footer: "DATA 622"
+author: "George I. Hagstrom"
+date: "02/03/2026"
+jupyter: stan
+---
+
+
+```{python}
+import ISLP as islp
+import numpy as np
+from IPython.core.pylabtools import figsize
+import pandas as pd
+import sklearn as sklearn
+from matplotlib.pyplot import subplots
+
+
+```
+
+## Recap: The Learning Problem
+
+
+![](../meetup-1/supevised-diagram3.png){width=50%}
+
+
+
+## Goals
+
+
+1. Model Fit versus Generalization
+2. Bias-Variance Tradeoff
+
+
+## Assessing Model Accuracy
+
+- In regression, measures like mean square error:
+$$
+\mathrm{MSE} = \frac{1}{n}\sum_{i=1}^n (y_i - g(\mathbf{x}_i)^2)
+$$
+- or $R^2:$
+$$
+R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
+$$
+Are used to assess model accuracy
+
+[But what we really care about is whether we can extrapolate assessed accuracy to unseen examples]{.incremental}
+
+
+## Generalization
+
+**Generalization** is defined as the ability of a model to maintain its accuracy on observations outside of its training 
+
+- For traditional statistical models, statistical theory let's you estimate how well a model will genearlize
+- When a model has high in-sample accuracy, it is not guarantee that it performs well out of sample
+
+
+## Overfitting
+
+- Overfitting is a phenomenon that causes bad generalization
+- Consider the following dataset:
+```{python}
+
+pi = np.pi
+num_points = 100
+xvec = np.random.uniform(-1,1,num_points)
+yvec = 1.3*np.cos(pi*xvec) + np.log(xvec+1.01) - 0.2*xvec*np.sin(10*pi*xvec) + 0.2*np.random.normal(size=num_points)
+
+full_xvec = np.linspace(-1,1,1000)
+full_yvec = 1.3*np.cos(pi*full_xvec) + np.log(full_xvec+1.01) - 0.2*full_xvec*np.sin(10*pi*full_xvec) 
+
+fig, ax = subplots(figsize = (8,6))
+ax.scatter(xvec,yvec)
+ax.plot(full_xvec,full_yvec)
+
+
+```
+
+
+## Models of Increasing Complexity
+
+1. Linear Model
+
+$$
+g(x) = g_0 + g_1 x 
+$$
+
+```{python}
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from numpy.polynomial.chebyshev import chebvander
+
+def plot_chebyshev_fit(xvec, yvec, full_xvec, full_yvec, degree):
+
+
+    X_cheb = chebvander(xvec, deg=degree)
+    model = LinearRegression()
+    model.fit(X_cheb, yvec)
+    
+
+    X_new_cheb = chebvander(full_xvec, deg=degree)
+    y_full_pred = model.predict(X_new_cheb)
+    
+
+
+    fig, ax = subplots(figsize=(8, 6))
+    
+    ax.scatter(xvec, yvec, label='Training data')
+    ax.plot(full_xvec, full_yvec, label='True function')
+    ax.plot(full_xvec, y_full_pred, label=f'Degree {degree} fit')
+    ax.set_ylim(-3, 1)
+    ax.set_title(f"Degree {degree} Model")
+    ax.text(0.05, 0.95, f'R² = {model.score(X_cheb, yvec):.4f}', 
+            transform=ax.transAxes, verticalalignment='top')
+    ax.legend()
+    
+    return ax
+
+```
+
+```{python}
+
+plot_chebyshev_fit(xvec, yvec, full_xvec, full_yvec, degree=1)
+
+
+```
+
+
+## Models of Increasing Complexity
+
+2. Quadratic Model
+
+$$
+g(x) = g_0 + g_1 x + g_2 x^2
+$$
+
+```{python}
+
+plot_chebyshev_fit(xvec, yvec, full_xvec, full_yvec, degree=2)
+
+
+```
+
+
+
+## Models of Increasing Complexity
+
+2. 5th Degree fit
+
+$$
+g(x) = \sum_{i=0}^5 g_i x^i
+$$
+
+```{python}
+
+plot_chebyshev_fit(xvec, yvec, full_xvec, full_yvec, degree=5)
+
+
+```
+
+
+
+## Models of Increasing Complexity
+
+2. 10th Degree fit
+
+$$
+g(x) = \sum_{i=0}^10 g_i x^i
+$$
+
+```{python}
+
+plot_chebyshev_fit(xvec, yvec, full_xvec, full_yvec, degree=10)
+
+
+```
+
+
+## Models of Increasing Complexity
+
+2. 25th Degree fit
+
+$$
+g(x) = \sum_{i=0}^25 g_i x^i
+$$
+
+```{python}
+
+plot_chebyshev_fit(xvec, yvec, full_xvec, full_yvec, degree=25)
+
+
+```
+
+
+## Overfitting
+
+- At low flexibility, in sample error was high
+- At mid flexibility, in sample error dropped, pattern approximated
+- At high flexibility, in sample error was zero
+
+
+## Training versus Testing Error
+
+- We can plot how the $R^2$ changes for the training data and randomly generated testing data
+- As model complexity increases, the training error diverges from the testing error
+
+
+```{python}
+xtest = np.random.uniform(-1,1,num_points)
+xtest.sort()
+ytest = 1.3*np.cos(pi*xtest) + np.log(xtest+1.01) - 0.2*xvec*np.sin(10*pi*xtest) + 0.2*np.random.normal(size=num_points)
+
+rmse_test_vec = np.zeros(24)
+rmse_train_vec = np.zeros(24)
+
+for deg in range(1,25):
+    x_cheb = chebvander(xvec, deg=deg)
+    model = LinearRegression()
+    model.fit(x_cheb, yvec)
+    y_pred = model.predict(x_cheb)
+    rmse_train = np.sqrt(np.mean((yvec - y_pred)**2))
+    print(rmse_train_vec[deg-1])
+    xtest_cheb = chebvander(xtest, deg=deg)
+    y_pred_test = model.predict(xtest_cheb)
+    rmse_test = np.sqrt(np.mean((ytest-y_pred_test)**2))
+    rmse_train_vec[deg-1] = rmse_train
+    rmse_test_vec[deg-1] = rmse_test
+
+
+
+fig, ax = subplots(figsize = (8,6))
+
+ax.plot(range(1,25),np.log(1+rmse_train_vec),label="train error")
+ax.plot(range(1,25),np.log(1+rmse_test_vec),label= "test_error")
+
+ax.legend()
+```
+
+
+
+
+```{python}
+
+deg = 5
+
+x_cheb = chebvander(xvec, deg=deg)
+model = LinearRegression()
+model.fit(x_cheb, yvec)
+y_pred = model.predict(x_cheb)
+rmse_train = np.sqrt(np.mean((yvec - y_pred)**2))
+print(rmse_train_vec[deg-1])
+xtest_cheb = chebvander(xtest, deg=deg)
+y_pred_test = model.predict(xtest_cheb)
+
+
+fig, ax = subplots(figsize=(8,6))
+ax.scatter(xtest,y_pred_test)
+ax.scatter(xvec,yvec)
+
+```
+
+
+## Irreducible Error
+
+- The target function $f(\mathbf{x})$ encodes all the information about $y$ contained in the variables $\mathbf{x}$
+- Thus, we can write $y$:
+
+$$
+y = f(\mathbf{x}) + \epsilon
+$$
+
+- Here $\epsilon$ is called the *irreducible error*
+- It accounts for other variables that are not measured and randomness
+- We have $E(\epsilon) = 0$
+
+## Reducible Error
+
+- When fitting a model $g$ to the data, there are two sources of error:
+$$
+E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
+$$
+- The (E((g-f)^2)) term is the _reducible_ error
+- Total error is a sum of _reducible_ and _irreducible_ errors
+
+
+## Why do complex models overfit?
+
+- Hypothetical scenario: study the performance of a model on a repeated learning task 
+
+![](bias-variance1.png)
+
+
+## Why do complex models overfit?
+
+-  Each fit will be compared to the target function $f$
+
+![](bias-variance2.png)
+
+
+## Bias Variance Tradeoff
+
+- Can look at the "average" fit model
+
+![](bias-variance3.png)
+
+
+## Why do complex models overfit?
+
+- Bias is the distance from average fit to target
+
+![](bias-variance4.png)
+
+
+## Why do complex models overfit?
+
+- Variance is how much individual fits vary from average 
+
+![](bias-variance5.png)
+
+
+
+
+## Bias-Variance Tradeoff
+
+- Expected out of sample error is sum of squared bias, variance, and irreducible error 
+
+![](bias-variance6.png)
+
+
+
+## Bias-Variance Tradeoff
+
+- Bias and variance trade-off 
+
+![](bias-variance7.png)
+
+
+
+
+## Bias-Variance Tradeoff
+
+- Bias and Variance Tradeoff 
+
+![](bias-variance8.png)
+
+
+## Learning Curves
+
+- Compare a simple versus complex model as amount of data increases
+
+```{python}
+
+def target_function(x):
+    return(1.3*np.cos(pi*x) + np.log(x+1.01) - 0.2*x*np.sin(10*pi*x) + 0.2*np.random.normal())
+
+
+
+
+def mean_error(num_points,degree):
+    
+    num_trials = 1000
+    E_train_vec = np.zeros(num_trials)
+    E_test_vec = np.zeros(num_trials)
+
+    for i in range(num_trials):
+    
+        xtrain = np.random.uniform(-1,1,num_points)
+        xtest = np.linspace(start=-1,stop=1,num = 10000)
+        ytrain = target_function(xtrain)
+        ytest = target_function(xtest)
+
+        x_cheb = chebvander(xtrain, deg=degree)
+        model = LinearRegression()
+        model.fit(x_cheb, ytrain)
+        y_pred = model.predict(x_cheb)
+        rmse_train = np.sqrt(np.mean((ytrain - y_pred)**2))
+        E_train_vec[i] = rmse_train
+        xtest_cheb = chebvander(xtest, deg=degree)
+        y_pred_test = model.predict(xtest_cheb)
+        rmse_test = np.sqrt(np.mean((ytest-y_pred_test)**2))
+        E_test_vec[i] =rmse_test
+    
+    return([np.mean(E_train_vec),np.mean(E_test_vec)])
+
+```
+
+
+```{python}
+
+deg_low = 4
+deg_high = 15
+
+low_point_range = range(4,300)
+high_point_range = range(15,300)
+
+E_train_low = np.zeros(len(low_point_range))
+E_test_low = np.zeros(len(low_point_range))
+
+E_train_high = np.zeros(len(high_point_range))
+E_test_high = np.zeros(len(high_point_range))
+
+
+
+for i, num_points, in enumerate(low_point_range):
+    [E_train,E_test] = mean_error(num_points,deg_low)
+    E_train_low[i] = E_train
+    E_test_low[i] = E_test
+
+
+
+for i, num_points in enumerate(high_point_range):
+    [E_train,E_test] = mean_error(num_points,deg_high)
+    E_train_high[i] = E_train
+    E_test_high[i] = E_test
+
+
+
+```
+
+```{python}
+
+fig, ax = subplots(figsize = (8,6))
+
+ax.plot(low_point_range,E_train_low)
+ax.plot(low_point_range,E_test_low)
+ax.set_ylim(ymin=0,ymax=1)
+
+
+
+
+```
+
+
+## Learning Curves
+
+```{python}
+
+fig, ax = subplots(figsize = (8,6))
+
+ax.plot(high_point_range,E_train_high)
+ax.plot(high_point_range,E_test_high)
+
+ax.plot(low_point_range,E_train_low)
+ax.plot(low_point_range,E_test_low)
+
+ax.set_ylim(ymin=0,ymax=1)
+
+
+
+
+```
+
+
+## What Complexity to Pick?
+
+- Model complexity dictated by your data more so than the complexity of the phenomenon!
+
+
+## Classification Accuracy
+
+- Switch gears to classification
+- Now $y$ is a class label
+- predictors $\mathbf{x}$ can still be continuous or discrete
+- Classification Accuracy:
+$$
+\mathrm{Error} = \frac{1}{n}\sum_{i=1}^n I(g(\mathbf{x}_i)\neq y_i)
+$$
+- Here $I=1$ if $g(\mathbf{x_i}\neq y_i)$ and $I=0$ if $g(\mathbf{x}_i=y_i)$
+
+
+## Naive Bayes
+
+- In classification, we think of conditional probability of $y$ given $\mathbf{x}$:
+$$
+P(y|\mathbf{x})
+$$
+- If we knew the probabilities, best prediction is to pick class with highest chance:
+$$
+y_{\mathrm{Naive-Bayes}}(\mathbf{x}) = \argmax_{y} P(y|\mathbf{x}) 
+$$
+- This is called Naive-Bayes
+
+## Applying Naive Bayes
+
+- We don't generally know the probabilities
+- Classification models often approximate them
+- Often the decision rule is basically an extension of Naive Bayes assuming our
+probabilities are true
+
+
+
+## kNN Model
+
+- Very simple _non-parametric_ classification model is called _k-nearest-neighbors_
+$$
+g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})} I(y\neq y_i)
+$$
+- Look at the $k$ nearest points to $\mathbf{x}$
+- Pick the $y$ occuring most often 
+
+
+## kNN Model
+
+- Here is an example for $k=3$. 
+
+![ISL](knn-1.png)
+
+
+## kNN Model
+
+- Consider this dataset for a classification problem with two classes
+- Boundary is the border between 50\% probability of blue versus orange
+
+![ISL](knn-2.png)
+
+
+## kNN Model
+
+- Decision boundary for $k=10$ 
+
+![ISL](knn-3.png)
+
+
+## kNN Model Over and Under fitting
+
+- $k=1$ corresponds to overfitting 
+- $k=100$ corresponds to underfitting
+
+![ISL](knn-4.png)
+
+
+## kNN Model Generalization Error
+
+- $1/k$ corresponds to model complexity
+- Optimal out of sample accuracy at intermediate $k$
+
+![ISL](knn-5.png)

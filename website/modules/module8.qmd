@@ -1,0 +1,53 @@
+---
+title: "Module 8 - Trees"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+During this week, we will begin working with highly nonlinear models that stand in stark contrast to linear and logistic regression models, namely decision and regression
+trees. These models rely on making successive cuts in the data-space, leading to a tree-structure where each "leaf" is a subset of the data-space and is accompanied by a
+decision rule to either predict a number (regression trees) or class (classification trees). The problem of finding the optimal tree for a given problem is usually computationally
+intractable, a scenario that is common for many of the most complex and powerful ML algorithms, and methods for finding trees non-deterministic and based on heuristics. We
+build your intuition for how decision trees work by contrasting them with other models, and we will discover that on their own, single trees make poor models.
+
+
+
+### Learning Objectives
+
+* Defining classification and regression trees
+* Contrasting trees with other models
+* Algorithms for trees and key hyperparameters
+* Challenges with using trees for inference
+
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning with Python): [8.1](statlearning.com)
+
+
+### Videos
+

@@ -1,0 +1,11 @@
+---
+title: "DATA 622 Meetup 3: The Linear Model"
+format: revealjs
+logo: ../../images/CUNY_SPS_Logo_Wide.png 
+footer: "DATA 622"
+author: "George I. Hagstrom"
+date: "01/26/2026"
+jupyter: stan
+---
+
+

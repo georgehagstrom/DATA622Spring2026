@@ -1,0 +1,54 @@
+---
+title: "Module 11 - Interpreting and Presenting Machine Learning Models"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+### Overview
+
+Machine Learning models and the analyses that derive from them are often derided for being impenetrable black boxes. The standard metrics which arise from such fits usually
+only describe the accuracy of the model in a predictive context. While this may be all that is required in some situations, more insight about how a given fit model makes
+predictions can be generated, which can lead to greater insight from the model and the potential for easier communication and stakeholder confidence as well as improved
+model iteration and development. We introduce a concept called _marginal effects_, which allows for the sensitivity of model predictions (both in terms of regression and the
+odds of different classes). We show how to understand Machine Learning models through the use of slopes, comparisons, and marginal effects. We also introduce the concept of a
+sensitivity analysis, which quantifies how much variation in the output of a given function is produced by variation in each input, and how to use a tool called
+SHAP (Shapley Additive Explanations) to understand what is happening under the hood of Machine Learning models.
+
+Lab 6 is Due at the end of the week
+
+### Learning Objectives
+
+* Marginal Effects
+* Using marginal effects to communicate the results of a machine learning analaysis
+* Definition of Sensitivity Analysis
+* Applying and interpreting SHAP
+
+
+### Readings
+
+* __M2M__: [Models to Meaning Sections 1-7 and Python Case Study](https://marginaleffects.com/chapters/who.html)
+
+### Videos
+
+

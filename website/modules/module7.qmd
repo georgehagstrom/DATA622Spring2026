@@ -1,0 +1,55 @@
+---
+title: "Module 7 - Regularization and Model Selection"
+editor: source
+---
+
+<!-- 
+See issue with underscores in MathJax equations here: https://gohugo.io/content-management/formats/#issues-with-markdown
+The solution, put backticks (`) around the LaTeX equation
+-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+### Overview
+
+Machine Learning models are often over-parameterized, meaning that they can have many more model parameters than there are data points. By default, over-parameterized models
+will generalize poorly due to overfitting. A family of methods called regularization are used to modify the loss functions employed in machine learning models, penalizing models
+for having values of the parameters far from 0. Remarkably, using these penalties can allow for over-parameterized models to generalize out of sample. We will study regularization
+in the context of the linear model, where the types of penalties used are called ridge regression, the lasso, elastic-net regression, or even Huber regression. These regression
+methods apply broadly throughout machine learning. We will also learn about principal component analysis, our first unsupervised learning method, and other tools used when
+working with large numbers of parameters and high-dimensions.
+
+Lab 4 Will be due at the end of the week
+
+### Learning Objectives
+
+* Regularization and Over-fitting
+* Ridge Regression, The Lasso, and Elastic Net
+* Principal Component Analsysis (PCA)
+* Challenges of working in high-dimensional spaces
+
+
+
+### Readings
+
+* __ISLP__ (Introduction to Statistical Learning with Python): [Chapters 6](statlearning.com)
+
+
+### Videos
+
