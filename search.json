@@ -283,7 +283,7 @@
     "href": "meetups/meetup-2/meetup-2.html#training-versus-testing-error",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Training versus Testing Error",
-    "text": "Training versus Testing Error\n\nWe can plot how the \\(R^2\\) changes for the training data and randomly generated testing data\nAs model complexity increases, the training error diverges from the testing error\n\n\n\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n\n\n\n\n\n\n\n\n\n0.23757912758936386"
+    "text": "Training versus Testing Error\n\nWe can plot how the \\(R^2\\) changes for the training data and randomly generated testing data\nAs model complexity increases, the training error diverges from the testing error\n\n\n\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n\n\n\n\n\n\n\n\n\n0.2513939119806864"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#irreducible-error",
