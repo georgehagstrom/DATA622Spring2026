@@ -131,6 +131,112 @@
     ]
   },
   {
+    "objectID": "images/IntroSlides.html#about-me",
+    "href": "images/IntroSlides.html#about-me",
+    "title": "Welcome to DATA 622",
+    "section": "About Me",
+    "text": "About Me\n\n\n\nDoctoral Lecturer at CUNY SPS\nPast research experience:\n\nPlasma physics and Applied Mathematics (NYU)\nEcology and Evolutionary Biology (Princeton)\n\nResearch using Bayesian methods and genomic data to improve global scale ocean and climate models\nTaught math at NYU"
+  },
+  {
+    "objectID": "images/IntroSlides.html#what-is-machine-learning",
+    "href": "images/IntroSlides.html#what-is-machine-learning",
+    "title": "Welcome to DATA 622",
+    "section": "What is Machine Learning?",
+    "text": "What is Machine Learning?\n\n\n\nMachine Learning uses algorithms and data to make predictions and uncover complex processes\nThree foci:\n\nModels for Classification, Regression, and Causal Inference\nTheory: Generalization, Regularization, Algorithms\nCommunication, Deployment, Ethics"
+  },
+  {
+    "objectID": "images/IntroSlides.html#course-websites",
+    "href": "images/IntroSlides.html#course-websites",
+    "title": "Welcome to DATA 622",
+    "section": "Course Website(s)",
+    "text": "Course Website(s)\n\n\n\nBrightspace to submit homework\nCourse Website"
+  },
+  {
+    "objectID": "images/IntroSlides.html#course-website-and-meetup",
+    "href": "images/IntroSlides.html#course-website-and-meetup",
+    "title": "Welcome to DATA 622",
+    "section": "Course Website and Meetup",
+    "text": "Course Website and Meetup\n\n\n\nBrightspace to submit homework\nCourse Website\nCourse Meetup: Monday 6:45-7:45PM\nZoom Link"
+  },
+  {
+    "objectID": "images/IntroSlides.html#slack-channel",
+    "href": "images/IntroSlides.html#slack-channel",
+    "title": "Welcome to DATA 622",
+    "section": "Slack Channel",
+    "text": "Slack Channel\n\n\n\nCourse slack channel for messaging and rapid communications\nhttps://data609-spring-2025.slack.com\nInvite Link"
+  },
+  {
+    "objectID": "images/IntroSlides.html#textbooks",
+    "href": "images/IntroSlides.html#textbooks",
+    "title": "Welcome to DATA 622",
+    "section": "Textbooks",
+    "text": "Textbooks\n\n\nTwo most important textbooks:\n\nIntroduction to Applied Linear Algebra\n\n\nAvailable free online VMLS\n\n\nConvex Optimization\n\n\nAvailable free online cvxbook"
+  },
+  {
+    "objectID": "images/IntroSlides.html#textbooks-1",
+    "href": "images/IntroSlides.html#textbooks-1",
+    "title": "Welcome to DATA 622",
+    "section": "Textbooks",
+    "text": "Textbooks\n\n\nTwo most important textbooks:\n\nIntroduction to Applied Linear Algebra\n\n\nAvailable free online VMLS\n\n\nConvex Optimization\n\n\nAvailable free online cvxbook"
+  },
+  {
+    "objectID": "images/IntroSlides.html#assignments",
+    "href": "images/IntroSlides.html#assignments",
+    "title": "Welcome to DATA 622",
+    "section": "Assignments",
+    "text": "Assignments\n\n\n\n8 Lab Assignments (80%)\nFinal Project (20%)"
+  },
+  {
+    "objectID": "images/IntroSlides.html#looking-forward-to-a-great-semester",
+    "href": "images/IntroSlides.html#looking-forward-to-a-great-semester",
+    "title": "Welcome to DATA 622",
+    "section": "Looking forward to a great semester!",
+    "text": "Looking forward to a great semester!\nThanks for watching"
+  },
+  {
+    "objectID": "assignments/project.html",
+    "href": "assignments/project.html",
+    "title": "Data Project",
+    "section": "",
+    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
+    "crumbs": [
+      "Assignments",
+      "Project"
+    ]
+  },
+  {
+    "objectID": "assignments/project.html#group-project",
+    "href": "assignments/project.html#group-project",
+    "title": "Data Project",
+    "section": "",
+    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
+    "crumbs": [
+      "Assignments",
+      "Project"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nBias-Variance Tradeoff (Template)\n\n\nThe Linear Model (Template)\n\n\nClassification (Template)\n\n\nRegularization and Generalization (Template)\n\n\nTrees and Ensembles (Template)\n\n\nCausal Inference (Template)\n\n\nNeural Networks and Deep Learning (Template)\n\n\nUnsupervised Learning and Pre-Trained Models (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
     "objectID": "assignments/labs/lab1.html",
     "href": "assignments/labs/lab1.html",
     "title": "DATA 622: Lab 1:",
@@ -157,49 +263,6 @@
     "title": "DATA 622: Lab 1:",
     "section": "Problem 2: kNN Classification of the ZIP code digit data",
     "text": "Problem 2: kNN Classification of the ZIP code digit data\nIn order to complete this problem you will need to download zip.train and zip.test from the course website. These datasets contain images of hand-drawn digits. We will be experimenting with kNN classification and factors impacting the bias-variance trade-off, and this will also be chance to practice using scikit-learn.\n\nDownload and load the training and test data sets using pandas. Make sure to load all of the data (there is no header) The zeroth column corresponds to the class label, a digit from 0-9, and the columns 1 to 256 correspond to a grayscale value from -1 to 1. Select the first entry in the training set, resize it to 16x16, and plot the image (you can use plt.imshow()).\nThe following code fits imports the kNN classification function from scikit-learn as well as an accuracy function, trains a classifier, and tests its accuracy on hypothetical training and testing data:\n\n\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\n\nknn = KNeighborsClassifier(n_neighbors=4)\nknn.fit(zip_image_train, zip_class_train)\n\n\nzip_pred_train = knn.predict(zip_image_train)\naccuracy = accuracy_score(zip_class_train, zip_pred_train)\nprint(f'Accuracy: {accuracy:.4f}')\n\nzip_pred_test = knn.predict(zip_image_test)\naccuracy = accuracy_score(zip_class_test, zip_pred_test)\nprint(f'Accuracy: {accuracy:.4f}')\n\nWhere the dataframes contain just the training and testing images and class.\nAdapt this code to determine if the we can observe the bias variance trade-off for different numbers of neighbors \\(k\\). Specifically, recreate plot 2.17 (pay attention to the x-axis scale and use the same choice as in the book) which shows test and train classification accuracy as a function of \\(1/k\\). Select a range of \\(k\\) from 1 to 300. You do not have to plot every single \\(k\\) value in this range if the problem is computationally intensive on your machine. Do you observe a \\(U\\)-shaped curve in the testing error (and a divergence from training error) as \\(1/k\\) increases?\n\nIntroduce some noise in the training and testing labels for both the training and testing data. You can do this by using np.random.choice to sample from the range of indices of each of the training and test set to determine which labels will be changed, and np.random.choice again to pick the new label. After making this modification, repeat problem (b). How did adding label noise impact the shape of the testing and training error versus \\(1/k\\) curves?"
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nIntroduction to Data Visualization using ggplot (Template)\n\n\nTidy Data (Template)\n\n\nExploratory Data Analysis (Template)\n\n\nData Transformations (Template)\n\n\nProcesing Text and Strings (Template)\n\n\nR and SQL (Template)\n\n\nRectangling and Web Scraping (Template)\n\n\nText Mining and NLP (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "assignments/project.html",
-    "href": "assignments/project.html",
-    "title": "Data Project",
-    "section": "",
-    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "assignments/project.html#group-project",
-    "href": "assignments/project.html#group-project",
-    "title": "Data Project",
-    "section": "",
-    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#recap-the-learning-problem",
