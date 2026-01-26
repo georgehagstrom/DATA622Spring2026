@@ -352,6 +352,14 @@ George I. Hagstrom
 <li>Bias-Variance Tradeoff</li>
 </ol>
 </section>
+<section id="weekly-tasks" class="slide level2">
+<h2>Weekly Tasks</h2>
+<ul>
+<li>Lab 1 due Sunday at midnight</li>
+<li>Reading: ISLP 2.2-2.4</li>
+<li>Keep posting ideas and finding team-mates in Slack</li>
+</ul>
+</section>
 <section id="assessing-model-accuracy" class="slide level2">
 <h2>Assessing Model Accuracy</h2>
 <ul>
@@ -362,15 +370,19 @@ George I. Hagstrom
 R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 \]</span> Are used to assess model accuracy</li>
 </ul>
+<div class="fragment" style="border: 2px solid black; padding: 20px; border-radius: 5px;">
 <p><span class="incremental">But what we really care about is whether we can extrapolate assessed accuracy to unseen examples</span></p>
+</div>
 </section>
 <section id="generalization" class="slide level2">
 <h2>Generalization</h2>
 <p><strong>Generalization</strong> is defined as the ability of a model to maintain its accuracy on observations outside of its training</p>
+<div class="fragment">
 <ul>
-<li>For traditional statistical models, statistical theory let’s you estimate how well a model will genearlize</li>
-<li>When a model has high in-sample accuracy, it is not guarantee that it performs well out of sample</li>
+<li class="fragment">For traditional statistical models, statistical theory let’s you estimate how well a model will genearlize</li>
+<li class="fragment">When a model has high in-sample accuracy, it is not guaranteed that it performs well out of sample</li>
 </ul>
+</div>
 </section>
 <section id="overfitting" class="slide level2">
 <h2>Overfitting</h2>
@@ -378,16 +390,8 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 <li>Overfitting is a phenomenon that causes bad generalization</li>
 <li>Consider the following dataset:</li>
 </ul>
-<div id="54356ee3" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-3-output-1.png" width="643" height="486"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
 <section id="models-of-increasing-complexity" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol type="1">
@@ -396,16 +400,8 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 <p><span class="math display">\[
 g(x) = g_0 + g_1 x
 \]</span></p>
-<div id="87a7b27f" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-5-output-1.png" width="656" height="505"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-5-output-1.png" class="r-stretch"></section>
 <section id="models-of-increasing-complexity-1" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
@@ -414,16 +410,8 @@ g(x) = g_0 + g_1 x
 <p><span class="math display">\[
 g(x) = g_0 + g_1 x + g_2 x^2
 \]</span></p>
-<div id="4cb649fa" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-6-output-1.png" width="656" height="505"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
 <section id="models-of-increasing-complexity-2" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
@@ -432,52 +420,28 @@ g(x) = g_0 + g_1 x + g_2 x^2
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^5 g_i x^i
 \]</span></p>
-<div id="c17e7fe3" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-7-output-1.png" width="656" height="505"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-7-output-1.png" class="r-stretch"></section>
 <section id="models-of-increasing-complexity-3" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
 <li>10th Degree fit</li>
 </ol>
 <p><span class="math display">\[
-g(x) = \sum_{i=0}^10 g_i x^i
+g(x) = \sum_{i=0}^{10} g_i x^i
 \]</span></p>
-<div id="a026abe3" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-8-output-1.png" width="656" height="505"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
 <section id="models-of-increasing-complexity-4" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
 <li>25th Degree fit</li>
 </ol>
 <p><span class="math display">\[
-g(x) = \sum_{i=0}^25 g_i x^i
+g(x) = \sum_{i=0}^{25} g_i x^i
 \]</span></p>
-<div id="7f348f4e" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-9-output-1.png" width="656" height="505"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
 <section id="overfitting-1" class="slide level2">
 <h2>Overfitting</h2>
 <ul>
@@ -492,50 +456,32 @@ g(x) = \sum_{i=0}^25 g_i x^i
 <li>We can plot how the <span class="math inline">\(R^2\)</span> changes for the training data and randomly generated testing data</li>
 <li>As model complexity increases, the training error diverges from the testing error</li>
 </ul>
-<div id="25af4652" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-stdout">
-<pre><code>0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0</code></pre>
-</div>
+<div style="width: 60%; margin: auto;">
+<div id="bdeb60a2" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-10-output-2.png" width="650" height="485"></p>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-10-output-1.png"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="ec38d6d7" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-stdout">
-<pre><code>0.2513939119806864</code></pre>
 </div>
+</section>
+<section id="training-versus-testing-error-1" class="slide level2">
+<h2>Training versus Testing Error</h2>
+<ul>
+<li>We can plot how the <span class="math inline">\(R^2\)</span> changes for the training data and randomly generated testing data</li>
+<li>As model complexity increases, the training error diverges from the testing error</li>
+</ul>
+<div style="width: 80%; margin: auto;">
+<div id="6446a02d" class="cell" data-fig-height="6" data-fig-width="16" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-11-output-2.png" width="643" height="487"></p>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-11-output-1.png"></p>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -543,14 +489,13 @@ g(x) = \sum_{i=0}^25 g_i x^i
 <section id="irreducible-error" class="slide level2">
 <h2>Irreducible Error</h2>
 <ul>
-<li>The target function <span class="math inline">\(f(\mathbf{x})\)</span> encodes all the information about <span class="math inline">\(y\)</span> contained in the variables <span class="math inline">\(\mathbf{x}\)</span></li>
-<li>Thus, we can write <span class="math inline">\(y\)</span>:</li>
+<li>Target function <span class="math inline">\(f(\mathbf{x})\)</span> encodes all the information about <span class="math inline">\(y\)</span> contained in the variables <span class="math inline">\(\mathbf{x}\)</span></li>
 </ul>
 <p><span class="math display">\[
 y = f(\mathbf{x}) + \epsilon
 \]</span></p>
 <ul>
-<li>Here <span class="math inline">\(\epsilon\)</span> is called the <em>irreducible error</em></li>
+<li><span class="math inline">\(\epsilon\)</span> is called the <em>irreducible error</em></li>
 <li>It accounts for other variables that are not measured and randomness</li>
 <li>We have <span class="math inline">\(E(\epsilon) = 0\)</span></li>
 </ul>
@@ -561,7 +506,7 @@ y = f(\mathbf{x}) + \epsilon
 <li>When fitting a model <span class="math inline">\(g\)</span> to the data, there are two sources of error: <span class="math display">\[
 E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 \]</span></li>
-<li>The (E((g-f)^2)) term is the <em>reducible</em> error</li>
+<li>The <span class="math inline">\(E((g-f)^2)\)</span> term is the <em>reducible</em> error</li>
 <li>Total error is a sum of <em>reducible</em> and <em>irreducible</em> errors</li>
 </ul>
 </section>
@@ -570,89 +515,97 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <ul>
 <li>Hypothetical scenario: study the performance of a model on a repeated learning task</li>
 </ul>
-
-<img data-src="bias-variance1.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance1.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="why-do-complex-models-overfit-1" class="slide level2">
 <h2>Why do complex models overfit?</h2>
 <ul>
 <li>Each fit will be compared to the target function <span class="math inline">\(f\)</span></li>
 </ul>
-
-<img data-src="bias-variance2.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance2.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="bias-variance-tradeoff" class="slide level2">
 <h2>Bias Variance Tradeoff</h2>
 <ul>
 <li>Can look at the “average” fit model</li>
 </ul>
-
-<img data-src="bias-variance3.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance3.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="why-do-complex-models-overfit-2" class="slide level2">
 <h2>Why do complex models overfit?</h2>
 <ul>
 <li>Bias is the distance from average fit to target</li>
 </ul>
-
-<img data-src="bias-variance4.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance4.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="why-do-complex-models-overfit-3" class="slide level2">
 <h2>Why do complex models overfit?</h2>
 <ul>
 <li>Variance is how much individual fits vary from average</li>
 </ul>
-
-<img data-src="bias-variance5.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance5.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="bias-variance-tradeoff-1" class="slide level2">
 <h2>Bias-Variance Tradeoff</h2>
 <ul>
 <li>Expected out of sample error is sum of squared bias, variance, and irreducible error</li>
 </ul>
-
-<img data-src="bias-variance6.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance6.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="bias-variance-tradeoff-2" class="slide level2">
 <h2>Bias-Variance Tradeoff</h2>
 <ul>
 <li>Bias and variance trade-off</li>
 </ul>
-
-<img data-src="bias-variance7.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance7.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="bias-variance-tradeoff-3" class="slide level2">
 <h2>Bias-Variance Tradeoff</h2>
 <ul>
 <li>Bias and Variance Tradeoff</li>
 </ul>
-
-<img data-src="bias-variance8.png" class="r-stretch"></section>
+<div style="text-align: left;">
+<p><img data-src="bias-variance8.png" style="width:80.0%"></p>
+</div>
+</section>
 <section id="learning-curves" class="slide level2">
 <h2>Learning Curves</h2>
 <ul>
-<li>Compare a simple versus complex model as amount of data increases</li>
+<li>Simple versus complex models as amount of data increases</li>
 </ul>
-<div id="69d55b35" class="cell" data-execution_count="13">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-14-output-1.png" width="645" height="490"></p>
-</figure>
+<div id="20dd1b8f" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>Text(0.5, 1.0, 'Learning Curve')</code></pre>
 </div>
+
 </div>
-</div>
-</section>
+<img data-src="meetup-2_files/figure-revealjs/cell-15-output-2.png" class="r-stretch"></section>
 <section id="learning-curves-1" class="slide level2">
 <h2>Learning Curves</h2>
-<div id="c1587570" class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-15-output-1.png" width="645" height="490"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+<ul>
+<li>Simple versus complex models as amount of data increases</li>
+</ul>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-16-output-1.png" class="r-stretch"></section>
 <section id="what-complexity-to-pick" class="slide level2">
 <h2>What Complexity to Pick?</h2>
-<ul>
-<li>Model complexity dictated by your data more so than the complexity of the phenomenon!</li>
-</ul>
+<div class="fragment" style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>Model complexity dictated by your data more so than the complexity of the phenomenon!</p>
+</div>
 </section>
 <section id="classification-accuracy" class="slide level2">
 <h2>Classification Accuracy</h2>
@@ -669,11 +622,11 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <section id="naive-bayes" class="slide level2">
 <h2>Naive Bayes</h2>
 <ul>
-<li>In classification, we think of conditional probability of <span class="math inline">\(y\)</span> given <span class="math inline">\(\mathbf{x}\)</span>: <span class="math display">\[
+<li>Conditional probability of <span class="math inline">\(y\)</span> given <span class="math inline">\(\mathbf{x}\)</span>: <span class="math display">\[
 P(y|\mathbf{x})
 \]</span></li>
-<li>If we knew the probabilities, best prediction is to pick class with highest chance: <span class="math display">\[
-y_{\mathrm{Naive-Bayes}}(\mathbf{x}) = \argmax_{y} P(y|\mathbf{x})
+<li>Best prediction is to pick class with highest chance: <span class="math display">\[
+y_{\mathrm{Naive-Bayes}}(\mathbf{x}) = \mathrm{argmax}_{y} P(y|\mathbf{x})
 \]</span></li>
 <li>This is called Naive-Bayes</li>
 </ul>
@@ -701,43 +654,76 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 <ul>
 <li>Here is an example for <span class="math inline">\(k=3\)</span>.</li>
 </ul>
-
-<img data-src="knn-1.png" class="r-stretch quarto-figure-center"><p class="caption">ISL</p></section>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="knn-1.png" style="width:80.0%"></p>
+<figcaption>ISL</figcaption>
+</figure>
+</div>
+</div>
+</section>
 <section id="knn-model-2" class="slide level2">
 <h2>kNN Model</h2>
 <ul>
-<li>Consider this dataset for a classification problem with two classes</li>
-<li>Boundary is the border between 50% probability of blue versus orange</li>
+<li>Classification problem with two classes</li>
+<li>Boundary is the border between 50% probability of blue</li>
 </ul>
-
-<img data-src="knn-2.png" class="r-stretch quarto-figure-center"><p class="caption">ISL</p></section>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="knn-2.png" style="width:60.0%"></p>
+<figcaption>ISL</figcaption>
+</figure>
+</div>
+</div>
+</section>
 <section id="knn-model-3" class="slide level2">
 <h2>kNN Model</h2>
 <ul>
 <li>Decision boundary for <span class="math inline">\(k=10\)</span></li>
 </ul>
-
-<img data-src="knn-3.png" class="r-stretch quarto-figure-center"><p class="caption">ISL</p></section>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="knn-3.png" style="width:60.0%"></p>
+<figcaption>ISL</figcaption>
+</figure>
+</div>
+</div>
+</section>
 <section id="knn-model-over-and-under-fitting" class="slide level2">
 <h2>kNN Model Over and Under fitting</h2>
 <ul>
 <li><span class="math inline">\(k=1\)</span> corresponds to overfitting</li>
 <li><span class="math inline">\(k=100\)</span> corresponds to underfitting</li>
 </ul>
-
-<img data-src="knn-4.png" class="r-stretch quarto-figure-center"><p class="caption">ISL</p></section>
+<div style="text-align: left;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="knn-4.png" style="width:80.0%"></p>
+<figcaption>ISL</figcaption>
+</figure>
+</div>
+</div>
+</section>
 <section id="knn-model-generalization-error" class="slide level2">
 <h2>kNN Model Generalization Error</h2>
 <ul>
 <li><span class="math inline">\(1/k\)</span> corresponds to model complexity</li>
 <li>Optimal out of sample accuracy at intermediate <span class="math inline">\(k\)</span></li>
 </ul>
+<div style="text-align: left;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="knn-5.png"></p>
+<p><img data-src="knn-5.png" style="width:70.0%"></p>
 <figcaption>ISL</figcaption>
 </figure>
 </div>
+</div>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>

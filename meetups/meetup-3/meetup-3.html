@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -321,6 +321,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="DATA 622 Meetup 3: The Linear Model – DATA 622 Spring 2026">
 <meta property="og:site_name" content="DATA 622 Spring 2026">
 </head>
@@ -341,8 +344,411 @@ George I. Hagstrom
 
   <p class="date">2026-01-26</p>
 </section>
-<section class="slide level2">
+<section id="linear-regression-revisited" class="slide level2">
+<h2>Linear Regression Revisited</h2>
+<ul>
+<li>Prediction is a linear function of the features:</li>
+</ul>
+<p><span class="math display">\[
+g(\mathbf{x}) = a_1 x_1 + a_2x_2 + \cdots a_nx_n = \sum_{i=1}^n a_ix_i = \mathbf{a}^T\mathbf{x} + c
+\]</span></p>
+<ul>
+<li>Most basic and fundamental regression model</li>
+</ul>
+</section>
+<section id="why-cover-this-again" class="slide level2">
+<h2>Why Cover this Again?</h2>
+<ul>
+<li>Probably most common production ML model</li>
+</ul>
 
+<img data-src="linear_regression_meme1.jpg" class="r-stretch"></section>
+<section id="linear-regression-advantages" class="slide level2">
+<h2>Linear Regression Advantages</h2>
+<ol type="1">
+<li>Easier to train</li>
+<li>Easier to understand</li>
+<li>Easier to fix</li>
+</ol>
+</section>
+<section id="training-is-fast-and-exact" class="slide level2">
+<h2>Training is fast and exact</h2>
+<p><span class="math display">\[
+\mathbf{a} = \left(\mathbf{x}^T\mathbf{x}\right)\mathbf{x}^T \mathbf{y}
+\]</span></p>
+<pre><code>- Much cheaper than a neural network to run
+- Can constantly update huge models on the fly on tiny hardware</code></pre>
+</section>
+<section id="linear-models-are-interpretable" class="slide level2">
+<h2>Linear Models are Interpretable</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>{.incremental} Coefficients <em>may</em> tell you causal effects</li>
+<li>{.incremental} Perfect for building intuition during EDA</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="model_complexity2.png"></p>
+</div></div>
+</section>
+<section id="start-with-regression" class="slide level2">
+<h2>Start with regression</h2>
+<ul>
+<li>It’s rarely a mistake to start with linear regression, even if you end up just using it as a benchmark to compare to.</li>
+</ul>
+</section>
+<section id="linear-regression-basics" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Features <span class="math inline">\(\mathbf{x} \in \mathcal{X}\)</span>:
+<ul>
+<li>Combination of real numbers and categorical variables</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-1" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Input space <span class="math inline">\(y \in \mathcal{Y}\)</span> is just real numbers</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-2" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Hypotheses/Models <span class="math inline">\(g\in\mathcal{G}\)</span> are linear functions <span class="math display">\[
+g(\mathbf{x}) = a_1x_1+\cdots a_nx_n \\
+= \mathbf{w}^T\mathbf{x}
+\]</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-3" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Simplest Learning Algorithm: Minimize Loss Function <span class="math display">\[
+\mathrm{min}_{\mathbf{w}} \sum_{i=1}^n (\mathbf{w}^T\mathbf{x_i}-y_i)^2
+\]</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-4" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Statistically motivated by maximum likelihood under Gaussian errors: <span class="math display">\[
+L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2\sigma^2}}
+\]</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-5" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Exact Formula:</li>
+</ul>
+<p><span class="math display">\[
+\mathbf{w} = (X^TX)^{-1}X^T\mathbf{y}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(X\)</span> is called the <em>design matrix</em></li>
+<li>Contains the data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-6" class="slide level2">
+<h2>Linear Regression Basics:</h2>
+<ul>
+<li>Learning algorithm works if number of data points <span class="math inline">\(n\)</span> is greater than number of features <span class="math inline">\(p\)</span></li>
+<li>If more features than data points, problem is <code>ill-posed</code> but we will show some tricks in a few weeks</li>
+</ul>
+</section>
+<section id="prediction-versus-inference" class="slide level2">
+<h2>Prediction versus Inference</h2>
+<ul>
+<li>Linear regression coefficients give easy interpretation:
+<ul>
+<li><span class="math inline">\(w_i\)</span> is increase in <span class="math inline">\(y\)</span> for a 1 unit increase in <span class="math inline">\(x_i\)</span></li>
+<li>But this only refers to <em>predictions</em>, not to <em>interventions</em></li>
+</ul></li>
+<li>Whether we care about inference or prediction will change what variables we will include</li>
+</ul>
+</section>
+<section id="waffle-house-example" class="slide level2">
+<h2>Waffle House Example</h2>
+<div id="7e0167c0" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Location</th>
+<th data-quarto-table-cell-role="th">Loc</th>
+<th data-quarto-table-cell-role="th">Population</th>
+<th data-quarto-table-cell-role="th">Marriage</th>
+<th data-quarto-table-cell-role="th">Divorce</th>
+<th data-quarto-table-cell-role="th">WaffleHouses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Alabama</td>
+<td>AL</td>
+<td>4.78</td>
+<td>20.2</td>
+<td>12.7</td>
+<td>128</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Alaska</td>
+<td>AK</td>
+<td>0.71</td>
+<td>26.0</td>
+<td>12.5</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Arizona</td>
+<td>AZ</td>
+<td>6.33</td>
+<td>20.3</td>
+<td>10.8</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Arkansas</td>
+<td>AR</td>
+<td>2.92</td>
+<td>26.4</td>
+<td>13.5</td>
+<td>41</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>California</td>
+<td>CA</td>
+<td>37.25</td>
+<td>19.1</td>
+<td>8.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="confounding" class="slide level2">
+<h2>Confounding</h2>
+
+<img data-src="meetup-3_files/figure-revealjs/cell-5-output-1.png" class="r-stretch"></section>
+<section id="confounding-1" class="slide level2">
+<h2>Confounding</h2>
+<ul>
+<li>Does anyone here believe that building waffle houses will increase the divorce rate?</li>
+<li>Or demolishing them will decrease it?</li>
+</ul>
+</section>
+<section id="confounding-2" class="slide level2">
+<h2>Confounding</h2>
+<ul>
+<li>We all know Correlation does not equal Causation</li>
+<li>Important for linear (and other) model interpretation</li>
+</ul>
+</section>
+<section id="confounding-3" class="slide level2">
+<h2>Confounding</h2>
+<p><strong>Confounding</strong> describes a situation where the predictions of a model differ from the result of experimentally manipulating the variables of that model.</p>
+<ul>
+<li>In the waffle house case, the fact that building waffle houses won’t change the divorce rate is an example of confounding.</li>
+</ul>
+</section>
+<section id="confounding-examples" class="slide level2">
+<h2>Confounding Examples</h2>
+<p>There are several types of confounding. In one, a third variable not included in the model impacts both dependent and independent variable. This third variable creates an additional association:</p>
+<ul>
+<li>Parental Income confounds the relationship between class size and SAT scores</li>
+<li>Tobacco use confounds the relationship between coffee drinking and lung cancer</li>
+<li>Income, health, social status, etc confound the relationship between wine consumption and life expectancy</li>
+</ul>
+</section>
+<section id="confounding-examples-1" class="slide level2">
+<h2>Confounding Examples</h2>
+<p>There are several types of confounding. In one, a third variable not included in the model impacts both dependent and independent variable. This third variable creates an additional association:</p>
+
+<img data-src="fork.png" class="r-stretch"></section>
+<section id="control-for-confounds" class="slide level2">
+<h2>Control for Confounds</h2>
+<ul>
+<li><p>If there is a variable you suspect is a common cause for your dependent and independent variables, you <em>must</em> include it in your regression for interpretability</p></li>
+<li><p><em>controlling</em> for the confounder</p></li>
+<li><p><em>stratifying</em> by the confounder</p></li>
+</ul>
+</section>
+<section id="waffle-example" class="slide level2">
+<h2>Waffle Example</h2>
+<ul>
+<li>In wafflehouse example, there is a common cause of both waffle house and divorce rates</li>
+<li>Southern states have earlier marriage age, and wafflehouse is a southern chain</li>
+<li>Regression coefficient becomes non-significant</li>
+<li>This might seem silly, but this is the most common problem I see in student projects</li>
+</ul>
+
+<img data-src="meetup-3_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
+<section id="collider-bias" class="slide level2">
+<h2>Collider Bias</h2>
+<p><strong>Collider Bias</strong> describes a situation when the independent and dependent variable both influence a third variable which you have used somehow in your analysis</p>
+<ul>
+<li>Smoking mortality paradox</li>
+<li>Yerushalmy studied 13,000 low birthweight babies born in the 1960s</li>
+<li>Found smokers were 2x as likely to have a low birthweight baby</li>
+<li>Mortality rate for low birthweight babies 25x normal weight babies</li>
+</ul>
+</section>
+<section id="low-birthweight-paradox" class="slide level2">
+<h2>Low Birthweight Paradox</h2>
+<ul>
+<li>Paradoxical Finding:
+<ul>
+<li>Mortality rate for low birthweight babies with smoking mothers was 50% lower!</li>
+<li>Makes it seem like smoking is protective against infant mortality</li>
+</ul></li>
+</ul>
+</section>
+<section id="low-birthweight-paradox-1" class="slide level2">
+<h2>Low Birthweight Paradox</h2>
+<ul>
+<li>There are many causes of low birthweight
+<ul>
+<li>Some dreadful conditions that will lead to mortality</li>
+<li>Smoking</li>
+</ul></li>
+<li>Population of infants is a mixture of infants with very bad conditions and infants with low birthweight due to smoking</li>
+<li>Selecting on low birthweight induces a negative correlation between smoking and infant mortality</li>
+</ul>
+</section>
+<section id="collider-bias-1" class="slide level2">
+<h2>Collider Bias</h2>
+<ul>
+<li>Unlike other confounders, you must not include colliders in your regression if you care about inference!</li>
+</ul>
+
+<img data-src="collider.png" class="r-stretch"></section>
+<section id="simpsonsberksons-paradox" class="slide level2">
+<h2>Simpson’s/Berkson’s Paradox</h2>
+<ul>
+<li>This appears all over the place:
+<ul>
+<li>For students already accepted to college, SAT scores don’t predict success</li>
+<li>Shorter NBA players are better at shooting than taller ones</li>
+<li>BMI is associated with survival for heart disease patients</li>
+</ul></li>
+</ul>
+</section>
+<section id="collinearity-for-inference" class="slide level2">
+<h2>Collinearity for Inference</h2>
+<ul>
+<li>Common advice to exclude collinear predictors</li>
+<li>For inference, confounding is <em>much</em> more important and should be your primary concern</li>
+<li>Inference is only as good as your assumptions</li>
+</ul>
+</section>
+<section id="linear-models-for-prediction" class="slide level2">
+<h2>Linear Models for Prediction</h2>
+<ul>
+<li>Confounding concerns go out the window when your goal is accurate predictions</li>
+<li>Out of sample accuracy, rather than inference/interpretability</li>
+<li>How?</li>
+</ul>
+</section>
+<section id="comparing-models" class="slide level2">
+<h2>Comparing Models</h2>
+<ul>
+<li>Hold Out/Cross Validation
+<ul>
+<li>Save some testing data, use it to test the model</li>
+</ul></li>
+<li>Information Criteria
+<ul>
+<li>Train with all the data, use statistical theory and likelihood to estimate out of sample accuracy</li>
+</ul></li>
+</ul>
+</section>
+<section id="akaike-information-criterion" class="slide level2">
+<h2>Akaike Information Criterion</h2>
+<ul>
+<li><p>AIC for statistical model is: <span class="math display">\[
+AIC = n - \log(\hat{L})
+\]</span></p></li>
+<li><p><span class="math inline">\(\hat{L}\)</span> is the likelihood of the model</p></li>
+<li><p><span class="math inline">\(n\)</span> is the number of parameters</p></li>
+<li><p>This balances model complexity (<span class="math inline">\(n\)</span>) with in-sample accuracy</p></li>
+</ul>
+</section>
+<section id="akaike-information-criterion-1" class="slide level2">
+<h2>Akaike Information Criterion</h2>
+<ul>
+<li>There are a wide variety of other information criteria (BIC, WAIC, etc)</li>
+<li>They are used for comparing models</li>
+<li>If <span class="math inline">\(p_{true}\)</span> is the probability distribution that generated the data, information criteria approximate something called the Kullback-Leibler Divergence: $$</li>
+</ul>
+<p>$$</p>
+</section>
+<section id="nonlinear-transformation" class="slide level2">
+<h2>Nonlinear Transformation</h2>
+</section>
+<section id="feature-engineering" class="slide level2">
+<h2>Feature Engineering</h2>
+</section>
+<section id="weighted-least-squares" class="slide level2">
+<h2>Weighted Least Squares</h2>
+</section>
+<section id="interactions" class="slide level2">
+<h2>Interactions</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>

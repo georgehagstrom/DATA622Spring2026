@@ -51,368 +51,544 @@
     "text": "Welcome to DATA 622, Data Acquisition and Management.\nClick this post now to get started!\nHere are the first steps:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nMake sure you have a good python environment and IDE setup\nIntroduce yourself on the course discussion forum on Brightspace.\nJoin our Slack workspace:\n\nI will invite you to a DATA 622 Slack Channel within that workspace when you join\n\nAttend our first meetup on Monday at 6:45 p.m. ET on Zoom\n\nI recorded a short video which introduces me and gives you more background on the course:"
   },
   {
-    "objectID": "modules/module1.html",
-    "href": "modules/module1.html",
-    "title": "Module 1 - What is Machine Learning",
+    "objectID": "modules/module4.html",
+    "href": "modules/module4.html",
+    "title": "Module 4 - Classification",
     "section": "",
-    "text": "Overview and Deliverables\n\n1/26: Attend the initial course meetup at 6:45PM Eastern\nDue 2/01: Introduction Post in Brightspace Discussions\nJoin Course Slack channel\nInstall a suitable python IDE if you do not have one (for instance positron), and a basic python installation (see the software page\n\n\nLearning Objectives\n\nExamples of Machine Learning Problems\nDefining Supervised Learning, Unsupervised Learning, Reinforcement Learning\nGoals of Machine Learning: Prediction, Understanding (inference/causal inference), Decision Making\nThe components of the machine learning problem\nReview course toolkit (or learn if unfamiliar): numpy, pandas, scikit-learn, matplotlib\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Chapter 1, Section 2.1\n\n\n\nInteractive Lab\n\nISLP (Introduction to Statistical Learning): [Section 2.3: Introduction to Python]\n\n\n\nVideos\nThe book authors have a video playlist where they go through the book section by section. You may or may not like they style and presentation- my weekly videos will be different than theirs. I will also make videos of coding demonstrations. For this week the relevant links are:\nLink to All Python Labs\nLink to All Course Videos\nVideos Covering Material Relevant to this week:\nOpening Remarks Updated Opening Remarks Statistical Learning Examples and Framework 1.2 Statistical Learning Intro to Regression Models 2.1\nCoding Videos Relevant to this week:\n\nIntro to the ISLP Presenters\nSetting Up Python\nData Types, Arrays, and Basics\nGraphics\nIndexing and Data Frames",
+    "text": "Overview\nDuring this week, we will focus on methods that can be used to solve classification problems. We will start by talking about the basis for decision rules in classification, which connects machine learning to statistics via likelihood ratio tests and loss functions. We will introduce the most basic classification model, which is called logistic regression, and which is in many ways the analog of linear regression for classification problems. We will go over a number of important instances of logistic regression and then discuss the intricacies of evaluating classification models.\n\n\nLearning Objectives\n\nClassification with Full Data: Likelihood Ratio Tests, Neymon-Pearson Lemma, and Loss-Functions\nLogistic Regression: Multiple and Multinomial\nClassification Metrics\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Sections 4.1-4.3\n\n\n\nAdditional Reading:\nIf you want to go deeper into this topic:\n\nHands on Machine Learning Chapter 3. This is a very practical take on classification\nPatterns, Predictions, and Actions Chapter 2 Very good exposition of the theory\n\n\n\nVideos\nhttps://www.youtube.com/watch?v=ju3J7iRy6xI&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=15\n\nSection 4.1: Introduction to Classification\nSection 4.2: Logistic Regression\nSection 4.3: Multivariate Logistic Regression\nSection 4.4: Logistic Regression Case Control Sampling and Multi-Class\n\n\n\nCoding Videos\n\nSection 4.1: Simple Linear Regression",
     "crumbs": [
       "Topics",
-      "1 - What is Machine Learning?"
+      "4 - Classification"
     ]
   },
   {
-    "objectID": "modules/module7.html",
-    "href": "modules/module7.html",
-    "title": "Module 7 - Regularization and Model Selection",
+    "objectID": "modules/module13.html",
+    "href": "modules/module13.html",
+    "title": "Module 13 - Deep Learning",
     "section": "",
-    "text": "Overview\nMachine Learning models are often over-parameterized, meaning that they can have many more model parameters than there are data points. By default, over-parameterized models will generalize poorly due to overfitting. A family of methods called regularization are used to modify the loss functions employed in machine learning models, penalizing models for having values of the parameters far from 0. Remarkably, using these penalties can allow for over-parameterized models to generalize out of sample. We will study regularization in the context of the linear model, where the types of penalties used are called ridge regression, the lasso, elastic-net regression, or even Huber regression. These regression methods apply broadly throughout machine learning. We will also learn about principal component analysis, our first unsupervised learning method, and other tools used when working with large numbers of parameters and high-dimensions.\nLab 4 Will be due at the end of the week\n\n\nLearning Objectives\n\nRegularization and Over-fitting\nRidge Regression, The Lasso, and Elastic Net\nPrincipal Component Analsysis (PCA)\nChallenges of working in high-dimensional spaces\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning with Python): Chapters 6\n\n\n\nVideos",
+    "text": "Overview\nDuring this week, we continue to learn about neural networks, moving from the basics of individual neurons to challenges that arise in deep architectures. We introduce recurrent neural networks, deep neural networks, and discuss some of the challenges with training deep neural networks. We explain backpropagation, and show how to use ReLU layers to mitigate vanishing and/or exploding gradients, and talk about hyperparameter optimization in stochastic gradient descent.\nLab 7 is due at the end of the week.\n\n\nLearning Objectives\n\nRNN Architectures\nChallenges with Deep Learning: Vanishing and Exploding Gradients\nReLU Layers\nHyperparameter Choices for Stochastic Gradient Descent\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 10.5-10.8\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "7 - Regularization and Model Selection"
+      "13 - Deep Learning"
     ]
   },
   {
-    "objectID": "modules/module2.html",
-    "href": "modules/module2.html",
-    "title": "Module 2 - The Bias-Variance Tradeoff",
+    "objectID": "modules/module3.html",
+    "href": "modules/module3.html",
+    "title": "Module 3 - Linear Models",
     "section": "",
-    "text": "Overview and Deliverables\nThis module introduces the bias-variance trade-off, which is one of the most fundamental ideas in machine learning and one which connects your data, the complexity of the problem you are solving, and the types of models which might be successful. We will introduce concepts such as in-sample and out-of-sample accuracy, generalization, overfitting, loss functions, and model assessment.\n\n2/8: Submit Lab 1 on the Brightspace page for the course\nStart brainstorming project ideas and forming groups on slack.\n\n\n\nLearning Objectives\n\nLoss functions and model assessment\nOverfitting and generalization error\nBias-Variance Tradeoff\nModel Flexibility and Interpretability\nBasic Regression and Classification Models\nIntroduction to scikit-learn package\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Sections 2.2-2.4\n\nOptional:\n\nChapter 2 of Hands on Machine Learning . I will go through an example of this in a coding vignette to introduce you to scikit-learn.\n\n\n\nVideos\n\nSection 2.2: Dimensionality and Structured Models\nSection 2.3: Bias Variance Trade-Off\nSection 2.4: Classification Models",
+    "text": "Overview and Deliverables\nThis week we will cover linear regression, a topic you are already quite familiar with from previous classes. We will take a different perspective on this subject, contextualizing it within machine learning as the default, baseline model that should be used for regression and also as the most interpretable model, and also discussing it from the distinct goals of prediction and understanding. One conclusion will be that variable selection is very different depending on your goal.\nYou should begin working on Lab 2 and continue project brainstorming and group formation.\n\n\nLearning Objectives\n\nOrdinary Least Squares for Regression\nBaseline Models\nIntrepreting Regression Coefficients, Confounders and Colliders\nPrediction versus Inference\nWeighted Least Squares\nExtending Regression using Feature Engineering and Nonlinear Transformations\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Chapter 3\n\n\n\nLabs\n\nISLP (Introduction to Statistical Learning): Chapter 3 Lab\nIpython Notebook Version\n\n\n\nVideos\n\nSection 3.1: Simple Linear Regression\nSection 3.2: Hypothesis Testing and Confidence Intervals\nSection 3.3: Multiple Regression\nSection 3.4: Some Important Questions\nSection 3.5: Extensions of the Linear Model\n\n\n\nCoding Videos\n\nStatsmodels Linear Regression\nStatsmodels Multiple Regression\nStatsmodels Features",
     "crumbs": [
       "Topics",
-      "2 - Bias-Variance Trade-Off"
+      "3 - The Linear Model"
     ]
   },
   {
-    "objectID": "modules/module15.html",
-    "href": "modules/module15.html",
-    "title": "Module 15 - Pre-Trained Models",
+    "objectID": "modules/module6.html",
+    "href": "modules/module6.html",
+    "title": "Module 6 - Resampling and Cross Validation",
     "section": "",
-    "text": "Overview\nA recent development in deep learning has been the advent of pre-trained models based on something called the transformer architecture. Pre-trained models are extremely large neural network models that have been trained on enormous datasets, usually of images or text (in the text context, this is often a scrape of the entire internet). The initial training of these models is laborious and state-of-the-art models can only be trained by very large and well funded organizations. However, it is possible to make use of pre-trained models for a variety of purposes, including the modification of them via transfer or reinforcement learning (i.e. fine tuning). This week we will discuss these models, the transformer architecture, and how to make use of them to solve problems.\n\n\nLearning Objectives\n\nTransformer architecture and pretrained models\nReinforcement learning and fine tuning\nApplications and practical implementations\n\n\n\nReadings\n\nTBD\n\n\n\nVideos",
+    "text": "Overview\nIn traditional statistical modeling, model fits are evaluated using test statistics, hypothesis tests, or examination of the posterior distribution. These statistical tools are often not available for machine learning models because of their complexity. Instead, computational methods based on resampling have been developed which allow for estimation of uncertainty, out of sample accuracy (generalization), and model comparison. During this week we will begin our exploration of these tools by studying resampling, the boostrap, and cross-validation, which is one of the most crucial techniques for evaluating machine learning models.\n\n\nLearning Objectives\n\nUnderstand how to apply cross-validation to assess out of sample accuracy\nUnderstand the trade-offs in different data splits\nApply the bootstrap to estimate uncertainty in predictions and parameters\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Chapter 5\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "15 - Pretrained Models"
+      "6 - Resampling and Cross Validation"
     ]
   },
   {
-    "objectID": "modules/module14.html",
-    "href": "modules/module14.html",
-    "title": "Module 14 - Unsupervised Learning",
+    "objectID": "modules/module10.html",
+    "href": "modules/module10.html",
+    "title": "Module 10 - Causal Inference",
     "section": "",
-    "text": "Overview\nSo far in this class we have focused primarily on supervised learning, which is the most heavily studied type of machine learning. Here we introduce unsupervised learning, a learning problem in which class labels do not exist and in which neither the number of classes nor their identities are known. Unsupervised learning involves using a distance metric and a learning algorithm to cluster nearby data points into clusters. Simple algorithms for clustering include k-means, and we have already seen some dimensionality reduction techniques (PCA). We will further our study of PCA and then learn about matrix completion, which was key to the winning entry in the Netflix movie review prediction contest. Finally, we will show two methods for clustering, k-means and hierarchical clustering.\n\n\nLearning Objectives\n\nUnsupervised learning basics\nPCA and Dimensionality Reduction\nMatrix Completion and Missing Values\nHierarchical Clustering and k-means\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 12\n\n\n\nVideos",
+    "text": "Overview\nFrequently, organizations want to use data not to make predictions, but to better understand the world and to understand the consequences of decisions. In many contexts, this can be handled by randomized experimentation, as is seen in A/B tests or randomized controlled trials. However, it is not always possible to perform experiments. Causal inference is a field that studies how to determine causation from observational data. Causal inference requires careful consideration of the potential confounding factors that exist in a given situation, but if correct assumptions can be made about those causal inference gives design principles for statistical or machine learning models that can allow us to infer how a given action or intervention would impact a variable of interest.\nThe Minimal Viable Product Demo is due this week\n\n\nLearning Objectives\n\nDifference between prediction and causal inference\nConfounders and basic DAGs\nPredicting Causal Effects with BART or Linear Regression\n\n\n\nReadings\n\nCIBT : Causal Inference for the Brave and True: Chapter 1, 13, 17\nMLStory: Patterns, Predictions, and Actions Chapters 9 and 10\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "14 - Unsupervised Learning"
+      "10 - Causal Inference"
     ]
   },
   {
-    "objectID": "modules/module8.html",
-    "href": "modules/module8.html",
-    "title": "Module 8 - Trees",
+    "objectID": "modules/module9.html",
+    "href": "modules/module9.html",
+    "title": "Module 9 - Ensemble Models",
     "section": "",
-    "text": "Overview\nDuring this week, we will begin working with highly nonlinear models that stand in stark contrast to linear and logistic regression models, namely decision and regression trees. These models rely on making successive cuts in the data-space, leading to a tree-structure where each “leaf” is a subset of the data-space and is accompanied by a decision rule to either predict a number (regression trees) or class (classification trees). The problem of finding the optimal tree for a given problem is usually computationally intractable, a scenario that is common for many of the most complex and powerful ML algorithms, and methods for finding trees non-deterministic and based on heuristics. We build your intuition for how decision trees work by contrasting them with other models, and we will discover that on their own, single trees make poor models.\n\n\nLearning Objectives\n\nDefining classification and regression trees\nContrasting trees with other models\nAlgorithms for trees and key hyperparameters\nChallenges with using trees for inference\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning with Python): 8.1\n\n\n\nVideos",
+    "text": "Overview\nWe continue with our study of tree-based methods by learning about a group of tools that allow for multiple trees to be combined into an ensemble to increase model performance. This family of techniques includes bagging, boosting, random forests, and BART. Ensemble methods turn trees into some of the most powerful and widely applicable machine learning models, and have applications through machine learning.\nLab 5 is due at the end of the week.\n\n\nLearning Objectives\n\nBagging, Boosting, Random Forests, and BART\nUnderstanding hyperparameter choices for fitting these models\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 8.2\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "8 - Tree Models"
+      "9 - Ensembles of Models"
     ]
   },
   {
-    "objectID": "modules/module11.html",
-    "href": "modules/module11.html",
-    "title": "Module 11 - Interpreting and Presenting Machine Learning Models",
+    "objectID": "modules/module12.html",
+    "href": "modules/module12.html",
+    "title": "Module 12 - Neural Networks",
     "section": "",
-    "text": "Overview\nMachine Learning models and the analyses that derive from them are often derided for being impenetrable black boxes. The standard metrics which arise from such fits usually only describe the accuracy of the model in a predictive context. While this may be all that is required in some situations, more insight about how a given fit model makes predictions can be generated, which can lead to greater insight from the model and the potential for easier communication and stakeholder confidence as well as improved model iteration and development. We introduce a concept called marginal effects, which allows for the sensitivity of model predictions (both in terms of regression and the odds of different classes). We show how to understand Machine Learning models through the use of slopes, comparisons, and marginal effects. We also introduce the concept of a sensitivity analysis, which quantifies how much variation in the output of a given function is produced by variation in each input, and how to use a tool called SHAP (Shapley Additive Explanations) to understand what is happening under the hood of Machine Learning models.\nLab 6 is Due at the end of the week\n\n\nLearning Objectives\n\nMarginal Effects\nUsing marginal effects to communicate the results of a machine learning analaysis\nDefinition of Sensitivity Analysis\nApplying and interpreting SHAP\n\n\n\nReadings\n\nM2M: Models to Meaning Sections 1-7 and Python Case Study\n\n\n\nVideos",
+    "text": "Overview\nNeural Networks are a very old class of models that were developed in the 1950s to understand cognition. Recent developments in computational science and neural network architecture have unlocked them as one of the most useful neural network models that exists today. Neural Networks are exceptional at challenging classification problems such as image or speech recognition, and underlie the large language models that have been developed in the past few years. At the same time, they are some of the most challenging models to work with, due to the large freedom to select structures, the sensitivity of model fits to learning hyperparameters, and the sometimes extreme computational costs and data requirements. We dive into the theory of neural networks this week, introducing single and multi-layer perceptrons, convolutionary neural network architectures, and stochastic gradient descent, the main algorithm that fits them.\n\n\nLearning Objectives\n\nDefining neural networks\nSingle and multi-layer perceptrons\nWhy neural networks?\nActivation functions\nConvolutionarl Neural Networks\nBasics of Stochastic Gradient Descent\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 10.1-10.4\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "11 - Model Interpretation and Ethics"
+      "12 - Neural Networks"
     ]
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Attribution-ShareAlike 4.0 International",
+    "objectID": "modules/module5.html",
+    "href": "modules/module5.html",
+    "title": "Module 5 - Generative Classification Models and Imbalanced Data",
     "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+    "text": "Overview\nDuring this week, we continue our exploration of classification models by introducing generative models such as linear discriminant analysis, and generalized linear models such as Poisson Regression, which enable more refined modeling of probabilities of discrete classes or count data. We also introduce an issue commonly encountered in real world data called class imbalance, which occurs when some classes occur at much lower frequency compared to the primary classes. Class imabalance can cause major challenges for modeling and we discuss some computational techniques that allow us to artificially “balance” our data.\nLab 3 is due at the end of the week, as is your your group project proposal.\n\n\nLearning Objectives\n\nTechniques for dealing with imbalanced data: SMOTE, under- and over-sampling\nLinear Discriminant Analysis\nGenearlized Linear Models and Poisson Regression\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Section 4.4-4.6\n\n\n\nVideos",
+    "crumbs": [
+      "Topics",
+      "5 - Generative Classification Models and Class Imbalance"
+    ]
   },
   {
-    "objectID": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+    "objectID": "acknowledgements.html",
+    "href": "acknowledgements.html",
+    "title": "Acknowledgements",
+    "section": "",
+    "text": "We acknowledge the wonderful resources made available on the open-source course Data Science in a Box, which helped in the design of this course site. We also made use of some materials on the Stanford CS 329s ML Engineering Course, particularly for the project design. This material is shared under a CC BY-SA 4.0 Creative Commons Share Alike License\nThis website would not be possible without the quarto package.",
+    "crumbs": [
+      "Acknowledgements"
+    ]
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#welcome-to-data-622",
-    "href": "meetups/meetup-1/meetup-1.html#welcome-to-data-622",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Welcome to DATA 622!",
-    "text": "Welcome to DATA 622!"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-revisited",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-revisited",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Revisited",
+    "text": "Linear Regression Revisited\n\nPrediction is a linear function of the features:\n\n\\[\ng(\\mathbf{x}) = a_1 x_1 + a_2x_2 + \\cdots a_nx_n = \\sum_{i=1}^n a_ix_i = \\mathbf{a}^T\\mathbf{x} + c\n\\]\n\nMost basic and fundamental regression model"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#what-to-expect",
-    "href": "meetups/meetup-1/meetup-1.html#what-to-expect",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "What to Expect",
-    "text": "What to Expect"
+    "objectID": "meetups/meetup-3/meetup-3.html#why-cover-this-again",
+    "href": "meetups/meetup-3/meetup-3.html#why-cover-this-again",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Why Cover this Again?",
+    "text": "Why Cover this Again?\n\nProbably most common production ML model"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#course-software",
-    "href": "meetups/meetup-1/meetup-1.html#course-software",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Course Software",
-    "text": "Course Software"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-advantages",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-advantages",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Advantages",
+    "text": "Linear Regression Advantages\n\nEasier to train\nEasier to understand\nEasier to fix"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#llm-use",
-    "href": "meetups/meetup-1/meetup-1.html#llm-use",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "LLM Use?",
-    "text": "LLM Use?"
+    "objectID": "meetups/meetup-3/meetup-3.html#training-is-fast-and-exact",
+    "href": "meetups/meetup-3/meetup-3.html#training-is-fast-and-exact",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Training is fast and exact",
+    "text": "Training is fast and exact\n\\[\n\\mathbf{a} = \\left(\\mathbf{x}^T\\mathbf{x}\\right)\\mathbf{x}^T \\mathbf{y}\n\\]\n- Much cheaper than a neural network to run\n- Can constantly update huge models on the fly on tiny hardware"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#course-outline",
-    "href": "meetups/meetup-1/meetup-1.html#course-outline",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Course Outline",
-    "text": "Course Outline"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-models-are-interpretable",
+    "href": "meetups/meetup-3/meetup-3.html#linear-models-are-interpretable",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Models are Interpretable",
+    "text": "Linear Models are Interpretable\n\n\n\n{.incremental} Coefficients may tell you causal effects\n{.incremental} Perfect for building intuition during EDA"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#learning-from-data",
-    "href": "meetups/meetup-1/meetup-1.html#learning-from-data",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Learning from Data",
-    "text": "Learning from Data\n\nGoals Today:\n\nExamples of Machine Learning\nThe Machine Learning Problem\nTypes of ML\nBias-Variance Tradeoff"
+    "objectID": "meetups/meetup-3/meetup-3.html#start-with-regression",
+    "href": "meetups/meetup-3/meetup-3.html#start-with-regression",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Start with regression",
+    "text": "Start with regression\n\nIt’s rarely a mistake to start with linear regression, even if you end up just using it as a benchmark to compare to."
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#example-transaction-fraud-detection",
-    "href": "meetups/meetup-1/meetup-1.html#example-transaction-fraud-detection",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Example: Transaction Fraud Detection",
-    "text": "Example: Transaction Fraud Detection\nProblem: Fraudulent transactions are costly\nCan be up several % of total revenue, billions of dollars"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics",
+    "text": "Linear Regression Basics\n\n\n\nFeatures \\(\\mathbf{x} \\in \\mathcal{X}\\):\n\nCombination of real numbers and categorical variables"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection",
-    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Transaction Fraud Detection",
-    "text": "Transaction Fraud Detection\nProblem: Fraudulent transactions are costly\nSolution: Fradulent transactions are different"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-1",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-1",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics",
+    "text": "Linear Regression Basics\n\n\n\nInput space \\(y \\in \\mathcal{Y}\\) is just real numbers"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-1",
-    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Transaction Fraud Detection",
-    "text": "Transaction Fraud Detection"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-2",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-2",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics",
+    "text": "Linear Regression Basics\n\n\n\nHypotheses/Models \\(g\\in\\mathcal{G}\\) are linear functions \\[\ng(\\mathbf{x}) = a_1x_1+\\cdots a_nx_n \\\\\n= \\mathbf{w}^T\\mathbf{x}\n\\]"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-2",
-    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-2",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Transaction Fraud Detection",
-    "text": "Transaction Fraud Detection\n\nCan create a formula: \\[\ny = f(\\mathbf{x})\n\\]"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-3",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-3",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics",
+    "text": "Linear Regression Basics\n\n\n\nSimplest Learning Algorithm: Minimize Loss Function \\[\n\\mathrm{min}_{\\mathbf{w}} \\sum_{i=1}^n (\\mathbf{w}^T\\mathbf{x_i}-y_i)^2\n\\]"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-3",
-    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-3",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Transaction Fraud Detection",
-    "text": "Transaction Fraud Detection\n\nCan create a formula: \\[\ny = f(\\mathbf{x}) = \\mathrm{sign}\\left(w_1x_1 + w_2x_2 + w_3x_3 + \\cdots + w_n x_n \\right)\n\\]"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-4",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-4",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics",
+    "text": "Linear Regression Basics\n\n\n\nStatistically motivated by maximum likelihood under Gaussian errors: \\[\nL(\\mathbf{w}) = \\prod_{i=1}^n \\exp^{-\\frac{(\\mathbf{w}^T\\mathbf{x}_i - y_i)^2}{2\\sigma^2}}\n\\]"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-4",
-    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-4",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Transaction Fraud Detection",
-    "text": "Transaction Fraud Detection\n\nCan create a formula: \\[\ny = f(\\mathbf{x}) = \\mathrm{sign}\\sum_{i=1}^n w_ix_i\n\\]"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-5",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-5",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics",
+    "text": "Linear Regression Basics\n\n\n\nExact Formula:\n\n\\[\n\\mathbf{w} = (X^TX)^{-1}X^T\\mathbf{y}\n\\]\n\n\\(X\\) is called the design matrix\nContains the data"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-5",
-    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-5",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Transaction Fraud Detection",
-    "text": "Transaction Fraud Detection\n\nWhere do the weights \\(w_i\\) come from?\nCould have an expert come up with them\nMachine Learning Idea: Find weights that minimize error"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-6",
+    "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-6",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Regression Basics:",
+    "text": "Linear Regression Basics:\n\nLearning algorithm works if number of data points \\(n\\) is greater than number of features \\(p\\)\nIf more features than data points, problem is ill-posed but we will show some tricks in a few weeks"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning",
-    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "When to use Machine Learning?",
-    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\n\n\n\n\n\n\n\n\n\n\n\nThere aren’t mathematical formulas that give you the answer already\nYou have data"
+    "objectID": "meetups/meetup-3/meetup-3.html#prediction-versus-inference",
+    "href": "meetups/meetup-3/meetup-3.html#prediction-versus-inference",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Prediction versus Inference",
+    "text": "Prediction versus Inference\n\nLinear regression coefficients give easy interpretation:\n\n\\(w_i\\) is increase in \\(y\\) for a 1 unit increase in \\(x_i\\)\nBut this only refers to predictions, not to interventions\n\nWhether we care about inference or prediction will change what variables we will include"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-1",
-    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "When to use Machine Learning?",
-    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\n\n\n\n\n\n\n\n\n\n\n\nThere aren’t mathematical formulas that give you the answer already\nYou have data"
+    "objectID": "meetups/meetup-3/meetup-3.html#waffle-house-example",
+    "href": "meetups/meetup-3/meetup-3.html#waffle-house-example",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Waffle House Example",
+    "text": "Waffle House Example\n\n\n\n\n\n\n\n\n\nLocation\nLoc\nPopulation\nMarriage\nDivorce\nWaffleHouses\n\n\n\n\n0\nAlabama\nAL\n4.78\n20.2\n12.7\n128\n\n\n1\nAlaska\nAK\n0.71\n26.0\n12.5\n0\n\n\n2\nArizona\nAZ\n6.33\n20.3\n10.8\n18\n\n\n3\nArkansas\nAR\n2.92\n26.4\n13.5\n41\n\n\n4\nCalifornia\nCA\n37.25\n19.1\n8.0\n0"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-2",
-    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-2",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "When to use Machine Learning?",
-    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\n\n\nStatistical Rethinking\nYou have data"
+    "objectID": "meetups/meetup-3/meetup-3.html#confounding",
+    "href": "meetups/meetup-3/meetup-3.html#confounding",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Confounding",
+    "text": "Confounding"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-3",
-    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-3",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "When to use Machine Learning?",
-    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\n\n\n\n\n\n\\[\n\\mathbf{F} = -\\frac{Gm_1m_2\\hat{\\mathbf{r}}}{\\|\\mathbf{r}\\|^2}\n\\]\n\n\nYou have data"
+    "objectID": "meetups/meetup-3/meetup-3.html#confounding-1",
+    "href": "meetups/meetup-3/meetup-3.html#confounding-1",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Confounding",
+    "text": "Confounding\n\nDoes anyone here believe that building waffle houses will increase the divorce rate?\nOr demolishing them will decrease it?"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-4",
-    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-4",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "When to use Machine Learning?",
-    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\nYou have data\n\nThis is the one dealbreaker here. Without data there is no possibility for machine learning."
+    "objectID": "meetups/meetup-3/meetup-3.html#confounding-2",
+    "href": "meetups/meetup-3/meetup-3.html#confounding-2",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Confounding",
+    "text": "Confounding\n\nWe all know Correlation does not equal Causation\nImportant for linear (and other) model interpretation"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#components-of-supervised-learning",
-    "href": "meetups/meetup-1/meetup-1.html#components-of-supervised-learning",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Components of Supervised Learning",
-    "text": "Components of Supervised Learning\n\nSupervised Learning:\nInput \\(\\mathbf{x}\\) (amount, location, time of day, transaction type)"
+    "objectID": "meetups/meetup-3/meetup-3.html#confounding-3",
+    "href": "meetups/meetup-3/meetup-3.html#confounding-3",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Confounding",
+    "text": "Confounding\nConfounding describes a situation where the predictions of a model differ from the result of experimentally manipulating the variables of that model.\n\nIn the waffle house case, the fact that building waffle houses won’t change the divorce rate is an example of confounding."
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#components-of-supervised-learning-1",
-    "href": "meetups/meetup-1/meetup-1.html#components-of-supervised-learning-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Components of Supervised Learning",
-    "text": "Components of Supervised Learning\n\n\nInput \\(\\mathbf{x}\\) (amount, location, time of day, transaction type)\n\nAlso called features, predictors, variables\n\nOutput \\(y\\) (real or fraudulent transaction)\nTarget function \\(f: \\mathcal{X}\\mapsto \\mathcal{Y}\\) (ideal formula for detecting fraud)\n\nUnknown and unknowable\n\nData: \\((\\mathbf{x}_1,y_1),\\, (\\mathbf{x}_2,y_2),\\, \\cdots,(\\mathbf{x}_n,y_n)\\)\nModel \\(g: \\mathcal{X}\\mapsto \\mathcal{Y}\\) (also called hypothesis, find this to make predictions)"
+    "objectID": "meetups/meetup-3/meetup-3.html#confounding-examples",
+    "href": "meetups/meetup-3/meetup-3.html#confounding-examples",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Confounding Examples",
+    "text": "Confounding Examples\nThere are several types of confounding. In one, a third variable not included in the model impacts both dependent and independent variable. This third variable creates an additional association:\n\nParental Income confounds the relationship between class size and SAT scores\nTobacco use confounds the relationship between coffee drinking and lung cancer\nIncome, health, social status, etc confound the relationship between wine consumption and life expectancy"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together",
-    "href": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "How the components fit together",
-    "text": "How the components fit together"
+    "objectID": "meetups/meetup-3/meetup-3.html#confounding-examples-1",
+    "href": "meetups/meetup-3/meetup-3.html#confounding-examples-1",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Confounding Examples",
+    "text": "Confounding Examples\nThere are several types of confounding. In one, a third variable not included in the model impacts both dependent and independent variable. This third variable creates an additional association:"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-1",
-    "href": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "How the components fit together",
-    "text": "How the components fit together"
+    "objectID": "meetups/meetup-3/meetup-3.html#control-for-confounds",
+    "href": "meetups/meetup-3/meetup-3.html#control-for-confounds",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Control for Confounds",
+    "text": "Control for Confounds\n\nIf there is a variable you suspect is a common cause for your dependent and independent variables, you must include it in your regression for interpretability\ncontrolling for the confounder\nstratifying by the confounder"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-2",
-    "href": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-2",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "How the components fit together",
-    "text": "How the components fit together"
+    "objectID": "meetups/meetup-3/meetup-3.html#waffle-example",
+    "href": "meetups/meetup-3/meetup-3.html#waffle-example",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Waffle Example",
+    "text": "Waffle Example\n\nIn wafflehouse example, there is a common cause of both waffle house and divorce rates\nSouthern states have earlier marriage age, and wafflehouse is a southern chain\nRegression coefficient becomes non-significant\nThis might seem silly, but this is the most common problem I see in student projects"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#models",
-    "href": "meetups/meetup-1/meetup-1.html#models",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Models",
-    "text": "Models\n\nThe set \\(\\mathcal{G}\\) can vary in complexity a lot\nLinear Models \\(y=\\mathbf{w}\\cdot\\mathbf{x}+x_0\\)"
+    "objectID": "meetups/meetup-3/meetup-3.html#collider-bias",
+    "href": "meetups/meetup-3/meetup-3.html#collider-bias",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Collider Bias",
+    "text": "Collider Bias\nCollider Bias describes a situation when the independent and dependent variable both influence a third variable which you have used somehow in your analysis\n\nSmoking mortality paradox\nYerushalmy studied 13,000 low birthweight babies born in the 1960s\nFound smokers were 2x as likely to have a low birthweight baby\nMortality rate for low birthweight babies 25x normal weight babies"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#models-1",
-    "href": "meetups/meetup-1/meetup-1.html#models-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Models",
-    "text": "Models\n\nThe set \\(\\mathcal{G}\\) can vary in complexity a lot\nDecision Trees\n\n\n\nText(0.5, 1.0, 'Decision Tree Ensemble Model')"
+    "objectID": "meetups/meetup-3/meetup-3.html#low-birthweight-paradox",
+    "href": "meetups/meetup-3/meetup-3.html#low-birthweight-paradox",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Low Birthweight Paradox",
+    "text": "Low Birthweight Paradox\n\nParadoxical Finding:\n\nMortality rate for low birthweight babies with smoking mothers was 50% lower!\nMakes it seem like smoking is protective against infant mortality"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#learning-algorithms",
-    "href": "meetups/meetup-1/meetup-1.html#learning-algorithms",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Learning Algorithms",
-    "text": "Learning Algorithms\n\nLearning algorithm selects final model \\(g\\) from \\(\\mathcal{G}\\)\nAlmost always minimization of a loss function: \\[\n\\mathrm{min}_{g\\in\\mathcal{G}} \\sum_{i=1}^N \\mathrm{loss}(y_i,g(\\mathbf{x}_i))\n\\]\nFind the function that “best” fits the data"
+    "objectID": "meetups/meetup-3/meetup-3.html#low-birthweight-paradox-1",
+    "href": "meetups/meetup-3/meetup-3.html#low-birthweight-paradox-1",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Low Birthweight Paradox",
+    "text": "Low Birthweight Paradox\n\nThere are many causes of low birthweight\n\nSome dreadful conditions that will lead to mortality\nSmoking\n\nPopulation of infants is a mixture of infants with very bad conditions and infants with low birthweight due to smoking\nSelecting on low birthweight induces a negative correlation between smoking and infant mortality"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#learning-algorithms-1",
-    "href": "meetups/meetup-1/meetup-1.html#learning-algorithms-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Learning Algorithms",
-    "text": "Learning Algorithms\n\nFor some models (linear models, support vector machines, etc), exact formula or guaranteed algorithms exist\nFor fancy models, decision trees, neural networks, Gaussian Processes, no guarantee exists and the algorithm is a dark art\nWe will learn what we need about optimization, but take DATA 609 to learn more"
+    "objectID": "meetups/meetup-3/meetup-3.html#collider-bias-1",
+    "href": "meetups/meetup-3/meetup-3.html#collider-bias-1",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Collider Bias",
+    "text": "Collider Bias\n\nUnlike other confounders, you must not include colliders in your regression if you care about inference!"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning",
-    "href": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Examples of Supervised Learning",
-    "text": "Examples of Supervised Learning\n\nPredicting Credit Risk\n\n\\(\\mathbf{x}\\): Income, Age, Education, Debt\n\\(y\\): Will they default on loan?\n\\(f(\\mathbf{x})\\) Credit approval formula\n\\((\\mathbf{x_i},y_i)\\) past data on loan repayments"
+    "objectID": "meetups/meetup-3/meetup-3.html#simpsonsberksons-paradox",
+    "href": "meetups/meetup-3/meetup-3.html#simpsonsberksons-paradox",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Simpson’s/Berkson’s Paradox",
+    "text": "Simpson’s/Berkson’s Paradox\n\nThis appears all over the place:\n\nFor students already accepted to college, SAT scores don’t predict success\nShorter NBA players are better at shooting than taller ones\nBMI is associated with survival for heart disease patients"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-1",
-    "href": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Examples of Supervised Learning",
-    "text": "Examples of Supervised Learning\n\nPredicting Movie Ratings\n\n\\(\\mathbf{x}\\): ratings of watched movies\n\\(y\\): rating they would give a movie if they watched\n\\(f(\\mathbf{x})\\) ideal movie rating function\n\\((\\mathbf{x_i},y_i)\\) data on user ratings"
+    "objectID": "meetups/meetup-3/meetup-3.html#collinearity-for-inference",
+    "href": "meetups/meetup-3/meetup-3.html#collinearity-for-inference",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Collinearity for Inference",
+    "text": "Collinearity for Inference\n\nCommon advice to exclude collinear predictors\nFor inference, confounding is much more important and should be your primary concern\nInference is only as good as your assumptions"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-2",
-    "href": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-2",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Examples of Supervised Learning",
-    "text": "Examples of Supervised Learning\n\nPredicting cancer diagnosis\n\n\\(\\mathbf{x}\\): gender, tumor location, size, and properties\n\\(y\\): Type of tumor\n\\(f(\\mathbf{x})\\) Ideal diagnosis function\n\\((\\mathbf{x_i},y_i)\\) data collected from patient brain scans and tumor biopsies"
+    "objectID": "meetups/meetup-3/meetup-3.html#linear-models-for-prediction",
+    "href": "meetups/meetup-3/meetup-3.html#linear-models-for-prediction",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Linear Models for Prediction",
+    "text": "Linear Models for Prediction\n\nConfounding concerns go out the window when your goal is accurate predictions\nOut of sample accuracy, rather than inference/interpretability\nHow?"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling",
-    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Goals of Modeling",
-    "text": "Goals of Modeling\n\nPrediction: What will \\(y\\) be for a given set of \\(\\mathbf{x}\\)?\n\nYour entire goal is maximizing the accuracy of your prediction of \\(y\\). Understanding/insight about how \\(y\\) is determined by each variable in \\(x\\) is not important\nExample: Image recognition, text translation, fraud detection"
+    "objectID": "meetups/meetup-3/meetup-3.html#comparing-models",
+    "href": "meetups/meetup-3/meetup-3.html#comparing-models",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Comparing Models",
+    "text": "Comparing Models\n\nHold Out/Cross Validation\n\nSave some testing data, use it to test the model\n\nInformation Criteria\n\nTrain with all the data, use statistical theory and likelihood to estimate out of sample accuracy"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling-1",
-    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Goals of Modeling",
-    "text": "Goals of Modeling\n\nInference/Understanding: Which of the predictors \\(\\mathbf{x}\\) influence or are associated with \\(y\\), and how?\n\nExample: What is the relationship between having a doorman and rent?\n2b. Causal Inference: What will happen to \\(y\\) if I take a certain action?\nExample: A/B testing, randomized controlled trials, if I hire a doorman for my building how much can I increase rent?"
+    "objectID": "meetups/meetup-3/meetup-3.html#akaike-information-criterion",
+    "href": "meetups/meetup-3/meetup-3.html#akaike-information-criterion",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Akaike Information Criterion",
+    "text": "Akaike Information Criterion\n\nAIC for statistical model is: \\[\nAIC = n - \\log(\\hat{L})\n\\]\n\\(\\hat{L}\\) is the likelihood of the model\n\\(n\\) is the number of parameters\nThis balances model complexity (\\(n\\)) with in-sample accuracy"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling-2",
-    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling-2",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Goals of Modeling",
-    "text": "Goals of Modeling\n\nDecision Making or Management: If I observe \\(\\mathbf{x}\\) what should I do?\n\nExample: Based on the observed fish stocks, water temperature, and ocean productivity, what should be the allowable fish catch?"
+    "objectID": "meetups/meetup-3/meetup-3.html#akaike-information-criterion-1",
+    "href": "meetups/meetup-3/meetup-3.html#akaike-information-criterion-1",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Akaike Information Criterion",
+    "text": "Akaike Information Criterion\n\nThere are a wide variety of other information criteria (BIC, WAIC, etc)\nThey are used for comparing models\nIf \\(p_{true}\\) is the probability distribution that generated the data, information criteria approximate something called the Kullback-Leibler Divergence: $$\n\n$$"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#regression-and-classification",
-    "href": "meetups/meetup-1/meetup-1.html#regression-and-classification",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Regression and Classification",
-    "text": "Regression and Classification\n\nRegression problems have continuous \\(y\\)\n\nPredicting income, temperature, cost\nTypical loss function \\(\\mathrm{loss(y_1,g(x_1))} = (y_1-g(x_1))^2\\)"
+    "objectID": "meetups/meetup-3/meetup-3.html#nonlinear-transformation",
+    "href": "meetups/meetup-3/meetup-3.html#nonlinear-transformation",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Nonlinear Transformation",
+    "text": "Nonlinear Transformation"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#regression-and-classification-1",
-    "href": "meetups/meetup-1/meetup-1.html#regression-and-classification-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Regression and Classification",
-    "text": "Regression and Classification\n\nClassification problems have discrete \\(y\\)\n\nTumor type, fraud or real transaction, Default or not on loan\nTypical loss function is misclassification \\(\\mathrm{loss}(y_1,g(x_1)) = 1-\\delta(y_1,g(x_1))\\)"
+    "objectID": "meetups/meetup-3/meetup-3.html#feature-engineering",
+    "href": "meetups/meetup-3/meetup-3.html#feature-engineering",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Feature Engineering",
+    "text": "Feature Engineering"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#unsupervised-learning",
-    "href": "meetups/meetup-1/meetup-1.html#unsupervised-learning",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Unsupervised Learning",
-    "text": "Unsupervised Learning\n\nIn some problems, the label \\(y\\) is not known to us\n\n\n\nText(0.5, 1.0, 'Phytoplankton Flow Cytometry')"
+    "objectID": "meetups/meetup-3/meetup-3.html#weighted-least-squares",
+    "href": "meetups/meetup-3/meetup-3.html#weighted-least-squares",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Weighted Least Squares",
+    "text": "Weighted Least Squares"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#unsupervised-learning-1",
-    "href": "meetups/meetup-1/meetup-1.html#unsupervised-learning-1",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Unsupervised Learning",
-    "text": "Unsupervised Learning\n\nAlgorithms exist to group points together or reduce dimension\n\n\n\nText(0.5, 1.0, 'Phytoplankton Flow Cytometry')"
+    "objectID": "meetups/meetup-3/meetup-3.html#interactions",
+    "href": "meetups/meetup-3/meetup-3.html#interactions",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Interactions",
+    "text": "Interactions\n\n\n\n\nDATA 622"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#reinforcement-learning",
-    "href": "meetups/meetup-1/meetup-1.html#reinforcement-learning",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Reinforcement Learning",
-    "text": "Reinforcement Learning"
+    "objectID": "images/IntroSlides.html#about-me",
+    "href": "images/IntroSlides.html#about-me",
+    "title": "Welcome to DATA 622",
+    "section": "About Me",
+    "text": "About Me\n\n\n\nDoctoral Lecturer at CUNY SPS\nPast research experience:\n\nPlasma physics and Applied Mathematics (NYU)\nEcology and Evolutionary Biology (Princeton)\n\nResearch using Bayesian methods and genomic data to improve global scale ocean and climate models\nTaught math at NYU"
   },
   {
-    "objectID": "meetups/meetup-1/meetup-1.html#thanks",
-    "href": "meetups/meetup-1/meetup-1.html#thanks",
-    "title": "DATA 622 Meetup 1: What is Machine Learning?",
-    "section": "Thanks!",
-    "text": "Thanks!\n\n\n\n\nDATA 622"
+    "objectID": "images/IntroSlides.html#what-is-machine-learning",
+    "href": "images/IntroSlides.html#what-is-machine-learning",
+    "title": "Welcome to DATA 622",
+    "section": "What is Machine Learning?",
+    "text": "What is Machine Learning?\n\nMachine Learning uses algorithms and data to make predictions and uncover complex processes\n\nClassification, Regression, Causal Inference\nTheory\nML Infrastructure"
+  },
+  {
+    "objectID": "images/IntroSlides.html#course-websites",
+    "href": "images/IntroSlides.html#course-websites",
+    "title": "Welcome to DATA 622",
+    "section": "Course Website(s)",
+    "text": "Course Website(s)\n\n\n\nBrightspace to submit homework\nCourse Website"
+  },
+  {
+    "objectID": "images/IntroSlides.html#course-website-and-meetup",
+    "href": "images/IntroSlides.html#course-website-and-meetup",
+    "title": "Welcome to DATA 622",
+    "section": "Course Website and Meetup",
+    "text": "Course Website and Meetup\n\n\n\nBrightspace to submit homework\nCourse Website\nCourse Meetup: Monday 6:45-7:45PM\nZoom Link"
+  },
+  {
+    "objectID": "images/IntroSlides.html#slack-channel",
+    "href": "images/IntroSlides.html#slack-channel",
+    "title": "Welcome to DATA 622",
+    "section": "Slack Channel",
+    "text": "Slack Channel\n\n\n\nProgram slack workspace for messaging and rapid communications\nhttps://cuny-msds.slack.com\nInvite Link\nI will add you to 622 slack channel"
+  },
+  {
+    "objectID": "images/IntroSlides.html#textbooks",
+    "href": "images/IntroSlides.html#textbooks",
+    "title": "Welcome to DATA 622",
+    "section": "Textbooks",
+    "text": "Textbooks\n\n\nTwo most important textbooks:\n\nIntroduction to Statistical Learning with Python\n\n\nAvailable free online ISLP\n\n\nDevOps for Data Science\n\n\nAvailable free online DevOps"
+  },
+  {
+    "objectID": "images/IntroSlides.html#assignments",
+    "href": "images/IntroSlides.html#assignments",
+    "title": "Welcome to DATA 622",
+    "section": "Assignments",
+    "text": "Assignments\n\n\n\n8 Lab Assignments (65%)\nFinal Project (35%)"
+  },
+  {
+    "objectID": "images/IntroSlides.html#looking-forward-to-a-great-semester",
+    "href": "images/IntroSlides.html#looking-forward-to-a-great-semester",
+    "title": "Welcome to DATA 622",
+    "section": "Looking forward to a great semester!",
+    "text": "Looking forward to a great semester!\nThanks for watching"
+  },
+  {
+    "objectID": "assignments/labs/tbd.html",
+    "href": "assignments/labs/tbd.html",
+    "title": "Lab TBD",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "assignments/labs/lab2.html",
+    "href": "assignments/labs/lab2.html",
+    "title": "Lab 2: The Linear Model",
+    "section": "",
+    "text": "Overview\nComplete this assignment by answering the following questions using code, text descriptions, and mathematics in a quarto markdown document. Render your .qmd to a pdf and submit both the qmd and pdf files on brightspace.\nThe purpose of this lab is for you to practice making linear regression models for inference and for prediction using statsmodels (my suggestion) or another library of your choosing. statsmodels is well featured for implementing statistical models and will automatically calculate most of the statistics that you need. scikit-learn is also possible to use. If you are feeling adventurous and want more of a challenge, you are welcome to perform the lab using pymc and do the regressions in a Bayesian framework (I would replace AIC with WAIC if you do so).\nWe will a dataset called `earnings. It can be found on the website for the textbook Regression and Other Stories, and if you are struggling this book has a good amount of discussion on this dataset. Use the version of the dataset that I provided, however, as I found some errors in the data processing in the originals on the website.\n\n\nProblem 1: Confounds in Earnings Data\nThe dataset earnings.csv contains samples from the Work, Family, and Well Being survey, which was collected by a group led by Catherine Ross in 1990. We are working with a processed version of the dataset, which contains information on the height, weight, age, gender, ethnicity earnings, education (for the respondent and their mother and father), and their health habits (levels of walk, smoking, exercise, anger, and tension). You can read a dataset description at earnings_dictionary.qmd. The goal of this problem is to understand which socioeconomic factors have an effect on earnings.\n\nEDA: Perform a basic exploratory data analysis on this dataset. Tell me how you decided to handle rows with missing values, and show me the plots of the distributions of variables and the relationships between variables that you believe are most important. An important decision is how to handle earnk, the target variable, and whether to log transform it or not. Look at the distribution of earnk and discuss the pros and cons of using the log transform, and make a decision about whether perform the transformation or not.\nHeight and Weight Confounds: Fit separate linear regression models predicting the effect of either height or weight on your earnings target variable (log_earnk or earnk). Report the model fit coefficients and their confidence intervals for each. Make a linear regression model that includes both height and weight and compare the predicted confidence intervals for the coefficients. What is your explanation for what happened? Find another variable that could confound the relationship between height/weight and earnings, include it in a linear regression model, and explain the outcome.\nEducation Coefficients: Fit a linear regression model to measure the total effect of parental education on your earnings target. Then compare the coefficients you found to those of a linear model which also includes the education variable. How do you interpret the coefficient of parental education variables in each of the two models?\nPotential Colliders: Consider each variable carefully, as well as your data processing steps. Are there any variables that you can identify which have the potential to cause collider bias in your regression models? You do not need to perform any regressions, just discussion.\n\n\n\nProblem 2: Optimizing a Predictive Model\nThe goal of this problem is to devise a linear regression model with optimal expected out of sample performance. You should use AIC (or WAIC if you are trying pymc) as your proxy for predictive accuracy. For this problem you will try several different models, but they must all have the same target in order for AIC to be comparable (you can perform a correction to fix this issue but that is a topic for another time).\n\nBaseline Model: Start with a model that includes age, gender, education, fit a linear model and calculate the deviance.\nFeature Engineering and Variable Selection: Based on your EDA and your experience fitting models so far, attempt to develop a model with the lowest possible AIC. You are encouraged to look at plots of variables versus the target and create custom features based on what you see, though it is not required to do so. I’ll award one person 5 bonus points for my subjectively judged most useful feature engineered. In your best model, which variables do you exclude? Do you include any pairs of collinear variables?"
+  },
+  {
+    "objectID": "assignments/labs/lab6.html",
+    "href": "assignments/labs/lab6.html",
+    "title": "Lab 6",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "assignments/labs/lab4.html",
+    "href": "assignments/labs/lab4.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "assignments/project.html",
+    "href": "assignments/project.html",
+    "title": "Data Project",
+    "section": "",
+    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
+    "crumbs": [
+      "Assignments",
+      "Project"
+    ]
+  },
+  {
+    "objectID": "assignments/project.html#group-project",
+    "href": "assignments/project.html#group-project",
+    "title": "Data Project",
+    "section": "",
+    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
+    "crumbs": [
+      "Assignments",
+      "Project"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1 Tonight and Slides\n\n\n\n\n\nClick here to download slides for Meetup 1.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 622\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nJan 25, 2026\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nBias-Variance Tradeoff (Template)\n\n\nThe Linear Model (Template)\n\n\nClassification (Template)\n\n\nRegularization and Generalization (Template)\n\n\nTrees and Ensembles (Template)\n\n\nCausal Inference (Template)\n\n\nNeural Networks and Deep Learning (Template)\n\n\nUnsupervised Learning and Pre-Trained Models (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "assignments/labs/lab1.html",
+    "href": "assignments/labs/lab1.html",
+    "title": "DATA 622: Lab 1:",
+    "section": "",
+    "text": "Complete this assignment by answering the following questions using code, text descriptions, and mathematics in a quarto markdown document. Render your .qmd to a pdf and submit both the qmd and pdf files on brightspace.\nThe purpose of this assignment is for you to review basic data manipulation and plotting in python, make sure that you have working software tools to complete the assignment, and learn a little bit about using sci-kit learn to explore the bias-variance tradeoff."
+  },
+  {
+    "objectID": "assignments/labs/lab1.html#instructions",
+    "href": "assignments/labs/lab1.html#instructions",
+    "title": "DATA 622: Lab 1:",
+    "section": "",
+    "text": "Complete this assignment by answering the following questions using code, text descriptions, and mathematics in a quarto markdown document. Render your .qmd to a pdf and submit both the qmd and pdf files on brightspace.\nThe purpose of this assignment is for you to review basic data manipulation and plotting in python, make sure that you have working software tools to complete the assignment, and learn a little bit about using sci-kit learn to explore the bias-variance tradeoff."
+  },
+  {
+    "objectID": "assignments/labs/lab1.html#problem-1-exploring-the-auto-data-set",
+    "href": "assignments/labs/lab1.html#problem-1-exploring-the-auto-data-set",
+    "title": "DATA 622: Lab 1:",
+    "section": "Problem 1: Exploring the Auto data set",
+    "text": "Problem 1: Exploring the Auto data set\nThis exercise involves the Auto data set studied in the lab. Make sure that the missing values have been removed from the data.\n\nWhich of the predictors are quantitative, and which are qualitative?\nWhat is the range of each quantitative predictor? You can answer this using the min() and max() methods in numpy.\nWhat is the mean and standard deviation of each quantitative predictor?\nNow remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?\nUsing the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.\nSuppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer."
+  },
+  {
+    "objectID": "assignments/labs/lab1.html#problem-2-knn-classification-of-the-zip-code-digit-data",
+    "href": "assignments/labs/lab1.html#problem-2-knn-classification-of-the-zip-code-digit-data",
+    "title": "DATA 622: Lab 1:",
+    "section": "Problem 2: kNN Classification of the ZIP code digit data",
+    "text": "Problem 2: kNN Classification of the ZIP code digit data\nIn order to complete this problem you will need to download zip.train and zip.test from the course website. These datasets contain images of hand-drawn digits. We will be experimenting with kNN classification and factors impacting the bias-variance trade-off, and this will also be chance to practice using scikit-learn.\n\nDownload and load the training and test data sets using pandas. Make sure to load all of the data (there is no header) The zeroth column corresponds to the class label, a digit from 0-9, and the columns 1 to 256 correspond to a grayscale value from -1 to 1. Select the first entry in the training set, resize it to 16x16, and plot the image (you can use plt.imshow()).\nThe following code fits imports the kNN classification function from scikit-learn as well as an accuracy function, trains a classifier, and tests its accuracy on hypothetical training and testing data:\n\n\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\n\nknn = KNeighborsClassifier(n_neighbors=4)\nknn.fit(zip_image_train, zip_class_train)\n\n\nzip_pred_train = knn.predict(zip_image_train)\naccuracy = accuracy_score(zip_class_train, zip_pred_train)\nprint(f'Accuracy: {accuracy:.4f}')\n\nzip_pred_test = knn.predict(zip_image_test)\naccuracy = accuracy_score(zip_class_test, zip_pred_test)\nprint(f'Accuracy: {accuracy:.4f}')\n\nWhere the dataframes contain just the training and testing images and class.\nAdapt this code to determine if the we can observe the bias variance trade-off for different numbers of neighbors \\(k\\). Specifically, recreate plot 2.17 (pay attention to the x-axis scale and use the same choice as in the book) which shows test and train classification accuracy as a function of \\(1/k\\). Select a range of \\(k\\) from 1 to 300. You do not have to plot every single \\(k\\) value in this range if the problem is computationally intensive on your machine. Do you observe a \\(U\\)-shaped curve in the testing error (and a divergence from training error) as \\(1/k\\) increases?\n\nIntroduce some noise in the training and testing labels for both the training and testing data. You can do this by using np.random.choice to sample from the range of indices of each of the training and test set to determine which labels will be changed, and np.random.choice again to pick the new label. After making this modification, repeat problem (b). How did adding label noise impact the shape of the testing and training error versus \\(1/k\\) curves?"
+  },
+  {
+    "objectID": "assignments/labs/lab7.html",
+    "href": "assignments/labs/lab7.html",
+    "title": "Lab 7",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "assignments/labs/lab3.html",
+    "href": "assignments/labs/lab3.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "assignments/labs/lab8.html",
+    "href": "assignments/labs/lab8.html",
+    "title": "Lab 8",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+  },
+  {
+    "objectID": "assignments/labs/lab5.html",
+    "href": "assignments/labs/lab5.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#recap-the-learning-problem",
@@ -429,18 +605,25 @@
     "text": "Goals\n\nModel Fit versus Generalization\nBias-Variance Tradeoff"
   },
   {
+    "objectID": "meetups/meetup-2/meetup-2.html#weekly-tasks",
+    "href": "meetups/meetup-2/meetup-2.html#weekly-tasks",
+    "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
+    "section": "Weekly Tasks",
+    "text": "Weekly Tasks\n\nLab 1 due Sunday at midnight\nReading: ISLP 2.2-2.4\nKeep posting ideas and finding team-mates in Slack"
+  },
+  {
     "objectID": "meetups/meetup-2/meetup-2.html#assessing-model-accuracy",
     "href": "meetups/meetup-2/meetup-2.html#assessing-model-accuracy",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Assessing Model Accuracy",
-    "text": "Assessing Model Accuracy\n\nIn regression, measures like mean square error: \\[\n\\mathrm{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i - g(\\mathbf{x}_i)^2)\n\\]\nor \\(R^2:\\) \\[\nR^2 = 1 - \\frac{\\mathrm{MSE}}{\\mathrm{var(y)}}\n\\] Are used to assess model accuracy\n\nBut what we really care about is whether we can extrapolate assessed accuracy to unseen examples"
+    "text": "Assessing Model Accuracy\n\nIn regression, measures like mean square error: \\[\n\\mathrm{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i - g(\\mathbf{x}_i)^2)\n\\]\nor \\(R^2:\\) \\[\nR^2 = 1 - \\frac{\\mathrm{MSE}}{\\mathrm{var(y)}}\n\\] Are used to assess model accuracy\n\n\nBut what we really care about is whether we can extrapolate assessed accuracy to unseen examples"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#generalization",
     "href": "meetups/meetup-2/meetup-2.html#generalization",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Generalization",
-    "text": "Generalization\nGeneralization is defined as the ability of a model to maintain its accuracy on observations outside of its training\n\nFor traditional statistical models, statistical theory let’s you estimate how well a model will genearlize\nWhen a model has high in-sample accuracy, it is not guarantee that it performs well out of sample"
+    "text": "Generalization\nGeneralization is defined as the ability of a model to maintain its accuracy on observations outside of its training\n\n\nFor traditional statistical models, statistical theory let’s you estimate how well a model will genearlize\nWhen a model has high in-sample accuracy, it is not guaranteed that it performs well out of sample"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#overfitting",
@@ -475,14 +658,14 @@
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-3",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\n10th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^10 g_i x^i\n\\]"
+    "text": "Models of Increasing Complexity\n\n10th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^{10} g_i x^i\n\\]"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-4",
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-4",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\n25th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^25 g_i x^i\n\\]"
+    "text": "Models of Increasing Complexity\n\n25th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^{25} g_i x^i\n\\]"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#overfitting-1",
@@ -496,21 +679,28 @@
     "href": "meetups/meetup-2/meetup-2.html#training-versus-testing-error",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Training versus Testing Error",
-    "text": "Training versus Testing Error\n\nWe can plot how the \\(R^2\\) changes for the training data and randomly generated testing data\nAs model complexity increases, the training error diverges from the testing error\n\n\n\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n\n\n\n\n\n\n\n\n\n0.2513939119806864"
+    "text": "Training versus Testing Error\n\nWe can plot how the \\(R^2\\) changes for the training data and randomly generated testing data\nAs model complexity increases, the training error diverges from the testing error"
+  },
+  {
+    "objectID": "meetups/meetup-2/meetup-2.html#training-versus-testing-error-1",
+    "href": "meetups/meetup-2/meetup-2.html#training-versus-testing-error-1",
+    "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
+    "section": "Training versus Testing Error",
+    "text": "Training versus Testing Error\n\nWe can plot how the \\(R^2\\) changes for the training data and randomly generated testing data\nAs model complexity increases, the training error diverges from the testing error"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#irreducible-error",
     "href": "meetups/meetup-2/meetup-2.html#irreducible-error",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Irreducible Error",
-    "text": "Irreducible Error\n\nThe target function \\(f(\\mathbf{x})\\) encodes all the information about \\(y\\) contained in the variables \\(\\mathbf{x}\\)\nThus, we can write \\(y\\):\n\n\\[\ny = f(\\mathbf{x}) + \\epsilon\n\\]\n\nHere \\(\\epsilon\\) is called the irreducible error\nIt accounts for other variables that are not measured and randomness\nWe have \\(E(\\epsilon) = 0\\)"
+    "text": "Irreducible Error\n\nTarget function \\(f(\\mathbf{x})\\) encodes all the information about \\(y\\) contained in the variables \\(\\mathbf{x}\\)\n\n\\[\ny = f(\\mathbf{x}) + \\epsilon\n\\]\n\n\\(\\epsilon\\) is called the irreducible error\nIt accounts for other variables that are not measured and randomness\nWe have \\(E(\\epsilon) = 0\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#reducible-error",
     "href": "meetups/meetup-2/meetup-2.html#reducible-error",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Reducible Error",
-    "text": "Reducible Error\n\nWhen fitting a model \\(g\\) to the data, there are two sources of error: \\[\nE((g-y)^2) = E((g-f)^2) - \\mathrm{var}(\\epsilon)\n\\]\nThe (E((g-f)^2)) term is the reducible error\nTotal error is a sum of reducible and irreducible errors"
+    "text": "Reducible Error\n\nWhen fitting a model \\(g\\) to the data, there are two sources of error: \\[\nE((g-y)^2) = E((g-f)^2) - \\mathrm{var}(\\epsilon)\n\\]\nThe \\(E((g-f)^2)\\) term is the reducible error\nTotal error is a sum of reducible and irreducible errors"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#why-do-complex-models-overfit",
@@ -573,14 +763,14 @@
     "href": "meetups/meetup-2/meetup-2.html#learning-curves",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Learning Curves",
-    "text": "Learning Curves\n\nCompare a simple versus complex model as amount of data increases"
+    "text": "Learning Curves\n\nSimple versus complex models as amount of data increases\n\n\n\nText(0.5, 1.0, 'Learning Curve')"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#learning-curves-1",
     "href": "meetups/meetup-2/meetup-2.html#learning-curves-1",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Learning Curves",
-    "text": "Learning Curves"
+    "text": "Learning Curves\n\nSimple versus complex models as amount of data increases"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#what-complexity-to-pick",
@@ -601,7 +791,7 @@
     "href": "meetups/meetup-2/meetup-2.html#naive-bayes",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Naive Bayes",
-    "text": "Naive Bayes\n\nIn classification, we think of conditional probability of \\(y\\) given \\(\\mathbf{x}\\): \\[\nP(y|\\mathbf{x})\n\\]\nIf we knew the probabilities, best prediction is to pick class with highest chance: \\[\ny_{\\mathrm{Naive-Bayes}}(\\mathbf{x}) = \\argmax_{y} P(y|\\mathbf{x})\n\\]\nThis is called Naive-Bayes"
+    "text": "Naive Bayes\n\nConditional probability of \\(y\\) given \\(\\mathbf{x}\\): \\[\nP(y|\\mathbf{x})\n\\]\nBest prediction is to pick class with highest chance: \\[\ny_{\\mathrm{Naive-Bayes}}(\\mathbf{x}) = \\mathrm{argmax}_{y} P(y|\\mathbf{x})\n\\]\nThis is called Naive-Bayes"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#applying-naive-bayes",
@@ -622,316 +812,546 @@
     "href": "meetups/meetup-2/meetup-2.html#knn-model-1",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "kNN Model",
-    "text": "kNN Model\n\nHere is an example for \\(k=3\\).\n\n\nISL"
+    "text": "kNN Model\n\nHere is an example for \\(k=3\\).\n\n\n\n\n\nISL"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#knn-model-2",
     "href": "meetups/meetup-2/meetup-2.html#knn-model-2",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "kNN Model",
-    "text": "kNN Model\n\nConsider this dataset for a classification problem with two classes\nBoundary is the border between 50% probability of blue versus orange\n\n\nISL"
+    "text": "kNN Model\n\nClassification problem with two classes\nBoundary is the border between 50% probability of blue\n\n\n\n\n\nISL"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#knn-model-3",
     "href": "meetups/meetup-2/meetup-2.html#knn-model-3",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "kNN Model",
-    "text": "kNN Model\n\nDecision boundary for \\(k=10\\)\n\n\nISL"
+    "text": "kNN Model\n\nDecision boundary for \\(k=10\\)\n\n\n\n\n\nISL"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#knn-model-over-and-under-fitting",
     "href": "meetups/meetup-2/meetup-2.html#knn-model-over-and-under-fitting",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "kNN Model Over and Under fitting",
-    "text": "kNN Model Over and Under fitting\n\n\\(k=1\\) corresponds to overfitting\n\\(k=100\\) corresponds to underfitting\n\n\nISL"
+    "text": "kNN Model Over and Under fitting\n\n\\(k=1\\) corresponds to overfitting\n\\(k=100\\) corresponds to underfitting\n\n\n\n\n\nISL"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#knn-model-generalization-error",
     "href": "meetups/meetup-2/meetup-2.html#knn-model-generalization-error",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "kNN Model Generalization Error",
-    "text": "kNN Model Generalization Error\n\n\\(1/k\\) corresponds to model complexity\nOptimal out of sample accuracy at intermediate \\(k\\)\n\n\n\n\nISL\n\n\n\n\n\n\nDATA 622"
+    "text": "kNN Model Generalization Error\n\n\\(1/k\\) corresponds to model complexity\nOptimal out of sample accuracy at intermediate \\(k\\)\n\n\n\n\n\nISL"
   },
   {
-    "objectID": "assignments/labs/lab5.html",
-    "href": "assignments/labs/lab5.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-2/meetup-2.html#thanks",
+    "href": "meetups/meetup-2/meetup-2.html#thanks",
+    "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
+    "section": "Thanks!",
+    "text": "Thanks!\n\n\n\n\nDATA 622"
   },
   {
-    "objectID": "assignments/labs/lab8.html",
-    "href": "assignments/labs/lab8.html",
-    "title": "Lab 8",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#welcome-to-data-622",
+    "href": "meetups/meetup-1/meetup-1.html#welcome-to-data-622",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Welcome to DATA 622!",
+    "text": "Welcome to DATA 622!"
   },
   {
-    "objectID": "assignments/labs/lab3.html",
-    "href": "assignments/labs/lab3.html",
-    "title": "Lab 3",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#what-to-expect",
+    "href": "meetups/meetup-1/meetup-1.html#what-to-expect",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "What to Expect",
+    "text": "What to Expect\n\nMeetups Monday 6:45-7:45PM\n\n\nThere is a poll on the course slack channel ‘#data-622-spring-2026’"
   },
   {
-    "objectID": "assignments/labs/lab7.html",
-    "href": "assignments/labs/lab7.html",
-    "title": "Lab 7",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#what-to-expect-1",
+    "href": "meetups/meetup-1/meetup-1.html#what-to-expect-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "What to Expect",
+    "text": "What to Expect\n\nWe have a course slack slack channel\n\n\nClick Here to Join\nThis is also for the entire department!"
   },
   {
-    "objectID": "assignments/labs/lab1.html",
-    "href": "assignments/labs/lab1.html",
-    "title": "DATA 622: Lab 1:",
-    "section": "",
-    "text": "Complete this assignment by answering the following questions using code, text descriptions, and mathematics in a quarto markdown document. Render your .qmd to a pdf and submit both the qmd and pdf files on brightspace.\nThe purpose of this assignment is for you to review basic data manipulation and plotting in python, make sure that you have working software tools to complete the assignment, and learn a little bit about using sci-kit learn to explore the bias-variance tradeoff."
+    "objectID": "meetups/meetup-1/meetup-1.html#what-to-expect-2",
+    "href": "meetups/meetup-1/meetup-1.html#what-to-expect-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "What to Expect",
+    "text": "What to Expect\n\nThere is a course website\n\n\nhttps://georgehagstrom.github.io/DATA622Spring2026/"
   },
   {
-    "objectID": "assignments/labs/lab1.html#instructions",
-    "href": "assignments/labs/lab1.html#instructions",
-    "title": "DATA 622: Lab 1:",
-    "section": "",
-    "text": "Complete this assignment by answering the following questions using code, text descriptions, and mathematics in a quarto markdown document. Render your .qmd to a pdf and submit both the qmd and pdf files on brightspace.\nThe purpose of this assignment is for you to review basic data manipulation and plotting in python, make sure that you have working software tools to complete the assignment, and learn a little bit about using sci-kit learn to explore the bias-variance tradeoff."
+    "objectID": "meetups/meetup-1/meetup-1.html#homework-assignments",
+    "href": "meetups/meetup-1/meetup-1.html#homework-assignments",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "8 Homework Assignments",
+    "text": "8 Homework Assignments\n\nLab assignments to be done using python and quarto\nSubmit both code and pdf\nExpectations for figures/code/descriptions elevated from other classes"
   },
   {
-    "objectID": "assignments/labs/lab1.html#problem-1-exploring-the-auto-data-set",
-    "href": "assignments/labs/lab1.html#problem-1-exploring-the-auto-data-set",
-    "title": "DATA 622: Lab 1:",
-    "section": "Problem 1: Exploring the Auto data set",
-    "text": "Problem 1: Exploring the Auto data set\nThis exercise involves the Auto data set studied in the lab. Make sure that the missing values have been removed from the data.\n\nWhich of the predictors are quantitative, and which are qualitative?\nWhat is the range of each quantitative predictor? You can answer this using the min() and max() methods in numpy.\nWhat is the mean and standard deviation of each quantitative predictor?\nNow remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains?\nUsing the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.\nSuppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer."
+    "objectID": "meetups/meetup-1/meetup-1.html#group-project",
+    "href": "meetups/meetup-1/meetup-1.html#group-project",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Group Project",
+    "text": "Group Project\n\nTeams of 3-4\nBuild a ML app to solve a problem, put in ‘production’\nStart forming teams now, Proposal due March 1st\nIf you are in a group, don’t be the problem. I’ll mediate disputes"
   },
   {
-    "objectID": "assignments/labs/lab1.html#problem-2-knn-classification-of-the-zip-code-digit-data",
-    "href": "assignments/labs/lab1.html#problem-2-knn-classification-of-the-zip-code-digit-data",
-    "title": "DATA 622: Lab 1:",
-    "section": "Problem 2: kNN Classification of the ZIP code digit data",
-    "text": "Problem 2: kNN Classification of the ZIP code digit data\nIn order to complete this problem you will need to download zip.train and zip.test from the course website. These datasets contain images of hand-drawn digits. We will be experimenting with kNN classification and factors impacting the bias-variance trade-off, and this will also be chance to practice using scikit-learn.\n\nDownload and load the training and test data sets using pandas. Make sure to load all of the data (there is no header) The zeroth column corresponds to the class label, a digit from 0-9, and the columns 1 to 256 correspond to a grayscale value from -1 to 1. Select the first entry in the training set, resize it to 16x16, and plot the image (you can use plt.imshow()).\nThe following code fits imports the kNN classification function from scikit-learn as well as an accuracy function, trains a classifier, and tests its accuracy on hypothetical training and testing data:\n\n\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\n\nknn = KNeighborsClassifier(n_neighbors=4)\nknn.fit(zip_image_train, zip_class_train)\n\n\nzip_pred_train = knn.predict(zip_image_train)\naccuracy = accuracy_score(zip_class_train, zip_pred_train)\nprint(f'Accuracy: {accuracy:.4f}')\n\nzip_pred_test = knn.predict(zip_image_test)\naccuracy = accuracy_score(zip_class_test, zip_pred_test)\nprint(f'Accuracy: {accuracy:.4f}')\n\nWhere the dataframes contain just the training and testing images and class.\nAdapt this code to determine if the we can observe the bias variance trade-off for different numbers of neighbors \\(k\\). Specifically, recreate plot 2.17 (pay attention to the x-axis scale and use the same choice as in the book) which shows test and train classification accuracy as a function of \\(1/k\\). Select a range of \\(k\\) from 1 to 300. You do not have to plot every single \\(k\\) value in this range if the problem is computationally intensive on your machine. Do you observe a \\(U\\)-shaped curve in the testing error (and a divergence from training error) as \\(1/k\\) increases?\n\nIntroduce some noise in the training and testing labels for both the training and testing data. You can do this by using np.random.choice to sample from the range of indices of each of the training and test set to determine which labels will be changed, and np.random.choice again to pick the new label. After making this modification, repeat problem (b). How did adding label noise impact the shape of the testing and training error versus \\(1/k\\) curves?"
+    "objectID": "meetups/meetup-1/meetup-1.html#group-project-1",
+    "href": "meetups/meetup-1/meetup-1.html#group-project-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Group Project",
+    "text": "Group Project\n\nReach Goal: CUNY Pitchfest\nAnnual CUNY wide event to put your programming or data science project in front of industry professionals"
   },
   {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nBias-Variance Tradeoff (Template)\n\n\nThe Linear Model (Template)\n\n\nClassification (Template)\n\n\nRegularization and Generalization (Template)\n\n\nTrees and Ensembles (Template)\n\n\nCausal Inference (Template)\n\n\nNeural Networks and Deep Learning (Template)\n\n\nUnsupervised Learning and Pre-Trained Models (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
-    ]
+    "objectID": "meetups/meetup-1/meetup-1.html#course-software",
+    "href": "meetups/meetup-1/meetup-1.html#course-software",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Course Software",
+    "text": "Course Software\n\npython is primary language of the course\nTell me asap if you don’t know python/haven’t taken DATA 602 or 608\n\nYou can still take the class if you want but will be tougher"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 622\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nJan 25, 2026\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
+    "objectID": "meetups/meetup-1/meetup-1.html#what-to-do-if-your-computer-is-slow",
+    "href": "meetups/meetup-1/meetup-1.html#what-to-do-if-your-computer-is-slow",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "What to do if your computer is slow?",
+    "text": "What to do if your computer is slow?\n\nTalk to me!\nposit.cloud\ngoogle colab"
   },
   {
-    "objectID": "assignments/project.html",
-    "href": "assignments/project.html",
-    "title": "Data Project",
-    "section": "",
-    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "objectID": "meetups/meetup-1/meetup-1.html#llm-use-conflicting-goals",
+    "href": "meetups/meetup-1/meetup-1.html#llm-use-conflicting-goals",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "LLM Use? Conflicting Goals",
+    "text": "LLM Use? Conflicting Goals\n\nI want you to become experts on the material\nI also want you to be experts on using LLMs"
   },
   {
-    "objectID": "assignments/project.html#group-project",
-    "href": "assignments/project.html#group-project",
-    "title": "Data Project",
-    "section": "",
-    "text": "For this project, you will work in small teams to develop a machine learning application which solves a problem of your choosing (in consultation with your professor) and which you will deploy in production. The final outcome will ideally be an interactive shiny app implementing a machine learning solution, but other tools are acceptable (though I may not be able to help as much, FastAPI is a potential alternative tool).\nThe timeline for the project is as follows:\n\nTeam Formation (Week 1-4 February 22nd). This will take place on the course slack page. Ideal teams will be 3 or 4 students. You should message your classmates and post both what topics you are interested in or what tools and technologies you want to work with in this project. If at the end of Week 4 you are unable to find a team, you must contact me and I will assign you to a team. It is important to be thinking about your project idea and working towards your project proposal towards the end of this phase.\nProject Proposal (March 1st, 10%). You will develop and submit a project proposal with a maximum length of 3 pages (not including references). The proposal should define the problem and outline your proposed solution. It should also answer as best as possible the following questions:\n\nWho are your target users, and what app features are needed to ensure that the app is useful for them? You do not necessarily have to achieve these goals but they are useful to have in mind.\nWhat interface do you plan to use for you app? (Shiny is recommended, for other choices you must convince me you have the relevant expertise)\nWhat data sources are you planning to use? Does the data you need already exist and is publicly available, or will you need to gather your data on your own?\nWhat type of Machine Learning problem will you need to solve for your app, and which are the initial model types that you will try?\nHow will you evaluate both model performance and app performance?\nWill model training be online (model updates whenever new data is ingested) or batch (at scheduled intervals)?\nDo you anticipate any large computational needs? If you think you will need to use large neural network models, LLMs, GPUs/TPUs, make sure to let me know here. Pricing for AWS/Google Cloud can be found here (GCP pricing AWS pricing Where do you plan to host your app?\nThe key midterm check for this project is the development of a minimally viable product, which will demonstrate feasibility and which you will iteratively improve. What does your minimally viable product look like?\n\nMVP (Minimally Viable Product Demo) (March 30th- April 4th, 20%) You will present/demonstrate your minimally viable project to your professor. Your presentation should be about 10 minutes long. The first part should be a slideshow presentation (target 5 mintues and 3 slides) which pitches your project, gives a diagram of your proposed solution, and outlines what challenges remain. The second part is a 5 minute demo of your MVP. It is ok if your MVP is very basic- ideally I want to see that you have given good thought to your application, tried to make your MVP an end-to-end product, and have a good understanding of the challenges that await.\nFinal Demo (May 11th 35%) In class live demo. Each team will do a 10 minute presentation. The presentation should consist of a short introduction to the team, description of the problem, description of the technology used to solve the problem, and a scripted live demo. Live demos are challenging. An example of highly polished demo (not live so above the expectations for this class, can be found here (https://www.youtube.com/watch?v=fw9f_HPFnok). This demo was created for the Stanford Class CS 239, which provided inspiration for this assignment. If you want to see other examples of demos, that class had a demo day with a similar structure. Keep in mind that, students in that class already had extensive programming and machine learning experience, but for this class we are making use of some tools to make those aspects less challenging.\nProject Writeup/Whitepaper (May 15th 35%) 2500 word description of your project. This aims to be less formal than an academic research paper and more in the style of a white paper or even a technical blog post. You should have sections of the problem definition, system design, machine learning components, application demonstration (ideally you can integrate parts of your application into your report), and a conclusion/reflection. A great example of a whitepaper (though not an app) is here offgrid ai. Some great examples of reports are here, here, and here.",
-    "crumbs": [
-      "Assignments",
-      "Project"
-    ]
+    "objectID": "meetups/meetup-1/meetup-1.html#research-on-llms-in-education",
+    "href": "meetups/meetup-1/meetup-1.html#research-on-llms-in-education",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Research on LLMs in Education",
+    "text": "Research on LLMs in Education\n\nEarly days, but mixed results\nOpinions range from ‘LLMs stop you from being able to think for yourself’ to ‘Concern over LLMs is just another moral panic’\nYour Brain on ChatGPT (I’m skeptical)\nWhy knowledge is important in the age of AI (makes excellent points)"
   },
   {
-    "objectID": "assignments/labs/lab4.html",
-    "href": "assignments/labs/lab4.html",
-    "title": "Lab 4",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#research-on-llms-in-education-1",
+    "href": "meetups/meetup-1/meetup-1.html#research-on-llms-in-education-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Research on LLMs in Education",
+    "text": "Research on LLMs in Education\n\n\n\n\nAbstract\n\n\nIn the age of generative AI and ubiquitous digital tools, human cognition faces a structural paradox: as external aids become more capable, internal memory systems risk atrophy. Drawing on neuroscience and cognitive psychology, this paper examines how heavy reliance on AI systems and discovery-based pedagogies may impair the consolidation of declarative and procedural memory – systems essential for expertise, critical thinking, and long-term retention. We review how tools like ChatGPT and calculators can short-circuit the retrieval, error correction, and schema-building processes necessary for robust neural encoding. Notably, we highlight striking parallels between deep learning phenomena such as “grokking” and the neuroscience of overlearning and intuition. Empirical studies are discussed showing how premature reliance on AI during learning inhibits proceduralization and intuitive mastery. We argue that effective human-AI interaction depends on strong internal models – biological “schemata” and neural manifolds – that enable users to evaluate, refine, and guide AI output…."
   },
   {
-    "objectID": "assignments/labs/lab6.html",
-    "href": "assignments/labs/lab6.html",
-    "title": "Lab 6",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#what-i-have-seen",
+    "href": "meetups/meetup-1/meetup-1.html#what-i-have-seen",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "What I have Seen",
+    "text": "What I have Seen\n\n\nDo not let yourself become reliant on LLMs"
   },
   {
-    "objectID": "assignments/labs/lab2.html",
-    "href": "assignments/labs/lab2.html",
-    "title": "Lab 2",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#my-recommendations",
+    "href": "meetups/meetup-1/meetup-1.html#my-recommendations",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "My Recommendations",
+    "text": "My Recommendations\n\nAsk LLMs how something works\nUse LLMs for things you can easily check that are low stakes\nUse LLMs to check for grammar issues, to reword a sentence you struggle with\nUnderstand model differences and use professional tools (You can get 1 year free of google AI Pro…)\nExperiment!"
   },
   {
-    "objectID": "assignments/labs/tbd.html",
-    "href": "assignments/labs/tbd.html",
-    "title": "Lab TBD",
-    "section": "",
-    "text": "Check back later\nThis assignment is not available to view yet. Please check back closer to the assignment due date/week of the module this assignment is based on."
+    "objectID": "meetups/meetup-1/meetup-1.html#my-recommendations-1",
+    "href": "meetups/meetup-1/meetup-1.html#my-recommendations-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "My recommendations",
+    "text": "My recommendations\n\nDon’t copy and paste\n\nType by hand LLM generated code, understand how it works, maybe even delete it and try to recreate it\n\nDon’t use it to write or analyze for you\n\nWriting is thinking\n\nDon’t turn in something you don’t understand"
   },
   {
-    "objectID": "images/IntroSlides.html#about-me",
-    "href": "images/IntroSlides.html#about-me",
-    "title": "Welcome to DATA 622",
-    "section": "About Me",
-    "text": "About Me\n\n\n\nDoctoral Lecturer at CUNY SPS\nPast research experience:\n\nPlasma physics and Applied Mathematics (NYU)\nEcology and Evolutionary Biology (Princeton)\n\nResearch using Bayesian methods and genomic data to improve global scale ocean and climate models\nTaught math at NYU"
-  },
-  {
-    "objectID": "images/IntroSlides.html#what-is-machine-learning",
-    "href": "images/IntroSlides.html#what-is-machine-learning",
-    "title": "Welcome to DATA 622",
-    "section": "What is Machine Learning?",
-    "text": "What is Machine Learning?\n\nMachine Learning uses algorithms and data to make predictions and uncover complex processes\n\nClassification, Regression, Causal Inference\nTheory\nML Infrastructure"
-  },
-  {
-    "objectID": "images/IntroSlides.html#course-websites",
-    "href": "images/IntroSlides.html#course-websites",
-    "title": "Welcome to DATA 622",
-    "section": "Course Website(s)",
-    "text": "Course Website(s)\n\n\n\nBrightspace to submit homework\nCourse Website"
-  },
-  {
-    "objectID": "images/IntroSlides.html#course-website-and-meetup",
-    "href": "images/IntroSlides.html#course-website-and-meetup",
-    "title": "Welcome to DATA 622",
-    "section": "Course Website and Meetup",
-    "text": "Course Website and Meetup\n\n\n\nBrightspace to submit homework\nCourse Website\nCourse Meetup: Monday 6:45-7:45PM\nZoom Link"
-  },
-  {
-    "objectID": "images/IntroSlides.html#slack-channel",
-    "href": "images/IntroSlides.html#slack-channel",
-    "title": "Welcome to DATA 622",
-    "section": "Slack Channel",
-    "text": "Slack Channel\n\n\n\nProgram slack workspace for messaging and rapid communications\nhttps://cuny-msds.slack.com\nInvite Link\nI will add you to 622 slack channel"
-  },
-  {
-    "objectID": "images/IntroSlides.html#textbooks",
-    "href": "images/IntroSlides.html#textbooks",
-    "title": "Welcome to DATA 622",
+    "objectID": "meetups/meetup-1/meetup-1.html#textbooks",
+    "href": "meetups/meetup-1/meetup-1.html#textbooks",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
     "section": "Textbooks",
-    "text": "Textbooks\n\n\nTwo most important textbooks:\n\nIntroduction to Statistical Learning with Python\n\n\nAvailable free online ISLP\n\n\nDevOps for Data Science\n\n\nAvailable free online DevOps"
+    "text": "Textbooks\n\n\n\nIntroduction to Statistical Learning\n\n\nStandard text for people coming into machine learning from a variety of areas"
   },
   {
-    "objectID": "images/IntroSlides.html#assignments",
-    "href": "images/IntroSlides.html#assignments",
-    "title": "Welcome to DATA 622",
-    "section": "Assignments",
-    "text": "Assignments\n\n\n\n8 Lab Assignments (65%)\nFinal Project (35%)"
+    "objectID": "meetups/meetup-1/meetup-1.html#textbooks-1",
+    "href": "meetups/meetup-1/meetup-1.html#textbooks-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Textbooks",
+    "text": "Textbooks\n\n\n\nHands on Machine Learning Very practical more CS style book that focuses on python implementations"
   },
   {
-    "objectID": "images/IntroSlides.html#looking-forward-to-a-great-semester",
-    "href": "images/IntroSlides.html#looking-forward-to-a-great-semester",
-    "title": "Welcome to DATA 622",
-    "section": "Looking forward to a great semester!",
-    "text": "Looking forward to a great semester!\nThanks for watching"
+    "objectID": "meetups/meetup-1/meetup-1.html#textbooks-2",
+    "href": "meetups/meetup-1/meetup-1.html#textbooks-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Textbooks",
+    "text": "Textbooks\n\n\n\nDevOps for Data Science Accessible book to start learning some things needed to get models in production"
   },
   {
-    "objectID": "acknowledgements.html",
-    "href": "acknowledgements.html",
-    "title": "Acknowledgements",
+    "objectID": "meetups/meetup-1/meetup-1.html#course-outline",
+    "href": "meetups/meetup-1/meetup-1.html#course-outline",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Course Outline",
+    "text": "Course Outline\n\n\n\nDate\nModule\nMain Deliverables\n\n\n\n\n\n\nJan 26\nIntroduction to Machine Learning\n\n\n\n\n\nFeb 2\nBias-Variance Trade-Off\nLab 1\n\n\n\n\nFeb 9\nThe Linear Model\nLab 2\n\n\n\n\nFeb 16\nClassification\n\n\n\n\n\nFeb 23\nGenerative Classification Models and Class Imbalance\nLab 3\n\n\n\n\nMar 2\nResampling and Cross-Validation\nProject Proposal\n\n\n\n\nMar 9\nRegularization and Model Selection\nLab 4\n\n\n\n\nMar 16\nTree Models\n\n\n\n\n\nMar 23\nEnsemble Models\nLab 5\n\n\n\n\nMar 30\nCausal Inference\nMinimal Viable Product Demo\n\n\n\n\nApr 6\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\nModel Interpretation, Communication, and Ethics\nLab 6\n\n\n\n\nApr 20\nNeural Networks\n\n\n\n\n\nApr 27\nDeep Learning\nLab 7\n\n\n\n\nMay 4\nUnsupervised Learning\n\n\n\n\n\nMay 11\nPretrained Models\nLab 8, Final project Writeup and Demo"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#this-week",
+    "href": "meetups/meetup-1/meetup-1.html#this-week",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "This Week:",
+    "text": "This Week:\n\nRead: Chapter 1 and Section 2.1 of ISLP\nWatch/Code: Chapter 2 Lab ISLP and vignette video\nInteract: Post in course slack about project\nHW: Start Lab 1"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#events-this-week",
+    "href": "meetups/meetup-1/meetup-1.html#events-this-week",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Events This Week!",
+    "text": "Events This Week!\n\n\nRegister By Clicking Here"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#events-this-week-1",
+    "href": "meetups/meetup-1/meetup-1.html#events-this-week-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Events This Week!",
+    "text": "Events This Week!\n\n\nRegister at nyhackr.org"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#learning-from-data",
+    "href": "meetups/meetup-1/meetup-1.html#learning-from-data",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Learning from Data",
+    "text": "Learning from Data\n\nGoals Today:\n\nExamples of Machine Learning\nThe Machine Learning Problem\nTypes of ML"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#example-transaction-fraud-detection",
+    "href": "meetups/meetup-1/meetup-1.html#example-transaction-fraud-detection",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Example: Transaction Fraud Detection",
+    "text": "Example: Transaction Fraud Detection\nProblem: Fraudulent transactions are costly\nCan be up several % of total revenue, billions of dollars"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection",
+    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Transaction Fraud Detection",
+    "text": "Transaction Fraud Detection\nProblem: Fraudulent transactions are costly\nSolution: Fradulent transactions are different"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-1",
+    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Transaction Fraud Detection",
+    "text": "Transaction Fraud Detection"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-2",
+    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Transaction Fraud Detection",
+    "text": "Transaction Fraud Detection\n\n\n\nCan create a formula: \\[\ny = f(\\mathbf{x})\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-3",
+    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-3",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Transaction Fraud Detection",
+    "text": "Transaction Fraud Detection\n\n\n\nCan create a formula: \\[\ny = f(\\mathbf{x}) = \\mathrm{sign}\\left(w_1x_1 + w_2x_2 + w_3x_3 + \\cdots + w_n x_n \\right)\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-4",
+    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-4",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Transaction Fraud Detection",
+    "text": "Transaction Fraud Detection\n\n\n\nCan create a formula: \\[\ny = f(\\mathbf{x}) = \\mathrm{sign}\\sum_{i=1}^n w_ix_i\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-5",
+    "href": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection-5",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Transaction Fraud Detection",
+    "text": "Transaction Fraud Detection\n\nWhere do the weights \\(w_i\\) come from?\nCould have an expert come up with them\nMachine Learning Idea: Find weights that minimize error"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning",
+    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "When to use Machine Learning?",
+    "text": "When to use Machine Learning?\n\n\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\nYou have data"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-1",
+    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "When to use Machine Learning?",
+    "text": "When to use Machine Learning?\n\n\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\nYou have data"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-2",
+    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "When to use Machine Learning?",
+    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\nYou have data\n\n\nStatistical Rethinking"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-3",
+    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-3",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "When to use Machine Learning?",
+    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\nYou have data\n\n\n\n\n\n\\[\n\\mathbf{F} = -\\frac{Gm_1m_2\\hat{\\mathbf{r}}}{\\|\\mathbf{r}\\|^2}\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-4",
+    "href": "meetups/meetup-1/meetup-1.html#when-to-use-machine-learning-4",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "When to use Machine Learning?",
+    "text": "When to use Machine Learning?\n\nThere is a pattern to learn\nThere aren’t mathematical formulas that give you the answer already\nYou have data\n\n\nThis is the one dealbreaker here. Without data there is no possibility for machine learning."
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#components-of-supervised-learning",
+    "href": "meetups/meetup-1/meetup-1.html#components-of-supervised-learning",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Components of Supervised Learning",
+    "text": "Components of Supervised Learning\n\n\nInput \\(\\mathbf{x}\\) (amount, location, time of day, transaction type)\n\nAlso called features, predictors, variables\n\nOutput \\(y\\) (real or fraudulent transaction)\nTarget function \\(f: \\mathcal{X}\\mapsto \\mathcal{Y}\\) (ideal formula for detecting fraud)\n\nUnknown and unknowable\n\nData: \\((\\mathbf{x}_1,y_1),\\, (\\mathbf{x}_2,y_2),\\, \\cdots,(\\mathbf{x}_n,y_n)\\)\nModel \\(g: \\mathcal{X}\\mapsto \\mathcal{Y}\\) (also called hypothesis, find this to make predictions)"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together",
+    "href": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "How the components fit together",
+    "text": "How the components fit together"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-1",
+    "href": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "How the components fit together",
+    "text": "How the components fit together"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-2",
+    "href": "meetups/meetup-1/meetup-1.html#how-the-components-fit-together-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "How the components fit together",
+    "text": "How the components fit together"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#models",
+    "href": "meetups/meetup-1/meetup-1.html#models",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Models",
+    "text": "Models\n\nThe set \\(\\mathcal{G}\\) can vary in complexity a lot\nLinear Models \\(y=\\mathbf{w}\\cdot\\mathbf{x}+x_0\\)"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#models-1",
+    "href": "meetups/meetup-1/meetup-1.html#models-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Models",
+    "text": "Models\n\nThe set \\(\\mathcal{G}\\) can vary in complexity a lot\nDecision Trees"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#learning-algorithms",
+    "href": "meetups/meetup-1/meetup-1.html#learning-algorithms",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Learning Algorithms",
+    "text": "Learning Algorithms\n\nLearning algorithm selects final model \\(g\\) from \\(\\mathcal{G}\\)\nAlmost always minimization of a loss function: \\[\n\\mathrm{min}_{g\\in\\mathcal{G}} \\sum_{i=1}^N \\mathrm{loss}(y_i,g(\\mathbf{x}_i))\n\\]\nFind the function that “best” fits the data"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#learning-algorithms-1",
+    "href": "meetups/meetup-1/meetup-1.html#learning-algorithms-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Learning Algorithms",
+    "text": "Learning Algorithms\n\nFor some models (linear models, support vector machines, etc), exact formula or guaranteed algorithms exist"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#learning-algorithms-2",
+    "href": "meetups/meetup-1/meetup-1.html#learning-algorithms-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Learning Algorithms",
+    "text": "Learning Algorithms\n\nFor fancy models, decision trees, neural networks, Gaussian Processes, no guarantee exists and the algorithm is a dark art"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#learning-algorithms-3",
+    "href": "meetups/meetup-1/meetup-1.html#learning-algorithms-3",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Learning Algorithms",
+    "text": "Learning Algorithms\n\nOptimization is not the focus here\nWe will talk about it, especially at the end\nTake 609 for the nitty gritty details"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning",
+    "href": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Examples of Supervised Learning",
+    "text": "Examples of Supervised Learning\n\nPredicting Credit Risk\n\n\\(\\mathbf{x}\\): Income, Age, Education, Debt\n\\(y\\): Will they default on loan?\n\\(f(\\mathbf{x})\\) Credit approval formula\n\\((\\mathbf{x_i},y_i)\\) past data on loan repayments"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-1",
+    "href": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Examples of Supervised Learning",
+    "text": "Examples of Supervised Learning\n\nPredicting Movie Ratings\n\n\\(\\mathbf{x}\\): ratings of watched movies\n\\(y\\): rating they would give a movie if they watched\n\\(f(\\mathbf{x})\\) ideal movie rating function\n\\((\\mathbf{x_i},y_i)\\) data on user ratings"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-2",
+    "href": "meetups/meetup-1/meetup-1.html#examples-of-supervised-learning-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Examples of Supervised Learning",
+    "text": "Examples of Supervised Learning\n\nPredicting cancer diagnosis\n\n\\(\\mathbf{x}\\): gender, tumor location, size, and properties\n\\(y\\): Type of tumor\n\\(f(\\mathbf{x})\\) Ideal diagnosis function\n\\((\\mathbf{x_i},y_i)\\) data collected from patient brain scans and tumor biopsies"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling",
+    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Goals of Modeling",
+    "text": "Goals of Modeling\n\nPrediction: What will \\(y\\) be for a given set of \\(\\mathbf{x}\\)?\n\nYour entire goal is maximizing the accuracy of your prediction of \\(y\\). Understanding/insight about how \\(y\\) is determined by each variable in \\(x\\) is not important\n\nExample: Image recognition, text translation, fraud detection"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling-1",
+    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Goals of Modeling",
+    "text": "Goals of Modeling\n\nInference/Understanding: Which of the predictors \\(\\mathbf{x}\\) influence or are associated with \\(y\\), and how?\n\n\nExample: What is the relationship between having a doorman and rent?\n\n2b. Causal Inference: What will happen to \\(y\\) if I take a certain action?\n\nExample: A/B testing, randomized controlled trials, if I hire a doorman for my building how much can I increase rent?"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling-2",
+    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling-2",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Goals of Modeling",
+    "text": "Goals of Modeling\n\nDecision Making or Management: If I observe \\(\\mathbf{x}\\) what should I do?\n\n\nExample: Based on the observed fish stocks, water temperature, and ocean productivity, what should be the allowable fish catch?"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling-3",
+    "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling-3",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Goals of Modeling",
+    "text": "Goals of Modeling\n\nDifferent models are good for different goals\n\n\nISLP"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#regression-and-classification",
+    "href": "meetups/meetup-1/meetup-1.html#regression-and-classification",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Regression and Classification",
+    "text": "Regression and Classification\n\nRegression problems have continuous \\(y\\)\n\nPredicting income, temperature, cost\nTypical loss function \\[\n\\mathrm{loss(y_1,g(x_1))} = (y_1-g(x_1))^2\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#regression-and-classification-1",
+    "href": "meetups/meetup-1/meetup-1.html#regression-and-classification-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Regression and Classification",
+    "text": "Regression and Classification\n\nClassification problems have discrete \\(y\\)\n\nTumor type, fraud or real transaction, Default or not on loan\nTypical loss function is misclassification:\n\n\\[\n  \\mathrm{loss}(y_1,g(x_1)) = 1-\\delta(y_1,g(x_1))\n  \\]"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#unsupervised-learning",
+    "href": "meetups/meetup-1/meetup-1.html#unsupervised-learning",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Unsupervised Learning",
+    "text": "Unsupervised Learning\n\nIn some problems, the label \\(y\\) is not known to us"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#unsupervised-learning-1",
+    "href": "meetups/meetup-1/meetup-1.html#unsupervised-learning-1",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Unsupervised Learning",
+    "text": "Unsupervised Learning\n\nAlgorithms exist to group points together or reduce dimension"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#reinforcement-learning",
+    "href": "meetups/meetup-1/meetup-1.html#reinforcement-learning",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Reinforcement Learning",
+    "text": "Reinforcement Learning\n\nTraining labels \\(y\\) not known\nBut can get an evaluation of \\(g(\\mathbf{x})\\)\nHow humans learn, “touching hot stove”\nalphago, alpha zero, fine tuning of LLMs"
+  },
+  {
+    "objectID": "meetups/meetup-1/meetup-1.html#thanks",
+    "href": "meetups/meetup-1/meetup-1.html#thanks",
+    "title": "DATA 622 Meetup 1: What is Machine Learning?",
+    "section": "Thanks!",
+    "text": "Thanks!\n\n\n\n\nDATA 622"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Attribution-ShareAlike 4.0 International",
     "section": "",
-    "text": "We acknowledge the wonderful resources made available on the open-source course Data Science in a Box, which helped in the design of this course site. We also made use of some materials on the Stanford CS 329s ML Engineering Course, particularly for the project design. This material is shared under a CC BY-SA 4.0 Creative Commons Share Alike License\nThis website would not be possible without the quarto package.",
-    "crumbs": [
-      "Acknowledgements"
-    ]
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
   },
   {
-    "objectID": "modules/module5.html",
-    "href": "modules/module5.html",
-    "title": "Module 5 - Generative Classification Models and Imbalanced Data",
+    "objectID": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "license.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "modules/module11.html",
+    "href": "modules/module11.html",
+    "title": "Module 11 - Interpreting and Presenting Machine Learning Models",
     "section": "",
-    "text": "Overview\nDuring this week, we continue our exploration of classification models by introducing generative models such as linear discriminant analysis, and generalized linear models such as Poisson Regression, which enable more refined modeling of probabilities of discrete classes or count data. We also introduce an issue commonly encountered in real world data called class imbalance, which occurs when some classes occur at much lower frequency compared to the primary classes. Class imabalance can cause major challenges for modeling and we discuss some computational techniques that allow us to artificially “balance” our data.\nLab 3 is due at the end of the week, as is your your group project proposal.\n\n\nLearning Objectives\n\nTechniques for dealing with imbalanced data: SMOTE, under- and over-sampling\nLinear Discriminant Analysis\nGenearlized Linear Models and Poisson Regression\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Section 4.4-4.6\n\n\n\nVideos",
+    "text": "Overview\nMachine Learning models and the analyses that derive from them are often derided for being impenetrable black boxes. The standard metrics which arise from such fits usually only describe the accuracy of the model in a predictive context. While this may be all that is required in some situations, more insight about how a given fit model makes predictions can be generated, which can lead to greater insight from the model and the potential for easier communication and stakeholder confidence as well as improved model iteration and development. We introduce a concept called marginal effects, which allows for the sensitivity of model predictions (both in terms of regression and the odds of different classes). We show how to understand Machine Learning models through the use of slopes, comparisons, and marginal effects. We also introduce the concept of a sensitivity analysis, which quantifies how much variation in the output of a given function is produced by variation in each input, and how to use a tool called SHAP (Shapley Additive Explanations) to understand what is happening under the hood of Machine Learning models.\nLab 6 is Due at the end of the week\n\n\nLearning Objectives\n\nMarginal Effects\nUsing marginal effects to communicate the results of a machine learning analaysis\nDefinition of Sensitivity Analysis\nApplying and interpreting SHAP\n\n\n\nReadings\n\nM2M: Models to Meaning Sections 1-7 and Python Case Study\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "5 - Generative Classification Models and Class Imbalance"
+      "11 - Model Interpretation and Ethics"
     ]
   },
   {
-    "objectID": "modules/module12.html",
-    "href": "modules/module12.html",
-    "title": "Module 12 - Neural Networks",
+    "objectID": "modules/module8.html",
+    "href": "modules/module8.html",
+    "title": "Module 8 - Trees",
     "section": "",
-    "text": "Overview\nNeural Networks are a very old class of models that were developed in the 1950s to understand cognition. Recent developments in computational science and neural network architecture have unlocked them as one of the most useful neural network models that exists today. Neural Networks are exceptional at challenging classification problems such as image or speech recognition, and underlie the large language models that have been developed in the past few years. At the same time, they are some of the most challenging models to work with, due to the large freedom to select structures, the sensitivity of model fits to learning hyperparameters, and the sometimes extreme computational costs and data requirements. We dive into the theory of neural networks this week, introducing single and multi-layer perceptrons, convolutionary neural network architectures, and stochastic gradient descent, the main algorithm that fits them.\n\n\nLearning Objectives\n\nDefining neural networks\nSingle and multi-layer perceptrons\nWhy neural networks?\nActivation functions\nConvolutionarl Neural Networks\nBasics of Stochastic Gradient Descent\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 10.1-10.4\n\n\n\nVideos",
+    "text": "Overview\nDuring this week, we will begin working with highly nonlinear models that stand in stark contrast to linear and logistic regression models, namely decision and regression trees. These models rely on making successive cuts in the data-space, leading to a tree-structure where each “leaf” is a subset of the data-space and is accompanied by a decision rule to either predict a number (regression trees) or class (classification trees). The problem of finding the optimal tree for a given problem is usually computationally intractable, a scenario that is common for many of the most complex and powerful ML algorithms, and methods for finding trees non-deterministic and based on heuristics. We build your intuition for how decision trees work by contrasting them with other models, and we will discover that on their own, single trees make poor models.\n\n\nLearning Objectives\n\nDefining classification and regression trees\nContrasting trees with other models\nAlgorithms for trees and key hyperparameters\nChallenges with using trees for inference\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning with Python): 8.1\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "12 - Neural Networks"
+      "8 - Tree Models"
     ]
   },
   {
-    "objectID": "modules/module9.html",
-    "href": "modules/module9.html",
-    "title": "Module 9 - Ensemble Models",
+    "objectID": "modules/module14.html",
+    "href": "modules/module14.html",
+    "title": "Module 14 - Unsupervised Learning",
     "section": "",
-    "text": "Overview\nWe continue with our study of tree-based methods by learning about a group of tools that allow for multiple trees to be combined into an ensemble to increase model performance. This family of techniques includes bagging, boosting, random forests, and BART. Ensemble methods turn trees into some of the most powerful and widely applicable machine learning models, and have applications through machine learning.\nLab 5 is due at the end of the week.\n\n\nLearning Objectives\n\nBagging, Boosting, Random Forests, and BART\nUnderstanding hyperparameter choices for fitting these models\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 8.2\n\n\n\nVideos",
+    "text": "Overview\nSo far in this class we have focused primarily on supervised learning, which is the most heavily studied type of machine learning. Here we introduce unsupervised learning, a learning problem in which class labels do not exist and in which neither the number of classes nor their identities are known. Unsupervised learning involves using a distance metric and a learning algorithm to cluster nearby data points into clusters. Simple algorithms for clustering include k-means, and we have already seen some dimensionality reduction techniques (PCA). We will further our study of PCA and then learn about matrix completion, which was key to the winning entry in the Netflix movie review prediction contest. Finally, we will show two methods for clustering, k-means and hierarchical clustering.\n\n\nLearning Objectives\n\nUnsupervised learning basics\nPCA and Dimensionality Reduction\nMatrix Completion and Missing Values\nHierarchical Clustering and k-means\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 12\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "9 - Ensembles of Models"
+      "14 - Unsupervised Learning"
     ]
   },
   {
-    "objectID": "modules/module10.html",
-    "href": "modules/module10.html",
-    "title": "Module 10 - Causal Inference",
+    "objectID": "modules/module15.html",
+    "href": "modules/module15.html",
+    "title": "Module 15 - Pre-Trained Models",
     "section": "",
-    "text": "Overview\nFrequently, organizations want to use data not to make predictions, but to better understand the world and to understand the consequences of decisions. In many contexts, this can be handled by randomized experimentation, as is seen in A/B tests or randomized controlled trials. However, it is not always possible to perform experiments. Causal inference is a field that studies how to determine causation from observational data. Causal inference requires careful consideration of the potential confounding factors that exist in a given situation, but if correct assumptions can be made about those causal inference gives design principles for statistical or machine learning models that can allow us to infer how a given action or intervention would impact a variable of interest.\nThe Minimal Viable Product Demo is due this week\n\n\nLearning Objectives\n\nDifference between prediction and causal inference\nConfounders and basic DAGs\nPredicting Causal Effects with BART or Linear Regression\n\n\n\nReadings\n\nCIBT : Causal Inference for the Brave and True: Chapter 1, 13, 17\nMLStory: Patterns, Predictions, and Actions Chapters 9 and 10\n\n\n\nVideos",
+    "text": "Overview\nA recent development in deep learning has been the advent of pre-trained models based on something called the transformer architecture. Pre-trained models are extremely large neural network models that have been trained on enormous datasets, usually of images or text (in the text context, this is often a scrape of the entire internet). The initial training of these models is laborious and state-of-the-art models can only be trained by very large and well funded organizations. However, it is possible to make use of pre-trained models for a variety of purposes, including the modification of them via transfer or reinforcement learning (i.e. fine tuning). This week we will discuss these models, the transformer architecture, and how to make use of them to solve problems.\n\n\nLearning Objectives\n\nTransformer architecture and pretrained models\nReinforcement learning and fine tuning\nApplications and practical implementations\n\n\n\nReadings\n\nTBD\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "10 - Causal Inference"
+      "15 - Pretrained Models"
     ]
   },
   {
-    "objectID": "modules/module6.html",
-    "href": "modules/module6.html",
-    "title": "Module 6 - Resampling and Cross Validation",
+    "objectID": "modules/module2.html",
+    "href": "modules/module2.html",
+    "title": "Module 2 - The Bias-Variance Tradeoff",
     "section": "",
-    "text": "Overview\nIn traditional statistical modeling, model fits are evaluated using test statistics, hypothesis tests, or examination of the posterior distribution. These statistical tools are often not available for machine learning models because of their complexity. Instead, computational methods based on resampling have been developed which allow for estimation of uncertainty, out of sample accuracy (generalization), and model comparison. During this week we will begin our exploration of these tools by studying resampling, the boostrap, and cross-validation, which is one of the most crucial techniques for evaluating machine learning models.\n\n\nLearning Objectives\n\nUnderstand how to apply cross-validation to assess out of sample accuracy\nUnderstand the trade-offs in different data splits\nApply the bootstrap to estimate uncertainty in predictions and parameters\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Chapter 5\n\n\n\nVideos",
+    "text": "Overview and Deliverables\nThis module introduces the bias-variance trade-off, which is one of the most fundamental ideas in machine learning and one which connects your data, the complexity of the problem you are solving, and the types of models which might be successful. We will introduce concepts such as in-sample and out-of-sample accuracy, generalization, overfitting, loss functions, and model assessment.\n\n2/8: Submit Lab 1 on the Brightspace page for the course\nStart brainstorming project ideas and forming groups on slack.\n\n\n\nLearning Objectives\n\nLoss functions and model assessment\nOverfitting and generalization error\nBias-Variance Tradeoff\nModel Flexibility and Interpretability\nBasic Regression and Classification Models\nIntroduction to scikit-learn package\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Sections 2.2-2.4\n\nOptional:\n\nChapter 2 of Hands on Machine Learning . I will go through an example of this in a coding vignette to introduce you to scikit-learn.\n\n\n\nVideos\n\nSection 2.2: Dimensionality and Structured Models\nSection 2.3: Bias Variance Trade-Off\nSection 2.4: Classification Models",
     "crumbs": [
       "Topics",
-      "6 - Resampling and Cross Validation"
+      "2 - Bias-Variance Trade-Off"
     ]
   },
   {
-    "objectID": "modules/module3.html",
-    "href": "modules/module3.html",
-    "title": "Module 3 - Linear Models",
+    "objectID": "modules/module7.html",
+    "href": "modules/module7.html",
+    "title": "Module 7 - Regularization and Model Selection",
     "section": "",
-    "text": "Overview and Deliverables\nThis week we will cover linear regression, a topic you are already quite familiar with from previous classes. We will take a different perspective on this subject, contextualizing it within machine learning as the default, baseline model that should be used for regression and also as the most interpretable model, and also discussing it from the distinct goals of prediction and understanding. One conclusion will be that variable selection is very different depending on your goal.\nYou should begin working on Lab 2 and continue project brainstorming and group formation.\n\n\nLearning Objectives\n\nOrdinary Least Squares for Regression\nBaseline Models\nIntrepreting Regression Coefficients, Confounders and Colliders\nPrediction versus Inference\nWeighted Least Squares\nExtending Regression using Feature Engineering and Nonlinear Transformations\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Chapter 3\n\n\n\nLabs\n\nISLP (Introduction to Statistical Learning): Chapter 3 Lab\nIpython Notebook Version\n\n\n\nVideos\n\nSection 3.1: Simple Linear Regression\nSection 3.2: Hypothesis Testing and Confidence Intervals\nSection 3.3: Multiple Regression\nSection 3.4: Some Important Questions\nSection 3.5: Extensions of the Linear Model\n\n\n\nCoding Videos\n\nStatsmodels Linear Regression\nStatsmodels Multiple Regression\nStatsmodels Features",
+    "text": "Overview\nMachine Learning models are often over-parameterized, meaning that they can have many more model parameters than there are data points. By default, over-parameterized models will generalize poorly due to overfitting. A family of methods called regularization are used to modify the loss functions employed in machine learning models, penalizing models for having values of the parameters far from 0. Remarkably, using these penalties can allow for over-parameterized models to generalize out of sample. We will study regularization in the context of the linear model, where the types of penalties used are called ridge regression, the lasso, elastic-net regression, or even Huber regression. These regression methods apply broadly throughout machine learning. We will also learn about principal component analysis, our first unsupervised learning method, and other tools used when working with large numbers of parameters and high-dimensions.\nLab 4 Will be due at the end of the week\n\n\nLearning Objectives\n\nRegularization and Over-fitting\nRidge Regression, The Lasso, and Elastic Net\nPrincipal Component Analsysis (PCA)\nChallenges of working in high-dimensional spaces\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning with Python): Chapters 6\n\n\n\nVideos",
     "crumbs": [
       "Topics",
-      "3 - The Linear Model"
+      "7 - Regularization and Model Selection"
     ]
   },
   {
-    "objectID": "modules/module13.html",
-    "href": "modules/module13.html",
-    "title": "Module 13 - Deep Learning",
+    "objectID": "modules/module1.html",
+    "href": "modules/module1.html",
+    "title": "Module 1 - What is Machine Learning",
     "section": "",
-    "text": "Overview\nDuring this week, we continue to learn about neural networks, moving from the basics of individual neurons to challenges that arise in deep architectures. We introduce recurrent neural networks, deep neural networks, and discuss some of the challenges with training deep neural networks. We explain backpropagation, and show how to use ReLU layers to mitigate vanishing and/or exploding gradients, and talk about hyperparameter optimization in stochastic gradient descent.\nLab 7 is due at the end of the week.\n\n\nLearning Objectives\n\nRNN Architectures\nChallenges with Deep Learning: Vanishing and Exploding Gradients\nReLU Layers\nHyperparameter Choices for Stochastic Gradient Descent\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): 10.5-10.8\n\n\n\nVideos",
+    "text": "Overview and Deliverables\n\n1/26: Attend the initial course meetup at 6:45PM Eastern\nDue 2/01: Introduction Post in Brightspace Discussions\nJoin Course Slack channel\nInstall a suitable python IDE if you do not have one (for instance positron), and a basic python installation (see the software page\n\n\nLearning Objectives\n\nExamples of Machine Learning Problems\nDefining Supervised Learning, Unsupervised Learning, Reinforcement Learning\nGoals of Machine Learning: Prediction, Understanding (inference/causal inference), Decision Making\nThe components of the machine learning problem\nReview course toolkit (or learn if unfamiliar): numpy, pandas, scikit-learn, matplotlib\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Chapter 1, Section 2.1\n\n\n\nInteractive Lab\n\nISLP (Introduction to Statistical Learning): [Section 2.3: Introduction to Python]\n\n\n\nVideos\nThe book authors have a video playlist where they go through the book section by section. You may or may not like they style and presentation- my weekly videos will be different than theirs. I will also make videos of coding demonstrations. For this week the relevant links are:\nLink to All Python Labs\nLink to All Course Videos\nVideos Covering Material Relevant to this week:\nOpening Remarks Updated Opening Remarks Statistical Learning Examples and Framework 1.2 Statistical Learning Intro to Regression Models 2.1\nCoding Videos Relevant to this week:\n\nIntro to the ISLP Presenters\nSetting Up Python\nData Types, Arrays, and Basics\nGraphics\nIndexing and Data Frames",
     "crumbs": [
       "Topics",
-      "13 - Deep Learning"
+      "1 - What is Machine Learning?"
     ]
   },
   {
-    "objectID": "modules/module4.html",
-    "href": "modules/module4.html",
-    "title": "Module 4 - Classification",
+    "objectID": "posts/2026-01-26-Meetup-1-Tonight.html",
+    "href": "posts/2026-01-26-Meetup-1-Tonight.html",
+    "title": "Meetup 1 Tonight and Slides",
     "section": "",
-    "text": "Overview\nDuring this week, we will focus on methods that can be used to solve classification problems. We will start by talking about the basis for decision rules in classification, which connects machine learning to statistics via likelihood ratio tests and loss functions. We will introduce the most basic classification model, which is called logistic regression, and which is in many ways the analog of linear regression for classification problems. We will go over a number of important instances of logistic regression and then discuss the intricacies of evaluating classification models.\n\n\nLearning Objectives\n\nClassification with Full Data: Likelihood Ratio Tests, Neymon-Pearson Lemma, and Loss-Functions\nLogistic Regression: Multiple and Multinomial\nClassification Metrics\n\n\n\nReadings\n\nISLP (Introduction to Statistical Learning): Sections 4.1-4.3\n\n\n\nAdditional Reading:\nIf you want to go deeper into this topic:\n\nHands on Machine Learning Chapter 3. This is a very practical take on classification\nPatterns, Predictions, and Actions Chapter 2 Very good exposition of the theory\n\n\n\nVideos\nhttps://www.youtube.com/watch?v=ju3J7iRy6xI&list=PLoROMvodv4rOzrYsAxzQyHb8n_RWNuS1e&index=15\n\nSection 4.1: Introduction to Classification\nSection 4.2: Logistic Regression\nSection 4.3: Multivariate Logistic Regression\nSection 4.4: Logistic Regression Case Control Sampling and Multi-Class\n\n\n\nCoding Videos\n\nSection 4.1: Simple Linear Regression",
-    "crumbs": [
-      "Topics",
-      "4 - Classification"
-    ]
+    "text": "I have posted the slides for Meetup 1 which you can view by clicking here\nThis week we are going to discuss the basic details and organization of the course, and also provide an introduction to machine learning.\nHere are some key first steps:\n\nRead the syllabus.\nGo through the course overview materials, and complete the week 1 readings.\nMake sure your python software stack is ready.\n\nStay tuned for a coding video that goes over the basics\n\nJoin our Slack workspace:\n\nI will ass you to the DATA 622 Slack Channel\n\n\nSign up and attend one of the events this week!\n\nWe are holding a data science seminar this Wednesday at 6:30PM on campus!\nRegister by clicking here \nWe regularly go the the nyhackr meetups once per month"
   },
   {
     "objectID": "course/syllabus.html",
