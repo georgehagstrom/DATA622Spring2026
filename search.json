@@ -1015,7 +1015,7 @@
     "href": "meetups/meetup-1/meetup-1.html#example-transaction-fraud-detection",
     "title": "DATA 622 Meetup 1: What is Machine Learning?",
     "section": "Example: Transaction Fraud Detection",
-    "text": "Example: Transaction Fraud Detection\nProblem: Fraudulent transactions are costly\nCan be up several % of total revenue, billions of dollars"
+    "text": "Example: Transaction Fraud Detection\nProblem: Fraudulent transactions are costly\nCan be several % of total revenue, billions of dollars"
   },
   {
     "objectID": "meetups/meetup-1/meetup-1.html#transaction-fraud-detection",
@@ -1190,7 +1190,7 @@
     "href": "meetups/meetup-1/meetup-1.html#goals-of-modeling",
     "title": "DATA 622 Meetup 1: What is Machine Learning?",
     "section": "Goals of Modeling",
-    "text": "Goals of Modeling\n\nPrediction: What will \\(y\\) be for a given set of \\(\\mathbf{x}\\)?\n\nYour entire goal is maximizing the accuracy of your prediction of \\(y\\). Understanding/insight about how \\(y\\) is determined by each variable in \\(x\\) is not important\n\nExample: Image recognition, text translation, fraud detection"
+    "text": "Goals of Modeling\n\nPrediction: What will \\(y\\) be for a given set of \\(\\mathbf{x}\\)?\n\nYour entire goal is maximizing the accuracy of your prediction of \\(y\\). Understanding/insight about how \\(y\\) is determined by each variable in \\(x\\) is not important\n\nExample: Image recognition, text translation, fraud detection\n\n\nPredictive models are not necessarily pure black boxes. People will care to know how something works when $ on the line"
   },
   {
     "objectID": "meetups/meetup-1/meetup-1.html#goals-of-modeling-1",
