@@ -370,6 +370,10 @@ George I. Hagstrom
 R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 \]</span> Are used to assess model accuracy</li>
 </ul>
+</section>
+<section id="question" class="slide level2">
+<h2>Question:</h2>
+<p>Suppose we have trained a model which has high accuracy on the training data. Are we done?</p>
 <div class="fragment" style="border: 2px solid black; padding: 20px; border-radius: 5px;">
 <p><span class="incremental">But what we really care about is whether we can extrapolate assessed accuracy to unseen examples</span></p>
 </div>
@@ -400,8 +404,18 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 <p><span class="math display">\[
 g(x) = g_0 + g_1 x
 \]</span></p>
-
-<img data-src="meetup-2_files/figure-revealjs/cell-5-output-1.png" class="r-stretch"></section>
+<div style="width: 60%; margin: auto;">
+<div id="48908868" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-5-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="models-of-increasing-complexity-1" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
@@ -410,8 +424,18 @@ g(x) = g_0 + g_1 x
 <p><span class="math display">\[
 g(x) = g_0 + g_1 x + g_2 x^2
 \]</span></p>
-
-<img data-src="meetup-2_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
+<div style="width: 60%; margin: auto;">
+<div id="5a412b4c" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-6-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="models-of-increasing-complexity-2" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
@@ -420,8 +444,18 @@ g(x) = g_0 + g_1 x + g_2 x^2
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^5 g_i x^i
 \]</span></p>
-
-<img data-src="meetup-2_files/figure-revealjs/cell-7-output-1.png" class="r-stretch"></section>
+<div style="width: 60%; margin: auto;">
+<div id="6439aebf" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-7-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="models-of-increasing-complexity-3" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
@@ -430,8 +464,18 @@ g(x) = \sum_{i=0}^5 g_i x^i
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^{10} g_i x^i
 \]</span></p>
-
-<img data-src="meetup-2_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
+<div style="width: 60%; margin: auto;">
+<div id="0aa5e7b3" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-8-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="models-of-increasing-complexity-4" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
@@ -440,8 +484,18 @@ g(x) = \sum_{i=0}^{10} g_i x^i
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^{25} g_i x^i
 \]</span></p>
-
-<img data-src="meetup-2_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
+<div style="width: 60%; margin: auto;">
+<div id="66cae676" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-9-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="overfitting-1" class="slide level2">
 <h2>Overfitting</h2>
 <ul>
@@ -453,11 +507,11 @@ g(x) = \sum_{i=0}^{25} g_i x^i
 <section id="training-versus-testing-error" class="slide level2">
 <h2>Training versus Testing Error</h2>
 <ul>
-<li>We can plot how the <span class="math inline">\(R^2\)</span> changes for the training data and randomly generated testing data</li>
+<li>We can plot how the error changes for the training data and randomly generated testing data</li>
 <li>As model complexity increases, the training error diverges from the testing error</li>
 </ul>
 <div style="width: 60%; margin: auto;">
-<div id="bdeb60a2" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="9">
+<div id="74ce6277" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -471,11 +525,11 @@ g(x) = \sum_{i=0}^{25} g_i x^i
 <section id="training-versus-testing-error-1" class="slide level2">
 <h2>Training versus Testing Error</h2>
 <ul>
-<li>We can plot how the <span class="math inline">\(R^2\)</span> changes for the training data and randomly generated testing data</li>
+<li>We can plot how the error changes for the training data and randomly generated testing data</li>
 <li>As model complexity increases, the training error diverges from the testing error</li>
 </ul>
 <div style="width: 80%; margin: auto;">
-<div id="6446a02d" class="cell" data-fig-height="6" data-fig-width="16" data-execution_count="10">
+<div id="85bc0832" class="cell" data-fig-height="6" data-fig-width="16" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -587,7 +641,7 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <ul>
 <li>Simple versus complex models as amount of data increases</li>
 </ul>
-<div id="20dd1b8f" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="14">
+<div id="f6eb3725" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="14">
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>Text(0.5, 1.0, 'Learning Curve')</code></pre>
 </div>
