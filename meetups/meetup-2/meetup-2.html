@@ -357,6 +357,7 @@ George I. Hagstrom
 <ul>
 <li>Lab 1 due Sunday at midnight</li>
 <li>Reading: ISLP 2.2-2.4</li>
+<li>Coding Vignette: Chapter 2 of HOML in <code>sklearn</code></li>
 <li>Keep posting ideas and finding team-mates in Slack</li>
 </ul>
 </section>
@@ -398,14 +399,14 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 <img data-src="meetup-2_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
 <section id="models-of-increasing-complexity" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
-<ol type="1">
+<ul>
 <li>Linear Model</li>
-</ol>
+</ul>
 <p><span class="math display">\[
 g(x) = g_0 + g_1 x
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="48908868" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
+<div id="f90b7e6f" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -425,7 +426,7 @@ g(x) = g_0 + g_1 x
 g(x) = g_0 + g_1 x + g_2 x^2
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="5a412b4c" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
+<div id="6418b826" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -438,14 +439,14 @@ g(x) = g_0 + g_1 x + g_2 x^2
 </section>
 <section id="models-of-increasing-complexity-2" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
-<ol start="2" type="1">
+<ul>
 <li>5th Degree fit</li>
-</ol>
+</ul>
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^5 g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="6439aebf" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
+<div id="7cfb4a52" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -458,14 +459,14 @@ g(x) = \sum_{i=0}^5 g_i x^i
 </section>
 <section id="models-of-increasing-complexity-3" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
-<ol start="2" type="1">
+<ul>
 <li>10th Degree fit</li>
-</ol>
+</ul>
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^{10} g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="0aa5e7b3" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
+<div id="f0a574b8" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -478,18 +479,38 @@ g(x) = \sum_{i=0}^{10} g_i x^i
 </section>
 <section id="models-of-increasing-complexity-4" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
-<ol start="2" type="1">
+<ul>
 <li>25th Degree fit</li>
-</ol>
+</ul>
 <p><span class="math display">\[
 g(x) = \sum_{i=0}^{25} g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="66cae676" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
+<div id="6a193134" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
 <p><img data-src="meetup-2_files/figure-revealjs/cell-9-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="models-of-increasing-complexity-5" class="slide level2">
+<h2>Models of Increasing Complexity</h2>
+<ul>
+<li>50th Degree fit</li>
+</ul>
+<p><span class="math display">\[
+g(x) = \sum_{i=0}^{50} g_i x^i
+\]</span></p>
+<div style="width: 60%; margin: auto;">
+<div id="e28921cf" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-2_files/figure-revealjs/cell-10-output-1.png"></p>
 </figure>
 </div>
 </div>
@@ -507,29 +528,10 @@ g(x) = \sum_{i=0}^{25} g_i x^i
 <section id="training-versus-testing-error" class="slide level2">
 <h2>Training versus Testing Error</h2>
 <ul>
-<li>We can plot how the error changes for the training data and randomly generated testing data</li>
-<li>As model complexity increases, the training error diverges from the testing error</li>
-</ul>
-<div style="width: 60%; margin: auto;">
-<div id="74ce6277" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-2_files/figure-revealjs/cell-10-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="training-versus-testing-error-1" class="slide level2">
-<h2>Training versus Testing Error</h2>
-<ul>
-<li>We can plot how the error changes for the training data and randomly generated testing data</li>
 <li>As model complexity increases, the training error diverges from the testing error</li>
 </ul>
 <div style="width: 80%; margin: auto;">
-<div id="85bc0832" class="cell" data-fig-height="6" data-fig-width="16" data-execution_count="10">
+<div id="2887842f" class="cell" data-fig-height="9" data-fig-width="12" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -641,7 +643,7 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <ul>
 <li>Simple versus complex models as amount of data increases</li>
 </ul>
-<div id="f6eb3725" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="14">
+<div id="c7459d69" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="14">
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>Text(0.5, 1.0, 'Learning Curve')</code></pre>
 </div>
@@ -661,36 +663,49 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <p>Model complexity dictated by your data more so than the complexity of the phenomenon!</p>
 </div>
 </section>
+<section id="what-complexity-to-pick-1" class="slide level2">
+<h2>What Complexity to Pick?</h2>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>Model complexity dictated by your data more so than the complexity of the phenomenon!</p>
+</div>
+
+<img data-src="meetup-2_files/figure-revealjs/cell-17-output-1.png" class="r-stretch"></section>
 <section id="classification-accuracy" class="slide level2">
 <h2>Classification Accuracy</h2>
 <ul>
 <li>Switch gears to classification</li>
 <li>Now <span class="math inline">\(y\)</span> is a class label</li>
 <li>predictors <span class="math inline">\(\mathbf{x}\)</span> can still be continuous or discrete</li>
-<li>Classification Accuracy: <span class="math display">\[
-\mathrm{Error} = \frac{1}{n}\sum_{i=1}^n I(g(\mathbf{x}_i)\neq y_i)
-\]</span></li>
-<li>Here <span class="math inline">\(I=1\)</span> if <span class="math inline">\(g(\mathbf{x_i}\neq y_i)\)</span> and <span class="math inline">\(I=0\)</span> if <span class="math inline">\(g(\mathbf{x}_i=y_i)\)</span></li>
 </ul>
 </section>
-<section id="naive-bayes" class="slide level2">
-<h2>Naive Bayes</h2>
+<section id="classification-accuracy-1" class="slide level2">
+<h2>Classification Accuracy</h2>
+<p><span class="math display">\[
+\mathrm{Error} = \frac{1}{n}\sum_{i=1}^n I(g(\mathbf{x}_i)\neq y_i)
+\]</span></p>
+<ul>
+<li>Here <span class="math inline">\(I=1\)</span> if <span class="math inline">\(g(\mathbf{x_i}\neq y_i)\)</span> and <span class="math inline">\(I=0\)</span> if <span class="math inline">\(g(\mathbf{x}_i=y_i)\)</span></li>
+<li>This counts the number of times the prediction is the wrong class</li>
+</ul>
+</section>
+<section id="mapbayes-classifier" class="slide level2">
+<h2>MAP/Bayes Classifier</h2>
 <ul>
 <li>Conditional probability of <span class="math inline">\(y\)</span> given <span class="math inline">\(\mathbf{x}\)</span>: <span class="math display">\[
 P(y|\mathbf{x})
 \]</span></li>
 <li>Best prediction is to pick class with highest chance: <span class="math display">\[
-y_{\mathrm{Naive-Bayes}}(\mathbf{x}) = \mathrm{argmax}_{y} P(y|\mathbf{x})
+y_{\mathrm{MAP}}(\mathbf{x}) = \mathrm{argmax}_{y} P(y|\mathbf{x})
 \]</span></li>
-<li>This is called Naive-Bayes</li>
+<li>Called <em>Bayes Classifier</em> or <em>Maximum A Posteriori</em> (<em>MAP</em>)</li>
 </ul>
 </section>
-<section id="applying-naive-bayes" class="slide level2">
-<h2>Applying Naive Bayes</h2>
+<section id="applying-bayes-decision-rule" class="slide level2">
+<h2>Applying Bayes Decision Rule</h2>
 <ul>
 <li>We don’t generally know the probabilities</li>
 <li>Classification models often approximate them</li>
-<li>Often the decision rule is basically an extension of Naive Bayes assuming our probabilities are true</li>
+<li>Often the decision rule is basically an extension of MAP assuming our probabilities are true</li>
 </ul>
 </section>
 <section id="knn-model" class="slide level2">
@@ -716,6 +731,13 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 </figure>
 </div>
 </div>
+</section>
+<section id="knn-question" class="slide level2">
+<h2>kNN Question</h2>
+<ul>
+<li>What do you think happens when <span class="math inline">\(k\)</span> is very small?</li>
+<li>What about when <span class="math inline">\(k\)</span> is very big?</li>
+</ul>
 </section>
 <section id="knn-model-2" class="slide level2">
 <h2>kNN Model</h2>

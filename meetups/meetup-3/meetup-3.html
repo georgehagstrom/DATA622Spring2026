@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="George I. Hagstrom">
-  <meta name="dcterms.date" content="2026-01-26">
+  <meta name="dcterms.date" content="2026-02-10">
   <title>DATA 622 Spring 2026 – DATA 622 Meetup 3: The Linear Model</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -342,7 +342,7 @@ George I. Hagstrom
 </div>
 </div>
 
-  <p class="date">2026-01-26</p>
+  <p class="date">2026-02-10</p>
 </section>
 <section id="linear-regression-revisited" class="slide level2">
 <h2>Linear Regression Revisited</h2>
@@ -363,6 +363,11 @@ g(\mathbf{x}) = a_1 x_1 + a_2x_2 + \cdots a_nx_n = \sum_{i=1}^n a_ix_i = \mathbf
 </ul>
 
 <img data-src="linear_regression_meme1.jpg" class="r-stretch"></section>
+<section id="question" class="slide level2">
+<h2>Question</h2>
+<p>What do you think are the advantages of linear regression?</p>
+
+<img data-src="linear_regression_meme1.jpg" class="r-stretch"></section>
 <section id="linear-regression-advantages" class="slide level2">
 <h2>Linear Regression Advantages</h2>
 <ol type="1">
@@ -374,28 +379,41 @@ g(\mathbf{x}) = a_1 x_1 + a_2x_2 + \cdots a_nx_n = \sum_{i=1}^n a_ix_i = \mathbf
 <section id="training-is-fast-and-exact" class="slide level2">
 <h2>Training is fast and exact</h2>
 <p><span class="math display">\[
-\mathbf{a} = \left(\mathbf{x}^T\mathbf{x}\right)\mathbf{x}^T \mathbf{y}
+\mathbf{a} = \left(\mathbf{X}^T\mathbf{X}\right)^{-1}\mathbf{X}^T \mathbf{y}
 \]</span></p>
-<pre><code>- Much cheaper than a neural network to run
-- Can constantly update huge models on the fly on tiny hardware</code></pre>
+<ul>
+<li>Much cheaper than a neural network to run</li>
+<li>Can constantly update huge models on the fly on tiny hardware</li>
+</ul>
+</section>
+<section id="math-aside" class="slide level2">
+<h2>Math Aside</h2>
+<ul>
+<li><p>Here <span class="math inline">\(\mathbf{X}\)</span> is the <em>design matrix</em> <span class="math display">\[
+  \mathbf{X} = \begin{pmatrix} x_{11} &amp; \cdots &amp; x_{1n} &amp; 1 \\
+                    \vdots &amp; \cdots &amp; \vdots &amp; 1 \\
+                    x_{m1} &amp; \cdots &amp; x_{mn} &amp; 1
+                    \end{pmatrix}
+  \]</span></p></li>
+<li><p>It is a math object with all the observations stacked in the rows</p></li>
+<li><p>Linear algebra is math worth learning</p></li>
+</ul>
 </section>
 <section id="linear-models-are-interpretable" class="slide level2">
 <h2>Linear Models are Interpretable</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <ul>
-<li>{.incremental} Coefficients <em>may</em> tell you causal effects</li>
-<li>{.incremental} Perfect for building intuition during EDA</li>
+<li>Coefficients <em>may</em> tell you causal effects</li>
+<li>Perfect for building intuition during EDA</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="model_complexity2.png"></p>
-</div></div>
-</section>
+
+<img data-src="model_complexity2.png" class="r-stretch quarto-figure-center"><p class="caption">ISLP</p></section>
 <section id="start-with-regression" class="slide level2">
 <h2>Start with regression</h2>
-<ul>
-<li>It’s rarely a mistake to start with linear regression, even if you end up just using it as a benchmark to compare to.</li>
-</ul>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>It’s rarely a mistake to start with linear regression, even if you end up just using it as a benchmark to compare to.</p>
+</div>
+</div>
 </section>
 <section id="linear-regression-basics" class="slide level2">
 <h2>Linear Regression Basics</h2>
@@ -454,7 +472,7 @@ g(\mathbf{x}) = a_1x_1+\cdots a_nx_n \\
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Statistically motivated by maximum likelihood under Gaussian errors: <span class="math display">\[
+<li>Motivated by maximum likelihood under Gaussian errors: <span class="math display">\[
 L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2\sigma^2}}
 \]</span></li>
 </ul>
@@ -463,6 +481,20 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 </div></div>
 </section>
 <section id="linear-regression-basics-5" class="slide level2">
+<h2>Linear Regression Basics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Motivated by maximum likelihood under Gaussian errors: <span class="math display">\[
+L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2\sigma^2}}
+\]</span></li>
+<li>Question: Tell me why</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../meetup-1/supevised-diagram3.png"></p>
+</div></div>
+</section>
+<section id="linear-regression-basics-6" class="slide level2">
 <h2>Linear Regression Basics</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -480,7 +512,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <p><img data-src="../meetup-1/supevised-diagram3.png"></p>
 </div></div>
 </section>
-<section id="linear-regression-basics-6" class="slide level2">
+<section id="linear-regression-basics-7" class="slide level2">
 <h2>Linear Regression Basics:</h2>
 <ul>
 <li>Learning algorithm works if number of data points <span class="math inline">\(n\)</span> is greater than number of features <span class="math inline">\(p\)</span></li>
@@ -498,10 +530,22 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <li>Whether we care about inference or prediction will change what variables we will include</li>
 </ul>
 </section>
+<section id="can-waffle-houses-predict-divorce-rate" class="slide level2">
+<h2>Can Waffle Houses Predict Divorce Rate?</h2>
+
+<img data-src="../../images/waffle.jpg" class="r-stretch"></section>
+<section id="waffle-map" class="slide level2">
+<h2>Waffle Map</h2>
+
+<img data-src="../../images/waffle_map.png" class="r-stretch"></section>
+<section id="divorce-rate-map" class="slide level2">
+<h2>Divorce Rate Map</h2>
+
+<img data-src="meetup-3_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
 <section id="waffle-house-example" class="slide level2">
 <h2>Waffle House Example</h2>
-<div id="7e0167c0" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div id="50ae12ae" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -602,55 +646,108 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 </section>
 <section id="confounding-3" class="slide level2">
 <h2>Confounding</h2>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
 <p><strong>Confounding</strong> describes a situation where the predictions of a model differ from the result of experimentally manipulating the variables of that model.</p>
+</div>
+<div>
 <ul>
-<li>In the waffle house case, the fact that building waffle houses won’t change the divorce rate is an example of confounding.</li>
+<li class="fragment">In the waffle house case, the fact that building waffle houses won’t change the divorce rate is an example of confounding.</li>
 </ul>
+</div>
 </section>
-<section id="confounding-examples" class="slide level2">
-<h2>Confounding Examples</h2>
-<p>There are several types of confounding. In one, a third variable not included in the model impacts both dependent and independent variable. This third variable creates an additional association:</p>
+<section id="types-of-confounds-fork" class="slide level2">
+<h2>Types of Confounds: Fork</h2>
 <ul>
-<li>Parental Income confounds the relationship between class size and SAT scores</li>
-<li>Tobacco use confounds the relationship between coffee drinking and lung cancer</li>
-<li>Income, health, social status, etc confound the relationship between wine consumption and life expectancy</li>
+<li>Omitted variable impacts both dependent and independent variable.</li>
 </ul>
-</section>
-<section id="confounding-examples-1" class="slide level2">
-<h2>Confounding Examples</h2>
-<p>There are several types of confounding. In one, a third variable not included in the model impacts both dependent and independent variable. This third variable creates an additional association:</p>
 
-<img data-src="fork.png" class="r-stretch"></section>
+<img data-src="fork.png" class="r-stretch"><div class="fragment">
+<p>Can you tell me an example of this?</p>
+</div>
+</section>
+<section id="types-of-confounds-fork-1" class="slide level2">
+<h2>Types of Confounds: Fork</h2>
+<ul>
+<li>Omitted variable impacts both dependent and independent variable.</li>
+</ul>
+
+<img data-src="fork-class-size.png" class="r-stretch"></section>
+<section id="types-of-confounds-fork-2" class="slide level2">
+<h2>Types of Confounds: Fork</h2>
+<ul>
+<li>Omitted variable impacts both dependent and independent variable.</li>
+</ul>
+
+<img data-src="fork-smoking.png" class="r-stretch"></section>
+<section id="types-of-confounds-fork-3" class="slide level2">
+<h2>Types of Confounds: Fork</h2>
+<ul>
+<li>Omitted variable impacts both dependent and independent variable.</li>
+</ul>
+
+<img data-src="fork-income-wine.png" class="r-stretch"></section>
+<section id="types-of-confounds-fork-4" class="slide level2">
+<h2>Types of Confounds: Fork</h2>
+<ul>
+<li>Omitted variable impacts both dependent and independent variable.</li>
+</ul>
+
+<img data-src="fork-health-wine.png" class="r-stretch"></section>
 <section id="control-for-confounds" class="slide level2">
 <h2>Control for Confounds</h2>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>If there is a variable you suspect is a common cause for your dependent and independent variables, you <em>must</em> include it in your regression for interpretability</p>
+</div>
 <ul>
-<li><p>If there is a variable you suspect is a common cause for your dependent and independent variables, you <em>must</em> include it in your regression for interpretability</p></li>
-<li><p><em>controlling</em> for the confounder</p></li>
-<li><p><em>stratifying</em> by the confounder</p></li>
+<li><em>controlling</em> for the confounder</li>
+<li><em>stratifying</em> by the confounder</li>
 </ul>
 </section>
-<section id="waffle-example" class="slide level2">
-<h2>Waffle Example</h2>
+<section id="waffle-fork" class="slide level2">
+<h2>Waffle Fork</h2>
 <ul>
-<li>In wafflehouse example, there is a common cause of both waffle house and divorce rates</li>
-<li>Southern states have earlier marriage age, and wafflehouse is a southern chain</li>
-<li>Regression coefficient becomes non-significant</li>
-<li>This might seem silly, but this is the most common problem I see in student projects</li>
+<li>South causes waffle house and divorce rates</li>
+</ul>
+
+<img data-src="fork-waffle.png" class="r-stretch"></section>
+<section id="waffle-fork-1" class="slide level2">
+<h2>Waffle Fork</h2>
+<ul>
+<li>Mediated by earlier marriage age</li>
+</ul>
+
+<img data-src="fork-waffle-age.png" class="r-stretch"></section>
+<section id="controlling-for-south" class="slide level2">
+<h2>Controlling for South</h2>
+<ul>
+<li>Regression coefficient drops</li>
 </ul>
 
 <img data-src="meetup-3_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
 <section id="collider-bias" class="slide level2">
 <h2>Collider Bias</h2>
-<p><strong>Collider Bias</strong> describes a situation when the independent and dependent variable both influence a third variable which you have used somehow in your analysis</p>
-<ul>
-<li>Smoking mortality paradox</li>
-<li>Yerushalmy studied 13,000 low birthweight babies born in the 1960s</li>
-<li>Found smokers were 2x as likely to have a low birthweight baby</li>
-<li>Mortality rate for low birthweight babies 25x normal weight babies</li>
-</ul>
+<div class="fragment" style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p><strong>Collider Bias</strong> describes a situation when the independent and dependent variable both influence a third variable which you have used in your analysis</p>
+</div>
+<div class="fragment">
+<p><img data-src="collider.png"></p>
+</div>
 </section>
 <section id="low-birthweight-paradox" class="slide level2">
+<h2>Low Birthweight paradox</h2>
+<p><img data-src="lbw.png"> - Yerushalmy studied 13,000 low birthweight babies born in the 1960s - Mortality rate for low birthweight babies 25x normal weight babies</p>
+</section>
+<section id="low-birthweight-paradox-1" class="slide level2">
 <h2>Low Birthweight Paradox</h2>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<ol start="2" type="1">
+<li>The neonatal mortality rates for single live births of “low birth weight” were substantially and significantly lower for infants of smoking than of nonsmoking mothers.</li>
+</ol>
+</div>
+</div>
+</div>
 <ul>
 <li>Paradoxical Finding:
 <ul>
@@ -659,23 +756,34 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 </ul></li>
 </ul>
 </section>
-<section id="low-birthweight-paradox-1" class="slide level2">
-<h2>Low Birthweight Paradox</h2>
+<section id="should-expectant-mothers-smoke" class="slide level2">
+<h2>Should expectant mothers smoke?</h2>
+<div class="fragment" style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p><strong>Hint:</strong> Smokers were about twice as likely to have babies lighter than 2500 grams, which is considered “low birthweight”.</p>
+</div>
+<div class="fragment">
+<p><img data-src="lbw_dist.png"></p>
+</div>
+</section>
+<section id="birthweight-is-a-collider" class="slide level2">
+<h2>Birthweight is a Collider</h2>
+
+<img data-src="lbw_collider.png" class="r-stretch"></section>
+<section id="birthweight-is-a-collider-1" class="slide level2">
+<h2>Birthweight is a collider</h2>
 <ul>
-<li>There are many causes of low birthweight
-<ul>
-<li>Some dreadful conditions that will lead to mortality</li>
-<li>Smoking</li>
-</ul></li>
-<li>Population of infants is a mixture of infants with very bad conditions and infants with low birthweight due to smoking</li>
+<li>Both smoking and birth defects cause low birthweight</li>
+<li>lbw infants from mothers who smoke have fewer birth defects</li>
 <li>Selecting on low birthweight induces a negative correlation between smoking and infant mortality</li>
 </ul>
 </section>
 <section id="collider-bias-1" class="slide level2">
 <h2>Collider Bias</h2>
+<div class="fragment" style="border: 2px solid black; padding: 20px; border-radius: 5px;">
 <ul>
 <li>Unlike other confounders, you must not include colliders in your regression if you care about inference!</li>
 </ul>
+</div>
 
 <img data-src="collider.png" class="r-stretch"></section>
 <section id="simpsonsberksons-paradox" class="slide level2">
@@ -684,11 +792,30 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <li>This appears all over the place:
 <ul>
 <li>For students already accepted to college, SAT scores don’t predict success</li>
+</ul></li>
+</ul>
+
+<img data-src="sat_collider.png" class="r-stretch"></section>
+<section id="simpsonsberksons-paradox-1" class="slide level2">
+<h2>Simpson’s/Berkson’s Paradox</h2>
+<ul>
+<li>This appears all over the place:
+<ul>
 <li>Shorter NBA players are better at shooting than taller ones</li>
+</ul></li>
+</ul>
+
+<img data-src="nba_collider.png" class="r-stretch"></section>
+<section id="simpsonsberksons-paradox-2" class="slide level2">
+<h2>Simpson’s/Berkson’s Paradox</h2>
+<ul>
+<li>This appears all over the place:
+<ul>
 <li>BMI is associated with survival for heart disease patients</li>
 </ul></li>
 </ul>
-</section>
+
+<img data-src="heart_collider.png" class="r-stretch"></section>
 <section id="collinearity-for-inference" class="slide level2">
 <h2>Collinearity for Inference</h2>
 <ul>
@@ -712,6 +839,11 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <ul>
 <li>Save some testing data, use it to test the model</li>
 </ul></li>
+</ul>
+</section>
+<section id="comparing-models-1" class="slide level2">
+<h2>Comparing Models</h2>
+<ul>
 <li>Information Criteria
 <ul>
 <li>Train with all the data, use statistical theory and likelihood to estimate out of sample accuracy</li>
@@ -734,21 +866,22 @@ AIC = n - \log(\hat{L})
 <ul>
 <li>There are a wide variety of other information criteria (BIC, WAIC, etc)</li>
 <li>They are used for comparing models</li>
-<li>If <span class="math inline">\(p_{true}\)</span> is the probability distribution that generated the data, information criteria approximate something called the Kullback-Leibler Divergence: $$</li>
+<li>For linear models, <code>AIC</code> approximates the loss of <em>information</em> caused by using the model out of sample <span class="math display">\[
+KL(p,q) = \int_{X}dx p(x)(\log(p(x))-\log(q(x)))
+\]</span></li>
+<li><strong>Only used for model comparison</strong></li>
 </ul>
-<p>$$</p>
 </section>
-<section id="nonlinear-transformation" class="slide level2">
-<h2>Nonlinear Transformation</h2>
+<section id="aic-intuition" class="slide level2">
+<h2>AIC Intuition</h2>
+<ul>
+<li>Training sample has some noise</li>
+<li>Additional parameters help to reduce error, but partially fit noise</li>
+<li>For linear models, you can estimate the “cost” of this fit with respect to the KL divergence</li>
+</ul>
 </section>
-<section id="feature-engineering" class="slide level2">
-<h2>Feature Engineering</h2>
-</section>
-<section id="weighted-least-squares" class="slide level2">
-<h2>Weighted Least Squares</h2>
-</section>
-<section id="interactions" class="slide level2">
-<h2>Interactions</h2>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>
