@@ -384,8 +384,7 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 <p><strong>Generalization</strong> is defined as the ability of a model to maintain its accuracy on observations outside of its training</p>
 <div class="fragment">
 <ul>
-<li class="fragment">For traditional statistical models, statistical theory let’s you estimate how well a model will genearlize</li>
-<li class="fragment">When a model has high in-sample accuracy, it is not guaranteed that it performs well out of sample</li>
+<li>When a model has high in-sample accuracy, it is not guaranteed that it performs well out of sample</li>
 </ul>
 </div>
 </section>
@@ -406,7 +405,7 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 g(x) = g_0 + g_1 x
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="f90b7e6f" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
+<div id="c4ee4089" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -426,7 +425,7 @@ g(x) = g_0 + g_1 x
 g(x) = g_0 + g_1 x + g_2 x^2
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="6418b826" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
+<div id="345922f7" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -446,7 +445,7 @@ g(x) = g_0 + g_1 x + g_2 x^2
 g(x) = \sum_{i=0}^5 g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="7cfb4a52" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
+<div id="5ec9e324" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -466,7 +465,7 @@ g(x) = \sum_{i=0}^5 g_i x^i
 g(x) = \sum_{i=0}^{10} g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="f0a574b8" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
+<div id="40d4e5df" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -486,7 +485,7 @@ g(x) = \sum_{i=0}^{10} g_i x^i
 g(x) = \sum_{i=0}^{25} g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="6a193134" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
+<div id="e5c7e0f2" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -506,7 +505,7 @@ g(x) = \sum_{i=0}^{25} g_i x^i
 g(x) = \sum_{i=0}^{50} g_i x^i
 \]</span></p>
 <div style="width: 60%; margin: auto;">
-<div id="e28921cf" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="9">
+<div id="20e31fc9" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -531,7 +530,7 @@ g(x) = \sum_{i=0}^{50} g_i x^i
 <li>As model complexity increases, the training error diverges from the testing error</li>
 </ul>
 <div style="width: 80%; margin: auto;">
-<div id="2887842f" class="cell" data-fig-height="9" data-fig-width="12" data-execution_count="10">
+<div id="3b25138a" class="cell" data-fig-height="9" data-fig-width="12" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -643,13 +642,8 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <ul>
 <li>Simple versus complex models as amount of data increases</li>
 </ul>
-<div id="c7459d69" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="14">
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>Text(0.5, 1.0, 'Learning Curve')</code></pre>
-</div>
 
-</div>
-<img data-src="meetup-2_files/figure-revealjs/cell-15-output-2.png" class="r-stretch"></section>
+<img data-src="meetup-2_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
 <section id="learning-curves-1" class="slide level2">
 <h2>Learning Curves</h2>
 <ul>
@@ -688,16 +682,31 @@ E((g-y)^2) = E((g-f)^2) - \mathrm{var}(\epsilon)
 <li>This counts the number of times the prediction is the wrong class</li>
 </ul>
 </section>
-<section id="mapbayes-classifier" class="slide level2">
-<h2>MAP/Bayes Classifier</h2>
+<section id="bayes-classifier" class="slide level2">
+<h2>Bayes Classifier</h2>
 <ul>
 <li>Conditional probability of <span class="math inline">\(y\)</span> given <span class="math inline">\(\mathbf{x}\)</span>: <span class="math display">\[
 P(y|\mathbf{x})
 \]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li class="fragment">This is probability of class given characteristics
+<ul>
+<li class="fragment">Probability of default given balance, income</li>
+<li class="fragment">Probability of hall of fame career given college stats</li>
+<li class="fragment">Probability of disease given medical tests</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="bayes-classifier-1" class="slide level2">
+<h2>Bayes Classifier</h2>
+<ul>
 <li>Best prediction is to pick class with highest chance: <span class="math display">\[
-y_{\mathrm{MAP}}(\mathbf{x}) = \mathrm{argmax}_{y} P(y|\mathbf{x})
+y_{\mathrm{Bayes}}(\mathbf{x}) = \mathrm{argmax}_{y} P(y|\mathbf{x})
 \]</span></li>
-<li>Called <em>Bayes Classifier</em> or <em>Maximum A Posteriori</em> (<em>MAP</em>)</li>
+<li>Called <em>Bayes Classifier</em> or <em>Bayes Decision Rule</em></li>
 </ul>
 </section>
 <section id="applying-bayes-decision-rule" class="slide level2">
@@ -705,7 +714,7 @@ y_{\mathrm{MAP}}(\mathbf{x}) = \mathrm{argmax}_{y} P(y|\mathbf{x})
 <ul>
 <li>We don’t generally know the probabilities</li>
 <li>Classification models often approximate them</li>
-<li>Often the decision rule is basically an extension of MAP assuming our probabilities are true</li>
+<li>Often the decision rule is basically an extension of Bayes Decision assuming good probabilities</li>
 </ul>
 </section>
 <section id="knn-model" class="slide level2">
