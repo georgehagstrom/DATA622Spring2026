@@ -573,42 +573,42 @@
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\nLinear Model\n\n\\[\ng(x) = g_0 + g_1 x\n\\]"
+    "text": "Models of Increasing Complexity\n\nLinear Model: \\(g(x) = g_0 + g_1 x\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-1",
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-1",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\nQuadratic Model\n\n\\[\ng(x) = g_0 + g_1 x + g_2 x^2\n\\]"
+    "text": "Models of Increasing Complexity\n\nQuadratic Model: \\(g(x) = g_0 + g_1 x + g_2 x^2\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-2",
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-2",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\n5th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^5 g_i x^i\n\\]"
+    "text": "Models of Increasing Complexity\n\n5th Degree fit: \\(g(x) = \\sum_{i=0}^5 g_i x^i\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-3",
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-3",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\n10th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^{10} g_i x^i\n\\]"
+    "text": "Models of Increasing Complexity\n\n10th Degree fit: \\(g(x) = \\sum_{i=0}^{10} g_i x^i\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-4",
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-4",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\n25th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^{25} g_i x^i\n\\]"
+    "text": "Models of Increasing Complexity\n\n25th Degree fit: \\(g(x) = \\sum_{i=0}^{25} g_i x^i\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-5",
     "href": "meetups/meetup-2/meetup-2.html#models-of-increasing-complexity-5",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Models of Increasing Complexity",
-    "text": "Models of Increasing Complexity\n\n50th Degree fit\n\n\\[\ng(x) = \\sum_{i=0}^{50} g_i x^i\n\\]"
+    "text": "Models of Increasing Complexity\n\n50th Degree fit: \\(g(x) = \\sum_{i=0}^{50} g_i x^i\\)"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#overfitting-1",
@@ -622,7 +622,7 @@
     "href": "meetups/meetup-2/meetup-2.html#training-versus-testing-error",
     "title": "DATA 622 Meetup 2: The Bias-Variance Tradeoff",
     "section": "Training versus Testing Error",
-    "text": "Training versus Testing Error\n\nAs model complexity increases, the training error diverges from the testing error"
+    "text": "Training versus Testing Error\n\nGeneralization Gap at high complexity"
   },
   {
     "objectID": "meetups/meetup-2/meetup-2.html#irreducible-error",
@@ -1709,7 +1709,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\n\n\n\nFeb 9\n06:45PM\nThe Linear Model\n\n\n\n\nFeb 16\n06:45PM\nClassification\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\nMay 11\n06:45PM\nPretrained Models",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\n\n\nFeb 9\n06:45PM\nThe Linear Model\n\n\n\n\nFeb 16\n06:45PM\nClassification\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\nMay 11\n06:45PM\nPretrained Models",
     "crumbs": [
       "Course information",
       "Schedule"

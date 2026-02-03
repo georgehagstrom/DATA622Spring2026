@@ -399,13 +399,10 @@ R^2 = 1 - \frac{\mathrm{MSE}}{\mathrm{var(y)}}
 <section id="models-of-increasing-complexity" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ul>
-<li>Linear Model</li>
+<li>Linear Model: <span class="math inline">\(g(x) = g_0 + g_1 x\)</span></li>
 </ul>
-<p><span class="math display">\[
-g(x) = g_0 + g_1 x
-\]</span></p>
-<div style="width: 60%; margin: auto;">
-<div id="c4ee4089" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
+<div style="width: 50%; margin: auto;">
+<div id="0db26420" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -419,13 +416,10 @@ g(x) = g_0 + g_1 x
 <section id="models-of-increasing-complexity-1" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ol start="2" type="1">
-<li>Quadratic Model</li>
+<li>Quadratic Model: <span class="math inline">\(g(x) = g_0 + g_1 x + g_2 x^2\)</span></li>
 </ol>
-<p><span class="math display">\[
-g(x) = g_0 + g_1 x + g_2 x^2
-\]</span></p>
-<div style="width: 60%; margin: auto;">
-<div id="345922f7" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
+<div style="width: 50%; margin: auto;">
+<div id="20a6be4b" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -439,13 +433,10 @@ g(x) = g_0 + g_1 x + g_2 x^2
 <section id="models-of-increasing-complexity-2" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ul>
-<li>5th Degree fit</li>
+<li>5th Degree fit: <span class="math inline">\(g(x) = \sum_{i=0}^5 g_i x^i\)</span></li>
 </ul>
-<p><span class="math display">\[
-g(x) = \sum_{i=0}^5 g_i x^i
-\]</span></p>
-<div style="width: 60%; margin: auto;">
-<div id="5ec9e324" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
+<div style="width: 50%; margin: auto;">
+<div id="9de63a7d" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -459,13 +450,10 @@ g(x) = \sum_{i=0}^5 g_i x^i
 <section id="models-of-increasing-complexity-3" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ul>
-<li>10th Degree fit</li>
+<li>10th Degree fit: <span class="math inline">\(g(x) = \sum_{i=0}^{10} g_i x^i\)</span></li>
 </ul>
-<p><span class="math display">\[
-g(x) = \sum_{i=0}^{10} g_i x^i
-\]</span></p>
-<div style="width: 60%; margin: auto;">
-<div id="40d4e5df" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
+<div style="width: 50%; margin: auto;">
+<div id="f7376417" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -479,13 +467,10 @@ g(x) = \sum_{i=0}^{10} g_i x^i
 <section id="models-of-increasing-complexity-4" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ul>
-<li>25th Degree fit</li>
+<li>25th Degree fit: <span class="math inline">\(g(x) = \sum_{i=0}^{25} g_i x^i\)</span></li>
 </ul>
-<p><span class="math display">\[
-g(x) = \sum_{i=0}^{25} g_i x^i
-\]</span></p>
-<div style="width: 60%; margin: auto;">
-<div id="e5c7e0f2" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
+<div style="width: 50%; margin: auto;">
+<div id="b008e158" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -499,13 +484,10 @@ g(x) = \sum_{i=0}^{25} g_i x^i
 <section id="models-of-increasing-complexity-5" class="slide level2">
 <h2>Models of Increasing Complexity</h2>
 <ul>
-<li>50th Degree fit</li>
+<li>50th Degree fit: <span class="math inline">\(g(x) = \sum_{i=0}^{50} g_i x^i\)</span></li>
 </ul>
-<p><span class="math display">\[
-g(x) = \sum_{i=0}^{50} g_i x^i
-\]</span></p>
-<div style="width: 60%; margin: auto;">
-<div id="20e31fc9" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="9">
+<div style="width: 50%; margin: auto;">
+<div id="645ed78e" class="cell" data-fig-height="8" data-fig-width="12" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -527,10 +509,10 @@ g(x) = \sum_{i=0}^{50} g_i x^i
 <section id="training-versus-testing-error" class="slide level2">
 <h2>Training versus Testing Error</h2>
 <ul>
-<li>As model complexity increases, the training error diverges from the testing error</li>
+<li>Generalization Gap at high complexity</li>
 </ul>
-<div style="width: 80%; margin: auto;">
-<div id="3b25138a" class="cell" data-fig-height="9" data-fig-width="12" data-execution_count="10">
+<div style="width: 60%; margin: auto;">
+<div id="5405624f" class="cell" data-fig-height="9" data-fig-width="12" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -735,7 +717,7 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="knn-1.png" style="width:80.0%"></p>
+<p><img data-src="knn-1.png" style="width:60.0%"></p>
 <figcaption>ISL</figcaption>
 </figure>
 </div>
@@ -757,7 +739,7 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="knn-2.png" style="width:60.0%"></p>
+<p><img data-src="knn-2.png" style="width:40.0%"></p>
 <figcaption>ISL</figcaption>
 </figure>
 </div>
@@ -771,7 +753,7 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="knn-3.png" style="width:60.0%"></p>
+<p><img data-src="knn-3.png" style="width:50.0%"></p>
 <figcaption>ISL</figcaption>
 </figure>
 </div>
@@ -786,7 +768,7 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 <div style="text-align: left;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="knn-4.png" style="width:80.0%"></p>
+<p><img data-src="knn-4.png" style="width:60.0%"></p>
 <figcaption>ISL</figcaption>
 </figure>
 </div>
@@ -801,7 +783,7 @@ g(\mathbf{x})_{kNN} = \mathrm{argmax}_{y}\sum_{\mathbf{x}_i \in N_k(\mathbf{x})}
 <div style="text-align: left;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="knn-5.png" style="width:70.0%"></p>
+<p><img data-src="knn-5.png" style="width:60.0%"></p>
 <figcaption>ISL</figcaption>
 </figure>
 </div>
