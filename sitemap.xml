@@ -21,44 +21,48 @@
     <lastmod>2026-02-02T23:19:03.981Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module4.html</loc>
-    <lastmod>2026-01-16T22:49:53.863Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/posts/2026-02-04-ML-Pipeline.html</loc>
+    <lastmod>2026-02-05T00:56:42.741Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module13.html</loc>
-    <lastmod>2026-01-16T22:50:53.234Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module1.html</loc>
+    <lastmod>2026-01-16T22:49:34.096Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module3.html</loc>
-    <lastmod>2026-01-16T22:49:47.077Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module7.html</loc>
+    <lastmod>2026-01-16T22:50:20.438Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module6.html</loc>
-    <lastmod>2026-01-16T22:50:14.080Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module2.html</loc>
+    <lastmod>2026-02-02T02:52:54.037Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module10.html</loc>
-    <lastmod>2026-01-16T22:50:35.481Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module15.html</loc>
+    <lastmod>2026-01-16T22:51:11.567Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module9.html</loc>
-    <lastmod>2026-01-16T22:50:30.933Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module14.html</loc>
+    <lastmod>2026-01-16T22:51:06.067Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module12.html</loc>
-    <lastmod>2026-01-16T22:50:46.704Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module8.html</loc>
+    <lastmod>2026-01-16T06:59:23.144Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module5.html</loc>
-    <lastmod>2026-01-16T22:50:01.559Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module11.html</loc>
+    <lastmod>2026-01-16T22:50:41.512Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/acknowledgements.html</loc>
-    <lastmod>2026-01-16T06:59:23.030Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/license.html</loc>
+    <lastmod>2026-01-16T06:59:23.105Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-3/meetup-3.html</loc>
-    <lastmod>2026-01-31T04:47:31.836Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-1/meetup-1.html</loc>
+    <lastmod>2026-02-02T01:01:07.262Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/MLPipelineVignette.html</loc>
+    <lastmod>2026-02-05T01:01:06.008Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/meetup-2.html</loc>
@@ -82,7 +86,7 @@
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab1.html</loc>
-    <lastmod>2026-01-26T19:19:21.503Z</lastmod>
+    <lastmod>2026-02-03T19:55:03.860Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs.html</loc>
@@ -121,40 +125,44 @@
     <lastmod>2026-02-02T17:58:02.204Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-1/meetup-1.html</loc>
-    <lastmod>2026-02-02T01:01:07.262Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-3/meetup-3.html</loc>
+    <lastmod>2026-01-31T04:47:31.836Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/license.html</loc>
-    <lastmod>2026-01-16T06:59:23.105Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/acknowledgements.html</loc>
+    <lastmod>2026-01-16T06:59:23.030Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module11.html</loc>
-    <lastmod>2026-01-16T22:50:41.512Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module5.html</loc>
+    <lastmod>2026-01-16T22:50:01.559Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module8.html</loc>
-    <lastmod>2026-01-16T06:59:23.144Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module12.html</loc>
+    <lastmod>2026-01-16T22:50:46.704Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module14.html</loc>
-    <lastmod>2026-01-16T22:51:06.067Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module9.html</loc>
+    <lastmod>2026-01-16T22:50:30.933Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module15.html</loc>
-    <lastmod>2026-01-16T22:51:11.567Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module10.html</loc>
+    <lastmod>2026-01-16T22:50:35.481Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module2.html</loc>
-    <lastmod>2026-02-02T02:52:54.037Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module6.html</loc>
+    <lastmod>2026-01-16T22:50:14.080Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module7.html</loc>
-    <lastmod>2026-01-16T22:50:20.438Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module3.html</loc>
+    <lastmod>2026-01-16T22:49:47.077Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module1.html</loc>
-    <lastmod>2026-01-16T22:49:34.096Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module13.html</loc>
+    <lastmod>2026-01-16T22:50:53.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/modules/module4.html</loc>
+    <lastmod>2026-01-16T22:49:53.863Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/posts/2026-01-28-Python-Packages-Video.html</loc>
@@ -170,7 +178,7 @@
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/course/schedule.html</loc>
-    <lastmod>2026-02-03T02:13:34.142Z</lastmod>
+    <lastmod>2026-02-05T00:56:47.664Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/course/overview.html</loc>
