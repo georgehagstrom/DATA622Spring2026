@@ -555,8 +555,8 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <img data-src="meetup-3_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
 <section id="waffle-house-example" class="slide level2">
 <h2>Waffle House Example</h2>
-<div id="86c7907c" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div id="8b0d4f43" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="210">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -898,6 +898,132 @@ KL(p,q) = \int_{X}dx p(x)(\log(p(x))-\log(q(x)))
 <li>Training sample has some noise</li>
 <li>Additional parameters help to reduce error, but partially fit noise</li>
 <li>For linear models, you can estimate the “cost” of this fit with respect to the KL divergence</li>
+</ul>
+</section>
+<section id="example-hitters-data" class="slide level2 scrollable">
+<h2>Example: Hitters Data</h2>
+<ul>
+<li>Dataset that contains information on baseball players in 1987</li>
+</ul>
+<div id="e6f43236" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.DataFrame'&gt;
+Index: 263 entries, 1 to 321
+Data columns (total 20 columns):
+ #   Column     Non-Null Count  Dtype   
+---  ------     --------------  -----   
+ 0   AtBat      263 non-null    int64   
+ 1   Hits       263 non-null    int64   
+ 2   HmRun      263 non-null    int64   
+ 3   Runs       263 non-null    int64   
+ 4   RBI        263 non-null    int64   
+ 5   Walks      263 non-null    int64   
+ 6   Years      263 non-null    int64   
+ 7   CAtBat     263 non-null    int64   
+ 8   CHits      263 non-null    int64   
+ 9   CHmRun     263 non-null    int64   
+ 10  CRuns      263 non-null    int64   
+ 11  CRBI       263 non-null    int64   
+ 12  CWalks     263 non-null    int64   
+ 13  League     263 non-null    category
+ 14  Division   263 non-null    category
+ 15  PutOuts    263 non-null    int64   
+ 16  Assists    263 non-null    int64   
+ 17  Errors     263 non-null    int64   
+ 18  Salary     263 non-null    float64 
+ 19  NewLeague  263 non-null    category
+dtypes: category(3), float64(1), int64(16)
+memory usage: 37.9 KB</code></pre>
+</div>
+</div>
+</section>
+<section id="predicting-salary" class="slide level2">
+<h2>Predicting Salary</h2>
+<ul>
+<li>We have a large number of variables to choose from</li>
+<li>What should we put in a predictive model to prevent overfitting?</li>
+</ul>
+<div id="e4417ac0" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="214">
+<pre><code>CRBI       0.566966
+CRuns      0.562678
+CHits      0.548910
+CAtBat     0.526135
+CHmRun     0.524931
+CWalks     0.489822
+RBI        0.449457
+Walks      0.443867
+Hits       0.438675
+Runs       0.419859
+Years      0.400657
+AtBat      0.394771
+HmRun      0.343028
+PutOuts    0.300480
+Assists    0.025436
+Errors     0.005401
+Name: Salary, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+<section id="collinear-predictors" class="slide level2">
+<h2>Collinear Predictors</h2>
+
+<img data-src="meetup-3_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
+<section id="lowest-aic" class="slide level2">
+<h2>Lowest AIC</h2>
+<ul>
+<li>Model of intermediate complexity is best</li>
+</ul>
+<div id="d0d176df" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="216">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">models</th>
+<th data-quarto-table-cell-role="th">aic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>intelligent</td>
+<td>3780.465325</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>everything</td>
+<td>3790.489087</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>basic</td>
+<td>3859.826181</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li><code>intelligent</code> ignored dropped several features that were irrelevant or redundant</li>
+<li>Doesn’t have <code>HmRun</code>, <code>RBI</code>, <code>CHmRun</code></li>
 </ul>
 </section>
 <section id="thanks" class="slide level2">

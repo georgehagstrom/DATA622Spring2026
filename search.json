@@ -527,6 +527,34 @@
     "text": "AIC Intuition\n\nTraining sample has some noise\nAdditional parameters help to reduce error, but partially fit noise\nFor linear models, you can estimate the “cost” of this fit with respect to the KL divergence"
   },
   {
+    "objectID": "meetups/meetup-3/meetup-3.html#example-hitters-data",
+    "href": "meetups/meetup-3/meetup-3.html#example-hitters-data",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Example: Hitters Data",
+    "text": "Example: Hitters Data\n\nDataset that contains information on baseball players in 1987\n\n\n\n&lt;class 'pandas.DataFrame'&gt;\nIndex: 263 entries, 1 to 321\nData columns (total 20 columns):\n #   Column     Non-Null Count  Dtype   \n---  ------     --------------  -----   \n 0   AtBat      263 non-null    int64   \n 1   Hits       263 non-null    int64   \n 2   HmRun      263 non-null    int64   \n 3   Runs       263 non-null    int64   \n 4   RBI        263 non-null    int64   \n 5   Walks      263 non-null    int64   \n 6   Years      263 non-null    int64   \n 7   CAtBat     263 non-null    int64   \n 8   CHits      263 non-null    int64   \n 9   CHmRun     263 non-null    int64   \n 10  CRuns      263 non-null    int64   \n 11  CRBI       263 non-null    int64   \n 12  CWalks     263 non-null    int64   \n 13  League     263 non-null    category\n 14  Division   263 non-null    category\n 15  PutOuts    263 non-null    int64   \n 16  Assists    263 non-null    int64   \n 17  Errors     263 non-null    int64   \n 18  Salary     263 non-null    float64 \n 19  NewLeague  263 non-null    category\ndtypes: category(3), float64(1), int64(16)\nmemory usage: 37.9 KB"
+  },
+  {
+    "objectID": "meetups/meetup-3/meetup-3.html#predicting-salary",
+    "href": "meetups/meetup-3/meetup-3.html#predicting-salary",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Predicting Salary",
+    "text": "Predicting Salary\n\nWe have a large number of variables to choose from\nWhat should we put in a predictive model to prevent overfitting?\n\n\n\nCRBI       0.566966\nCRuns      0.562678\nCHits      0.548910\nCAtBat     0.526135\nCHmRun     0.524931\nCWalks     0.489822\nRBI        0.449457\nWalks      0.443867\nHits       0.438675\nRuns       0.419859\nYears      0.400657\nAtBat      0.394771\nHmRun      0.343028\nPutOuts    0.300480\nAssists    0.025436\nErrors     0.005401\nName: Salary, dtype: float64"
+  },
+  {
+    "objectID": "meetups/meetup-3/meetup-3.html#collinear-predictors",
+    "href": "meetups/meetup-3/meetup-3.html#collinear-predictors",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Collinear Predictors",
+    "text": "Collinear Predictors"
+  },
+  {
+    "objectID": "meetups/meetup-3/meetup-3.html#lowest-aic",
+    "href": "meetups/meetup-3/meetup-3.html#lowest-aic",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "Lowest AIC",
+    "text": "Lowest AIC\n\nModel of intermediate complexity is best\n\n\n\n\n\n\n\n\n\n\nmodels\naic\n\n\n\n\n1\nintelligent\n3780.465325\n\n\n2\neverything\n3790.489087\n\n\n0\nbasic\n3859.826181\n\n\n\n\n\n\n\n\nintelligent ignored dropped several features that were irrelevant or redundant\nDoesn’t have HmRun, RBI, CHmRun"
+  },
+  {
     "objectID": "meetups/meetup-3/meetup-3.html#thanks",
     "href": "meetups/meetup-3/meetup-3.html#thanks",
     "title": "DATA 622 Meetup 3: The Linear Model",
@@ -1744,7 +1772,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\n\n\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\n\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\n\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\n\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
