@@ -170,11 +170,18 @@
     "text": "Week Summary\n\nHW 2 on Linear Regression is due Next Sunday at midnight\nPost/Contact others about project\nReading: Chapter 3 of ISLP\nOne coding vignette on statsmodels"
   },
   {
+    "objectID": "meetups/meetup-3/meetup-3.html#nyhackr-meetup-feb-17",
+    "href": "meetups/meetup-3/meetup-3.html#nyhackr-meetup-feb-17",
+    "title": "DATA 622 Meetup 3: The Linear Model",
+    "section": "nyhackr meetup Feb 17!",
+    "text": "nyhackr meetup Feb 17!"
+  },
+  {
     "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-revisited",
     "href": "meetups/meetup-3/meetup-3.html#linear-regression-revisited",
     "title": "DATA 622 Meetup 3: The Linear Model",
     "section": "Linear Regression Revisited",
-    "text": "Linear Regression Revisited\n\nPrediction is a linear function of the features:\n\n\\[\ng(\\mathbf{x}) = a_1 x_1 + a_2x_2 + \\cdots a_nx_n = \\sum_{i=1}^n a_ix_i = \\mathbf{a}^T\\mathbf{x} + c\n\\]\n\nMost basic and fundamental regression model"
+    "text": "Linear Regression Revisited\n\nPrediction is a linear function of the features:\n\n\\[\ng(\\mathbf{x}) = w_1 x_1 + w_2x_2 + \\cdots w_nx_n = \\sum_{i=1}^n w_ix_i = \\mathbf{w}^T\\mathbf{x} + c\n\\]\n\nMost basic and fundamental regression model"
   },
   {
     "objectID": "meetups/meetup-3/meetup-3.html#why-cover-this-again",
@@ -223,7 +230,7 @@
     "href": "meetups/meetup-3/meetup-3.html#start-with-regression",
     "title": "DATA 622 Meetup 3: The Linear Model",
     "section": "Start with regression",
-    "text": "Start with regression\n\n\nIt’s rarely a mistake to start with linear regression, even if you end up just using it as a benchmark to compare to."
+    "text": "Start with regression\n\nIt’s rarely a mistake to start with linear regression, even if you end up just using it as a benchmark to compare to."
   },
   {
     "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics",
@@ -244,7 +251,7 @@
     "href": "meetups/meetup-3/meetup-3.html#linear-regression-basics-2",
     "title": "DATA 622 Meetup 3: The Linear Model",
     "section": "Linear Regression Basics",
-    "text": "Linear Regression Basics\n\n\n\nHypotheses/Models \\(g\\in\\mathcal{G}\\) are linear functions \\[\ng(\\mathbf{x}) = a_1x_1+\\cdots a_nx_n \\\\\n= \\mathbf{w}^T\\mathbf{x}\n\\]"
+    "text": "Linear Regression Basics\n\n\n\nHypotheses/Models \\(g\\in\\mathcal{G}\\) are linear functions \\[\ng(\\mathbf{x}) = w_1x_1+\\cdots w_nx_n \\\\\n= \\mathbf{w}^T\\mathbf{x}\n\\]"
   },
   {
     "objectID": "meetups/meetup-3/meetup-3.html#linear-regression-basics-3",
