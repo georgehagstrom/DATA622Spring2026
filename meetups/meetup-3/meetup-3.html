@@ -344,6 +344,15 @@ George I. Hagstrom
 
   <p class="date">2026-02-10</p>
 </section>
+<section id="week-summary" class="slide level2">
+<h2>Week Summary</h2>
+<ul>
+<li>HW 2 on Linear Regression is due Next Sunday at midnight</li>
+<li>Post/Contact others about project</li>
+<li>Reading: Chapter 3 of ISLP</li>
+<li>One coding vignette on <code>statsmodels</code></li>
+</ul>
+</section>
 <section id="linear-regression-revisited" class="slide level2">
 <h2>Linear Regression Revisited</h2>
 <ul>
@@ -362,12 +371,14 @@ g(\mathbf{x}) = a_1 x_1 + a_2x_2 + \cdots a_nx_n = \sum_{i=1}^n a_ix_i = \mathbf
 <li>Probably most common production ML model</li>
 </ul>
 
-<img data-src="linear_regression_meme1.jpg" class="r-stretch"></section>
+<img data-src="linear_regression_meme1.jpg" style="width:80.0%" class="r-stretch"></section>
 <section id="question" class="slide level2">
 <h2>Question</h2>
-<p>What do you think are the advantages of linear regression?</p>
+<ul>
+<li>What do you think are the advantages of linear regression?</li>
+</ul>
 
-<img data-src="linear_regression_meme1.jpg" class="r-stretch"></section>
+<img data-src="linear_regression_meme1.jpg" style="width:80.0%" class="r-stretch"></section>
 <section id="linear-regression-advantages" class="slide level2">
 <h2>Linear Regression Advantages</h2>
 <ol type="1">
@@ -472,7 +483,7 @@ g(\mathbf{x}) = a_1x_1+\cdots a_nx_n \\
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Motivated by maximum likelihood under Gaussian errors: <span class="math display">\[
+<li>Maximum likelihood with Gaussian errors: <span class="math display">\[
 L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2\sigma^2}}
 \]</span></li>
 </ul>
@@ -485,10 +496,10 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Motivated by maximum likelihood under Gaussian errors: <span class="math display">\[
+<li>Maximum Likelihood with Gaussian <span class="math display">\[
 L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2\sigma^2}}
 \]</span></li>
-<li>Question: Tell me why</li>
+<li>Question: Do you know why?</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="../meetup-1/supevised-diagram3.png"></p>
@@ -544,7 +555,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <img data-src="meetup-3_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
 <section id="waffle-house-example" class="slide level2">
 <h2>Waffle House Example</h2>
-<div id="2aa1dcb6" class="cell" data-execution_count="3">
+<div id="86c7907c" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <style scoped="">
@@ -571,6 +582,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <th data-quarto-table-cell-role="th">Marriage</th>
 <th data-quarto-table-cell-role="th">Divorce</th>
 <th data-quarto-table-cell-role="th">WaffleHouses</th>
+<th data-quarto-table-cell-role="th">South</th>
 </tr>
 </thead>
 <tbody>
@@ -582,6 +594,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <td>20.2</td>
 <td>12.7</td>
 <td>128</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -590,6 +603,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <td>0.71</td>
 <td>26.0</td>
 <td>12.5</td>
+<td>0</td>
 <td>0</td>
 </tr>
 <tr class="odd">
@@ -600,6 +614,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <td>20.3</td>
 <td>10.8</td>
 <td>18</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -609,6 +624,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <td>26.4</td>
 <td>13.5</td>
 <td>41</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -617,6 +633,7 @@ L(\mathbf{w}) = \prod_{i=1}^n \exp^{-\frac{(\mathbf{w}^T\mathbf{x}_i - y_i)^2}{2
 <td>37.25</td>
 <td>19.1</td>
 <td>8.0</td>
+<td>0</td>
 <td>0</td>
 </tr>
 </tbody>
@@ -882,9 +899,6 @@ KL(p,q) = \int_{X}dx p(x)(\log(p(x))-\log(q(x)))
 <li>Additional parameters help to reduce error, but partially fit noise</li>
 <li>For linear models, you can estimate the “cost” of this fit with respect to the KL divergence</li>
 </ul>
-</section>
-<section id="feature-engineering-tips" class="slide level2">
-<h2>Feature Engineering Tips</h2>
 </section>
 <section id="thanks" class="slide level2">
 <h2>Thanks!</h2>
