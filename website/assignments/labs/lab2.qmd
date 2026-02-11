@@ -20,7 +20,7 @@ of discussion on this dataset. Use the version of the dataset that I provided, h
 
 ### Problem 1: Confounds in Earnings Data
 
-The dataset [earnings.csv]("https://raw.githubusercontent.com/georgehagstrom/DATA622Spring2026/main/website/assignments/labs/labData/earnings_v2.csv") contains samples from the _Work, Family, and Well Being_ survey, which was collected by
+The dataset [earnings.csv]("https://raw.githubusercontent.com/georgehagstrom/DATA622Spring2026/main/website/assignments/labs/labData/earnings.csv") contains samples from the _Work, Family, and Well Being_ survey, which was collected by
 a group led by Catherine Ross in 1990. We are working with a processed version of the dataset, which contains
 information on the `height`, `weight`, `age`, `gender`, `ethnicity`, `earnings`, `education` (for the respondent and their mother and father), and their health habits (levels of `walk`, `smoking`, `exercise`, `anger`, and `tension`). You can read a dataset description at [earnings_dictionary.qmd](https://github.com/georgehagstrom/DATA622Spring2026/tree/main/website/assignments/labs/labData/earnings_dictionary.qmd) or read it on this [link](labData/earnings_dictionary.qmd). The goal of this problem is to understand which socioeconomic factors have an effect on earnings. 
 
