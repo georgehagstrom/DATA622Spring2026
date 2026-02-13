@@ -66,39 +66,43 @@
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-3/sm-vignette.html</loc>
-    <lastmod>2026-02-11T14:37:33.258Z</lastmod>
+    <lastmod>2026-02-13T16:02:03.584Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/MLPipelineVignette.html</loc>
-    <lastmod>2026-02-05T01:01:06.008Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/knnVignette.html</loc>
+    <lastmod>2026-02-13T15:45:33.677Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/meetup-2.html</loc>
-    <lastmod>2026-02-02T23:34:11.634Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/02_end_to_end_machine_learning_project.html</loc>
+    <lastmod>2026-02-11T20:37:39.916Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab5.html</loc>
-    <lastmod>2026-01-16T23:15:37.092Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/images/IntroSlides.html</loc>
+    <lastmod>2026-01-19T21:40:27.312Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab8.html</loc>
-    <lastmod>2026-01-16T23:16:16.136Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/tbd.html</loc>
+    <lastmod>2026-01-16T22:57:12.350Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab3.html</loc>
-    <lastmod>2026-02-05T20:40:09.145Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab2.html</loc>
+    <lastmod>2026-02-11T05:07:35.145Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab7.html</loc>
-    <lastmod>2026-01-16T23:16:08.029Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab6.html</loc>
+    <lastmod>2026-01-16T23:15:59.070Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab1.html</loc>
-    <lastmod>2026-02-08T15:27:22.734Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab4.html</loc>
+    <lastmod>2026-01-16T23:15:28.191Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/labData/bank_marketing_dictionary.html</loc>
+    <lastmod>2026-02-13T16:24:33.533Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab3draft.html</loc>
-    <lastmod>2026-02-06T21:40:11.627Z</lastmod>
+    <lastmod>2026-02-13T17:50:57.062Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs.html</loc>
@@ -114,31 +118,35 @@
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/labData/earnings_dictionary.html</loc>
-    <lastmod>2026-02-11T04:49:20.198Z</lastmod>
+    <lastmod>2026-02-13T15:48:03.593Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab4.html</loc>
-    <lastmod>2026-01-16T23:15:28.191Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab1.html</loc>
+    <lastmod>2026-02-08T15:27:22.734Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab6.html</loc>
-    <lastmod>2026-01-16T23:15:59.070Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab7.html</loc>
+    <lastmod>2026-01-16T23:16:08.029Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab2.html</loc>
-    <lastmod>2026-02-11T05:07:35.145Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab3.html</loc>
+    <lastmod>2026-02-13T18:19:52.135Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/tbd.html</loc>
-    <lastmod>2026-01-16T22:57:12.350Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab8.html</loc>
+    <lastmod>2026-01-16T23:16:16.136Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/images/IntroSlides.html</loc>
-    <lastmod>2026-01-19T21:40:27.312Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/assignments/labs/lab5.html</loc>
+    <lastmod>2026-01-16T23:15:37.092Z</lastmod>
   </url>
   <url>
-    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/02_end_to_end_machine_learning_project.html</loc>
-    <lastmod>2026-02-02T17:58:02.204Z</lastmod>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/meetup-2.html</loc>
+    <lastmod>2026-02-02T23:34:11.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-2/MLPipelineVignette.html</loc>
+    <lastmod>2026-02-05T01:01:06.008Z</lastmod>
   </url>
   <url>
     <loc>https://georgehagstrom.github.io/DATA622Spring2026/meetups/meetup-3/meetup-3.html</loc>
