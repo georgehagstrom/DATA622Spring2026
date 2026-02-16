@@ -174,7 +174,14 @@
     "href": "meetups/meetup-4/meetup-4.html#week-summary",
     "title": "DATA 622 Meetup 3: Classification",
     "section": "Week Summary",
-    "text": "Week Summary\n\nSorry for grading delays, had lots of fires to put out this week\nEssential to contact others about projects this week\nHW 3 on Classification due in 2 weeks\nCoding vignette on classification/LR"
+    "text": "Week Summary\n\nEssential to contact others about projects this week\n\nProposal Due in 2 Weeks.\nEach team reach out to schedule 5-10 minute meeting during March 1 week\n\nHW 3 on Classification due in 2 weeks\nCoding vignette on classification/LR"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#hw-3-summary",
+    "href": "meetups/meetup-4/meetup-4.html#hw-3-summary",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "HW 3 Summary:",
+    "text": "HW 3 Summary:\n\nAlways look at your figures very carefully.\nMisconception: Noise in data does not help regularize\n\nLater we will learn that noise in the algorithm can\n\nPython arrays indexed starting from 0"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#nyhackr-meetup-tomorrow",
@@ -184,53 +191,263 @@
     "text": "nyhackr meetup Tomorrow!"
   },
   {
-    "objectID": "meetups/meetup-4/meetup-4.html#classification-problems",
-    "href": "meetups/meetup-4/meetup-4.html#classification-problems",
+    "objectID": "meetups/meetup-4/meetup-4.html#weather-example",
+    "href": "meetups/meetup-4/meetup-4.html#weather-example",
     "title": "DATA 622 Meetup 3: Classification",
-    "section": "Classification Problems",
-    "text": "Classification Problems"
+    "section": "Weather Example",
+    "text": "Weather Example\n\nMeteorologist forecasts the weather"
   },
   {
-    "objectID": "meetups/meetup-4/meetup-4.html#the-two-cultures",
-    "href": "meetups/meetup-4/meetup-4.html#the-two-cultures",
+    "objectID": "meetups/meetup-4/meetup-4.html#weather-example-1",
+    "href": "meetups/meetup-4/meetup-4.html#weather-example-1",
     "title": "DATA 622 Meetup 3: Classification",
-    "section": "The Two Cultures",
-    "text": "The Two Cultures"
+    "section": "Weather Example",
+    "text": "Weather Example\n\nHere is an example of a potential forecast:\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\nHow would you evaluate this?"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#weather-example-2",
+    "href": "meetups/meetup-4/meetup-4.html#weather-example-2",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Weather Example",
+    "text": "Weather Example\n\nWhich of these two forecasts do you think is better:\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#which-forecast-is-better",
+    "href": "meetups/meetup-4/meetup-4.html#which-forecast-is-better",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Which forecast is better?",
+    "text": "Which forecast is better?\n\nIt depends on the consequences of your decisions!\n\n\n\nRain: Take the subway, bring umbrella\nSun: Bike to work, no umbrella\nCost of getting soaked on rainy day is probably higher than inconvenience of not biking or carrying an umbrella"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#probability-as-nuance",
+    "href": "meetups/meetup-4/meetup-4.html#probability-as-nuance",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Probability as Nuance",
+    "text": "Probability as Nuance\n\nWhat if the forecasts were like this instead:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0.8\n0.8\n0.8\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#probability-adds-nuance",
+    "href": "meetups/meetup-4/meetup-4.html#probability-adds-nuance",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Probability adds Nuance",
+    "text": "Probability adds Nuance\n\nConsider a disease classification model\nPatient 1: \\(P(\\mathrm{disease}|\\mathrm{labs}) = 0.001\\)\nPatient 2: \\(P(\\mathrm{disease}|\\mathrm{labs}) = 0.15\\)\n\n\nBoth classify to “no disease”, but in patient 2 you might recommend further testing or monitoring"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#calibration-versus-relative-ranking",
+    "href": "meetups/meetup-4/meetup-4.html#calibration-versus-relative-ranking",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Calibration versus Relative Ranking",
+    "text": "Calibration versus Relative Ranking\n\nA model with accurate probabilities is called well calibrated\nSometimes you just need relative rankings\nWhich potential customers to call?\nWhich drug candidates to test?\nWhere to drill test wells?"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#probability-prediction-versus-classification",
     "href": "meetups/meetup-4/meetup-4.html#probability-prediction-versus-classification",
     "title": "DATA 622 Meetup 3: Classification",
     "section": "Probability Prediction Versus Classification",
-    "text": "Probability Prediction Versus Classification"
+    "text": "Probability Prediction Versus Classification\n\nComputer Science focuses on error:\n\n\\[\n\\frac{1}{n}\\sum_{i=1}^n I(y_i \\neq g(\\mathbf{x}_i))\n\\]\n\nStatistics focuses on probabilities:\n\n\\[\np(y|\\mathbf{x})\n\\]"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#loss-functions-for-classification",
     "href": "meetups/meetup-4/meetup-4.html#loss-functions-for-classification",
     "title": "DATA 622 Meetup 3: Classification",
     "section": "Loss Functions for Classification",
-    "text": "Loss Functions for Classification"
+    "text": "Loss Functions for Classification\n\nClassification often works with a threshold function: \\[\ng(\\mathbf{x}) = 1\\quad\\quad \\mathrm{if}\\quad\\quad \\eta(\\mathbf{x}) &gt; 0 \\\\\ng(\\mathbf{x}) = 0\\quad\\quad \\mathrm{if}\\quad\\quad \\eta(\\mathbf{x}) &lt; 0\n\\]\nMinimizing standard error function is computationally intractable!"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#classification-error",
+    "href": "meetups/meetup-4/meetup-4.html#classification-error",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Classification Error",
+    "text": "Classification Error\n\nConsider this set of points:"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#classification-error-1",
+    "href": "meetups/meetup-4/meetup-4.html#classification-error-1",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Classification Error",
+    "text": "Classification Error\n\nLinear classifier, error is 2"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#classification-error-2",
+    "href": "meetups/meetup-4/meetup-4.html#classification-error-2",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Classification Error",
+    "text": "Classification Error\n\nAs we move line, error does not change"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#classification-error-3",
+    "href": "meetups/meetup-4/meetup-4.html#classification-error-3",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Classification Error",
+    "text": "Classification Error\n\nExcept for Sudden Jumps"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#surrogate-loss",
+    "href": "meetups/meetup-4/meetup-4.html#surrogate-loss",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Surrogate Loss",
+    "text": "Surrogate Loss\n\nLearning algorithms cannot use this discontinuous rule!\nInstead use surrogate functions which mimic the loss rule\nBased on threshold function"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#logistic-loss",
+    "href": "meetups/meetup-4/meetup-4.html#logistic-loss",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Logistic loss",
+    "text": "Logistic loss\n\nlogistic function \\(\\sigma\\): \\[\n\\sigma(\\eta(\\mathbf{x})) = \\frac{1}{1+e^{-\\eta(\\mathbf{x})}}\n\\]\nHere is \\(\\eta\\) is a score that could range from \\(-\\infty\\) to \\(\\infty\\)\n\\(\\sigma\\) is between 0 and 1, can interpret as a probability"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#logistic-regression",
     "href": "meetups/meetup-4/meetup-4.html#logistic-regression",
     "title": "DATA 622 Meetup 3: Classification",
     "section": "Logistic Regression",
-    "text": "Logistic Regression"
+    "text": "Logistic Regression\n\n\\(\\eta\\) is linear function of predictors: \\[\n\\eta(\\mathbf{x}) = \\sum_j w_jx_j\n\\]\nProbability that \\(y=1\\) is \\(\\sigma(\\eta(\\mathbf{x}))\\): \\[\np(y=1|\\mathbf{x}) = \\frac{1}{1+\\exp(-\\mathbf{w}\\cdot\\mathbf{x})}\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#maximum-likelihood-for-lr",
+    "href": "meetups/meetup-4/meetup-4.html#maximum-likelihood-for-lr",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Maximum Likelihood for LR",
+    "text": "Maximum Likelihood for LR\n\nMinimizing logistic loss is equivalent to finding maximum likelihood\n‘log’ likelihood formula: \\[\nL(\\mathbf{w}) = \\sum_{y_i = 1} \\log(p(1|\\mathbf{x}_i)) + \\sum_{y_i=0}\\log(p(0|\\mathbf{x}_i))\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#multinomial-logistic-regression",
+    "href": "meetups/meetup-4/meetup-4.html#multinomial-logistic-regression",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Multinomial Logistic Regression",
+    "text": "Multinomial Logistic Regression\n\nWhat happens if there are more than one class?\nGet weight vector \\(w_k\\) for each predictor (except last one)\n\n\\[\np(y=k|\\mathbf{x}) = \\frac{\\exp{\\mathbf{w}_k\\cdot\\mathbf{x}}}{1 + \\sum_{j=1}^{K-1} \\exp{\\mathbf{w}_j\\cdot\\mathbf{x}}}\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#understanding-log-loss",
+    "href": "meetups/meetup-4/meetup-4.html#understanding-log-loss",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Understanding ‘log’ loss",
+    "text": "Understanding ‘log’ loss\n\nConsider weather examples again, interpreted as probabilities:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0.8\n0.8\n0.8\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#understanding-log-loss-1",
+    "href": "meetups/meetup-4/meetup-4.html#understanding-log-loss-1",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Understanding ‘log’ loss",
+    "text": "Understanding ‘log’ loss\n\nMisclassification Error:\n\nFirst forecast made 7 wrong predictions\nSecond forecast made 3 wrong predictions"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#understanding-log-loss-2",
+    "href": "meetups/meetup-4/meetup-4.html#understanding-log-loss-2",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Understanding ‘log’ loss",
+    "text": "Understanding ‘log’ loss\n\n‘log’ loss\n\nFirst forecast: \\(3\\log(0.8) + 7\\log(0.4) = -7\\)\nSecond forecast \\(3\\log(0) + 7\\log(1) = -\\infty\\)\n\n\n\n‘log’ loss massively penalizes overconfident wrong predictions!\n\n\nIf this is a problem, consider using Brier score or some other loss function"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#example-credit-data",
+    "href": "meetups/meetup-4/meetup-4.html#example-credit-data",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Example: Credit Data",
+    "text": "Example: Credit Data\n\n\n\n\n\n\n\n\n\ndefault\nstudent\nbalance\nincome\n\n\n\n\n0\nNo\nNo\n729.526495\n44361.625074\n\n\n1\nNo\nYes\n817.180407\n12106.134700\n\n\n2\nNo\nNo\n1073.549164\n31767.138947\n\n\n3\nNo\nNo\n529.250605\n35704.493935\n\n\n4\nNo\nNo\n785.655883\n38463.495879"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#example-credit-data-1",
+    "href": "meetups/meetup-4/meetup-4.html#example-credit-data-1",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Example: Credit Data",
+    "text": "Example: Credit Data"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#example-credit-data-2",
+    "href": "meetups/meetup-4/meetup-4.html#example-credit-data-2",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Example: Credit Data",
+    "text": "Example: Credit Data"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#model-coefficients",
+    "href": "meetups/meetup-4/meetup-4.html#model-coefficients",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Model Coefficients",
+    "text": "Model Coefficients\n\n\n\n\n\n\n\n\n\nfeature\ncoefficient\n\n\n\n\n0\nnum__balance\n2.699375\n\n\n2\ncat__student_Yes\n-0.518437\n\n\n1\nnum__income\n0.121987\n\n\n\n\n\n\n\n\nWhat do these coefficients actually mean?"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios",
     "href": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios",
     "title": "DATA 622 Meetup 3: Classification",
     "section": "logit transformation to Odds Ratios",
-    "text": "logit transformation to Odds Ratios"
+    "text": "logit transformation to Odds Ratios\n\nlogistic regression predicts log-odds ratios of outcomes: \\[\n\\log(\\frac{p_{\\mathrm{default}}}{1-p_{\\mathrm{default}}}) = w_0 + w_1 x_1 + \\cdots w_n x_n\n\\]\nCoefficient relates feature to odds ratio\n\n\nMost people do not intuitively understand log-odds ratios, nor should they be expected to be"
   },
   {
-    "objectID": "meetups/meetup-4/meetup-4.html#section",
-    "href": "meetups/meetup-4/meetup-4.html#section",
+    "objectID": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios-1",
+    "href": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios-1",
     "title": "DATA 622 Meetup 3: Classification",
-    "section": "",
-    "text": "Outline:\n\nBasics of classification,\nstructure of typical problem\nLogistic Regression\nMultinomial regression\n\n\n\n\n\nDATA 622"
+    "section": "logit transformation to Odds Ratios",
+    "text": "logit transformation to Odds Ratios\n\nexponentiate coefficients to recover odds ratios\n\n\n\n\n\n\n\n\n\n\nfeature\ncoefficient\nodds_ratio\n\n\n\n\n0\nnum__balance\n2.699375\n14.870429\n\n\n2\ncat__student_Yes\n-0.518437\n0.595451\n\n\n1\nnum__income\n0.121987\n1.129739\n\n\n\n\n\n\n\n\nA 1 unit change in variable leads to a change in odds equal to the ‘odds_ratio’"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#marginal-effects",
+    "href": "meetups/meetup-4/meetup-4.html#marginal-effects",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Marginal Effects",
+    "text": "Marginal Effects\n\nOdds ratios are good, but probabilities are even more intuitive\nDoubling the odds ratio:\n1% to 2%\n25% to 40%\n50% to 67%\n90% to 95%"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#marginal-effects-1",
+    "href": "meetups/meetup-4/meetup-4.html#marginal-effects-1",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Marginal Effects",
+    "text": "Marginal Effects\n\nTo see how factors impact proability, decide where you want to make predictions\n\n\n\nshape: (3, 3)\n┌─────────┬──────────┬──────────┐\n│ Term    ┆ Contrast ┆ Estimate │\n│ ---     ┆ ---      ┆ ---      │\n│ str     ┆ str      ┆ str      │\n╞═════════╪══════════╪══════════╡\n│ balance ┆ dY/dX    ┆ 0.119    │\n│ income  ┆ dY/dX    ┆ 0.000202 │\n│ student ┆ Yes - No ┆ -0.0103  │\n└─────────┴──────────┴──────────┘\nshape: (3, 3)\n┌─────────┬─────────────────────┬──────────┐\n│ Term    ┆ Contrast            ┆ Estimate │\n│ ---     ┆ ---                 ┆ ---      │\n│ str     ┆ str                 ┆ str      │\n╞═════════╪═════════════════════╪══════════╡\n│ balance ┆ (x+sd/2) - (x-sd/2) ┆ 0.0613   │\n│ income  ┆ (x+sd/2) - (x-sd/2) ┆ 0.00269  │\n│ student ┆ Yes - No            ┆ -0.0103  │\n└─────────┴─────────────────────┴──────────┘"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#plot-the-probability-predictions",
+    "href": "meetups/meetup-4/meetup-4.html#plot-the-probability-predictions",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Plot the Probability Predictions",
+    "text": "Plot the Probability Predictions"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#probability-calibration",
+    "href": "meetups/meetup-4/meetup-4.html#probability-calibration",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Probability Calibration",
+    "text": "Probability Calibration"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#types-of-errors",
+    "href": "meetups/meetup-4/meetup-4.html#types-of-errors",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Types of errors",
+    "text": "Types of errors\n\nDefaults are very rare, Bayes decision rule predicts no defaults!\nFalse Negative: predicted no default, default happened\nFalse Positive: predicted default, no default happened"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#decision-thresholds",
+    "href": "meetups/meetup-4/meetup-4.html#decision-thresholds",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Decision Thresholds",
+    "text": "Decision Thresholds\n\nConsequences of mistakes can vary:\n\nPredict rain wrong you accidentally carried umbrella\nPredict sun wrong, you arrived to work soaked\n\n\n\nSolution: Bias your prediction towards the mistake that has worse consequences"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#roc-curve",
+    "href": "meetups/meetup-4/meetup-4.html#roc-curve",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "ROC Curve",
+    "text": "ROC Curve"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#confusion-matrix",
+    "href": "meetups/meetup-4/meetup-4.html#confusion-matrix",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Confusion Matrix",
+    "text": "Confusion Matrix\n\nTabular counterpart to ROC curve\nDisplays amount of different types of errors and successes\n\n\n\nBayes Decision Rule\n\n              precision    recall  f1-score   support\n\n  No Default       0.98      1.00      0.99      1933\n     Default       0.75      0.27      0.40        67\n\n    accuracy                           0.97      2000\n   macro avg       0.86      0.63      0.69      2000\nweighted avg       0.97      0.97      0.97      2000\n\n\n\n\nPrecision: If model said it, was it true?\nRecall: If it was true, did the model say it? (TPR/TNR)"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#confusion-matrix-1",
+    "href": "meetups/meetup-4/meetup-4.html#confusion-matrix-1",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Confusion Matrix",
+    "text": "Confusion Matrix\n\nTabular counterpart to ROC curve\nDisplays amount of different types of errors and successes\n\n\n\n10% threshold\n\n              precision    recall  f1-score   support\n\n  No Default       0.99      0.94      0.97      1933\n     Default       0.30      0.72      0.43        67\n\n    accuracy                           0.94      2000\n   macro avg       0.65      0.83      0.70      2000\nweighted avg       0.97      0.94      0.95      2000\n\n\n\n\nPrecision: If model said it, was it true?\nRecall: If it was true, did the model say it?"
+  },
+  {
+    "objectID": "meetups/meetup-4/meetup-4.html#thanks",
+    "href": "meetups/meetup-4/meetup-4.html#thanks",
+    "title": "DATA 622 Meetup 3: Classification",
+    "section": "Thanks",
+    "text": "Thanks\n\n\n\n\nDATA 622"
   },
   {
     "objectID": "meetups/meetup-3/sm-vignette.html",
@@ -1912,7 +2129,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\n\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\n\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\n\n\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"

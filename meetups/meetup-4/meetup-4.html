@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -321,6 +321,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="DATA 622 Meetup 3: Classification – DATA 622 Spring 2026">
 <meta property="og:site_name" content="DATA 622 Spring 2026">
 </head>
@@ -344,43 +347,916 @@ George I. Hagstrom
 <section id="week-summary" class="slide level2">
 <h2>Week Summary</h2>
 <ul>
-<li>Sorry for grading delays, had lots of fires to put out this week</li>
-<li>Essential to contact others about projects this week</li>
+<li>Essential to contact others about projects this week
+<ul>
+<li>Proposal Due in 2 Weeks.</li>
+<li>Each team reach out to schedule 5-10 minute meeting during March 1 week</li>
+</ul></li>
 <li>HW 3 on Classification due in 2 weeks</li>
 <li>Coding vignette on classification/LR</li>
+</ul>
+</section>
+<section id="hw-3-summary" class="slide level2">
+<h2>HW 3 Summary:</h2>
+<ul>
+<li>Always look at your figures very carefully.</li>
+<li>Misconception: Noise in data does not help regularize
+<ul>
+<li>Later we will learn that noise in the algorithm can</li>
+</ul></li>
+<li>Python arrays indexed starting from 0</li>
 </ul>
 </section>
 <section id="nyhackr-meetup-tomorrow" class="slide level2">
 <h2>nyhackr meetup Tomorrow!</h2>
 
 <img data-src="../../images/February_2026_Meetup_Card.png" class="r-stretch"></section>
-<section id="classification-problems" class="slide level2">
-<h2>Classification Problems</h2>
+<section id="weather-example" class="slide level2">
+<h2>Weather Example</h2>
+<ul>
+<li>Meteorologist forecasts the weather</li>
+</ul>
+
+<img data-src="weather.png" class="r-stretch"></section>
+<section id="weather-example-1" class="slide level2">
+<h2>Weather Example</h2>
+<ul>
+<li>Here is an example of a potential forecast:</li>
+</ul>
+<div style="width: 80%; text-align: left;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>How would you evaluate this?</li>
+</ul>
 </section>
-<section id="the-two-cultures" class="slide level2">
-<h2>The Two Cultures</h2>
+<section id="weather-example-2" class="slide level2">
+<h2>Weather Example</h2>
+<ul>
+<li>Which of these two forecasts do you think is better:</li>
+</ul>
+<div style="width: 80%; text-align: left;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="which-forecast-is-better" class="slide level2">
+<h2>Which forecast is better?</h2>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>It depends on the consequences of your decisions!</p>
+</div>
+<div>
+<ul>
+<li class="fragment">Rain: Take the subway, bring umbrella</li>
+<li class="fragment">Sun: Bike to work, no umbrella</li>
+<li class="fragment">Cost of getting soaked on rainy day is probably higher than inconvenience of not biking or carrying an umbrella</li>
+</ul>
+</div>
+</section>
+<section id="probability-as-nuance" class="slide level2">
+<h2>Probability as Nuance</h2>
+<ul>
+<li>What if the forecasts were like this instead:</li>
+</ul>
+<div style="width: 80%; text-align: left;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="probability-adds-nuance" class="slide level2">
+<h2>Probability adds Nuance</h2>
+<ul>
+<li>Consider a disease classification model</li>
+<li>Patient 1: <span class="math inline">\(P(\mathrm{disease}|\mathrm{labs}) = 0.001\)</span></li>
+<li>Patient 2: <span class="math inline">\(P(\mathrm{disease}|\mathrm{labs}) = 0.15\)</span></li>
+</ul>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>Both classify to “no disease”, but in patient 2 you might recommend further testing or monitoring</p>
+</div>
+</section>
+<section id="calibration-versus-relative-ranking" class="slide level2">
+<h2>Calibration versus Relative Ranking</h2>
+<ul>
+<li>A model with accurate probabilities is called <strong>well calibrated</strong></li>
+<li>Sometimes you just need relative rankings</li>
+<li>Which potential customers to call?</li>
+<li>Which drug candidates to test?</li>
+<li>Where to drill test wells?</li>
+</ul>
 </section>
 <section id="probability-prediction-versus-classification" class="slide level2">
 <h2>Probability Prediction Versus Classification</h2>
+<ul>
+<li>Computer Science focuses on error:</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{n}\sum_{i=1}^n I(y_i \neq g(\mathbf{x}_i))
+\]</span></p>
+<ul>
+<li>Statistics focuses on probabilities:</li>
+</ul>
+<p><span class="math display">\[
+p(y|\mathbf{x})
+\]</span></p>
 </section>
 <section id="loss-functions-for-classification" class="slide level2">
 <h2>Loss Functions for Classification</h2>
+<ul>
+<li><p>Classification often works with a threshold function: <span class="math display">\[
+g(\mathbf{x}) = 1\quad\quad \mathrm{if}\quad\quad \eta(\mathbf{x}) &gt; 0 \\
+g(\mathbf{x}) = 0\quad\quad \mathrm{if}\quad\quad \eta(\mathbf{x}) &lt; 0
+\]</span></p></li>
+<li><p>Minimizing standard error function is computationally intractable!</p></li>
+</ul>
+</section>
+<section id="classification-error" class="slide level2">
+<h2>Classification Error</h2>
+<ul>
+<li>Consider this set of points:</li>
+</ul>
+<div style="width: 60%; text-align: left;">
+<p><img data-src="class_error1.png"></p>
+</div>
+</section>
+<section id="classification-error-1" class="slide level2">
+<h2>Classification Error</h2>
+<ul>
+<li>Linear classifier, error is 2</li>
+</ul>
+<div style="width: 60%; text-align: left;">
+<p><img data-src="class_error2.png"></p>
+</div>
+</section>
+<section id="classification-error-2" class="slide level2">
+<h2>Classification Error</h2>
+<ul>
+<li>As we move line, error does not change</li>
+</ul>
+<div style="width: 60%; text-align: left;">
+<p><img data-src="class_error3.png"></p>
+</div>
+</section>
+<section id="classification-error-3" class="slide level2">
+<h2>Classification Error</h2>
+<ul>
+<li>Except for Sudden Jumps</li>
+</ul>
+<div style="width: 60%; text-align: left;">
+<p><img data-src="class_error4.png"></p>
+</div>
+</section>
+<section id="surrogate-loss" class="slide level2">
+<h2>Surrogate Loss</h2>
+<ul>
+<li>Learning algorithms cannot use this discontinuous rule!</li>
+<li>Instead use <em>surrogate</em> functions which mimic the loss rule</li>
+<li>Based on threshold function</li>
+</ul>
+
+<img data-src="surrogate.png" class="r-stretch"></section>
+<section id="logistic-loss" class="slide level2">
+<h2>Logistic loss</h2>
+<ul>
+<li>logistic function <span class="math inline">\(\sigma\)</span>: <span class="math display">\[
+\sigma(\eta(\mathbf{x})) = \frac{1}{1+e^{-\eta(\mathbf{x})}}
+\]</span></li>
+<li>Here is <span class="math inline">\(\eta\)</span> is a score that could range from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span></li>
+<li><span class="math inline">\(\sigma\)</span> is between 0 and 1, can interpret as a probability</li>
+</ul>
 </section>
 <section id="logistic-regression" class="slide level2">
 <h2>Logistic Regression</h2>
+<ul>
+<li><span class="math inline">\(\eta\)</span> is linear function of predictors: <span class="math display">\[
+\eta(\mathbf{x}) = \sum_j w_jx_j
+\]</span></li>
+<li>Probability that <span class="math inline">\(y=1\)</span> is <span class="math inline">\(\sigma(\eta(\mathbf{x}))\)</span>: <span class="math display">\[
+p(y=1|\mathbf{x}) = \frac{1}{1+\exp(-\mathbf{w}\cdot\mathbf{x})}
+\]</span></li>
+</ul>
+</section>
+<section id="maximum-likelihood-for-lr" class="slide level2">
+<h2>Maximum Likelihood for LR</h2>
+<ul>
+<li>Minimizing logistic loss is equivalent to finding maximum likelihood</li>
+<li>‘log’ likelihood formula: <span class="math display">\[
+L(\mathbf{w}) = \sum_{y_i = 1} \log(p(1|\mathbf{x}_i)) + \sum_{y_i=0}\log(p(0|\mathbf{x}_i))
+\]</span></li>
+</ul>
+</section>
+<section id="multinomial-logistic-regression" class="slide level2">
+<h2>Multinomial Logistic Regression</h2>
+<ul>
+<li>What happens if there are more than one class?</li>
+<li>Get weight vector <span class="math inline">\(w_k\)</span> for each predictor (except last one)</li>
+</ul>
+<p><span class="math display">\[
+p(y=k|\mathbf{x}) = \frac{\exp{\mathbf{w}_k\cdot\mathbf{x}}}{1 + \sum_{j=1}^{K-1} \exp{\mathbf{w}_j\cdot\mathbf{x}}}
+\]</span></p>
+</section>
+<section id="understanding-log-loss" class="slide level2">
+<h2>Understanding ‘log’ loss</h2>
+<ul>
+<li>Consider weather examples again, interpreted as probabilities:</li>
+</ul>
+<div style="width: 80%; text-align: left;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+<td>0.6</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prediction</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Observed</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>🌧️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+<td>☀️</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="understanding-log-loss-1" class="slide level2">
+<h2>Understanding ‘log’ loss</h2>
+<ul>
+<li>Misclassification Error:
+<ul>
+<li>First forecast made 7 wrong predictions</li>
+<li>Second forecast made 3 wrong predictions</li>
+</ul></li>
+</ul>
+</section>
+<section id="understanding-log-loss-2" class="slide level2">
+<h2>Understanding ‘log’ loss</h2>
+<ul>
+<li>‘log’ loss
+<ul>
+<li>First forecast: <span class="math inline">\(3\log(0.8) + 7\log(0.4) = -7\)</span></li>
+<li>Second forecast <span class="math inline">\(3\log(0) + 7\log(1) = -\infty\)</span></li>
+</ul></li>
+</ul>
+<div class="fragment" style="border: 2px solid red; padding: 20px; border-radius: 5px;">
+<p>‘log’ loss massively penalizes overconfident wrong predictions!</p>
+</div>
+<div class="fragment" style="border: 2px solid blue; padding: 20px; border-radius: 5px;">
+<p>If this is a problem, consider using Brier score or some other loss function</p>
+</div>
+</section>
+<section id="example-credit-data" class="slide level2">
+<h2>Example: Credit Data</h2>
+<div id="8490d453" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">default</th>
+<th data-quarto-table-cell-role="th">student</th>
+<th data-quarto-table-cell-role="th">balance</th>
+<th data-quarto-table-cell-role="th">income</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>No</td>
+<td>No</td>
+<td>729.526495</td>
+<td>44361.625074</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>No</td>
+<td>Yes</td>
+<td>817.180407</td>
+<td>12106.134700</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>No</td>
+<td>No</td>
+<td>1073.549164</td>
+<td>31767.138947</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>No</td>
+<td>No</td>
+<td>529.250605</td>
+<td>35704.493935</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>No</td>
+<td>No</td>
+<td>785.655883</td>
+<td>38463.495879</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="example-credit-data-1" class="slide level2">
+<h2>Example: Credit Data</h2>
+
+<img data-src="meetup-4_files/figure-revealjs/cell-4-output-1.png" class="r-stretch"></section>
+<section id="example-credit-data-2" class="slide level2">
+<h2>Example: Credit Data</h2>
+
+<img data-src="meetup-4_files/figure-revealjs/cell-5-output-1.png" class="r-stretch"></section>
+<section id="model-coefficients" class="slide level2">
+<h2>Model Coefficients</h2>
+<div id="9f588a4c" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">feature</th>
+<th data-quarto-table-cell-role="th">coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>num__balance</td>
+<td>2.699375</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>cat__student_Yes</td>
+<td>-0.518437</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>num__income</td>
+<td>0.121987</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>What do these coefficients actually mean?</li>
+</ul>
 </section>
 <section id="logit-transformation-to-odds-ratios" class="slide level2">
 <h2>logit transformation to Odds Ratios</h2>
+<ul>
+<li>logistic regression predicts log-odds ratios of outcomes: <span class="math display">\[
+\log(\frac{p_{\mathrm{default}}}{1-p_{\mathrm{default}}}) = w_0 + w_1 x_1 + \cdots w_n x_n
+\]</span></li>
+<li>Coefficient relates feature to odds ratio</li>
+</ul>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>Most people do not intuitively understand log-odds ratios, nor should they be expected to be</p>
+</div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>Outline:</p>
-<ol type="1">
-<li>Basics of classification,</li>
-<li>structure of typical problem</li>
-<li>Logistic Regression</li>
-<li>Multinomial regression</li>
-</ol>
+<section id="logit-transformation-to-odds-ratios-1" class="slide level2">
+<h2>logit transformation to Odds Ratios</h2>
+<ul>
+<li>exponentiate coefficients to recover odds ratios</li>
+</ul>
+<div id="f479d05e" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">feature</th>
+<th data-quarto-table-cell-role="th">coefficient</th>
+<th data-quarto-table-cell-role="th">odds_ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>num__balance</td>
+<td>2.699375</td>
+<td>14.870429</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>cat__student_Yes</td>
+<td>-0.518437</td>
+<td>0.595451</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>num__income</td>
+<td>0.121987</td>
+<td>1.129739</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>A 1 unit change in variable leads to a change in odds equal to the ‘odds_ratio’</li>
+</ul>
+</section>
+<section id="marginal-effects" class="slide level2">
+<h2>Marginal Effects</h2>
+<ul>
+<li>Odds ratios are good, but probabilities are even more intuitive</li>
+<li>Doubling the odds ratio:</li>
+<li>1% to 2%</li>
+<li>25% to 40%</li>
+<li>50% to 67%</li>
+<li>90% to 95%</li>
+</ul>
+</section>
+<section id="marginal-effects-1" class="slide level2">
+<h2>Marginal Effects</h2>
+<ul>
+<li>To see how factors impact proability, decide where you want to make predictions</li>
+</ul>
+<div id="2fc9c68f" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>shape: (3, 3)
+┌─────────┬──────────┬──────────┐
+│ Term    ┆ Contrast ┆ Estimate │
+│ ---     ┆ ---      ┆ ---      │
+│ str     ┆ str      ┆ str      │
+╞═════════╪══════════╪══════════╡
+│ balance ┆ dY/dX    ┆ 0.119    │
+│ income  ┆ dY/dX    ┆ 0.000202 │
+│ student ┆ Yes - No ┆ -0.0103  │
+└─────────┴──────────┴──────────┘
+shape: (3, 3)
+┌─────────┬─────────────────────┬──────────┐
+│ Term    ┆ Contrast            ┆ Estimate │
+│ ---     ┆ ---                 ┆ ---      │
+│ str     ┆ str                 ┆ str      │
+╞═════════╪═════════════════════╪══════════╡
+│ balance ┆ (x+sd/2) - (x-sd/2) ┆ 0.0613   │
+│ income  ┆ (x+sd/2) - (x-sd/2) ┆ 0.00269  │
+│ student ┆ Yes - No            ┆ -0.0103  │
+└─────────┴─────────────────────┴──────────┘</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-the-probability-predictions" class="slide level2">
+<h2>Plot the Probability Predictions</h2>
+
+<img data-src="meetup-4_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
+<section id="probability-calibration" class="slide level2">
+<h2>Probability Calibration</h2>
+
+<img data-src="meetup-4_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
+<section id="types-of-errors" class="slide level2">
+<h2>Types of errors</h2>
+<ul>
+<li>Defaults are very rare, Bayes decision rule predicts no defaults!</li>
+<li>False Negative: predicted no default, default happened</li>
+<li>False Positive: predicted default, no default happened</li>
+</ul>
+</section>
+<section id="decision-thresholds" class="slide level2">
+<h2>Decision Thresholds</h2>
+<ul>
+<li>Consequences of mistakes can vary:
+<ul>
+<li>Predict rain wrong you accidentally carried umbrella</li>
+<li>Predict sun wrong, you arrived to work soaked</li>
+</ul></li>
+</ul>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p><strong>Solution:</strong> Bias your prediction towards the mistake that has worse consequences</p>
+</div>
+</section>
+<section id="roc-curve" class="slide level2">
+<h2>ROC Curve</h2>
+
+<img data-src="meetup-4_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
+<section id="confusion-matrix" class="slide level2">
+<h2>Confusion Matrix</h2>
+<ul>
+<li>Tabular counterpart to ROC curve</li>
+<li>Displays amount of different types of errors and successes</li>
+</ul>
+<div id="5cb0af69" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-stdout">
+<pre><code>Bayes Decision Rule
+
+              precision    recall  f1-score   support
+
+  No Default       0.98      1.00      0.99      1933
+     Default       0.75      0.27      0.40        67
+
+    accuracy                           0.97      2000
+   macro avg       0.86      0.63      0.69      2000
+weighted avg       0.97      0.97      0.97      2000
+</code></pre>
+</div>
+</div>
+<ul>
+<li>Precision: If model said it, was it true?</li>
+<li>Recall: If it was true, did the model say it? (TPR/TNR)</li>
+</ul>
+</section>
+<section id="confusion-matrix-1" class="slide level2">
+<h2>Confusion Matrix</h2>
+<ul>
+<li>Tabular counterpart to ROC curve</li>
+<li>Displays amount of different types of errors and successes</li>
+</ul>
+<div id="3b8a7070" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-stdout">
+<pre><code>10% threshold
+
+              precision    recall  f1-score   support
+
+  No Default       0.99      0.94      0.97      1933
+     Default       0.30      0.72      0.43        67
+
+    accuracy                           0.94      2000
+   macro avg       0.65      0.83      0.70      2000
+weighted avg       0.97      0.94      0.95      2000
+</code></pre>
+</div>
+</div>
+<ul>
+<li>Precision: If model said it, was it true?</li>
+<li>Recall: If it was true, did the model say it?</li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>
