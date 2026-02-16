@@ -69,7 +69,7 @@
     "href": "posts/2026-02-15-Week-4-Classification.html",
     "title": "Week 4 Info: Classification",
     "section": "",
-    "text": "Welcome to week 4! This week we are going to shift gears from regression to talk about classification. We will talk about different ways to assess classification accuracy from the disciplines of computer science and statistics. We will introduce the most common and also most simple classifcation model, logistic regression, and discuss how to interpret its coefficients and classifications.\nYou can read more about the plan for the week and the reading/resources in Module 4.\nThere will be one coding video tutorial published on the statsmodels package.\nLab 3 is due in two weeks, Sunday at midnight."
+    "text": "Welcome to week 4! This week we are going to shift gears from regression to talk about classification. We will talk about different ways to assess classification accuracy from the disciplines of computer science and statistics. We will introduce the most common and also most simple classifcation model, logistic regression, and discuss how to interpret its coefficients and classifications.\nYou can read more about the plan for the week and the reading/resources in Module 4.\nThere will be a coding video covering the implementation of logistic regression models and the marginal effects package.\nLab 3 is due in two weeks, Sunday at midnight."
   },
   {
     "objectID": "posts/2026-02-08-Week-3-Linear-Model.html",
