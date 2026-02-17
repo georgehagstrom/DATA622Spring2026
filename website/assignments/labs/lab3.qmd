@@ -18,11 +18,7 @@ the 'UCI Page'. The data is described on the course website at [bank_marketing_d
 
 ### Problem 1: What Can Machine Learning Do?
 
-(a) Put yourself in the shoes of a marketer working at this bank whose objective is
-to use the results of a machine learning analysis on this dataset to increase the profitability of future marketing campaigns. What are some ways that you could see
-machine learning helping you? (1-2 paragraphs max)
-
-(b) This dataset has been analyzed extensively by many different people. `kaggle.com` is a machine learning community that shares datasets, analysis methods, and hosts competitions. The most upvoted analysis notebook on `kaggle` for the Bank Marketing dataset (see: [https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit](https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit)) has a glaring flaw that makes it useless in
+(a) This dataset has been analyzed extensively by many different people. `kaggle.com` is a machine learning community that shares datasets, analysis methods, and hosts competitions. The most upvoted analysis notebook on `kaggle` for the Bank Marketing dataset (see: [https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit](https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit)) has a glaring flaw that makes it useless in
 practice. Examine the analysis and determine the flaw. Your answer should be short. 
 _Hint: Take a careful look at all the variables used, or look for people complaining about it in the comments._
 
@@ -34,7 +30,9 @@ those conclusions. Pay particular attention to temporal variations in addition t
 
 
 (b) __Baseline Model and Data Drift:__ The temporal variation in the dataset necessitates a careful approach to model evaluation. Explain (in one paragraph) why temporal variation in the data could cause model performance metrics evaluated on the entire testing split to mismatch the
-real-time experiences of the marketing team. The standard way to approach this is to train and test your model against a 'rolling window' of 
+real-time experiences of the marketing team. 
+
+The standard way to approach this is to train and test your model against a 'rolling window' of 
 observations, mimicking how the model would be used and updated in the real world.
 I suggest taking a simpler approach (due to dramatic changes in the amount of data in different time periods): using the variables identified as causing the temporal patterns in 2(a),
 divide the data into 3 to 4 _epochs_ (you could use `pd.cut` on a suitable variable). Train the model on the full training split from 2(a), but divide
@@ -42,12 +40,12 @@ the test splits by the epochs and test model performance separately on the subse
 of the testing split corresponding to each epoch. This should tell you how the model would perform in 
 different types of conditions.  
 
-   Implement this plan by creating a baseline logistic regression model, embedding all of the data cleaning, processing, transformation, and model fitting steps into a `sklearn` pipeline. Select variables based on what you observed to be important in the EDA,
-    but avoid using temporal predictors ('month_numeric', 'day', 'year') or any predictor that could not be used to make a decision on who to call. For each testing epoch, report the overall error rate, precision, recall, and f1-score, and also make note of the overall success rate of the
-    campaign during that epoch for comparison. For each epoch, plot the ROC curve and the probability calibration curve. What do you notice about the difference in model performance in different periods? Test the model on the entire testing set and report how the results compare to the individual epochs.
+   (c) Implement this plan by creating a baseline logistic regression model, either through 'statsmodels' or 'sklearn' (I recommend building your preprocessing steps and fitting steps into a pipeline). Select variables based on what you observed to be important in the EDA,
+    but avoid using temporal predictors ('month_numeric', 'day', 'year') or any predictor that could not be used to make a decision on who to call. For each testing epoch, report the overall error rate and the overall success rate of the
+    campaign during that epoch for context and comparison. For each epoch, plot the ROC curve and the probability calibration curve. What do you notice about the difference in model performance in different periods? Test the model on the entire testing set and report how the results compare to the individual epochs.
 
 
-(c) __Lift Curves and Hit Rates:__ Your marketing team is planning a marketing campaign where they will call the top $x$ percent of likely clients based on based on model forecasts. _Lift_ describes the ratio of the success rate in the top $x$ percent to
+(d) __Lift Curves and Hit Rates:__ Your marketing team is planning a marketing campaign where they will call the top $x$ percent of likely clients based on based on model forecasts. _Lift_ describes the ratio of the success rate in the top $x$ percent to
 the success rate in the entire population and _hit rate_ means the fraction of marketing calls that are
 successful. A campaign that targets the top 1\% will have a much higher _lift_ than one that targets the top
 50\%, and the lift of a campaign that targets everyone will be 1. A _lift curve_ is a graph showing the _lift_ on the y-axis and the percent
@@ -68,15 +66,11 @@ Using the python 'marginaleffects' package, calculate the average marginal effec
 unknown) evaluated on the test observations within each epoch, using standard telephone as a baseline. 
 
 
-### Problem 4: Model Comparison and Refinement
+### Problem 4: Model Comparison or Refinement
 
-(a) __Refining Logistic Regression:__ Attempt to improve your model by varying the number of features or engineering new ones. For the model that you find most promising report the _lift_ and _hit rate_ for campaigns targeting the top 10\% and 
-top 50\% across all epochs. Describe the differences between this model and the one from problem 2, and determine which one performs best according to the log scoring rule.
+(a) __Improve upon the Baseline:__ Attempt to improve upon your Baseline model by either selecting different/better features for logistic regression, or using _Naive Bayes_ or _k Nearest Neighbor classification_. There are several dimensions of model performance, and you do not need to improve upon every metric, but you should be able to articulate how your new model would benefit the marketing team. For the model that you find most promising report the _lift_ and _hit rate_ for campaigns targeting the top 10\% and 
+top 50\% across all epochs. Describe the differences between this model and the one from problem 2, and determine which one performs best according to the log score across each epoch. If using Naive Bayes, be careful about how you handle the mixture of categorical and numerical features.
 
-
-(b) __Comparing to Naive Bayes or kNN:__ Repeat 4(a) with either Naive Bayes or k Nearest Neighbor classification, and compare to the
-model in 4(a). Are you able to outperform logistic regression in any epoch (compare using both the lift curve and the log scoring rule)? You do not need to outperform 4(a) to receive full points. If using Naive Bayes, be careful about
-how you handle the mixture of categorical and numerical features.
 
 ### Extra Credit (5 pts): How Has the Marketing Team Already Been Optimizing?
 
