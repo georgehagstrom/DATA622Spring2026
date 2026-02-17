@@ -12,7 +12,7 @@
 
   <meta name="author" content="George I. Hagstrom">
   <meta name="dcterms.date" content="2026-02-16">
-  <title>DATA 622 Spring 2026 – DATA 622 Meetup 3: Classification</title>
+  <title>DATA 622 Spring 2026 – DATA 622 Meetup 4: Classification</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -324,7 +324,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta property="og:title" content="DATA 622 Meetup 3: Classification – DATA 622 Spring 2026">
+<meta property="og:title" content="DATA 622 Meetup 4: Classification – DATA 622 Spring 2026">
 <meta property="og:site_name" content="DATA 622 Spring 2026">
 </head>
 <body class="quarto-light">
@@ -332,7 +332,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">DATA 622 Meetup 3: Classification</h1>
+  <h1 class="title">DATA 622 Meetup 4: Classification</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -926,8 +926,8 @@ p(y=k|\mathbf{x}) = \frac{\exp{\mathbf{w}_k\cdot\mathbf{x}}}{1 + \sum_{j=1}^{K-1
 </section>
 <section id="example-credit-data" class="slide level2">
 <h2>Example: Credit Data</h2>
-<div id="8490d453" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="8bde7ed4" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1006,8 +1006,8 @@ p(y=k|\mathbf{x}) = \frac{\exp{\mathbf{w}_k\cdot\mathbf{x}}}{1 + \sum_{j=1}^{K-1
 <img data-src="meetup-4_files/figure-revealjs/cell-5-output-1.png" class="r-stretch"></section>
 <section id="model-coefficients" class="slide level2">
 <h2>Model Coefficients</h2>
-<div id="9f588a4c" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div id="5f167e79" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1074,8 +1074,8 @@ p(y=k|\mathbf{x}) = \frac{\exp{\mathbf{w}_k\cdot\mathbf{x}}}{1 + \sum_{j=1}^{K-1
 <ul>
 <li>exponentiate coefficients to recover odds ratios</li>
 </ul>
-<div id="f479d05e" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div id="7746e588" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1145,7 +1145,7 @@ p(y=k|\mathbf{x}) = \frac{\exp{\mathbf{w}_k\cdot\mathbf{x}}}{1 + \sum_{j=1}^{K-1
 <ul>
 <li>To see how factors impact proability, decide where you want to make predictions</li>
 </ul>
-<div id="2fc9c68f" class="cell" data-execution_count="7">
+<div id="e0afd1e7" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>shape: (3, 3)
 ┌─────────┬──────────┬──────────┐
@@ -1209,7 +1209,7 @@ shape: (3, 3)
 <li>Tabular counterpart to ROC curve</li>
 <li>Displays amount of different types of errors and successes</li>
 </ul>
-<div id="5cb0af69" class="cell" data-execution_count="11">
+<div id="135ca2ee" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>Bayes Decision Rule
 
@@ -1235,7 +1235,7 @@ weighted avg       0.97      0.97      0.97      2000
 <li>Tabular counterpart to ROC curve</li>
 <li>Displays amount of different types of errors and successes</li>
 </ul>
-<div id="3b8a7070" class="cell" data-execution_count="12">
+<div id="12b5fc32" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-stdout">
 <pre><code>10% threshold
 

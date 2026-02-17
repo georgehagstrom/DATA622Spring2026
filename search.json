@@ -172,280 +172,280 @@
   {
     "objectID": "meetups/meetup-4/meetup-4.html#week-summary",
     "href": "meetups/meetup-4/meetup-4.html#week-summary",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Week Summary",
     "text": "Week Summary\n\nEssential to contact others about projects this week\n\nProposal Due in 2 Weeks.\nEach team reach out to schedule 5-10 minute meeting during March 1 week\n\nHW 3 on Classification due in 2 weeks\nCoding vignette on classification/LR"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#hw-3-summary",
     "href": "meetups/meetup-4/meetup-4.html#hw-3-summary",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "HW 3 Summary:",
     "text": "HW 3 Summary:\n\nAlways look at your figures very carefully.\nMisconception: Noise in data does not help regularize\n\nLater we will learn that noise in the algorithm can\n\nPython arrays indexed starting from 0"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#nyhackr-meetup-tomorrow",
     "href": "meetups/meetup-4/meetup-4.html#nyhackr-meetup-tomorrow",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "nyhackr meetup Tomorrow!",
     "text": "nyhackr meetup Tomorrow!"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#weather-example",
     "href": "meetups/meetup-4/meetup-4.html#weather-example",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Weather Example",
     "text": "Weather Example\n\nMeteorologist forecasts the weather"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#weather-example-1",
     "href": "meetups/meetup-4/meetup-4.html#weather-example-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Weather Example",
     "text": "Weather Example\n\nHere is an example of a potential forecast:\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\nHow would you evaluate this?"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#weather-example-2",
     "href": "meetups/meetup-4/meetup-4.html#weather-example-2",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Weather Example",
     "text": "Weather Example\n\nWhich of these two forecasts do you think is better:\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n🌧️\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#which-forecast-is-better",
     "href": "meetups/meetup-4/meetup-4.html#which-forecast-is-better",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Which forecast is better?",
     "text": "Which forecast is better?\n\nIt depends on the consequences of your decisions!\n\n\n\nRain: Take the subway, bring umbrella\nSun: Bike to work, no umbrella\nCost of getting soaked on rainy day is probably higher than inconvenience of not biking or carrying an umbrella"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#probability-as-nuance",
     "href": "meetups/meetup-4/meetup-4.html#probability-as-nuance",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Probability as Nuance",
     "text": "Probability as Nuance\n\nWhat if the forecasts were like this instead:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0.8\n0.8\n0.8\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#probability-adds-nuance",
     "href": "meetups/meetup-4/meetup-4.html#probability-adds-nuance",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Probability adds Nuance",
     "text": "Probability adds Nuance\n\nConsider a disease classification model\nPatient 1: \\(P(\\mathrm{disease}|\\mathrm{labs}) = 0.001\\)\nPatient 2: \\(P(\\mathrm{disease}|\\mathrm{labs}) = 0.15\\)\n\n\nBoth classify to “no disease”, but in patient 2 you might recommend further testing or monitoring"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#calibration-versus-relative-ranking",
     "href": "meetups/meetup-4/meetup-4.html#calibration-versus-relative-ranking",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Calibration versus Relative Ranking",
     "text": "Calibration versus Relative Ranking\n\nA model with accurate probabilities is called well calibrated\nSometimes you just need relative rankings\nWhich potential customers to call?\nWhich drug candidates to test?\nWhere to drill test wells?"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#probability-prediction-versus-classification",
     "href": "meetups/meetup-4/meetup-4.html#probability-prediction-versus-classification",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Probability Prediction Versus Classification",
     "text": "Probability Prediction Versus Classification\n\nComputer Science focuses on error:\n\n\\[\n\\frac{1}{n}\\sum_{i=1}^n I(y_i \\neq g(\\mathbf{x}_i))\n\\]\n\nStatistics focuses on probabilities:\n\n\\[\np(y|\\mathbf{x})\n\\]"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#loss-functions-for-classification",
     "href": "meetups/meetup-4/meetup-4.html#loss-functions-for-classification",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Loss Functions for Classification",
     "text": "Loss Functions for Classification\n\nClassification often works with a threshold function: \\[\ng(\\mathbf{x}) = 1\\quad\\quad \\mathrm{if}\\quad\\quad \\eta(\\mathbf{x}) &gt; 0 \\\\\ng(\\mathbf{x}) = 0\\quad\\quad \\mathrm{if}\\quad\\quad \\eta(\\mathbf{x}) &lt; 0\n\\]\nMinimizing standard error function is computationally intractable!"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#classification-error",
     "href": "meetups/meetup-4/meetup-4.html#classification-error",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Classification Error",
     "text": "Classification Error\n\nConsider this set of points:"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#classification-error-1",
     "href": "meetups/meetup-4/meetup-4.html#classification-error-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Classification Error",
     "text": "Classification Error\n\nLinear classifier, error is 2"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#classification-error-2",
     "href": "meetups/meetup-4/meetup-4.html#classification-error-2",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Classification Error",
     "text": "Classification Error\n\nAs we move line, error does not change"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#classification-error-3",
     "href": "meetups/meetup-4/meetup-4.html#classification-error-3",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Classification Error",
     "text": "Classification Error\n\nExcept for Sudden Jumps"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#surrogate-loss",
     "href": "meetups/meetup-4/meetup-4.html#surrogate-loss",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Surrogate Loss",
     "text": "Surrogate Loss\n\nLearning algorithms cannot use this discontinuous rule!\nInstead use surrogate functions which mimic the loss rule\nBased on threshold function"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#logistic-loss",
     "href": "meetups/meetup-4/meetup-4.html#logistic-loss",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Logistic loss",
     "text": "Logistic loss\n\nlogistic function \\(\\sigma\\): \\[\n\\sigma(\\eta(\\mathbf{x})) = \\frac{1}{1+e^{-\\eta(\\mathbf{x})}}\n\\]\nHere is \\(\\eta\\) is a score that could range from \\(-\\infty\\) to \\(\\infty\\)\n\\(\\sigma\\) is between 0 and 1, can interpret as a probability"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#logistic-regression",
     "href": "meetups/meetup-4/meetup-4.html#logistic-regression",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Logistic Regression",
     "text": "Logistic Regression\n\n\\(\\eta\\) is linear function of predictors: \\[\n\\eta(\\mathbf{x}) = \\sum_j w_jx_j\n\\]\nProbability that \\(y=1\\) is \\(\\sigma(\\eta(\\mathbf{x}))\\): \\[\np(y=1|\\mathbf{x}) = \\frac{1}{1+\\exp(-\\mathbf{w}\\cdot\\mathbf{x})}\n\\]"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#maximum-likelihood-for-lr",
     "href": "meetups/meetup-4/meetup-4.html#maximum-likelihood-for-lr",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Maximum Likelihood for LR",
     "text": "Maximum Likelihood for LR\n\nMinimizing logistic loss is equivalent to finding maximum likelihood\n‘log’ likelihood formula: \\[\nL(\\mathbf{w}) = \\sum_{y_i = 1} \\log(p(1|\\mathbf{x}_i)) + \\sum_{y_i=0}\\log(p(0|\\mathbf{x}_i))\n\\]"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#multinomial-logistic-regression",
     "href": "meetups/meetup-4/meetup-4.html#multinomial-logistic-regression",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Multinomial Logistic Regression",
     "text": "Multinomial Logistic Regression\n\nWhat happens if there are more than one class?\nGet weight vector \\(w_k\\) for each predictor (except last one)\n\n\\[\np(y=k|\\mathbf{x}) = \\frac{\\exp{\\mathbf{w}_k\\cdot\\mathbf{x}}}{1 + \\sum_{j=1}^{K-1} \\exp{\\mathbf{w}_j\\cdot\\mathbf{x}}}\n\\]"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#understanding-log-loss",
     "href": "meetups/meetup-4/meetup-4.html#understanding-log-loss",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Understanding ‘log’ loss",
     "text": "Understanding ‘log’ loss\n\nConsider weather examples again, interpreted as probabilities:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0.8\n0.8\n0.8\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n0.6\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n\n\n\n\n\n\nDay\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nPrediction\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n\n\nObserved\n🌧️\n🌧️\n🌧️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️\n☀️"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#understanding-log-loss-1",
     "href": "meetups/meetup-4/meetup-4.html#understanding-log-loss-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Understanding ‘log’ loss",
     "text": "Understanding ‘log’ loss\n\nMisclassification Error:\n\nFirst forecast made 7 wrong predictions\nSecond forecast made 3 wrong predictions"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#understanding-log-loss-2",
     "href": "meetups/meetup-4/meetup-4.html#understanding-log-loss-2",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Understanding ‘log’ loss",
     "text": "Understanding ‘log’ loss\n\n‘log’ loss\n\nFirst forecast: \\(3\\log(0.8) + 7\\log(0.4) = -7\\)\nSecond forecast \\(3\\log(0) + 7\\log(1) = -\\infty\\)\n\n\n\n‘log’ loss massively penalizes overconfident wrong predictions!\n\n\nIf this is a problem, consider using Brier score or some other loss function"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#example-credit-data",
     "href": "meetups/meetup-4/meetup-4.html#example-credit-data",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Example: Credit Data",
     "text": "Example: Credit Data\n\n\n\n\n\n\n\n\n\ndefault\nstudent\nbalance\nincome\n\n\n\n\n0\nNo\nNo\n729.526495\n44361.625074\n\n\n1\nNo\nYes\n817.180407\n12106.134700\n\n\n2\nNo\nNo\n1073.549164\n31767.138947\n\n\n3\nNo\nNo\n529.250605\n35704.493935\n\n\n4\nNo\nNo\n785.655883\n38463.495879"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#example-credit-data-1",
     "href": "meetups/meetup-4/meetup-4.html#example-credit-data-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Example: Credit Data",
     "text": "Example: Credit Data"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#example-credit-data-2",
     "href": "meetups/meetup-4/meetup-4.html#example-credit-data-2",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Example: Credit Data",
     "text": "Example: Credit Data"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#model-coefficients",
     "href": "meetups/meetup-4/meetup-4.html#model-coefficients",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Model Coefficients",
     "text": "Model Coefficients\n\n\n\n\n\n\n\n\n\nfeature\ncoefficient\n\n\n\n\n0\nnum__balance\n2.699375\n\n\n2\ncat__student_Yes\n-0.518437\n\n\n1\nnum__income\n0.121987\n\n\n\n\n\n\n\n\nWhat do these coefficients actually mean?"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios",
     "href": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "logit transformation to Odds Ratios",
     "text": "logit transformation to Odds Ratios\n\nlogistic regression predicts log-odds ratios of outcomes: \\[\n\\log(\\frac{p_{\\mathrm{default}}}{1-p_{\\mathrm{default}}}) = w_0 + w_1 x_1 + \\cdots w_n x_n\n\\]\nCoefficient relates feature to odds ratio\n\n\nMost people do not intuitively understand log-odds ratios, nor should they be expected to be"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios-1",
     "href": "meetups/meetup-4/meetup-4.html#logit-transformation-to-odds-ratios-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "logit transformation to Odds Ratios",
     "text": "logit transformation to Odds Ratios\n\nexponentiate coefficients to recover odds ratios\n\n\n\n\n\n\n\n\n\n\nfeature\ncoefficient\nodds_ratio\n\n\n\n\n0\nnum__balance\n2.699375\n14.870429\n\n\n2\ncat__student_Yes\n-0.518437\n0.595451\n\n\n1\nnum__income\n0.121987\n1.129739\n\n\n\n\n\n\n\n\nA 1 unit change in variable leads to a change in odds equal to the ‘odds_ratio’"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#marginal-effects",
     "href": "meetups/meetup-4/meetup-4.html#marginal-effects",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Marginal Effects",
     "text": "Marginal Effects\n\nOdds ratios are good, but probabilities are even more intuitive\nDoubling the odds ratio:\n1% to 2%\n25% to 40%\n50% to 67%\n90% to 95%"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#marginal-effects-1",
     "href": "meetups/meetup-4/meetup-4.html#marginal-effects-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Marginal Effects",
     "text": "Marginal Effects\n\nTo see how factors impact proability, decide where you want to make predictions\n\n\n\nshape: (3, 3)\n┌─────────┬──────────┬──────────┐\n│ Term    ┆ Contrast ┆ Estimate │\n│ ---     ┆ ---      ┆ ---      │\n│ str     ┆ str      ┆ str      │\n╞═════════╪══════════╪══════════╡\n│ balance ┆ dY/dX    ┆ 0.119    │\n│ income  ┆ dY/dX    ┆ 0.000202 │\n│ student ┆ Yes - No ┆ -0.0103  │\n└─────────┴──────────┴──────────┘\nshape: (3, 3)\n┌─────────┬─────────────────────┬──────────┐\n│ Term    ┆ Contrast            ┆ Estimate │\n│ ---     ┆ ---                 ┆ ---      │\n│ str     ┆ str                 ┆ str      │\n╞═════════╪═════════════════════╪══════════╡\n│ balance ┆ (x+sd/2) - (x-sd/2) ┆ 0.0613   │\n│ income  ┆ (x+sd/2) - (x-sd/2) ┆ 0.00269  │\n│ student ┆ Yes - No            ┆ -0.0103  │\n└─────────┴─────────────────────┴──────────┘"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#plot-the-probability-predictions",
     "href": "meetups/meetup-4/meetup-4.html#plot-the-probability-predictions",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Plot the Probability Predictions",
     "text": "Plot the Probability Predictions"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#probability-calibration",
     "href": "meetups/meetup-4/meetup-4.html#probability-calibration",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Probability Calibration",
     "text": "Probability Calibration"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#types-of-errors",
     "href": "meetups/meetup-4/meetup-4.html#types-of-errors",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Types of errors",
     "text": "Types of errors\n\nDefaults are very rare, Bayes decision rule predicts no defaults!\nFalse Negative: predicted no default, default happened\nFalse Positive: predicted default, no default happened"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#decision-thresholds",
     "href": "meetups/meetup-4/meetup-4.html#decision-thresholds",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Decision Thresholds",
     "text": "Decision Thresholds\n\nConsequences of mistakes can vary:\n\nPredict rain wrong you accidentally carried umbrella\nPredict sun wrong, you arrived to work soaked\n\n\n\nSolution: Bias your prediction towards the mistake that has worse consequences"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#roc-curve",
     "href": "meetups/meetup-4/meetup-4.html#roc-curve",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "ROC Curve",
     "text": "ROC Curve"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#confusion-matrix",
     "href": "meetups/meetup-4/meetup-4.html#confusion-matrix",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Confusion Matrix",
     "text": "Confusion Matrix\n\nTabular counterpart to ROC curve\nDisplays amount of different types of errors and successes\n\n\n\nBayes Decision Rule\n\n              precision    recall  f1-score   support\n\n  No Default       0.98      1.00      0.99      1933\n     Default       0.75      0.27      0.40        67\n\n    accuracy                           0.97      2000\n   macro avg       0.86      0.63      0.69      2000\nweighted avg       0.97      0.97      0.97      2000\n\n\n\n\nPrecision: If model said it, was it true?\nRecall: If it was true, did the model say it? (TPR/TNR)"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#confusion-matrix-1",
     "href": "meetups/meetup-4/meetup-4.html#confusion-matrix-1",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Confusion Matrix",
     "text": "Confusion Matrix\n\nTabular counterpart to ROC curve\nDisplays amount of different types of errors and successes\n\n\n\n10% threshold\n\n              precision    recall  f1-score   support\n\n  No Default       0.99      0.94      0.97      1933\n     Default       0.30      0.72      0.43        67\n\n    accuracy                           0.94      2000\n   macro avg       0.65      0.83      0.70      2000\nweighted avg       0.97      0.94      0.95      2000\n\n\n\n\nPrecision: If model said it, was it true?\nRecall: If it was true, did the model say it?"
   },
   {
     "objectID": "meetups/meetup-4/meetup-4.html#thanks",
     "href": "meetups/meetup-4/meetup-4.html#thanks",
-    "title": "DATA 622 Meetup 3: Classification",
+    "title": "DATA 622 Meetup 4: Classification",
     "section": "Thanks",
     "text": "Thanks\n\n\n\n\nDATA 622"
   },
@@ -847,7 +847,7 @@
     "href": "assignments/labs/lab3.html",
     "title": "Using Classification to Build a Marketing Target Model",
     "section": "",
-    "text": "Overview\nIn this lab assignment you will be exploring the Portuguese Bank Marketing Dataset, which consists of data on the outcomes of marketing calls to bank clients offering them a term deposit. A term deposit is a fixed term deposit with the bank that returns the principal plus interest at the end of the pre-defined term period. The objective of this assignment is to apply classification models to make suggestions to the marketing team.\nThe dataset can be found at the following link: bank_marketing_dataset.csv. This dataset is a standard benchmark for classification in the ML community, see the UCI Machine Learning Repository page, and this introductory paper: A data driven approach to predict the success of bank telemarketing. The specific dataset used for this assignment has some subtle differences to those available at the ‘UCI Page’. The data is described on the course website at bank_marketing_dictionary.qmd.\n\n\nProblem 1: What Can Machine Learning Do?\n\nPut yourself in the shoes of a marketer working at this bank whose objective is to use the results of a machine learning analysis on this dataset to increase the profitability of future marketing campaigns. What are some ways that you could see machine learning helping you? (1-2 paragraphs max)\nThis dataset has been analyzed extensively by many different people. kaggle.com is a machine learning community that shares datasets, analysis methods, and hosts competitions. The most upvoted analysis notebook on kaggle for the Bank Marketing dataset (see: https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit) has a glaring flaw that makes it useless in practice. Examine the analysis and determine the flaw. Your answer should be short. Hint: Take a careful look at all the variables used, or look for people complaining about it in the comments.\n\n\n\nProblem 2: EDA and Baseline Model\n\nEDA and Temporal Patterns: Take a quick look at the initial distribution of the data, and perform a train-test split. Justify your choice of whether to stratify your split or not and if so by which variable (consider reading the rest of the question before deciding). Are there any additional variables that need to be added or recoded? Describe the most important relationships that you uncovered between the predictors and the target and show the visualizations you made specifically to support those conclusions. Pay particular attention to temporal variations in addition to correlation with the target: how did the success rate of the marketing campaign and the composition of the target population vary over time? Which variables (and related real world events) explain the temporal pattern?\nBaseline Model and Data Drift: The temporal variation in the dataset necessitates a careful approach to model evaluation. Explain (in one paragraph) why temporal variation in the data could cause model performance metrics evaluated on the entire testing split to mismatch the real-time experiences of the marketing team. The standard way to approach this is to train and test your model against a ‘rolling window’ of observations, mimicking how the model would be used and updated in the real world. I suggest taking a simpler approach (due to dramatic changes in the amount of data in different time periods): using the variables identified as causing the temporal patterns in 2(a), divide the data into 3 to 4 epochs (you could use pd.cut on a suitable variable). Train the model on the full training split from 2(a), but divide the test splits by the epochs and test model performance separately on the subset of the testing split corresponding to each epoch. This should tell you how the model would perform in different types of conditions.\n\nImplement this plan by creating a baseline logistic regression model, embedding all of the data cleaning, processing, transformation, and model fitting steps into a sklearn pipeline. Select variables based on what you observed to be important in the EDA, but avoid using temporal predictors (‘month_numeric’, ‘day’, ‘year’) or any predictor that could not be used to make a decision on who to call. For each testing epoch, report the overall error rate, precision, recall, and f1-score, and also make note of the overall success rate of the campaign during that epoch for comparison. For each epoch, plot the ROC curve and the probability calibration curve. What do you notice about the difference in model performance in different periods? Test the model on the entire testing set and report how the results compare to the individual epochs.\n\nLift Curves and Hit Rates: Your marketing team is planning a marketing campaign where they will call the top \\(x\\) percent of likely clients based on based on model forecasts. Lift describes the ratio of the success rate in the top \\(x\\) percent to the success rate in the entire population and hit rate means the fraction of marketing calls that are successful. A campaign that targets the top 1% will have a much higher lift than one that targets the top 50%, and the lift of a campaign that targets everyone will be 1. A lift curve is a graph showing the lift on the y-axis and the percent targeted on the x-axis. Lift curves and hit rates are essential tools used to estimate the return on investment of a campaign. Estimate the lift on the testing set corresponding to each epoch by sorting the testing examples in descending order of predicted probability and then calculating the fraction of successful conversions in the top \\(x\\) percent and dividing by the total number of successful conversions in the testing set. Make a plot of the lift curve using your baseline model for each epoch and report the lift and hit rate for campaigns that target the top 10% and top 50% of potential customers.\n\n\n\nProblem 3: Model Interpretation\n\nOdds Ratios: Logistic Regression coefficients are difficult to interpret. Extract the coefficients and transform them into odds ratios. According to your model, what are the predictors that have the largest positive impact on campaign success, and what are the predictors with the largest negative impact?\nMarginal Effects: Changes in predicted probabilities are easier to interpret than odds ratios. Using the python ‘marginaleffects’ package, calculate the average marginal effect of the contact method (cellphone versus regular telephone versus unknown) evaluated on the test observations within each epoch, using standard telephone as a baseline.\n\n\n\nProblem 4: Model Comparison and Refinement\n\nRefining Logistic Regression: Attempt to improve your model by varying the number of features or engineering new ones. For the model that you find most promising report the lift and hit rate for campaigns targeting the top 10% and top 50% across all epochs. Describe the differences between this model and the one from problem 2, and determine which one performs best according to the log scoring rule.\nComparing to Naive Bayes or kNN: Repeat 4(a) with either Naive Bayes or k Nearest Neighbor classification, and compare to the model in 4(a). Are you able to outperform logistic regression in any epoch (compare using both the lift curve and the log scoring rule)? You do not need to outperform 4(a) to receive full points. If using Naive Bayes, be careful about how you handle the mixture of categorical and numerical features.\n\n\n\nExtra Credit (5 pts): How Has the Marketing Team Already Been Optimizing?\nUnderstanding the data generating process is vital for modeling. This marketing dataset is not a random sample of the bank’s customers. Marketers may already be using a model or their own expertise to select which customers to call. This could lead to selection bias, where segments of the population are not represented in the dataset. As the marketing campaign progressed, the marketing team may also have gained knowledge about the most effective practices, which could explain some of the temporal anomalies. Can you find evidence for this in any of the variables in the dataset? Note: there is a trade-off between exploration (getting data to improve the model accuracy) and exploitation (making calls to optimize the number of term deposits the bank sells). This trade-off is often referred to as a ‘multi-armed bandit’ problem, see https://en.wikipedia.org/wiki/Multi-armed_bandit."
+    "text": "Overview\nIn this lab assignment you will be exploring the Portuguese Bank Marketing Dataset, which consists of data on the outcomes of marketing calls to bank clients offering them a term deposit. A term deposit is a fixed term deposit with the bank that returns the principal plus interest at the end of the pre-defined term period. The objective of this assignment is to apply classification models to make suggestions to the marketing team.\nThe dataset can be found at the following link: bank_marketing_dataset.csv. This dataset is a standard benchmark for classification in the ML community, see the UCI Machine Learning Repository page, and this introductory paper: A data driven approach to predict the success of bank telemarketing. The specific dataset used for this assignment has some subtle differences to those available at the ‘UCI Page’. The data is described on the course website at bank_marketing_dictionary.qmd.\n\n\nProblem 1: What Can Machine Learning Do?\n\nThis dataset has been analyzed extensively by many different people. kaggle.com is a machine learning community that shares datasets, analysis methods, and hosts competitions. The most upvoted analysis notebook on kaggle for the Bank Marketing dataset (see: https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit) has a glaring flaw that makes it useless in practice. Examine the analysis and determine the flaw. Your answer should be short. Hint: Take a careful look at all the variables used, or look for people complaining about it in the comments.\n\n\n\nProblem 2: EDA and Baseline Model\n\nEDA and Temporal Patterns: Take a quick look at the initial distribution of the data, and perform a train-test split. Justify your choice of whether to stratify your split or not and if so by which variable (consider reading the rest of the question before deciding). Are there any additional variables that need to be added or recoded? Describe the most important relationships that you uncovered between the predictors and the target and show the visualizations you made specifically to support those conclusions. Pay particular attention to temporal variations in addition to correlation with the target: how did the success rate of the marketing campaign and the composition of the target population vary over time? Which variables (and related real world events) explain the temporal pattern?\nBaseline Model and Data Drift: The temporal variation in the dataset necessitates a careful approach to model evaluation. Explain (in one paragraph) why temporal variation in the data could cause model performance metrics evaluated on the entire testing split to mismatch the real-time experiences of the marketing team.\n\nThe standard way to approach this is to train and test your model against a ‘rolling window’ of observations, mimicking how the model would be used and updated in the real world. I suggest taking a simpler approach (due to dramatic changes in the amount of data in different time periods): using the variables identified as causing the temporal patterns in 2(a), divide the data into 3 to 4 epochs (you could use pd.cut on a suitable variable). Train the model on the full training split from 2(a), but divide the test splits by the epochs and test model performance separately on the subset of the testing split corresponding to each epoch. This should tell you how the model would perform in different types of conditions.\n\nImplement this plan by creating a baseline logistic regression model, either through ‘statsmodels’ or ‘sklearn’ (I recommend building your preprocessing steps and fitting steps into a pipeline). Select variables based on what you observed to be important in the EDA, but avoid using temporal predictors (‘month_numeric’, ‘day’, ‘year’) or any predictor that could not be used to make a decision on who to call. For each testing epoch, report the overall error rate and the overall success rate of the campaign during that epoch for context and comparison. For each epoch, plot the ROC curve and the probability calibration curve. What do you notice about the difference in model performance in different periods? Test the model on the entire testing set and report how the results compare to the individual epochs.\nLift Curves and Hit Rates: Your marketing team is planning a marketing campaign where they will call the top \\(x\\) percent of likely clients based on based on model forecasts. Lift describes the ratio of the success rate in the top \\(x\\) percent to the success rate in the entire population and hit rate means the fraction of marketing calls that are successful. A campaign that targets the top 1% will have a much higher lift than one that targets the top 50%, and the lift of a campaign that targets everyone will be 1. A lift curve is a graph showing the lift on the y-axis and the percent targeted on the x-axis. Lift curves and hit rates are essential tools used to estimate the return on investment of a campaign. Estimate the lift on the testing set corresponding to each epoch by sorting the testing examples in descending order of predicted probability and then calculating the fraction of successful conversions in the top \\(x\\) percent and dividing by the total number of successful conversions in the testing set. Make a plot of the lift curve using your baseline model for each epoch and report the lift and hit rate for campaigns that target the top 10% and top 50% of potential customers.\n\n\n\nProblem 3: Model Interpretation\n\nOdds Ratios: Logistic Regression coefficients are difficult to interpret. Extract the coefficients and transform them into odds ratios. According to your model, what are the predictors that have the largest positive impact on campaign success, and what are the predictors with the largest negative impact?\nMarginal Effects: Changes in predicted probabilities are easier to interpret than odds ratios. Using the python ‘marginaleffects’ package, calculate the average marginal effect of the contact method (cellphone versus regular telephone versus unknown) evaluated on the test observations within each epoch, using standard telephone as a baseline.\n\n\n\nProblem 4: Model Comparison or Refinement\n\nImprove upon the Baseline: Attempt to improve upon your Baseline model by either selecting different/better features for logistic regression, or using Naive Bayes or k Nearest Neighbor classification. There are several dimensions of model performance, and you do not need to improve upon every metric, but you should be able to articulate how your new model would benefit the marketing team. For the model that you find most promising report the lift and hit rate for campaigns targeting the top 10% and top 50% across all epochs. Describe the differences between this model and the one from problem 2, and determine which one performs best according to the log score across each epoch. If using Naive Bayes, be careful about how you handle the mixture of categorical and numerical features.\n\n\n\nExtra Credit (5 pts): How Has the Marketing Team Already Been Optimizing?\nUnderstanding the data generating process is vital for modeling. This marketing dataset is not a random sample of the bank’s customers. Marketers may already be using a model or their own expertise to select which customers to call. This could lead to selection bias, where segments of the population are not represented in the dataset. As the marketing campaign progressed, the marketing team may also have gained knowledge about the most effective practices, which could explain some of the temporal anomalies. Can you find evidence for this in any of the variables in the dataset? Note: there is a trade-off between exploration (getting data to improve the model accuracy) and exploitation (making calls to optimize the number of term deposits the bank sells). This trade-off is often referred to as a ‘multi-armed bandit’ problem, see https://en.wikipedia.org/wiki/Multi-armed_bandit."
   },
   {
     "objectID": "assignments/labs/lab8.html",
