@@ -720,7 +720,7 @@
     "href": "meetups/meetup-5/meetup-5.html#two-stage-model",
     "title": "DATA 622 Meetup 5: Naive Bayes and Classification Metrics",
     "section": "Two Stage Model",
-    "text": "Two Stage Model\n\nlogistic regression for \\(y=0\\): \\[\np(y=0|\\mathbf{x}) = \\frac{1}{1 + \\exp(\\sum_{j=0}^p \\beta_j x_j)}\n\\]\nlog-linear regression for \\(y&gt;0\\) \\[\np(\\log(y)|\\mathbf{x}) = (1-p(y=0|\\mathbf{x}))\\cdot\\mathrm{normal}\\left(\\sum_{j=0}^p w_jx_j - \\log(y)\\right,\\sigma^2)\n\\]"
+    "text": "Two Stage Model\n\nlogistic regression for \\(y=0\\): \\[\np(y=0|\\mathbf{x}) = \\frac{1}{1 + \\exp(\\sum_{j=0}^p \\beta_j x_j)}\n\\]\nlog-linear regression for \\(y&gt;0\\) \\[\np(\\log(y)|\\mathbf{x},y&gt;0) \\sim \\mathrm{normal}\\left(\\sum_{j=0}^p w_jx_j,\\sigma^2\\right)\n\\]"
   },
   {
     "objectID": "meetups/meetup-5/meetup-5.html#what-if-the-zeros-are-caused-by-an-important-unobserved-variable",
@@ -730,11 +730,11 @@
     "text": "What if the zeros are caused by an important unobserved variable\n\neg a health condition that effects low wage workers more than high wage workers\n2000 Nobel Prize in Econ for Heckman Correction\nVery generic and powerful technique, applies more broadly"
   },
   {
-    "objectID": "meetups/meetup-5/meetup-5.html#forwardbackward-selection-or-something-else",
-    "href": "meetups/meetup-5/meetup-5.html#forwardbackward-selection-or-something-else",
+    "objectID": "meetups/meetup-5/meetup-5.html#forwardbackward-selection",
+    "href": "meetups/meetup-5/meetup-5.html#forwardbackward-selection",
     "title": "DATA 622 Meetup 5: Naive Bayes and Classification Metrics",
-    "section": "Forward/Backward Selection, or Something Else?",
-    "text": "Forward/Backward Selection, or Something Else?\n\nCan get stuck in a local minimum\nBest: Use expert knowledge a design few models\nNever use it for inference"
+    "section": "Forward/Backward Selection?",
+    "text": "Forward/Backward Selection?\n\nCan get stuck in a local minimum\nBest: Use expert knowledge a design few models\nNever use it for inference"
   },
   {
     "objectID": "meetups/meetup-5/meetup-5.html#types-of-errors",
@@ -748,7 +748,7 @@
     "href": "meetups/meetup-5/meetup-5.html#decision-thresholds",
     "title": "DATA 622 Meetup 5: Naive Bayes and Classification Metrics",
     "section": "Decision Thresholds",
-    "text": "Decision Thresholds\n\nConsequences of mistakes can vary:\n\nPredict rain wrong you accidentally carried umbrella\nPredict sun wrong, you arrived to work soaked\n\n\n\nSolution: Bias your prediction towards the mistake that has worse consequences"
+    "text": "Decision Thresholds\n\nConsequences of mistakes can vary:\n\nPredict rain wrong you accidentally carried umbrella\nPredict sun wrong, you arrived to work soaked\n\n\n\nSolution: Bias your prediction away from the mistake that has worse consequences"
   },
   {
     "objectID": "meetups/meetup-5/meetup-5.html#roc-curve",
@@ -1094,6 +1094,34 @@
     "text": "Variables\n\n\n\nVariable\nRole\nType\nDescription\n\n\n\n\nage\nFeature\nInteger\nClient age in years\n\n\njob\nFeature\nCategorical\nOccupation type (admin, blue-collar, entrepreneur, housemaid, management, retired, self-employed, services, student, technician, unemployed, unknown)\n\n\nmarital\nFeature\nCategorical\nMarital status (married, divorced, single). Divorced includes widowed\n\n\neducation\nFeature\nCategorical\nEducation level (primary, secondary, tertiary, unknown)\n\n\ndefault\nFeature\nBinary\nHas credit in default?\n\n\nbalance\nFeature\nInteger\nAverage yearly balance in euros\n\n\nhousing\nFeature\nBinary\nHas housing loan?\n\n\nloan\nFeature\nBinary\nHas personal loan?\n\n\ncontact\nFeature\nCategorical\nContact communication type (cellular, telephone, unknown)\n\n\nmonth\nFeature\nCategorical\nLast contact month of year\n\n\nday\nFeature\nInteger\nDay of call\n\n\nduration\nFeature\nInteger\nDuration of marketing call\n\n\ncampaign\nFeature\nInteger\nNumber of contacts during this campaign for this client\n\n\npdays\nFeature\nInteger\nDays since last contact from a previous campaign. -1 means not previously contacted\n\n\nprevious\nFeature\nInteger\nNumber of contacts before this campaign for this client\n\n\npoutcome\nFeature\nCategorical\nOutcome of previous marketing campaign (unknown, failure, other, success)\n\n\nmonth_numeric\nFeature\nInteger\nMonth of the call\n\n\nyear\nFeature\nInteger\nYear of the call\n\n\neuribor3m\nFeature\nNumeric\nEuribor 3-month rate — daily indicator\n\n\nemp.var.rate\nFeature\nNumeric\nEmployment variation rate in Portugal, change in unemployment rate from one quarter to the next — quarterly indicator\n\n\nnr.employed\nFeature\nNumeric\nNumber of employees in Portugal — quarterly indicator (thousands)\n\n\ncons.price.idx\nFeature\nNumeric\nConsumer price index in Portugal — monthly indicator\n\n\ncons.conf.idx\nFeature\nNumeric\nConsumer confidence index in Portugal — monthly indicator\n\n\ny\nTarget\nBinary\nHas the client subscribed a term deposit?"
   },
   {
+    "objectID": "assignments/labs/lab3_alt.html",
+    "href": "assignments/labs/lab3_alt.html",
+    "title": "Using Classification to Build a Marketing Target Model",
+    "section": "",
+    "text": "Overview\nIn this lab assignment you will be exploring the Portuguese Bank Marketing Dataset, which consists of data on the outcomes of marketing calls to bank clients offering them a term deposit. A term deposit is a fixed term deposit with the bank that returns the principal plus interest at the end of the pre-defined term period. The objective of this assignment is to apply classification models to make suggestions to the marketing team.\nThe dataset can be found at the following link: bank_marketing_dataset.csv. This dataset is a standard benchmark for classification in the ML community, see the UCI Machine Learning Repository page, and this introductory paper: A data driven approach to predict the success of bank telemarketing. The specific dataset used for this assignment has some subtle differences to those available at the ‘UCI Page’. The data is described on the course website at bank_marketing_dictionary.qmd.\n\n\nProblem 1: What Can Machine Learning Do?\n\nThis dataset has been analyzed extensively by many different people. kaggle.com is a machine learning community that shares datasets, analysis methods, and hosts competitions. The most upvoted analysis notebook on kaggle for the Bank Marketing dataset (see: https://www.kaggle.com/code/janiobachmann/bank-marketing-campaign-opening-a-term-deposit) has a glaring flaw that makes it useless in practice. Examine the analysis and determine the flaw. Your answer should be short. Hint: Take a careful look at all the variables used, or look for people complaining about it in the comments.\n\n\n\nProblem 2: EDA and Baseline Model\n\nEDA and Temporal Patterns: Take a quick look at the initial distribution of the data, and perform a train-test split. Justify your choice of whether to stratify your split or not and if so by which variable (consider reading the rest of the question before deciding). Are there any additional variables that need to be added or recoded? Describe the most important relationships that you uncovered between the predictors and the target and show the visualizations you made specifically to support those conclusions. Pay particular attention to temporal variations in addition to correlation with the target: how did the success rate of the marketing campaign and the composition of the target population vary over time? Which variables (and related real world events) explain the temporal pattern?\nBaseline Model and Data Drift: The temporal variation in the dataset necessitates a careful approach to model evaluation. Explain (in one paragraph) why temporal variation in the data could cause model performance metrics evaluated on the entire testing split to mismatch the real-time experiences of the marketing team.\n\nThe standard way to approach this is to train and test your model against a ‘rolling window’ of observations, mimicking how the model would be used and updated in the real world. I suggest taking a simpler approach (due to dramatic changes in the amount of data in different time periods): using the variables identified as causing the temporal patterns in 2(a), divide the data into 3 to 4 epochs (you could use pd.cut on a suitable variable). Train the model on the full training split from 2(a), but divide the test splits by the epochs and test model performance separately on the subset of the testing split corresponding to each epoch. This should tell you how the model would perform in different types of conditions.\n\nImplement this plan by creating a baseline logistic regression model, either through ‘statsmodels’ or ‘sklearn’ (I recommend building your preprocessing steps and fitting steps into a pipeline). Select variables based on what you observed to be important in the EDA, but avoid using temporal predictors (‘month_numeric’, ‘day’, ‘year’) or any predictor that could not be used to make a decision on who to call. For each testing epoch, report the overall error rate and the overall success rate of the campaign during that epoch for context and comparison. For each epoch, plot the ROC curve and the probability calibration curve. What do you notice about the difference in model performance in different periods? Test the model on the entire testing set and report how the results compare to the individual epochs.\nLift Curves and Hit Rates: Your marketing team is planning a marketing campaign where they will call the top \\(x\\) percent of likely clients based on based on model forecasts. Lift describes the ratio of the success rate in the top \\(x\\) percent to the success rate in the entire population and hit rate means the fraction of marketing calls that are successful. A campaign that targets the top 1% will have a much higher lift than one that targets the top 50%, and the lift of a campaign that targets everyone will be 1. A lift curve is a graph showing the lift on the y-axis and the percent targeted on the x-axis. Lift curves and hit rates are essential tools used to estimate the return on investment of a campaign. Estimate the lift on the testing set corresponding to each epoch by sorting the testing examples in descending order of predicted probability and then calculating the fraction of successful conversions in the top \\(x\\) percent and dividing by the total number of successful conversions in the testing set. Make a plot of the lift curve using your baseline model for each epoch and report the lift and hit rate for campaigns that target the top 10% and top 50% of potential customers.\n\n\n\nExtra Credit (5 pts): How Has the Marketing Team Already Been Optimizing?\nUnderstanding the data generating process is vital for modeling. This marketing dataset is not a random sample of the bank’s customers. Marketers may already be using a model or their own expertise to select which customers to call. This could lead to selection bias, where segments of the population are not represented in the dataset. As the marketing campaign progressed, the marketing team may also have gained knowledge about the most effective practices, which could explain some of the temporal anomalies. Can you find evidence for this in any of the variables in the dataset? Note: there is a trade-off between exploration (getting data to improve the model accuracy) and exploitation (making calls to optimize the number of term deposits the bank sells). This trade-off is often referred to as a ‘multi-armed bandit’ problem, see https://en.wikipedia.org/wiki/Multi-armed_bandit."
+  },
+  {
+    "objectID": "assignments/labs.html",
+    "href": "assignments/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nBias-Variance Tradeoff (Template)\n\n\nThe Linear Model (Template)\n\n\nClassification (Template)\n\n\nRegularization and Generalization (Template)\n\n\nTrees and Ensembles (Template)\n\n\nCausal Inference (Template)\n\n\nNeural Networks and Deep Learning (Template)\n\n\nUnsupervised Learning and Pre-Trained Models (Template)",
+    "crumbs": [
+      "Assignments",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5 Info: Generative Classifiers\n\n\n\n\n\nClick here for info on Week 5\n\n\n\n\n\nFeb 22, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nClassification on the Titanic using sklearn\n\n\n\n\n\nClick here to watch a video on fitting and evaluating logistic regression models on the Titanic dataset using ‘sklearn’\n\n\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Info: Classification\n\n\n\n\n\nClick here for info on Week 4\n\n\n\n\n\nFeb 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Regression in statsmodels\n\n\n\n\n\nClick here to watch a video on fitting linear regression models in ‘statsmodels’\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2 Updated\n\n\n\n\n\nClick Here to read about lab 2 changes\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Info: The Linear Model\n\n\n\n\n\nClick here for info on Week 3\n\n\n\n\n\nFeb 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nML Pipelines in sklearn\n\n\n\n\n\nClick here to watch three videos on building a full machine learning pipeline in sklearn\n\n\n\n\n\nFeb 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Info: Generalization and the Bias-Variance Trade-Off\n\n\n\n\n\nClick here for info on Week 2\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPython Environments and Packages\n\n\n\n\n\nClick here to watch a video about python environments and packages\n\n\n\n\n\nJan 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1 Tonight and Slides\n\n\n\n\n\nClick here to download slides for Meetup 1.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 622\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nJan 25, 2026\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Announcements"
+    ]
+  },
+  {
     "objectID": "assignments/project.html",
     "href": "assignments/project.html",
     "title": "Data Project",
@@ -1113,27 +1141,6 @@
     "crumbs": [
       "Assignments",
       "Project"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Be sure to check this page regularly for updates. In addition to periodic updates about the course, slides and recordings of the weekly meetups will be posted here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5 Info: Generative Classifiers\n\n\n\n\n\nClick here for info on Week 5\n\n\n\n\n\nFeb 22, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nClassification on the Titanic using sklearn\n\n\n\n\n\nClick here to watch a video on fitting and evaluating logistic regression models on the Titanic dataset using ‘sklearn’\n\n\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Info: Classification\n\n\n\n\n\nClick here for info on Week 4\n\n\n\n\n\nFeb 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Regression in statsmodels\n\n\n\n\n\nClick here to watch a video on fitting linear regression models in ‘statsmodels’\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2 Updated\n\n\n\n\n\nClick Here to read about lab 2 changes\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Info: The Linear Model\n\n\n\n\n\nClick here for info on Week 3\n\n\n\n\n\nFeb 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nML Pipelines in sklearn\n\n\n\n\n\nClick here to watch three videos on building a full machine learning pipeline in sklearn\n\n\n\n\n\nFeb 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Info: Generalization and the Bias-Variance Trade-Off\n\n\n\n\n\nClick here for info on Week 2\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPython Environments and Packages\n\n\n\n\n\nClick here to watch a video about python environments and packages\n\n\n\n\n\nJan 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMeetup 1 Tonight and Slides\n\n\n\n\n\nClick here to download slides for Meetup 1.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to DATA 622\n\n\n\n\n\nImportant information on how to get started with this course. Click this post now for instructions on getting started.\n\n\n\n\n\nJan 25, 2026\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Announcements"
-    ]
-  },
-  {
-    "objectID": "assignments/labs.html",
-    "href": "assignments/labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "The primary homework assignments in this course are lab assignments where you will use R and occassionally other software to acquire, explore, wrangle, and manage different data sets. Please submit a PDF (preferred) or HTML file along with your qmd file. Labs should be submitted on Blackboard.\n\n\nBias-Variance Tradeoff (Template)\n\n\nThe Linear Model (Template)\n\n\nClassification (Template)\n\n\nRegularization and Generalization (Template)\n\n\nTrees and Ensembles (Template)\n\n\nCausal Inference (Template)\n\n\nNeural Networks and Deep Learning (Template)\n\n\nUnsupervised Learning and Pre-Trained Models (Template)",
-    "crumbs": [
-      "Assignments",
-      "Labs"
     ]
   },
   {
@@ -2542,7 +2549,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\n\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\n\n\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
