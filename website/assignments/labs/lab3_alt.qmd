@@ -55,22 +55,6 @@ by the total number of successful conversions in the testing set. Make a plot of
 and report the lift and hit rate for campaigns that target the top 10\% and top 50\% of potential customers. 
 
 
-### Problem 3: Model Interpretation
-
-(a) __Odds Ratios:__ Logistic Regression coefficients are difficult to interpret. Extract the coefficients and transform them
-into odds ratios. According to your model, what are the predictors that have the largest positive impact on campaign success, and what are the predictors with
-the largest negative impact?
-
-(b) __Marginal Effects:__ Changes in predicted probabilities are easier to interpret than odds ratios.
-Using the python 'marginaleffects' package, calculate the average marginal effect of the contact method (cellphone versus regular telephone versus 
-unknown) evaluated on the test observations within each epoch, using standard telephone as a baseline. 
-
-
-### Problem 4: Model Comparison or Refinement
-
-(a) __Improve upon the Baseline:__ Attempt to improve upon your Baseline model by either selecting different/better features for logistic regression, or using _Naive Bayes_ or _k Nearest Neighbor classification_. There are several dimensions of model performance, and you do not need to improve upon every metric, but you should be able to articulate how your new model would benefit the marketing team. For the model that you find most promising report the _lift_ and _hit rate_ for campaigns targeting the top 10\% and 
-top 50\% across all epochs. Describe the differences between this model and the one from problem 2, and determine which one performs best according to the log score across each epoch. If using Naive Bayes, be careful about how you handle the mixture of categorical and numerical features.
-
 
 ### Extra Credit (5 pts): How Has the Marketing Team Already Been Optimizing?
 
