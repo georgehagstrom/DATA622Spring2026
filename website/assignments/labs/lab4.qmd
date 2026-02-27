@@ -14,7 +14,7 @@ import pandas as pd
 
 Complete this assignment by answering the following questions using code, text descriptions, and mathematics in a quarto markdown document. Render your .qmd to a pdf and submit both the qmd and pdf files on brightspace.
 
-In this lab you are going to be using resampling techiniques (cross-validation and the bootstrap) along with regularization 
+In this lab you are going to be using resampling techniques (cross-validation and the bootstrap) along with regularization 
 (ridge regression and the lasso) to rank basketball players based on their performance during the 2022 NBA season. To get the most out
 of this lab, you do not need to be an expert on the NBA, but you do need to pay attention to the following background information.
 
@@ -28,18 +28,18 @@ players on a team contribute to these individual statistics.
 The goal of capturing these more abstract contributions to success has led to the concept of "plus-minus", which looks at how the presence
 or absence of a player on the court correlates with the scoring margin of the team. The idea is to model what happens in a basketball
 game by assigning each player on both teams a "coefficient", which will be called 'RAPM' during this homework assignment. 'RAPM' stands for
-Regularized Ajusted Plus Minus, and it measures the contribution of each player to the expected point differential between
-the two teams. A player with a RAPM of 3 is expected to add 3 points to their team's net performance for every 100 posessions of a basketball game (a possession is defined as a period of the game where a single team has control of the ball, games consist of a series of alternating possessions and there are usually about 200 possessions in a game, 100 per team). 
+Regularized Adjusted Plus Minus, and it measures the contribution of each player to the expected point differential between
+the two teams. A player with a RAPM of 3 is expected to add 3 points to their team's net performance for every 100 possessions of a basketball game (a possession is defined as a period of the game where a single team has control of the ball, games consist of a series of alternating possessions and there are usually about 200 possessions in a game, 100 per team). 
 
 Suppose that two teams are playing against each other, and that the 'lineups' of the two teams stay the same for a certain number of possessions, call it 'num_pos'. This period of time with constant lineups is called a 'stint', and we can model the probability distribution
-for the point margin in the 'stint' using the following formula:
+for the point 'margin' (defined as $(\mathrm{points\_home} - \mathrm{points\_road})\cdot \frac{100}{\mathrm{n\_pos}}$ ) in the 'stint' using the following formula:
 
 $$
-\frac{\mathrm{Point_Diff}_i\cdot\mathrm{num\_pos}_i}{100} ~ \mathrm{Normal}\left(\sum_{i} c_i\left(\mathrm{RAPM}\right)_i, \sigma^2 \right)
+\mathrm{margin}_i \sim \mathrm{Normal}\left(\sum_{j} c_{ij}\left(\mathrm{RAPM}\right)_j, \sigma^2 \right)
 $$
 
 
-Here, the sum is over all the different players in the dataset, and the coefficient $c_i$ is +1 if that player was on the court during the stint and playing for the 'home' team, and -1 is they were on the court for the 'road' team. The coefficient is $0$ otherwise. The 'home' team and 'road' team distinction allows us to use the same data for players who were playing against each-other.
+Here, the sum is over all the different players in the dataset, and the coefficient $c_{ij}$ is +1 if that player $j$ was on the court during stint $i$ and playing for the 'home' team, and -1 if they were on the court for the 'road' team. The coefficient is $0$ otherwise. The 'home' team and 'road' team distinction allows us to use the same data for players who were playing against each-other. The 'margin' variable is the point differential during the stint normalized to points per 100 possessions.
 
 The dataset to fit this model is contained in [nba_stint_data.csv](https://github.com/georgehagstrom/DATA622Spring2026/blob/main/website/assignments/labs/labData/nba_stint_data.csv). Let's take a look at it:
 
@@ -52,8 +52,7 @@ nba_stints.head(10)
 ```
 
 Here you can see that each row corresponds to a stint where the players on the court didn't change. The 'n_pos' variable is the number
-of possessions that took place during that stint. The 'home_points' and 'away_points' are the number of points scored by the home and away teams respectively. The 'minutes' describes how long in minutes the stint lasted, and the 'margin' is the target variable, defined as
-$ (\mathrm{home\_points}-\mathrm{away\_points})\cdot\mathrm{num\_pos}/100$. The features in column 7 onwards are labeled by player ids, 
+of possessions that took place during that stint. The 'home_points' and 'away_points' are the number of points scored by the home and away teams respectively. The 'minutes' describes how long in minutes the stint lasted, and the 'margin' is the target variable (defined earlier). The features in column 7 onwards are labeled by player ids, 
 and the value in each cell corresponds to the $c_i$ values for that stint (whether the player was on the court for the home team, road team, or neither). You can recover the identity of the players from the ['player_id']("https://raw.githubusercontent.com/georgehagstrom/DATA622Spring2026/main/website/assignments/labs/labData/player_id.csv") file. 
 
 In the following lab you will be exploring different ways of calculating the the 'RAPM' model coefficients and interpreting them in terms 
@@ -65,14 +64,14 @@ of player skill.
 
 (a) __Ordinary Linear Regression:__  Use ordinary linear regression to fit the model described in the overview. Use cross-validation to
 estimate the out of sample root mean squared error and compare it to the in sample error, you may use 'RidgeCV' with $alpha=1e-8$ to keep
-consistency with the rest of the assignment, or use 'LinearRegression'. Make sure 'fit_intercept=True', the intercept corresponds to the home court advantage. Does the difference between in-sample and cross-validated mean squared error suggest a major problem with overfitting?
+consistency with the rest of the assignment, or use 'LinearRegression'. Make sure 'fit_intercept=True', the intercept corresponds to the home court advantage, and do not use 'sample_weight'. Does the difference between in-sample and cross-validated mean squared error suggest a major problem with overfitting?
 
 (b) __Examining 'RAPM' Coefficients:__ Create a dataframe with the player-ids, the RAPM coefficients, and join it with the player names (from the data file shared earlier). Use the stint matrix to calculate the number of minutes that each player played ('minutes' variable)
 and add that to the data frame too. Sort the players in descending order by 'RAPM' and print the top 20 players by 'RAPM'. What do you notice about their minutes played? Look up the names of a few of the top players on the internet- are they regarded as top NBA players?
 Make a scatter plot of 'RAPM' versus minutes-played.
 
 (c) __Ridge Regression RAPM:__ The results of (b) suggest that the model is attaching extreme values of 'RAPM' to low minute players, something which can be potentially fixed with regularization. Define a vector of regularization parameters 'alpha' on a logarithmic scale between $10^{-2}$ and $10^{5}$ (look up 'np.logspace'). Make this vector contain at least 10 but not more than 200 values of 'alpha' (pick based on
-how fast your comptuer is). Use 'RidgeCV' to fit a ridge regression model, selecting the model with the best value of the hyperparameters.
+how fast your computer is). Use 'RidgeCV' to fit a ridge regression model, selecting the model with the best value of the hyperparameters.
 What value of 'alpha' is optimal? Next repeat the same calculation as you did in part (b) (you could create a function or just copy the dataframe and replace the old 'RAPM' with new 'RAPM'). Look up some of the top players that your model identified, are they well regarded by the NBA? Make a scatterplot of 'RAPM' versus minutes played.
 
 
@@ -87,15 +86,15 @@ This involves adjusting the error term for each stint based on a weight that acc
 weighted model looks like this:
 
 $$
-\mathrm{margin}_i ~ \mathrm{Normal}\left(\sum_{i} c_i\left(\mathrm{RAPM}\right)_i, \frac{\sigma^2}{w_i} \right)
+\mathrm{margin}_i \sim \mathrm{Normal}\left(\sum_{j} c_{ij}\left(\mathrm{RAPM}\right)_j, \frac{\sigma^2}{w_i} \right)
 $$
 
 where $w_i$ is a coefficient that determines how the variance of 'margin' should scale for each stint. The idea is that $w_i$ should
 be smaller for stints where the variance is high, and larger for stints where the variance is low. This forces the model to fit the
-low-variance stints more closely than the high-variance stints. The correct weights for this problem are the $w_i = \mathrm{num\pos}_i$,
+low-variance stints more closely than the high-variance stints. The correct weights for this problem are the $w_i = \mathrm{num\_pos}_i$,
 which implies that the variance of the margin is inversely proportional to the number of stints. Verify this by making a scatter plot of the
 margin rate times the square root of the number of stints versus the number of stints. Then recalculate the player 'RAPM' coefficients
-from 1(b) using the by setting the 'weights' keyword in the model fit to be 'n_pos'.  How have the rankings of top players changed? 
+from 1(c) by setting the 'weights' keyword in the model fit to be 'n_pos'.  How have the rankings of top players changed? 
 
 
 
@@ -103,11 +102,11 @@ from 1(b) using the by setting the 'weights' keyword in the model fit to be 'n_p
 
 (a) __Calculate Confidence Intervals Using the Bootstrap:__ Suppose you are a general manager for a basketball team. You want to identify candidate players to add to your team, but you are 
 unsure how certain to be about the 'RAPM' coefficients for the model. The bootstrap is a standard approach for calculating confidence
-intervals for model coefficients. Use either the 'resample' function from 'sklearn' or 'np.random.choice' to calculate bootstrap samples
-of the model coefficients for each player (do not forget to resample the weights!). For the top 20 players, display the RAPM estimates 
+intervals for model coefficients. Use either the 'resample' function from 'sklearn' or 'np.random.choice' along with a loop to calculate bootstrap samples
+of the model coefficients for each player. You may use the optimal 'alpha' found during the hyperparameter search in 2(b) for all bootstrap fits. Do not forget to resample the weights when bootstrapping!. For the top 20 players, display the RAPM estimates 
 along with the confidence interval (calculate 92% intervals or some other high value that isn't 95%). How much do the intervals of the top 20 overlap?
 
-(b) __Impact of Minutes Played on Confidence Interavls:__ One potential use of a model like this is to find players who do not play much but who might do well with more opportunity. Calculate the standard errors of each coefficient from the bootstrap samples 
+(b) __Impact of Minutes Played on Confidence Intervals:__ One potential use of a model like this is to find players who do not play much but who might do well with more opportunity. Calculate the standard errors of each coefficient from the bootstrap samples 
 and make a scatterplot of standard error versus minutes played. Comment on the relationship between minutes played and standard error- does 
 it make sense to you intuitively and/or statistically?
 
@@ -118,10 +117,10 @@ the frequency of outcomes in repeated experiments. In the Bayesian framework, it
 distribution of model parameters, which leads to the concept of a 'credible interval', defined as an interval with a certain probability
 of containing the model parameter (a 92\% credible interval would have a 92\% chance of containing the model parameter). Credible 
 intervals often correspond closely to confidence intervals captured using standard statistics, but this problem is one case where they
-diverge sharply. Ridge regression has an interpretation in Bayesian statistics, where the regulation parameter corresponds to the strength
+diverge sharply. Ridge regression has an interpretation in Bayesian statistics, where the regulrization parameter corresponds to the strength
 of a prior belief that the model coefficients have a normal distribution centered around zero and with variance inversely proportional to 
 the regularization penalty $\alpha$. For ridge regression interpreted as Bayesian statistics, there is an exact formula for the standard
-errors and confidence intervals which we can use to contrast with the bootsrap estimate. I have provided code below to calculate the
+errors and confidence intervals which we can use to contrast with the bootstrap estimate. I have provided code below to calculate the
 standard errors and the Bayesian credible intervals (if you are curious about the full details [read this article](https://en.wikipedia.org/wiki/Bayesian_linear_regression)). You will need to adapt this code to your variable names and data structures:
 
 ```{python}
@@ -142,7 +141,7 @@ margin_vec = MarginVector.values # Ditto
 
 
 
-var = np.average((StintMatrix - model_ridge.predict(PlayerMatrix))**2, weights=weights) # We need to incorporate weights into variance calculation
+var = np.average((margin_vec - model_ridge.predict(stint_mat))**2, weights=weights) # We need to incorporate weights into variance calculation
 num_players = stint_mat.shape[1]
 
 AMat = (stint_mat * weights.reshape(-1, 1)).T @ stint_mat + alpha_opt * np.eye(num_players)
@@ -150,7 +149,7 @@ AMat = (stint_mat * weights.reshape(-1, 1)).T @ stint_mat + alpha_opt * np.eye(n
 
 # This is the covariance matrix. You could find very high covariance between players on the same teams
 
-posterior_covariance = var * np.linalg.inv(AMat) # This would be a risky operation on a larger problem, but should work on your computers
+posterior_covariance = var * np.linalg.inv(AMat) 
 
 se_vec = np.sqrt(np.diag(posterior_covariance)) # These are the standard errors
 
@@ -167,7 +166,8 @@ versus minutes played and compare to the standard errors calculated from the boo
 
 An alternative to ridge regression that is used for variable selection is called the Lasso. The Lasso differs penalty causes a
 large number of model coefficients to be zero, making it a good tool for variable selection and for creating interpretable models.
-Use 'LassoCV' to calculate the 'RAPM' coefficients. I recommend using regularization weights that range between $10^-4$ and $10^2$. 
+Use 'LassoCV' to calculate the 'RAPM' coefficients. I recommend using regularization weights that range between $10^{-4}$ and $10^2$ 
+(the scale needs to be different compared to ridge regression). 
 Compare the 'RAPM' values calculated with lasso to those calculated with ridge regression. Are there any notable differences in the top
 20 players? Find the 10 players with the largest difference between lasso RAPM and Ridge RAPM in both directions (ridge greater than lasso and lasso greater than ridge). Within the players where there was large disagreement, consider how the players performed in the next NBA season (you may do this however you like, I recommend reading media reports about those players during the next season) and determine which
 model was more correct when it comes to players with large disagreements.
