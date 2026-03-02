@@ -162,9 +162,9 @@ Use the above code and calculate the Bayesian standard errors for each 'RAPM' co
 versus minutes played and compare to the standard errors calculated from the bootstrap. In which part of the range is the agreement highest? In which part is the disagreement highest? Focusing on the areas where the disagreement is highest, put yourself in the shoes of someone using the model and discuss which estimate of uncertainty is more realistic and why.
 
 
-### Extra Credit (5 Points): Ridge versus Lasso
+### Extra Credit (5 Points): Ridge versus Lasso and Confidence/Credible Interval Calculations
 
-An alternative to ridge regression that is used for variable selection is called the Lasso. The Lasso differs penalty causes a
+(a) An alternative to ridge regression that is used for variable selection is called the Lasso. The Lasso differs penalty causes a
 large number of model coefficients to be zero, making it a good tool for variable selection and for creating interpretable models.
 Use 'LassoCV' to calculate the 'RAPM' coefficients. I recommend using regularization weights that range between $10^{-4}$ and $10^2$ 
 (the scale needs to be different compared to ridge regression). 
@@ -172,5 +172,6 @@ Compare the 'RAPM' values calculated with lasso to those calculated with ridge r
 20 players? Find the 10 players with the largest difference between lasso RAPM and Ridge RAPM in both directions (ridge greater than lasso and lasso greater than ridge). Within the players where there was large disagreement, consider how the players performed in the next NBA season (you may do this however you like, I recommend reading media reports about those players during the next season) and determine which
 model was more correct when it comes to players with large disagreements.
 
+(b) There is a subtle conceptual flaw in how the confidence or credible intervals were calculated in this lab. This is apparent if you paid very close attention during the meetup. Can you tell me what it is?
 
 
