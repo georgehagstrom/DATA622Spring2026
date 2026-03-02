@@ -5180,7 +5180,7 @@ window.Quarto = {
 </header>
 
 
-<div id="09d249a2" class="cell" data-execution_count="1">
+<div id="b6d97530" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="overview" class="level3">
@@ -5195,7 +5195,7 @@ window.Quarto = {
 \]</span></p>
 <p>Here, the sum is over all the different players in the dataset, and the coefficient <span class="math inline">\(c_i\)</span> is +1 if that player was on the court during the stint and playing for the ‘home’ team, and -1 is they were on the court for the ‘road’ team. The coefficient is <span class="math inline">\(0\)</span> otherwise. The ‘home’ team and ‘road’ team distinction allows us to use the same data for players who were playing against each-other.</p>
 <p>The dataset to fit this model is contained in <a href="https://github.com/georgehagstrom/DATA622Spring2026/blob/main/website/assignments/labs/labData/nba_stint_data.csv">nba_stint_data.csv</a>. Let’s take a look at it:</p>
-<div id="227f54b1" class="cell" data-execution_count="2">
+<div id="88c72c1c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nba_stints <span class="op">=</span> pd.read_csv(<span class="st">&quot;https://raw.githubusercontent.com/georgehagstrom/DATA622Spring2026/main/website/assignments/labs/labData/nba_stint_data.csv&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nba_stints.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5507,7 +5507,7 @@ window.Quarto = {
 <li><p><strong>Impact of Minutes Played on Confidence Interavls:</strong> One potential use of a model like this is to find players who do not play much but who might do well with more opportunity. Calculate the standard errors of each coefficient from the bootstrap samples and make a scatterplot of standard error versus minutes played. Comment on the relationship between minutes played and standard error- does it make sense to you intuitively and/or statistically?</p></li>
 <li><p><strong>Comparison to Bayesian Credible Intervals:</strong> Bayesian statistics (which you should have learned about briefly in DATA 606) is a field of statistics based on an interpretation of probability as referring to uncertainty about the real world rather than as the frequency of outcomes in repeated experiments. In the Bayesian framework, it is normal to talk about the probability distribution of model parameters, which leads to the concept of a ‘credible interval’, defined as an interval with a certain probability of containing the model parameter (a 92% credible interval would have a 92% chance of containing the model parameter). Credible intervals often correspond closely to confidence intervals captured using standard statistics, but this problem is one case where they diverge sharply. Ridge regression has an interpretation in Bayesian statistics, where the regulation parameter corresponds to the strength of a prior belief that the model coefficients have a normal distribution centered around zero and with variance inversely proportional to the regularization penalty <span class="math inline">\(\alpha\)</span>. For ridge regression interpreted as Bayesian statistics, there is an exact formula for the standard errors and confidence intervals which we can use to contrast with the bootsrap estimate. I have provided code below to calculate the standard errors and the Bayesian credible intervals (if you are curious about the full details <a href="https://en.wikipedia.org/wiki/Bayesian_linear_regression">read this article</a>). You will need to adapt this code to your variable names and data structures:</p></li>
 </ol>
-<div id="7636cdd7" class="cell" data-execution_count="3">
+<div id="552b3c72" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here MarginVector is your Target</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># StintMatrix are your observations</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># WeightVector are your weights</span></span>
