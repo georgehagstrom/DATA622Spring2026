@@ -353,6 +353,14 @@ George I. Hagstrom
 <li>Coding vignette on RidgeCV and Lasso</li>
 </ul>
 </section>
+<section id="nyhackr-tomorrow-at-nyu" class="slide level2">
+<h2>nyhackr Tomorrow at NYU!</h2>
+
+<img data-src="March_2026_Meetup_Card.png" class="r-stretch quarto-figure-center"><p class="caption">nyhackr.org</p></section>
+<section id="jiahao-chen-on-march-25th" class="slide level2">
+<h2>Jiahao Chen on March 25th!</h2>
+
+<img data-src="Mar2026Seminar.png" class="r-stretch quarto-figure-center"><p class="caption">https://us02web.zoom.us/meeting/register/pDyeuQ9ERrqYbBNKJPBMkw</p></section>
 <section id="regularization" class="slide level2">
 <h2>Regularization</h2>
 <ul>
@@ -426,7 +434,7 @@ George I. Hagstrom
 <li>Ridge regression adds a penalty proportional to squared sum of coefficients</li>
 </ul>
 <p><span class="math display">\[
-\mathrm{argmin}_{\mathbf{w}} \sum_{i=1}^n (y_i -\mmathbf{w}\cdot\mathbf{x}_i )^2 + \alpha \sum_{j=1}^p w_j^2
+\mathrm{argmin}_{\mathbf{w}} \sum_{i=1}^n (y_i -\mathbf{w}\cdot\mathbf{x}_i )^2 + \alpha \sum_{j=1}^p w_j^2
 \]</span></p>
 <ul>
 <li>Effect is to “shrink” coefficients towards <span class="math inline">\(0\)</span></li>
@@ -535,38 +543,215 @@ George I. Hagstrom
 <img data-src="meetup-7_files/figure-revealjs/cell-14-output-1.png" class="r-stretch"></section>
 <section id="hyperparameter-optimization" class="slide level2">
 <h2>Hyperparameter Optimization</h2>
+<ul>
+<li>The process of varying the strength of the regularization and comparing the test error is called <strong>hyperparameter optimization</strong></li>
+<li><span class="math inline">\(\lambda\)</span> is a <em>hyperparameter</em>
+<ul>
+<li>Not fit like a traditional model coefficient</li>
+<li>Impacts performance of model</li>
+</ul></li>
+<li>Pick hyperparameters like you select models</li>
+<li>We will meet many hyperparameters in the rest of this course</li>
+</ul>
 </section>
+<section id="can-do-better-with-cross-validation" class="slide level2">
+<h2>Can do Better With Cross-Validation</h2>
+<ul>
+<li>Typical to find best <span class="math inline">\(\lambda\)</span> using cross-validation</li>
+<li>Also more efficient with data</li>
+</ul>
+
+<img data-src="ridge-LR-loo-error.png" class="r-stretch"></section>
+<section id="can-do-better-with-cross-validation-1" class="slide level2">
+<h2>Can do Better With Cross-Validation</h2>
+<ul>
+<li>Typical to find best <span class="math inline">\(\lambda\)</span> using cross-validation</li>
+<li>Also more efficient with data</li>
+</ul>
+
+<img data-src="ridge-LR-loo-logloss.png" class="r-stretch"></section>
 <section id="ridge-regression-considerations" class="slide level2">
 <h2>Ridge Regression Considerations</h2>
-</section>
-<section id="ridge-regression-example" class="slide level2">
-<h2>Ridge Regression Example</h2>
 <ul>
-<li>Consider trying to learn following data with polynomial features:</li>
+<li><em>Must</em> scale predictors first
+<ul>
+<li>Otherwise you are effectively putting arbitrarily different priors on each coefficient</li>
+</ul></li>
+<li>For example, if you have population and age as predictors:
+<ul>
+<li>Population ranges to millions</li>
+<li>age is under 100</li>
+<li>Penalty will constrain shrink age coefficient more than population</li>
+</ul></li>
+</ul>
+</section>
+<section id="ridge-regression-considerations-1" class="slide level2">
+<h2>Ridge Regression Considerations</h2>
+<ul>
+<li>There are many solver options:</li>
+</ul>
+
+<img data-src="solvers.png" class="r-stretch quarto-figure-center"><p class="caption">‘sklearn’ website</p><ul>
+<li>It helps to know some linear algebra
+<ul>
+<li>Take DATA 605!!!!!</li>
+</ul></li>
+</ul>
+</section>
+<section id="ridge-regression-considerations-2" class="slide level2">
+<h2>Ridge Regression Considerations</h2>
+<ul>
+<li>There are many solver options:</li>
+</ul>
+
+<img data-src="solvers_2.png" class="r-stretch quarto-figure-center"><p class="caption">‘sklearn’ website</p></section>
+<section id="ridge-regression-considerations-3" class="slide level2">
+<h2>Ridge Regression Considerations</h2>
+<ul>
+<li>There are many solver options:
+<ul>
+<li>Each solver has a case where it is best</li>
+<li>‘svd’, ‘cholesky’ most likely to get right answer, but slower than competitors</li>
+<li>‘sparse-cg’ good for large, sparse problems</li>
+<li>‘lsqr’ and ‘lbfgs’ fast iterative solvers, can tune accuracy</li>
+<li>‘sag’ poor accuracy but for very large problems</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-lasso" class="slide level2">
+<h2>The Lasso</h2>
+<ul>
+<li>A regularization that uses a different penalty</li>
+</ul>
+<p><span class="math display">\[
+\mathrm{argmin}_{\mathbf{w}} \sum_{i=1}^n (y_i -\mathbf{w}\cdot\mathbf{x}_i )^2 + \alpha \sum_{j=1}^p |w_j|
+\]</span></p>
+</section>
+<section id="the-lasso-1" class="slide level2">
+<h2>The Lasso</h2>
+<ul>
+<li>A regularization that uses a different penalty</li>
+</ul>
+<p><span class="math display">\[
+\mathrm{argmin}_{\mathbf{w}} \sum_{i=1}^n (y_i -\mathbf{w}\cdot\mathbf{x}_i )^2 + \alpha \|\mathbf{w}\|_1
+\]</span></p>
+<ul>
+<li>Also called <span class="math inline">\(L_1\)</span> penalty</li>
+</ul>
+</section>
+<section id="lasso-geometry" class="slide level2">
+<h2>Lasso Geometry</h2>
+<ul>
+<li>Unit “Circle” in Lasso is actually a square</li>
+<li>Coefficient values trade off directly</li>
 </ul>
 
 <img data-src="meetup-7_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
-<section id="ridge-regression-example-1" class="slide level2">
-<h2>Ridge Regression Example</h2>
+<section id="lasso-causes-sparsity" class="slide level2">
+<h2>Lasso Causes Sparsity</h2>
 <ul>
-<li>Using Regular polynomial regression, we have normal underfitting to overfitting transition</li>
+<li>Sparse means that most values (here coefficients) are 0</li>
 </ul>
 
 <img data-src="meetup-7_files/figure-revealjs/cell-16-output-1.png" class="r-stretch"></section>
-<section id="ridge-regression-example-2" class="slide level2">
-<h2>Ridge Regression Example</h2>
+<section id="lasso-causes-sparsity-1" class="slide level2">
+<h2>Lasso Causes Sparsity</h2>
 <ul>
-<li>Alternative, max out complexity and vary ridge penalty</li>
+<li>Sparse means that most values (here coefficients) are 0</li>
 </ul>
-<div id="05935a9c" class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-7_files/figure-revealjs/cell-17-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
+
+<img data-src="meetup-7_files/figure-revealjs/cell-17-output-1.png" class="r-stretch"></section>
+<section id="lasso-causes-sparsity-2" class="slide level2">
+<h2>Lasso Causes Sparsity</h2>
+<ul>
+<li>Sparse means that most values (here coefficients) are 0</li>
+</ul>
+
+<img data-src="meetup-7_files/figure-revealjs/cell-18-output-1.png" class="r-stretch"></section>
+<section id="lasso-pros" class="slide level2">
+<h2>Lasso Pros</h2>
+<ul>
+<li>Lasso Can be Viewed as a means of variable selection</li>
+<li>See here Lasso applied to AML/ALL problem</li>
+</ul>
+
+<img data-src="lasso-shrinkage.png" class="r-stretch"></section>
+<section id="lasso-pros-1" class="slide level2">
+<h2>Lasso Pros</h2>
+<ul>
+<li>Lasso Can be Viewed as a means of variable selection</li>
+<li>See here Lasso applied to AML/ALL problem</li>
+</ul>
+
+<img data-src="lasso-nonzero.png" class="r-stretch"></section>
+<section id="lasso-pros-2" class="slide level2">
+<h2>Lasso Pros</h2>
+<ul>
+<li>Sparsity doesn’t trade off much if at all on performance</li>
+</ul>
+
+<img data-src="Lasso-LR-loo-error.png" class="r-stretch"></section>
+<section id="lasso-pros-3" class="slide level2">
+<h2>Lasso Pros</h2>
+<ul>
+<li>Sparsity doesn’t trade off much if at all on performance</li>
+</ul>
+
+<img data-src="Lasso-LR-loo-logloss.png" class="r-stretch"></section>
+<section id="lasso-vs-ridge" class="slide level2">
+<h2>Lasso vs Ridge</h2>
+<ul>
+<li>Ridge Regression smoothly shrinks all coefficients</li>
+</ul>
+
+<img data-src="ridge-shrinkage.png" class="r-stretch"></section>
+<section id="lasso-vs-ridge-trade-offs" class="slide level2">
+<h2>Lasso vs Ridge Trade-Offs</h2>
+<ul>
+<li>Lasso is more unstable (different coefficients for different cv folds/regularization parameters)</li>
+<li>Correlated features: Lasso might pick randomly whereas Ridge will keep all</li>
+<li>Ridge is usually faster and sometimes <em>much</em> faster</li>
+<li>Lasso also has a Bayesian Prior interpretation (Laplace/Double Exponential Priors)</li>
+</ul>
+</section>
+<section id="elastic-net" class="slide level2">
+<h2>Elastic Net</h2>
+<ul>
+<li>Elastic Net Combines Both Penalties</li>
+</ul>
+<p><span class="math display">\[
+\mathrm{argmin}_{\mathbf{w}} \sum_{i=1}^n (y_i -\mathbf{w}\cdot\mathbf{x}_i )^2 + \lambda_1 \|\mathbf{w}\|_2^2 + \lambda_2 \|\mathbf{w}\|_1
+\]</span></p>
+</section>
+<section id="nested-cv-and-hyperparameters" class="slide level2">
+<h2>Nested CV and Hyperparameters</h2>
+<ul>
+<li>The more hyperparameters the more careful you need to be with cross-validation</li>
+<li>Typical approach: Use CV to pick best hyperparameters <em>and</em> estimate out of sample accuracy</li>
+<li>Leads to overfitting because uses testing data to pick hyperparameter</li>
+</ul>
+</section>
+<section id="nested-cv-and-hyperparameters-1" class="slide level2">
+<h2>Nested CV and Hyperparameters</h2>
+<ul>
+<li>Nested Cross-Validation: Outer CV loop for testing
+<ul>
+<li>For each fold, inner CV for hyperparameters</li>
+<li>Test that model on the outer fold</li>
+</ul></li>
+</ul>
+
+<img data-src="nested-cv.png" class="r-stretch quarto-figure-center"><p class="caption">‘sklearn’ website</p></section>
+<section id="when-to-consider-nested" class="slide level2">
+<h2>When to consider nested?</h2>
+<ol type="1">
+<li>When data is low</li>
+<li>When you have many hyperparameters</li>
+<li>When you are selecting between different models each with hyperparameters</li>
+</ol>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>

@@ -198,6 +198,20 @@
     "text": "Week Summary\n\nPresentations this week\n\nWork on projects with aim to get something working this month\nPerfect it in the final month\n\nHomework 4 Due Sunday\nCoding vignette on RidgeCV and Lasso"
   },
   {
+    "objectID": "meetups/meetup-7/meetup-7.html#nyhackr-tomorrow-at-nyu",
+    "href": "meetups/meetup-7/meetup-7.html#nyhackr-tomorrow-at-nyu",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "nyhackr Tomorrow at NYU!",
+    "text": "nyhackr Tomorrow at NYU!\n\nnyhackr.org"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#jiahao-chen-on-march-25th",
+    "href": "meetups/meetup-7/meetup-7.html#jiahao-chen-on-march-25th",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Jiahao Chen on March 25th!",
+    "text": "Jiahao Chen on March 25th!\n\nhttps://us02web.zoom.us/meeting/register/pDyeuQ9ERrqYbBNKJPBMkw"
+  },
+  {
     "objectID": "meetups/meetup-7/meetup-7.html#regularization",
     "href": "meetups/meetup-7/meetup-7.html#regularization",
     "title": "DATA 622 Meetup 7: Regularization",
@@ -258,7 +272,7 @@
     "href": "meetups/meetup-7/meetup-7.html#ridge-regression",
     "title": "DATA 622 Meetup 7: Regularization",
     "section": "Ridge Regression",
-    "text": "Ridge Regression\n\nRidge regression adds a penalty proportional to squared sum of coefficients\n\n\\[\n\\mathrm{argmin}_{\\mathbf{w}} \\sum_{i=1}^n (y_i -\\mmathbf{w}\\cdot\\mathbf{x}_i )^2 + \\alpha \\sum_{j=1}^p w_j^2\n\\]\n\nEffect is to “shrink” coefficients towards \\(0\\)\nDon’t do this with intercept"
+    "text": "Ridge Regression\n\nRidge regression adds a penalty proportional to squared sum of coefficients\n\n\\[\n\\mathrm{argmin}_{\\mathbf{w}} \\sum_{i=1}^n (y_i -\\mathbf{w}\\cdot\\mathbf{x}_i )^2 + \\alpha \\sum_{j=1}^p w_j^2\n\\]\n\nEffect is to “shrink” coefficients towards \\(0\\)\nDon’t do this with intercept"
   },
   {
     "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-picture",
@@ -349,35 +363,168 @@
     "href": "meetups/meetup-7/meetup-7.html#hyperparameter-optimization",
     "title": "DATA 622 Meetup 7: Regularization",
     "section": "Hyperparameter Optimization",
-    "text": "Hyperparameter Optimization"
+    "text": "Hyperparameter Optimization\n\nThe process of varying the strength of the regularization and comparing the test error is called hyperparameter optimization\n\\(\\lambda\\) is a hyperparameter\n\nNot fit like a traditional model coefficient\nImpacts performance of model\n\nPick hyperparameters like you select models\nWe will meet many hyperparameters in the rest of this course"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#can-do-better-with-cross-validation",
+    "href": "meetups/meetup-7/meetup-7.html#can-do-better-with-cross-validation",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Can do Better With Cross-Validation",
+    "text": "Can do Better With Cross-Validation\n\nTypical to find best \\(\\lambda\\) using cross-validation\nAlso more efficient with data"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#can-do-better-with-cross-validation-1",
+    "href": "meetups/meetup-7/meetup-7.html#can-do-better-with-cross-validation-1",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Can do Better With Cross-Validation",
+    "text": "Can do Better With Cross-Validation\n\nTypical to find best \\(\\lambda\\) using cross-validation\nAlso more efficient with data"
   },
   {
     "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations",
     "href": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations",
     "title": "DATA 622 Meetup 7: Regularization",
     "section": "Ridge Regression Considerations",
-    "text": "Ridge Regression Considerations"
+    "text": "Ridge Regression Considerations\n\nMust scale predictors first\n\nOtherwise you are effectively putting arbitrarily different priors on each coefficient\n\nFor example, if you have population and age as predictors:\n\nPopulation ranges to millions\nage is under 100\nPenalty will constrain shrink age coefficient more than population"
   },
   {
-    "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-example",
-    "href": "meetups/meetup-7/meetup-7.html#ridge-regression-example",
+    "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations-1",
+    "href": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations-1",
     "title": "DATA 622 Meetup 7: Regularization",
-    "section": "Ridge Regression Example",
-    "text": "Ridge Regression Example\n\nConsider trying to learn following data with polynomial features:"
+    "section": "Ridge Regression Considerations",
+    "text": "Ridge Regression Considerations\n\nThere are many solver options:\n\n\n‘sklearn’ website\nIt helps to know some linear algebra\n\nTake DATA 605!!!!!"
   },
   {
-    "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-example-1",
-    "href": "meetups/meetup-7/meetup-7.html#ridge-regression-example-1",
+    "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations-2",
+    "href": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations-2",
     "title": "DATA 622 Meetup 7: Regularization",
-    "section": "Ridge Regression Example",
-    "text": "Ridge Regression Example\n\nUsing Regular polynomial regression, we have normal underfitting to overfitting transition"
+    "section": "Ridge Regression Considerations",
+    "text": "Ridge Regression Considerations\n\nThere are many solver options:\n\n\n‘sklearn’ website"
   },
   {
-    "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-example-2",
-    "href": "meetups/meetup-7/meetup-7.html#ridge-regression-example-2",
+    "objectID": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations-3",
+    "href": "meetups/meetup-7/meetup-7.html#ridge-regression-considerations-3",
     "title": "DATA 622 Meetup 7: Regularization",
-    "section": "Ridge Regression Example",
-    "text": "Ridge Regression Example\n\nAlternative, max out complexity and vary ridge penalty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA 622"
+    "section": "Ridge Regression Considerations",
+    "text": "Ridge Regression Considerations\n\nThere are many solver options:\n\nEach solver has a case where it is best\n‘svd’, ‘cholesky’ most likely to get right answer, but slower than competitors\n‘sparse-cg’ good for large, sparse problems\n‘lsqr’ and ‘lbfgs’ fast iterative solvers, can tune accuracy\n‘sag’ poor accuracy but for very large problems"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#the-lasso",
+    "href": "meetups/meetup-7/meetup-7.html#the-lasso",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "The Lasso",
+    "text": "The Lasso\n\nA regularization that uses a different penalty\n\n\\[\n\\mathrm{argmin}_{\\mathbf{w}} \\sum_{i=1}^n (y_i -\\mathbf{w}\\cdot\\mathbf{x}_i )^2 + \\alpha \\sum_{j=1}^p |w_j|\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#the-lasso-1",
+    "href": "meetups/meetup-7/meetup-7.html#the-lasso-1",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "The Lasso",
+    "text": "The Lasso\n\nA regularization that uses a different penalty\n\n\\[\n\\mathrm{argmin}_{\\mathbf{w}} \\sum_{i=1}^n (y_i -\\mathbf{w}\\cdot\\mathbf{x}_i )^2 + \\alpha \\|\\mathbf{w}\\|_1\n\\]\n\nAlso called \\(L_1\\) penalty"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-geometry",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-geometry",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Geometry",
+    "text": "Lasso Geometry\n\nUnit “Circle” in Lasso is actually a square\nCoefficient values trade off directly"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-causes-sparsity",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-causes-sparsity",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Causes Sparsity",
+    "text": "Lasso Causes Sparsity\n\nSparse means that most values (here coefficients) are 0"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-causes-sparsity-1",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-causes-sparsity-1",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Causes Sparsity",
+    "text": "Lasso Causes Sparsity\n\nSparse means that most values (here coefficients) are 0"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-causes-sparsity-2",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-causes-sparsity-2",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Causes Sparsity",
+    "text": "Lasso Causes Sparsity\n\nSparse means that most values (here coefficients) are 0"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-pros",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-pros",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Pros",
+    "text": "Lasso Pros\n\nLasso Can be Viewed as a means of variable selection\nSee here Lasso applied to AML/ALL problem"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-pros-1",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-pros-1",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Pros",
+    "text": "Lasso Pros\n\nLasso Can be Viewed as a means of variable selection\nSee here Lasso applied to AML/ALL problem"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-pros-2",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-pros-2",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Pros",
+    "text": "Lasso Pros\n\nSparsity doesn’t trade off much if at all on performance"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-pros-3",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-pros-3",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso Pros",
+    "text": "Lasso Pros\n\nSparsity doesn’t trade off much if at all on performance"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-vs-ridge",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-vs-ridge",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso vs Ridge",
+    "text": "Lasso vs Ridge\n\nRidge Regression smoothly shrinks all coefficients"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#lasso-vs-ridge-trade-offs",
+    "href": "meetups/meetup-7/meetup-7.html#lasso-vs-ridge-trade-offs",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Lasso vs Ridge Trade-Offs",
+    "text": "Lasso vs Ridge Trade-Offs\n\nLasso is more unstable (different coefficients for different cv folds/regularization parameters)\nCorrelated features: Lasso might pick randomly whereas Ridge will keep all\nRidge is usually faster and sometimes much faster\nLasso also has a Bayesian Prior interpretation (Laplace/Double Exponential Priors)"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#elastic-net",
+    "href": "meetups/meetup-7/meetup-7.html#elastic-net",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Elastic Net",
+    "text": "Elastic Net\n\nElastic Net Combines Both Penalties\n\n\\[\n\\mathrm{argmin}_{\\mathbf{w}} \\sum_{i=1}^n (y_i -\\mathbf{w}\\cdot\\mathbf{x}_i )^2 + \\lambda_1 \\|\\mathbf{w}\\|_2^2 + \\lambda_2 \\|\\mathbf{w}\\|_1\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#nested-cv-and-hyperparameters",
+    "href": "meetups/meetup-7/meetup-7.html#nested-cv-and-hyperparameters",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Nested CV and Hyperparameters",
+    "text": "Nested CV and Hyperparameters\n\nThe more hyperparameters the more careful you need to be with cross-validation\nTypical approach: Use CV to pick best hyperparameters and estimate out of sample accuracy\nLeads to overfitting because uses testing data to pick hyperparameter"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#nested-cv-and-hyperparameters-1",
+    "href": "meetups/meetup-7/meetup-7.html#nested-cv-and-hyperparameters-1",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Nested CV and Hyperparameters",
+    "text": "Nested CV and Hyperparameters\n\nNested Cross-Validation: Outer CV loop for testing\n\nFor each fold, inner CV for hyperparameters\nTest that model on the outer fold\n\n\n\n‘sklearn’ website"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#when-to-consider-nested",
+    "href": "meetups/meetup-7/meetup-7.html#when-to-consider-nested",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "When to consider nested?",
+    "text": "When to consider nested?\n\nWhen data is low\nWhen you have many hyperparameters\nWhen you are selecting between different models each with hyperparameters"
+  },
+  {
+    "objectID": "meetups/meetup-7/meetup-7.html#thanks",
+    "href": "meetups/meetup-7/meetup-7.html#thanks",
+    "title": "DATA 622 Meetup 7: Regularization",
+    "section": "Thanks!",
+    "text": "Thanks!\n\n\n\n\nDATA 622"
   },
   {
     "objectID": "meetups/meetup-4/LR_Vignette.html",
@@ -3046,7 +3193,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\n\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\n\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\n\n\n\n\n\nMar 23\n06:45M\nEnsemble Models\n\n\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\n\n\nMinimal Viable Product Demo\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\n\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\n\n\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\n\n\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
