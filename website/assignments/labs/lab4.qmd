@@ -94,7 +94,7 @@ where $w_i$ is a coefficient that determines how the variance of 'margin' should
 be smaller for stints where the variance is high, and larger for stints where the variance is low. This forces the model to fit the
 low-variance stints more closely than the high-variance stints. The correct weights for this problem are the $w_i = \mathrm{num\_pos}_i$,
 which implies that the variance of the margin is inversely proportional to the number of stints. Verify this by making a scatter plot of the
-margin rate times the square root of the number of stints versus the number of stints. Then recalculate the player 'RAPM' coefficients
+margin rate times the square root of the number of possessions versus the number of possessions. Then recalculate the player 'RAPM' coefficients
 from 1(c) by setting the 'weights' keyword in the model fit to be 'n_pos'.  How have the rankings of top players changed? 
 
 
