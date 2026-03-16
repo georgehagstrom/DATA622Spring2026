@@ -1777,7 +1777,7 @@
     "href": "meetups/meetup-8/meetup-8.html#spring-pitchfest",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Spring Pitchfest!",
-    "text": "Spring Pitchfest!"
+    "text": "Spring Pitchfest!\n\n\n\nhttps://pitchfest.github.io/"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#decision-trees",
@@ -1798,7 +1798,7 @@
     "href": "meetups/meetup-8/meetup-8.html#previous-models-easy-to-solve",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Previous Models Easy to Solve",
-    "text": "Previous Models Easy to Solve\n\nPrevious Models: -Linear Regression\n\nLogistic Regression\nGLMs\nSupport Vector Machines\n\n\n\nLearning algorithms for these models guarantee finding the “best” solution"
+    "text": "Previous Models Easy to Solve\n\nPrevious Models:\n\nLinear Regression\nLogistic Regression\nGLMs\nSupport Vector Machines\n\n\n\nLearning algorithms for these models guarantee finding the “best” solution"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#models-for-rest-of-the-class-hard-to-solve",
@@ -1910,7 +1910,7 @@
     "href": "meetups/meetup-8/meetup-8.html#classification",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Classification",
-    "text": "Classification\n\nInstead of accuracy, pick variable and splits using evenness:\n\nGini Impuristy: \\(\\sum_{k}\\hat{p}_k(1-\\hat{p}_k)\\)\nEntropy: \\(\\sum_{k}\\hat{p}_k\\log \\hat{p}_k\\)\n\nPick variable and split to give maximum reduction of weighted Gini or entropy"
+    "text": "Classification\n\nInstead of accuracy, pick variable and splits using evenness:\n\nGini Impurity: \\(\\sum_{k}\\hat{p}_k(1-\\hat{p}_k)\\)\nEntropy: \\(-\\sum_{k}\\hat{p}_k\\log \\hat{p}_k\\)\n\nPick variable and split to give maximum reduction of weighted Gini or entropy"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#trees-are-low-bias-and-high-variance",
@@ -1934,36 +1934,43 @@
     "text": "Best \\(\\alpha\\) with CV"
   },
   {
-    "objectID": "meetups/meetup-8/meetup-8.html#hitters-alternative",
-    "href": "meetups/meetup-8/meetup-8.html#hitters-alternative",
-    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
-    "section": "Hitters Alternative",
-    "text": "Hitters Alternative"
-  },
-  {
     "objectID": "meetups/meetup-8/meetup-8.html#wisdom-of-the-crowds",
     "href": "meetups/meetup-8/meetup-8.html#wisdom-of-the-crowds",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Wisdom of the Crowds",
-    "text": "Wisdom of the Crowds\n\n1908 County Fair\nStatistician Polled 800 townsfolk, asked them weight of a cow\nHow accurate do you think they were?\n\n\nOil Painting of Crave Heiffer 1811"
+    "text": "Wisdom of the Crowds\n\nStatistician went to 1908 Plymouth County Fair:\nPolled 800 townsfolk on weight of a cow\n\n\nOil Painting of Craven Heiffer 1811"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#wisdom-of-the-crowds-1",
     "href": "meetups/meetup-8/meetup-8.html#wisdom-of-the-crowds-1",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Wisdom of the Crowds",
-    "text": "Wisdom of the Crowds\n\nCrowd Median: 1198 pounds\nActual Weight: 1202 pounds\nPhenomenon called Wisdom of the Crowds\n\n\nOil Painting of Crave Heiffer 1811"
+    "text": "Wisdom of the Crowds\n\nCrowd Median: 1198 pounds\nActual Weight: 1202 pounds\n\n\nOil Painting of Crave Heiffer 1811"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#ensemble-learning",
     "href": "meetups/meetup-8/meetup-8.html#ensemble-learning",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Ensemble Learning",
-    "text": "Ensemble Learning"
+    "text": "Ensemble Learning\n\nCombine predictions of several methods\n\n\nHOML 7.2"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#ensemble-learning-1",
+    "href": "meetups/meetup-8/meetup-8.html#ensemble-learning-1",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Ensemble Learning",
+    "text": "Ensemble Learning\n\nDifferent models make errors in different ways\n\nCombining them leads to complementary insights\nStacking: Train a final model to combine outputs of different models\nNetflix Prize did this with Neural Networks and Matrix factorization methods, kNN\n\nMixture of Experts for LLMs"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#bagging",
     "href": "meetups/meetup-8/meetup-8.html#bagging",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Bagging",
+    "text": "Bagging\n\nYou can also combine models from the same class trained with different features or data:\n\n\nHOML 7.4"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#bagging-1",
+    "href": "meetups/meetup-8/meetup-8.html#bagging-1",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Bagging",
     "text": "Bagging\n\nGenerate a lot of trees, each tree generalizes poorly\nAverage or poll their predictions to reduce variance \\[\n\\hat{g}_{\\mathrm{bag}}(\\mathbf{x}) = \\frac{1}{B} \\sum_{j=1}^B \\hat{g}_{j}(\\mathbf{x})\n\\]"
@@ -1987,21 +1994,63 @@
     "href": "meetups/meetup-8/meetup-8.html#how-many-trees-to-bag",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "How many trees to bag?",
-    "text": "How many trees to bag?\n\nModel improves as \\(B\\) increases, up until a point\nLevels off, does not overfit\n\n\n\nText(0, 0.5, 'MSE')"
+    "text": "How many trees to bag?\n\nModel improves as \\(B\\) increases, up until a point\nAdding more trees doesn’t increase test error"
   },
   {
-    "objectID": "meetups/meetup-8/meetup-8.html#random-forest",
-    "href": "meetups/meetup-8/meetup-8.html#random-forest",
+    "objectID": "meetups/meetup-8/meetup-8.html#decreasing-the-variance-by-decorrelating-trees",
+    "href": "meetups/meetup-8/meetup-8.html#decreasing-the-variance-by-decorrelating-trees",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
-    "section": "Random Forest",
-    "text": "Random Forest"
+    "section": "Decreasing the Variance by Decorrelating Trees",
+    "text": "Decreasing the Variance by Decorrelating Trees\n\nImprovement from Bagging was modest\nTrees tend to be similar to each-other even though different bootstrap samples\n\nRandom Forest: For each split, randomly select a certain number of features less than the total.\n\nForces trees to be less correlated"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#random-forests",
+    "href": "meetups/meetup-8/meetup-8.html#random-forests",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Random Forests",
+    "text": "Random Forests\n\nCan try any value of ‘max_features’ from 1 to \\(p\\)\n\\(p/3\\) for regression, \\(\\sqrt{p}\\) for classification"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#random-forest-classification",
+    "href": "meetups/meetup-8/meetup-8.html#random-forest-classification",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Random Forest Classification",
+    "text": "Random Forest Classification\n\n15 Class Gene Expression data with 500 features\n\n\nISLP 8.10"
   },
   {
     "objectID": "meetups/meetup-8/meetup-8.html#out-of-bag-error",
     "href": "meetups/meetup-8/meetup-8.html#out-of-bag-error",
     "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
     "section": "Out Of Bag Error",
-    "text": "Out Of Bag Error\n\n\n\n\nDATA 622"
+    "text": "Out Of Bag Error\n\n1/3rd of data doesn’t get chosen each sample\nCan use those data to estimate error"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#feature-importance",
+    "href": "meetups/meetup-8/meetup-8.html#feature-importance",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Feature Importance",
+    "text": "Feature Importance"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#feature-importance-1",
+    "href": "meetups/meetup-8/meetup-8.html#feature-importance-1",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Feature Importance",
+    "text": "Feature Importance\n\nWe are building up to something like this:"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#poor-extrapolation",
+    "href": "meetups/meetup-8/meetup-8.html#poor-extrapolation",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Poor Extrapolation",
+    "text": "Poor Extrapolation\n\nTrees do not extrapolate out of the “range” of your dataset\nPredictions “flat” in each region"
+  },
+  {
+    "objectID": "meetups/meetup-8/meetup-8.html#thanks",
+    "href": "meetups/meetup-8/meetup-8.html#thanks",
+    "title": "DATA 622 Meetup 8: Trees and Ensemble Methods",
+    "section": "Thanks",
+    "text": "Thanks\n\n\n\n\nDATA 622"
   },
   {
     "objectID": "assignments/labs/lab5.html",

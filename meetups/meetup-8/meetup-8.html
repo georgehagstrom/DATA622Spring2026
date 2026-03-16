@@ -367,6 +367,11 @@ George I. Hagstrom
 </section>
 <section id="spring-pitchfest" class="slide level2">
 <h2>Spring Pitchfest!</h2>
+<p><img data-src="pitchfest.png"></p>
+<p><img data-src="pitchfest_details.png"></p>
+<ul>
+<li><a href="https://pitchfest.github.io/">https://pitchfest.github.io/</a></li>
+</ul>
 </section>
 <section id="decision-trees" class="slide level2">
 <h2>Decision Trees</h2>
@@ -385,8 +390,9 @@ George I. Hagstrom
 <section id="previous-models-easy-to-solve" class="slide level2">
 <h2>Previous Models Easy to Solve</h2>
 <ul>
-<li>Previous Models: -Linear Regression
+<li>Previous Models:
 <ul>
+<li>Linear Regression</li>
 <li>Logistic Regression</li>
 <li>GLMs</li>
 <li>Support Vector Machines</li>
@@ -531,8 +537,8 @@ George I. Hagstrom
 <ul>
 <li>Instead of accuracy, pick variable and splits using evenness:
 <ul>
-<li><strong>Gini Impuristy:</strong> <span class="math inline">\(\sum_{k}\hat{p}_k(1-\hat{p}_k)\)</span></li>
-<li><strong>Entropy:</strong> <span class="math inline">\(\sum_{k}\hat{p}_k\log \hat{p}_k\)</span></li>
+<li><strong>Gini Impurity:</strong> <span class="math inline">\(\sum_{k}\hat{p}_k(1-\hat{p}_k)\)</span></li>
+<li><strong>Entropy:</strong> <span class="math inline">\(-\sum_{k}\hat{p}_k\log \hat{p}_k\)</span></li>
 </ul></li>
 <li>Pick variable and split to give maximum reduction of weighted Gini or entropy</li>
 </ul>
@@ -559,32 +565,49 @@ George I. Hagstrom
 <h2>Best <span class="math inline">\(\alpha\)</span> with CV</h2>
 
 <img data-src="meetup-8_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
-<section id="hitters-alternative" class="slide level2">
-<h2>Hitters Alternative</h2>
-
-<img data-src="meetup-8_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
 <section id="wisdom-of-the-crowds" class="slide level2">
 <h2>Wisdom of the Crowds</h2>
 <ul>
-<li>1908 County Fair</li>
-<li>Statistician Polled 800 townsfolk, asked them weight of a cow</li>
-<li>How accurate do you think they were?</li>
+<li>Statistician went to 1908 Plymouth County Fair:</li>
+<li>Polled 800 townsfolk on weight of a cow</li>
 </ul>
 
-<img data-src="penelope_cow.jpg" class="r-stretch quarto-figure-center"><p class="caption">Oil Painting of Crave Heiffer 1811</p></section>
+<img data-src="penelope_cow.jpg" class="r-stretch quarto-figure-center"><p class="caption">Oil Painting of Craven Heiffer 1811</p></section>
 <section id="wisdom-of-the-crowds-1" class="slide level2">
 <h2>Wisdom of the Crowds</h2>
 <ul>
 <li>Crowd Median: 1198 pounds</li>
 <li>Actual Weight: 1202 pounds</li>
-<li>Phenomenon called <em>Wisdom of the Crowds</em></li>
 </ul>
 
 <img data-src="penelope_cow.jpg" class="r-stretch quarto-figure-center"><p class="caption">Oil Painting of Crave Heiffer 1811</p></section>
 <section id="ensemble-learning" class="slide level2">
 <h2>Ensemble Learning</h2>
+<ul>
+<li>Combine predictions of several methods</li>
+</ul>
+
+<img data-src="ensemble.png" class="r-stretch quarto-figure-center"><p class="caption">HOML 7.2</p></section>
+<section id="ensemble-learning-1" class="slide level2">
+<h2>Ensemble Learning</h2>
+<ul>
+<li>Different models make errors in different ways
+<ul>
+<li>Combining them leads to complementary insights</li>
+<li><em>Stacking:</em> Train a final model to combine outputs of different models</li>
+<li><strong>Netflix Prize</strong> did this with Neural Networks and Matrix factorization methods, kNN</li>
+</ul></li>
+<li>Mixture of Experts for LLMs</li>
+</ul>
 </section>
 <section id="bagging" class="slide level2">
+<h2>Bagging</h2>
+<ul>
+<li>You can also combine models from the same class trained with different features or data:</li>
+</ul>
+
+<img data-src="bagging.png" class="r-stretch quarto-figure-center"><p class="caption">HOML 7.4</p></section>
+<section id="bagging-1" class="slide level2">
 <h2>Bagging</h2>
 <ul>
 <li>Generate a lot of trees, each tree generalizes poorly</li>
@@ -620,20 +643,65 @@ George I. Hagstrom
 <h2>How many trees to bag?</h2>
 <ul>
 <li>Model improves as <span class="math inline">\(B\)</span> increases, up until a point</li>
-<li>Levels off, does <em>not</em> overfit</li>
+<li>Adding more trees doesn’t increase test error</li>
 </ul>
-<div id="6ee00bac" class="cell" data-execution_count="11">
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>Text(0, 0.5, 'MSE')</code></pre>
-</div>
 
-</div>
-<img data-src="meetup-8_files/figure-revealjs/cell-12-output-2.png" class="r-stretch"></section>
-<section id="random-forest" class="slide level2">
-<h2>Random Forest</h2>
+<img data-src="meetup-8_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
+<section id="decreasing-the-variance-by-decorrelating-trees" class="slide level2">
+<h2>Decreasing the Variance by Decorrelating Trees</h2>
+<ul>
+<li>Improvement from Bagging was modest</li>
+<li>Trees tend to be similar to each-other even though different bootstrap samples</li>
+</ul>
+<p><strong>Random Forest:</strong> For each split, randomly select a certain number of features less than the total.</p>
+<ul>
+<li>Forces trees to be less correlated</li>
+</ul>
 </section>
+<section id="random-forests" class="slide level2">
+<h2>Random Forests</h2>
+<ul>
+<li>Can try any value of ‘max_features’ from 1 to <span class="math inline">\(p\)</span></li>
+<li><span class="math inline">\(p/3\)</span> for regression, <span class="math inline">\(\sqrt{p}\)</span> for classification</li>
+</ul>
+
+<img data-src="meetup-8_files/figure-revealjs/cell-12-output-1.png" class="r-stretch"></section>
+<section id="random-forest-classification" class="slide level2">
+<h2>Random Forest Classification</h2>
+<ul>
+<li>15 Class Gene Expression data with 500 features</li>
+</ul>
+
+<img data-src="RF_classification.png" class="r-stretch quarto-figure-center"><p class="caption">ISLP 8.10</p></section>
 <section id="out-of-bag-error" class="slide level2">
 <h2>Out Of Bag Error</h2>
+<ul>
+<li>1/3rd of data doesn’t get chosen each sample</li>
+<li>Can use those data to estimate error</li>
+</ul>
+
+<img data-src="meetup-8_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
+<section id="feature-importance" class="slide level2">
+<h2>Feature Importance</h2>
+
+<img data-src="meetup-8_files/figure-revealjs/cell-14-output-1.png" class="r-stretch"></section>
+<section id="feature-importance-1" class="slide level2">
+<h2>Feature Importance</h2>
+<ul>
+<li>We are building up to something like this:</li>
+</ul>
+
+<img data-src="meetup-8_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
+<section id="poor-extrapolation" class="slide level2">
+<h2>Poor Extrapolation</h2>
+<ul>
+<li>Trees do not extrapolate out of the “range” of your dataset</li>
+<li>Predictions “flat” in each region</li>
+</ul>
+
+<img data-src="meetup-8_files/figure-revealjs/cell-16-output-1.png" class="r-stretch"></section>
+<section id="thanks" class="slide level2">
+<h2>Thanks</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>
