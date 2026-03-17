@@ -600,6 +600,18 @@ George I. Hagstrom
 <li>Mixture of Experts for LLMs</li>
 </ul>
 </section>
+<section id="when-does-it-help" class="slide level2">
+<h2>When does it help?</h2>
+<ul>
+<li>Consider errors from two models, <span class="math inline">\(\delta_1\)</span> and <span class="math inline">\(\delta_2\)</span></li>
+<li>Average them together and compute variance: <span class="math display">\[
+\mathrm{Var}(\frac{1}{2}\delta_1 + \frac{1}{2}\delta_2) = \frac{1}{4}\mathrm{Var}(\delta_1) + \\
+\frac{1}{4}\mathrm{Var}(\delta_1) + \frac{1}{2}\mathrm{Cov}(\delta_1,\delta_2)
+\]</span></li>
+<li>If models are same, makes no difference</li>
+<li>If models make different errors and accuracy is similar, improve error</li>
+</ul>
+</section>
 <section id="bagging" class="slide level2">
 <h2>Bagging</h2>
 <ul>
