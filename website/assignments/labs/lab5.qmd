@@ -14,7 +14,7 @@ import pandas as pd
 
 ### Overview
 
-You have been given a dataset consisting of a single file, `AmesHousing.csv`, and a data dictionary `data-dictionary.txt`. 
+You have been given a dataset consisting of a single file, `AmesHousing.csv`, and a data dictionary `data-description.txt`. 
 This dataset contains the sales price of each home as well as other attributes of the home and the
 sales transaction, such as the lot size, the square footage of each floor, when the home was built and remodeled, whether the kitchen is upgraded, etc. A data dictionary has been included with the data. During this lab, you will practice using different types of regression tree methods to predict housing prices in the data.
 
@@ -23,9 +23,12 @@ you could use this assignment to create your first entry. The dataset was
 originally compiled by De Cook for educational purposes. Skim this article for some tips on using this dataset: [De Cock 2011](https://jse.amstat.org/v19n3/decock.pdf). De Cook makes some suggestions for simplifying the data that you can take if you need to. 
 
 
-The dataset is available here:
+The dataset and data dictionary are available here:
 
 - [AmesHousing.csv](https://github.com/georgehagstrom/DATA622Spring2026/blob/main/website/assignments/labs/labData/AmesHousing.csv)
+- [data-description.txt](https://github.com/georgehagstrom/DATA622Spring2026/blob/main/website/assignments/labs/labData/data-description.txt)
+
+
 
 Note: There is a lot of freedom in this exercise in terms of which variables you pick, some of the model choices, and also some hyperparameters. I have an expectation for what the answers will be in general, but you might get different answers depending on what you select and random chance. Report what you find, not what you expect to see (though if you see something unexpected it is a good hint to look for a mistake).
 
