@@ -1882,7 +1882,35 @@
     "href": "meetups/meetup-9/meetup-9.html#rounds-of-boosting-2",
     "title": "DATA 622 Meetup 9: Trees Part 2: Boosting",
     "section": "1000 Rounds of Boosting",
-    "text": "1000 Rounds of Boosting\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA 622"
+    "text": "1000 Rounds of Boosting"
+  },
+  {
+    "objectID": "meetups/meetup-9/meetup-9.html#boosted-trees-can-overfit",
+    "href": "meetups/meetup-9/meetup-9.html#boosted-trees-can-overfit",
+    "title": "DATA 622 Meetup 9: Trees Part 2: Boosting",
+    "section": "Boosted Trees Can Overfit",
+    "text": "Boosted Trees Can Overfit\n\nLearning Rate \\(\\lambda\\) \\[\n\\hat{f} = \\sum_{i=1}^{n_e} \\lambda \\hat{f}_i\n\\]\nSmall \\(\\lambda\\) slows learning, reduces variance"
+  },
+  {
+    "objectID": "meetups/meetup-9/meetup-9.html#learning-rate-effects",
+    "href": "meetups/meetup-9/meetup-9.html#learning-rate-effects",
+    "title": "DATA 622 Meetup 9: Trees Part 2: Boosting",
+    "section": "Learning Rate Effects",
+    "text": "Learning Rate Effects\n\nSmall \\(\\lambda\\) regularizes"
+  },
+  {
+    "objectID": "meetups/meetup-9/meetup-9.html#max-depth",
+    "href": "meetups/meetup-9/meetup-9.html#max-depth",
+    "title": "DATA 622 Meetup 9: Trees Part 2: Boosting",
+    "section": "Max Depth",
+    "text": "Max Depth\n\nDeeper Trees lead to Overfitting"
+  },
+  {
+    "objectID": "meetups/meetup-9/meetup-9.html#other-hyperparameters",
+    "href": "meetups/meetup-9/meetup-9.html#other-hyperparameters",
+    "title": "DATA 622 Meetup 9: Trees Part 2: Boosting",
+    "section": "Other Hyperparameters",
+    "text": "Other Hyperparameters\n\n‘subsample’ part of the data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA 622"
   },
   {
     "objectID": "meetups/meetup-8/trees_bagging_vignette_live.html",
