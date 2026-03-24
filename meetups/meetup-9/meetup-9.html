@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -321,6 +321,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="DATA 622 Meetup 9: Trees Part 2: Boosting – DATA 622 Spring 2026">
 <meta property="og:site_name" content="DATA 622 Spring 2026">
 </head>
@@ -362,6 +365,54 @@ George I. Hagstrom
 <h2>Meetup Wednesday!!!</h2>
 <ul>
 <li>Sign up here: <a href="https://us02web.zoom.us/meeting/register/pDyeuQ9ERrqYbBNKJPBMkw">Sign up Link</a></li>
+</ul>
+</section>
+<section id="lab-3-feedback" class="slide level2">
+<h2>Lab 3 Feedback</h2>
+<ul>
+<li>Be very wary of default or LLM chosen model parameters!!!
+<ul>
+<li>Penalty On by default</li>
+</ul></li>
+</ul>
+
+<img data-src="sklearn_reg.png" class="r-stretch"></section>
+<section id="lab-3-feedback-1" class="slide level2">
+<h2>Lab 3 Feedback</h2>
+<ul>
+<li>Be very cognizant of model options!!!
+<ul>
+<li>Without standard scaler, model is not what you expect</li>
+</ul></li>
+</ul>
+
+<img data-src="sklearn_reg.png" class="r-stretch"></section>
+<section id="lab-3-feedback-2" class="slide level2">
+<h2>Lab 3 Feedback</h2>
+<ul>
+<li>Be very cognizant of model options!!!
+<ul>
+<li>‘class_weights’ balanced ruins calibration</li>
+</ul></li>
+</ul>
+
+<img data-src="class_weights.png" class="r-stretch"></section>
+<section id="lab-3-feedback-3" class="slide level2">
+<h2>Lab 3 Feedback</h2>
+<ul>
+<li>Be very cognizant of model options!!!
+<ul>
+<li>‘class_weights’ balanced ruins calibration</li>
+</ul></li>
+</ul>
+
+<img data-src="no_class_weights.png" class="r-stretch"></section>
+<section id="lab-3-feedback-4" class="slide level2">
+<h2>Lab 3 Feedback</h2>
+<ul>
+<li>Read the questions</li>
+<li>Read your report</li>
+<li>Message me before turning in a really long report!</li>
 </ul>
 </section>
 <section id="bagging-review" class="slide level2">
@@ -502,17 +553,414 @@ George I. Hagstrom
 <section id="other-hyperparameters" class="slide level2">
 <h2>Other Hyperparameters</h2>
 <ul>
-<li>‘subsample’ part of the data</li>
+<li>‘subsample’ part of the data
+<ul>
+<li>Large, noisy data</li>
+<li>Regularizes</li>
+<li>Increases speed</li>
+</ul></li>
+<li>‘min_samples_leaf’</li>
+<li>Lasso and Ridge Penalties</li>
 </ul>
-<div id="c919b59d" class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display">
+</section>
+<section id="classification-and-gradient-boosting" class="slide level2">
+<h2>Classification and Gradient Boosting</h2>
+<ul>
+<li>Boosted Trees use regression for classification problems</li>
+<li>Standard Loss is called ‘cross-entropy’, equivalent to ‘log’ score</li>
+<li>For each <em>class</em> there are trees that predict the weight: <span class="math display">\[
+p(y=k|\mathbf{x}) = \frac{\exp(\hat{f}_k(\mathbf{x}))}{\sum_{k'=1}^K \exp(\hat{f}_k(\mathbf{x}))}
+\]</span></li>
+</ul>
+</section>
+<section id="classification-and-gradient-boosting-1" class="slide level2">
+<h2>Classification and Gradient Boosting</h2>
+<ul>
+<li>Weights come from sum of trees for each class:</li>
+</ul>
+<p><span class="math display">\[
+\hat{f}_k(\mathbf{x}) = \sum_{m=1}^M \eta \hat{f}_{mk}(\mathbf{x})
+\]</span></p>
+</section>
+<section id="where-does-gradient-come-in" class="slide level2">
+<h2>Where does ‘Gradient’ Come in?</h2>
+<ul>
+<li>Gradient of the log likelihood with respect to the weights: <span class="math display">\[
+\frac{\partial L}{\partial \hat{f}_k(\mathbf{x}_i)} = I(y_i = k) - p(y=k|\mathbf{x}_i)
+\]</span></li>
+<li>This is the direction in which the likelihood increases most</li>
+<li>Treat the gradient like a residual</li>
+</ul>
+</section>
+<section id="state-of-the-art-gradient-boosting" class="slide level2">
+<h2>State-Of-The-Art Gradient Boosting</h2>
+<ul>
+<li>There are lots of very advanced gradient boosting libraries and models</li>
+<li>Also approximate curvature</li>
+</ul>
+
+<img data-src="meetup-9_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
+<section id="gradient-boosting-libraries" class="slide level2">
+<h2>Gradient Boosting Libraries</h2>
+<ul>
+<li>‘XGBoost’: Oldest, slowest, most solid, needs one-hot</li>
+<li>‘CatBoost’: Best for categorical, some tricks for low bias</li>
+<li>‘LightGBM’: From Microsoft, built for speed, more overfitting potential</li>
+<li>‘HistGradientBoostingClassifier’: ‘sklearn’ implementation</li>
+</ul>
+</section>
+<section id="example-uci-credit-card-defaults" class="slide level2">
+<h2>Example: UCI Credit Card Defaults</h2>
+<ul>
+<li>Dataset of 30,000 observations</li>
+<li>Features: Payment History</li>
+</ul>
+<div id="cad07f86" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="73">
 <div>
-<figure>
-<p><img data-src="meetup-9_files/figure-revealjs/cell-13-output-1.png"></p>
-</figure>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">LIMIT_BAL</th>
+<th data-quarto-table-cell-role="th">SEX</th>
+<th data-quarto-table-cell-role="th">EDUCATION</th>
+<th data-quarto-table-cell-role="th">MARRIAGE</th>
+<th data-quarto-table-cell-role="th">AGE</th>
+<th data-quarto-table-cell-role="th">PAY_0</th>
+<th data-quarto-table-cell-role="th">PAY_2</th>
+<th data-quarto-table-cell-role="th">PAY_3</th>
+<th data-quarto-table-cell-role="th">PAY_4</th>
+<th data-quarto-table-cell-role="th">PAY_5</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">BILL_AMT3</th>
+<th data-quarto-table-cell-role="th">BILL_AMT4</th>
+<th data-quarto-table-cell-role="th">BILL_AMT5</th>
+<th data-quarto-table-cell-role="th">BILL_AMT6</th>
+<th data-quarto-table-cell-role="th">PAY_AMT1</th>
+<th data-quarto-table-cell-role="th">PAY_AMT2</th>
+<th data-quarto-table-cell-role="th">PAY_AMT3</th>
+<th data-quarto-table-cell-role="th">PAY_AMT4</th>
+<th data-quarto-table-cell-role="th">PAY_AMT5</th>
+<th data-quarto-table-cell-role="th">PAY_AMT6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">17041</td>
+<td>190000.0</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>25</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>23130.0</td>
+<td>28126.0</td>
+<td>26104.0</td>
+<td>18840.0</td>
+<td>1615.0</td>
+<td>1200.0</td>
+<td>26703.0</td>
+<td>2104.0</td>
+<td>7000.0</td>
+<td>11747.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8451</td>
+<td>50000.0</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>40</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>48600.0</td>
+<td>7514.0</td>
+<td>9336.0</td>
+<td>-177.0</td>
+<td>10000.0</td>
+<td>21019.0</td>
+<td>1500.0</td>
+<td>3000.0</td>
+<td>1210.0</td>
+<td>7900.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5764</td>
+<td>80000.0</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>-1</td>
+<td>-1</td>
+<td>-2</td>
+<td>...</td>
+<td>15674.0</td>
+<td>-1.0</td>
+<td>-1.0</td>
+<td>-1.0</td>
+<td>2400.0</td>
+<td>15674.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1745</td>
+<td>50000.0</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>50071.0</td>
+<td>10104.0</td>
+<td>9208.0</td>
+<td>10075.0</td>
+<td>2300.0</td>
+<td>2000.0</td>
+<td>1000.0</td>
+<td>500.0</td>
+<td>1000.0</td>
+<td>500.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29645</td>
+<td>310000.0</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>34</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>80533.0</td>
+<td>70343.0</td>
+<td>58365.0</td>
+<td>51454.0</td>
+<td>3100.0</td>
+<td>3604.0</td>
+<td>2366.0</td>
+<td>2018.0</td>
+<td>2000.0</td>
+<td>1700.0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 23 columns</p>
 </div>
 </div>
 </div>
+</section>
+<section id="example-uci-credit-card-default-dataset" class="slide level2">
+<h2>Example: UCI Credit Card Default Dataset</h2>
+<ul>
+<li>Dataset of 30,000 observations</li>
+<li>Target: Default in the next month</li>
+<li>78% don’t default</li>
+</ul>
+<div id="96fdb715" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>default.payment.next.month
+0    18691
+1     5309
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="example-uci-credit-card-default-dataset-1" class="slide level2">
+<h2>Example: UCI Credit Card Default Dataset</h2>
+<ul>
+<li>Dataset of 30,000 observations</li>
+<li>Target: Default in the next month</li>
+</ul>
+<div id="a2423c4e" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="75">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PAY_0</td>
+<td>0.327770</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">PAY_2</td>
+<td>0.263590</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PAY_3</td>
+<td>0.235160</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">PAY_4</td>
+<td>0.218304</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PAY_5</td>
+<td>0.206920</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">PAY_6</td>
+<td>0.188902</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">LIMIT_BAL</td>
+<td>-0.155912</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">PAY_AMT1</td>
+<td>-0.070510</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PAY_AMT5</td>
+<td>-0.056307</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">PAY_AMT2</td>
+<td>-0.055253</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PAY_AMT3</td>
+<td>-0.055114</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">PAY_AMT4</td>
+<td>-0.052717</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PAY_AMT6</td>
+<td>-0.047702</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">SEX</td>
+<td>-0.042882</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">EDUCATION</td>
+<td>0.025775</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="cv-with-xgboost" class="slide level2">
+<h2>CV with ‘XGBoost’</h2>
+<ul>
+<li>Have a lot of hyperparameters:
+<ul>
+<li>‘n_estimators’</li>
+<li>‘learning_rate’</li>
+<li>‘max_depth’</li>
+<li>even more…</li>
+</ul></li>
+</ul>
+</section>
+<section id="early-stopping" class="slide level2">
+<h2>Early Stopping</h2>
+<ul>
+<li>DO NOT use CV to pick ‘n_estimators’</li>
+<li>Instead monitor validation error on each fold</li>
+<li>If validation error does not decrease after certain number of iterations, stop</li>
+<li>Pick Other hyperparameters using CV</li>
+</ul>
+</section>
+<section id="regularization-path" class="slide level2">
+<h2>Regularization Path</h2>
+<ul>
+<li>Select Learning Rate with lowest log-loss</li>
+</ul>
+
+<img data-src="meetup-9_files/figure-revealjs/cell-17-output-1.png" class="r-stretch"></section>
+<section id="n_estimators-vs-learning_rate-trade-off" class="slide level2">
+<h2>‘n_estimators’ vs ‘learning_rate’ trade-off</h2>
+
+<img data-src="meetup-9_files/figure-revealjs/cell-18-output-1.png" class="r-stretch"></section>
+<section id="eval-set" class="slide level2">
+<h2>Eval Set</h2>
+<ul>
+<li>Refit the model with selected hyperparameters on the training</li>
+<li>But hold out 15% to determine early stopping</li>
+<li>Just edges out a RF/LR models</li>
+</ul>
+<div id="e1b40e75" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-stdout">
+<pre><code>Model                       Log Loss   Accuracy
+-----------------------------------------------
+XGBoost                       0.4337     0.8200
+Random Forest                 0.4423     0.8158
+Logistic Regression           0.4679     0.8113</code></pre>
+</div>
+</div>
+</section>
+<section id="roc-curves" class="slide level2">
+<h2>ROC Curves</h2>
+
+<img data-src="meetup-9_files/figure-revealjs/cell-20-output-1.png" class="r-stretch"></section>
+<section id="calibration-curves" class="slide level2">
+<h2>Calibration Curves</h2>
+
+<img data-src="meetup-9_files/figure-revealjs/cell-21-output-1.png" class="r-stretch"></section>
+<section id="thanks" class="slide level2">
+<h2>Thanks</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>
