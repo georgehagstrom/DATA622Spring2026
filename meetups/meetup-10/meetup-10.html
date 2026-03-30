@@ -355,6 +355,10 @@ George I. Hagstrom
 </section>
 <section id="tuesday-april-14th-save-the-date" class="slide level2">
 <h2>Tuesday April 14th Save the Date</h2>
+
+<img data-src="Apr2026Seminar.png" class="r-stretch"></section>
+<section id="tuesdal-april-14th-save-the-date" class="slide level2">
+<h2>Tuesdal April 14th Save the Date</h2>
 <ul>
 <li>Daniel Lee
 <ul>
@@ -392,8 +396,8 @@ George I. Hagstrom
 <li>Optimistic CEO:</li>
 </ul>
 <p>“Our super-shoes will save you almost 50 minutes off your marathon time”</p>
-<div id="1ec84245" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div id="5cb8ee5a" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -799,7 +803,7 @@ George I. Hagstrom
 <td><strong>ATE</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>-4</strong></td>
 </tr>
 </tbody>
 </table>
@@ -843,7 +847,7 @@ George I. Hagstrom
 <td><strong>ATT</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>-2.5</strong></td>
 </tr>
 </tbody>
 </table>
@@ -887,7 +891,7 @@ George I. Hagstrom
 <td><strong>ATC</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>-5.5</strong></td>
 </tr>
 </tbody>
 </table>
@@ -1036,21 +1040,23 @@ George I. Hagstrom
 <section id="beyond-linear-regression-1" class="slide level2">
 <h2>Beyond Linear Regression</h2>
 <p><strong>Problem 2: Matching doesn’t work with many features</strong></p>
-<ul>
-<li>When you have a lot of features, curse of dimensionality bites and you can’t find matches</li>
-</ul>
 
 <img data-src="meetup-10_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
 <section id="propensity-score" class="slide level2">
 <h2>Propensity Score</h2>
+<div style="border: 2px solid black; padding: 20px; border-radius: 5px;">
+<p>Rubens and Rosenbaum: Instead of matching on exact characteristics, we can match on <em>probability of getting the treatment</em>.</p>
+</div>
+</section>
+<section id="propensity-score-1" class="slide level2">
+<h2>Propensity Score</h2>
 <ul>
-<li>Breakthrough by Rubens and Rosenbaum: Instead of matching on exact characteristics, we can match on <em>probability of getting the treatment</em>.</li>
 <li>Fit logistic regression to predict probability of having premium shoes</li>
 <li>Stratify by this <em>propensity</em> score
 <ul>
 <li>Add as covariate, matching, inverse probability weighting, more</li>
 </ul></li>
-<li>This gets you ATE</li>
+<li>Compute ATE</li>
 </ul>
 </section>
 <section id="causal-machine-learning" class="slide level2">
