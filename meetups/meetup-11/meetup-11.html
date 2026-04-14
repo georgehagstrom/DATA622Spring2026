@@ -437,7 +437,7 @@ George I. Hagstrom
 <ol type="1">
 <li>Cross Validation with Linear Models</li>
 </ol>
-<div id="2021dba5" class="cell" data-execution_count="2">
+<div id="08761d0d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># I saw this or something equivalent in most homeworks:</span></span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>cv <span class="op">=</span> KFold(n_splits<span class="op">=</span><span class="dv">5</span>, </span>
@@ -455,7 +455,7 @@ George I. Hagstrom
 <ol type="1">
 <li>Cross Validation with Linear Models</li>
 </ol>
-<div id="9d293de1" class="cell" data-execution_count="3">
+<div id="79265216" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># I saw this or something equivalent in most homeworks:</span></span>
 <span id="cb2-2"><a></a></span>
 <span id="cb2-3"><a></a>cv <span class="op">=</span> KFold(n_splits<span class="op">=</span><span class="dv">5</span>, </span>
@@ -476,7 +476,7 @@ George I. Hagstrom
 <ol type="1">
 <li>Cross Validation with Linear Models</li>
 </ol>
-<div id="4b94bc03" class="cell" data-execution_count="4">
+<div id="ea7a76a7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Best way to do this:</span></span>
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a>ridge_cv <span class="op">=</span> RidgeCV(alphas<span class="op">=</span>alphas, </span>
@@ -489,7 +489,7 @@ George I. Hagstrom
 <ol start="2" type="1">
 <li>Different <span class="math inline">\(\alpha\)</span> for weighted and unweighted regression</li>
 </ol>
-<div id="fa913b1d" class="cell" data-execution_count="5">
+<div id="aeeea5ff" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># The best alpha from the unweighted model</span></span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>best_alpha <span class="op">=</span> ridge_cv.alpha_</span>
@@ -505,7 +505,7 @@ George I. Hagstrom
 <ol start="2" type="1">
 <li>Different <span class="math inline">\(\alpha\)</span> for weighted and unweighted regression</li>
 </ol>
-<div id="5d90be13" class="cell" data-execution_count="6">
+<div id="8e1efea2" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Instead just do RidgeCV</span></span>
 <span id="cb5-2"><a></a></span>
 <span id="cb5-3"><a></a>ridge_weights <span class="op">=</span> RidgeCV(alphas<span class="op">=</span>alphas,</span>
@@ -723,7 +723,7 @@ George I. Hagstrom
 <li>Target is ‘cnt’ variable</li>
 <li>Features are weather, type of day, time of day, etc</li>
 </ul>
-<div id="575d38a0" class="cell" data-execution_count="7">
+<div id="bd52ab9c" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <style scoped="">
@@ -864,7 +864,7 @@ George I. Hagstrom
 <ul>
 <li>How does our Random Forest Perform?</li>
 </ul>
-<div id="44947e1d" class="cell" data-execution_count="8">
+<div id="1491fab5" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE: 81.1
 \$R^2\$: 0.864</code></pre>
@@ -907,21 +907,19 @@ George I. Hagstrom
 <li>Local looks at the impact of features at a specific data point.</li>
 <li>Ceteris Parabis plots (or “Slope” or “Marginal Effect”):</li>
 </ul>
-<div id="fb8e285d" class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>Text(0.5, 1.0, 'Individual Conditional Expectation: workingday=1, temp=0.70')</code></pre>
-</div>
 
-</div>
-<img data-src="meetup-11_files/figure-revealjs/cell-13-output-2.png" class="r-stretch"></section>
+<img data-src="meetup-11_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
 <section id="local-versus-global-1" class="slide level2">
 <h2>Local Versus Global</h2>
 <ul>
 <li>Global looks at the impact of the feature averaged over many instances</li>
 <li>Partial Dependence Plot averages all of the Conditional Expectation Curves</li>
 </ul>
-<div id="f490bf07" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>PartialDependenceDisplay.from_estimator(rf, X_test, features<span class="op">=</span>[<span class="st">"hr"</span>], grid_resolution<span class="op">=</span><span class="dv">24</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3253dca3" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>PartialDependenceDisplay.from_estimator(rf, </span>
+<span id="cb7-2"><a></a>  X_test, </span>
+<span id="cb7-3"><a></a>  features<span class="op">=</span>[<span class="st">"hr"</span>], </span>
+<span id="cb7-4"><a></a>  grid_resolution<span class="op">=</span><span class="dv">24</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="local-versus-global-2" class="slide level2">
@@ -1047,71 +1045,71 @@ E(\hat{f}| x_t, x_c) - E(\hat{f}| x_c)
 </section>
 <section id="shap-importance" class="slide level2">
 <h2>SHAP Importance</h2>
-<div id="b47ca42f" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># Code for a feature importance plot</span></span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a>shap.summary_plot(shap_values, X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a9438e72" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># Code for a feature importance plot</span></span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a>shap.summary_plot(shap_values, X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="meetup-11_files/figure-revealjs/cell-18-output-1.png" class="r-stretch"></section>
 <section id="shap-dependence-plot" class="slide level2">
 <h2>SHAP Dependence Plot</h2>
-<div id="29ecba1a" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co"># Code for a shap dependence plot</span></span>
-<span id="cb10-2"><a></a></span>
-<span id="cb10-3"><a></a>shap.dependence_plot(<span class="st">"temp"</span>, shap_values, X_test,</span>
-<span id="cb10-4"><a></a>    interaction_index<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8e17c435" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># Code for a shap dependence plot</span></span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a>shap.dependence_plot(<span class="st">"temp"</span>, shap_values, X_test,</span>
+<span id="cb9-4"><a></a>    interaction_index<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="meetup-11_files/figure-revealjs/cell-19-output-1.png" class="r-stretch"></section>
 <section id="interactions-by-default" class="slide level2">
 <h2>Interactions by default</h2>
-<div id="8f7e2440" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># Code for a shap dependence plot with interactions picked by size</span></span>
-<span id="cb11-2"><a></a></span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a>shap.dependence_plot(<span class="st">"temp"</span>, shap_values, X_test,</span>
-<span id="cb11-5"><a></a>    cmap<span class="op">=</span>plt.cm.twilight_shifted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5d172e7f" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co"># Code for a shap dependence plot with interactions picked by size</span></span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a>shap.dependence_plot(<span class="st">"temp"</span>, shap_values, X_test,</span>
+<span id="cb10-5"><a></a>    cmap<span class="op">=</span>plt.cm.twilight_shifted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="meetup-11_files/figure-revealjs/cell-20-output-1.png" class="r-stretch"></section>
 <section id="shap-interactions-plot" class="slide level2">
 <h2>SHAP Interactions Plot</h2>
-<div id="ed5825ab" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># Code for a shap dependence plot with interaction chosen</span></span>
-<span id="cb12-2"><a></a></span>
-<span id="cb12-3"><a></a>shap.dependence_plot(<span class="st">"hr"</span>, shap_values, X_test, </span>
-<span id="cb12-4"><a></a>    interaction_index<span class="op">=</span><span class="st">"workingday"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5a262277" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># Code for a shap dependence plot with interaction chosen</span></span>
+<span id="cb11-2"><a></a></span>
+<span id="cb11-3"><a></a>shap.dependence_plot(<span class="st">"hr"</span>, shap_values, X_test, </span>
+<span id="cb11-4"><a></a>    interaction_index<span class="op">=</span><span class="st">"workingday"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="meetup-11_files/figure-revealjs/cell-21-output-1.png" class="r-stretch"></section>
 <section id="shap-waterfall-plot" class="slide level2">
 <h2>Shap Waterfall Plot</h2>
-<div id="7e20b67a" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co"># The waterfall plot shows how a prediction was made</span></span>
-<span id="cb13-2"><a></a></span>
-<span id="cb13-3"><a></a>shap.waterfall_plot(shap.Explanation(</span>
-<span id="cb13-4"><a></a>    values<span class="op">=</span>shap_values[<span class="dv">0</span>], base_values<span class="op">=</span>explainer.expected_value, </span>
-<span id="cb13-5"><a></a>    data<span class="op">=</span>X_test.iloc[<span class="dv">0</span>]</span>
-<span id="cb13-6"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f1ae0115" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># The waterfall plot shows how a prediction was made</span></span>
+<span id="cb12-2"><a></a></span>
+<span id="cb12-3"><a></a>shap.waterfall_plot(shap.Explanation(</span>
+<span id="cb12-4"><a></a>    values<span class="op">=</span>shap_values[<span class="dv">0</span>], base_values<span class="op">=</span>explainer.expected_value, </span>
+<span id="cb12-5"><a></a>    data<span class="op">=</span>X_test.iloc[<span class="dv">0</span>]</span>
+<span id="cb12-6"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="meetup-11_files/figure-revealjs/cell-22-output-1.png" class="r-stretch"></section>
 <section id="shap-waterfall-plot-v2" class="slide level2">
 <h2>Shap Waterfall Plot v2</h2>
-<div id="16207e0e" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="co"># 6 hours later waterfall plot</span></span>
-<span id="cb14-2"><a></a></span>
-<span id="cb14-3"><a></a>shap.waterfall_plot(shap.Explanation(</span>
-<span id="cb14-4"><a></a>    values<span class="op">=</span>shap_values[<span class="dv">6</span>], base_values<span class="op">=</span>explainer.expected_value, </span>
-<span id="cb14-5"><a></a>    data<span class="op">=</span>X_test.iloc[<span class="dv">6</span>]</span>
-<span id="cb14-6"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="85b0bd2b" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co"># 6 hours later waterfall plot</span></span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>shap.waterfall_plot(shap.Explanation(</span>
+<span id="cb13-4"><a></a>    values<span class="op">=</span>shap_values[<span class="dv">6</span>], base_values<span class="op">=</span>explainer.expected_value, </span>
+<span id="cb13-5"><a></a>    data<span class="op">=</span>X_test.iloc[<span class="dv">6</span>]</span>
+<span id="cb13-6"><a></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="meetup-11_files/figure-revealjs/cell-23-output-1.png" class="r-stretch"></section>
 <section id="shap-plot-for-the-worst-prediction" class="slide level2">
 <h2>Shap Plot for the worst prediction</h2>
-<div id="06cf59e9" class="cell" data-execution_count="23">
+<div id="33163613" class="cell" data-execution_count="23">
 <div class="cell-output cell-output-stdout">
 <pre><code>2012-12-27</code></pre>
 </div>
