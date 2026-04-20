@@ -11,7 +11,8 @@
   <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="George I. Hagstrom">
-  <title>DATA 622 Spring 2026 – DATA 609 Meetup 14: Neural Networks</title>
+  <meta name="dcterms.date" content="2026-04-20">
+  <title>DATA 622 Spring 2026 – DATA 622 Meetup 12: Neural Networks</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,7 +386,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="DATA 609 Meetup 14: Neural Networks – DATA 622 Spring 2026">
+<meta property="og:title" content="DATA 622 Meetup 12: Neural Networks – DATA 622 Spring 2026">
 <meta property="og:site_name" content="DATA 622 Spring 2026">
 </head>
 <body class="quarto-light">
@@ -393,7 +394,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">DATA 609 Meetup 14: Neural Networks</h1>
+  <h1 class="title">DATA 622 Meetup 12: Neural Networks</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -403,28 +404,23 @@ George I. Hagstrom
 </div>
 </div>
 
+  <p class="date">2026-04-20</p>
 </section>
 <section id="week-summary" class="slide level2">
 <h2>Week Summary</h2>
 <ul>
-<li>Lab 7 and Final Project</li>
-<li>Motivation and Basics of Neural Networks</li>
-<li>Introduction to <code>pytorch</code>
-<ul>
-<li><code>torch</code> also exists for <code>R</code></li>
-</ul></li>
-<li>Reading:
-<ul>
-<li><a href="http://neuralnetworksanddeeplearning.com/chap1.html">Neural Networks and Deep Learning, Chapter 1 and 3</a></li>
-<li><a href="https://pytorch.org/tutorials/beginner/basics/intro.html">pytorch basics</a></li>
-<li><a href="https://pytorch.org/tutorials/recipes/recipes_index.html">pytorch recipes</a></li>
-</ul></li>
+<li>Contact me ASAP if you haven’t scheduled MVP demo</li>
+<li>Lab 7 due Sunday May 3rd</li>
+<li>You will want a Google Colab Pro student account!!!</li>
+<li>Vignette on neural networks in Colab</li>
 </ul>
 </section>
-<section id="ny-open-statistical-computing-meetup" class="slide level2">
-<h2>NY Open Statistical Computing Meetup</h2>
+<section id="neural-network-gameplan" class="slide level2">
+<h2>Neural Network Gameplan</h2>
 <ul>
-<li>This Wednesday!</li>
+<li>Week 12: Basics, pytorch, activation functions, optimization algos</li>
+<li>Week 13: CNNs, RNNs, Deep Learning Considerations, vision applications</li>
+<li>Week 14: Pretrained Networks, Transfer Learning, text applications</li>
 </ul>
 </section>
 <section id="introduction-to-neural-networks" class="slide level2">
@@ -573,36 +569,8 @@ x_{\mathrm{out}} = \phi\left(\sum_{i=1}^n w_ix_i + c\right)
 </ul></li>
 <li>Leads to step/sigmoid functions:</li>
 </ul>
-<div id="11018ab7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a></a>xvec <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
-<span id="cb1-4"><a></a>yvec <span class="op">=</span> np.tanh(xvec)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))</span>
-<span id="cb1-7"><a></a>plt.plot(xvec, yvec, color<span class="op">=</span><span class="st">'dodgerblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb1-8"><a></a>plt.title(<span class="st">'Activation Function'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb1-9"><a></a>plt.xlabel(<span class="st">'x'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb1-10"><a></a>plt.ylabel(<span class="st">'$\phi(x)$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb1-11"><a></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb1-12"><a></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-13"><a></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-14"><a></a>plt.legend()</span>
-<span id="cb1-15"><a></a>plt.tight_layout()</span>
-<span id="cb1-16"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_790799/3506477847.py:14: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-  plt.legend()</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-html/cell-2-output-2.png" width="563" height="277"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-2-output-1.png" class="r-stretch"></section>
 <section id="activation-functions-to-know" class="slide level2">
 <h2>Activation Functions to Know</h2>
 <ul>
@@ -611,29 +579,8 @@ x_{\mathrm{out}} = \phi\left(\sum_{i=1}^n w_ix_i + c\right)
               0&amp; \text{if} \quad x&lt;0}
 \]</span></li>
 </ul>
-<div id="b9f15fd4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>xvec <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
-<span id="cb3-2"><a></a>yvec <span class="op">=</span> np.heaviside(xvec,<span class="dv">0</span>)</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb3-5"><a></a>plt.plot(xvec, yvec, color<span class="op">=</span><span class="st">'dodgerblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-6"><a></a>plt.title(<span class="st">'Perceptron'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb3-7"><a></a>plt.xlabel(<span class="st">'x'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb3-8"><a></a>plt.ylabel(<span class="st">'$\phi(x)$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb3-9"><a></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb3-10"><a></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-11"><a></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-12"><a></a>plt.tight_layout()</span>
-<span id="cb3-13"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-html/cell-3-output-1.png" width="755" height="373"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
 <section id="activation-functions-to-know-1" class="slide level2">
 <h2>Activation Functions to Know</h2>
 <ul>
@@ -642,29 +589,8 @@ x_{\mathrm{out}} = \phi\left(\sum_{i=1}^n w_ix_i + c\right)
 <p><span class="math display">\[
 \phi(x) = \frac{1}{1+e^{-x}}
 \]</span></p>
-<div id="d8a75357" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>xvec <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
-<span id="cb4-2"><a></a>yvec <span class="op">=</span> <span class="fl">1.0</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>np.exp(<span class="op">-</span>xvec))</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb4-5"><a></a>plt.plot(xvec, yvec, color<span class="op">=</span><span class="st">'dodgerblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb4-6"><a></a>plt.title(<span class="st">'Sigmoid'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb4-7"><a></a>plt.xlabel(<span class="st">'x'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb4-8"><a></a>plt.ylabel(<span class="st">'$\phi(x)$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb4-9"><a></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb4-10"><a></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb4-11"><a></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb4-12"><a></a>plt.tight_layout()</span>
-<span id="cb4-13"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-html/cell-4-output-1.png" width="755" height="373"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-4-output-1.png" class="r-stretch"></section>
 <section id="activation-functions-to-know-2" class="slide level2">
 <h2>Activation Functions to Know</h2>
 <ul>
@@ -673,29 +599,8 @@ x_{\mathrm{out}} = \phi\left(\sum_{i=1}^n w_ix_i + c\right)
 <p><span class="math display">\[
 \phi(x) = \frac{e^x - e^{-x}}{e^x +e^{-x}}
 \]</span></p>
-<div id="45791ea7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>xvec <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
-<span id="cb5-2"><a></a>yvec <span class="op">=</span> np.tanh(xvec)</span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb5-5"><a></a>plt.plot(xvec, yvec, color<span class="op">=</span><span class="st">'dodgerblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb5-6"><a></a>plt.title(<span class="st">'Hyperbolic Tangent'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb5-7"><a></a>plt.xlabel(<span class="st">'x'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb5-8"><a></a>plt.ylabel(<span class="st">'$\phi(x)$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb5-9"><a></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb5-10"><a></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb5-11"><a></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb5-12"><a></a>plt.tight_layout()</span>
-<span id="cb5-13"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-html/cell-5-output-1.png" width="755" height="373"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-5-output-1.png" class="r-stretch"></section>
 <section id="activation-functions-to-know-3" class="slide level2">
 <h2>Activation Functions to Know</h2>
 <ul>
@@ -705,29 +610,8 @@ x_{\mathrm{out}} = \phi\left(\sum_{i=1}^n w_ix_i + c\right)
 \phi(x) = \cases{0&amp; \text{if} \quad x\geq 0 \\
                 x&amp; \text{if} \quad x&lt;0}
 \]</span></p>
-<div id="2cd7319b" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>xvec <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
-<span id="cb6-2"><a></a>yvec <span class="op">=</span> np.heaviside(xvec,<span class="dv">0</span>)<span class="op">*</span>xvec</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb6-5"><a></a>plt.plot(xvec, yvec, color<span class="op">=</span><span class="st">'dodgerblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-6"><a></a>plt.title(<span class="st">'ReLU'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb6-7"><a></a>plt.xlabel(<span class="st">'x'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb6-8"><a></a>plt.ylabel(<span class="st">'$\phi(x)$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb6-9"><a></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb6-10"><a></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb6-11"><a></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb6-12"><a></a>plt.tight_layout()</span>
-<span id="cb6-13"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-html/cell-6-output-1.png" width="755" height="373"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
 <section id="feedforward-neural-networks" class="slide level2">
 <h2>Feedforward Neural Networks</h2>
 <ul>
@@ -749,66 +633,29 @@ x_{\mathrm{out}} = \phi\left(\sum_{i=1}^n w_ix_i + c\right)
 </ul></li>
 </ul>
 </section>
-<section id="feedforward-examples-1" class="slide level2">
-<h2>Feedforward Examples</h2>
+<section id="neural-network-considerations" class="slide level2">
+<h2>Neural Network Considerations</h2>
 <ul>
-<li>Image Recognition
+<li>Even a small NN can be huge:</li>
+</ul>
+
+<img data-src="nn-size.png" class="r-stretch"><ul>
+<li>Need lots of data</li>
+<li>Lots of different regularization</li>
+</ul>
+</section>
+<section id="what-are-nns-used-for" class="slide level2">
+<h2>What are NNs used for?</h2>
 <ul>
-<li>Input Neurons are pixels</li>
-<li>Output neurons correspond to each category</li>
-<li>Inner Layers Represent Features</li>
-<li>Can use a softmax layer at the end to determine category</li>
+<li>Anything where the features are abstract
+<ul>
+<li>Images</li>
+<li>Audio</li>
+<li>Text</li>
 </ul></li>
+<li>Large amounts of data</li>
+<li>Tabular data problems decision trees often just as good but with less trouble</li>
 </ul>
-</section>
-<section id="universal-function-approximation" class="slide level2">
-<h2>Universal Function Approximation</h2>
-<ul>
-<li>Chapter 3 of Nielson</li>
-<li>Can Represent any function to arbitrary accuracy with a neural network</li>
-</ul>
-<div id="70e5e5a5" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> f_s(x):</span>
-<span id="cb7-2"><a></a>  <span class="cf">return</span> <span class="fl">0.2</span> <span class="op">+</span> <span class="fl">0.4</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="fl">0.3</span><span class="op">*</span>x<span class="op">*</span>np.sin(<span class="dv">15</span><span class="op">*</span>x) <span class="op">+</span> <span class="fl">0.05</span><span class="op">*</span>np.cos(<span class="dv">50</span><span class="op">*</span>x)</span>
-<span id="cb7-3"><a></a></span>
-<span id="cb7-4"><a></a>xvec <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">100</span>)</span>
-<span id="cb7-5"><a></a>yvec <span class="op">=</span> f_s(xvec)</span>
-<span id="cb7-6"><a></a></span>
-<span id="cb7-7"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb7-8"><a></a>plt.plot(xvec, yvec, color<span class="op">=</span><span class="st">'dodgerblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb7-9"><a></a>plt.title(<span class="st">'Challenging Function'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb7-10"><a></a>plt.xlabel(<span class="st">'x'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb7-11"><a></a>plt.ylabel(<span class="st">'$f(x)$'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb7-12"><a></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb7-13"><a></a>plt.legend()</span>
-<span id="cb7-14"><a></a>plt.tight_layout()</span>
-<span id="cb7-15"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_790799/4261977703.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-  plt.legend()</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-html/cell-7-output-2.png" width="756" height="373"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="universal-function-idea" class="slide level2">
-<h2>Universal Function Idea</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<ul>
-<li>Hidden Layer Represents Intervals on x-axis</li>
-<li>Pairs of neurons implement step functions</li>
-<li>Match Amplitude</li>
-<li>Increase Intervals</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="UniversalFunction.png"></p>
-</div></div>
 </section>
 <section id="how-would-you-train-one" class="slide level2">
 <h2>How would you train one?</h2>
@@ -866,14 +713,14 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 <ul>
 <li>Primary data object in <code>pytorch</code> is called a <code>tensor</code></li>
 </ul>
-<div id="6c941237" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> torch</span>
-<span id="cb9-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a>data <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>],[<span class="dv">3</span>, <span class="dv">4</span>]]</span>
-<span id="cb9-5"><a></a>x_data <span class="op">=</span> torch.tensor(data)</span>
-<span id="cb9-6"><a></a>x_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="1b579ce3" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> torch</span>
+<span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>data <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>],[<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb1-5"><a></a>x_data <span class="op">=</span> torch.tensor(data)</span>
+<span id="cb1-6"><a></a>x_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>tensor([[1, 2],
         [3, 4]])</code></pre>
 </div>
@@ -887,8 +734,8 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 <li>They live on a particular device:</li>
 </ul></li>
 </ul>
-<div id="56a855be" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">print</span>(<span class="ss">f"Device tensor is stored on: </span><span class="sc">{</span>x_data<span class="sc">.</span>device<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="24b0570b" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(<span class="ss">f"Device tensor is stored on: </span><span class="sc">{</span>x_data<span class="sc">.</span>device<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Device tensor is stored on: cpu</code></pre>
 </div>
@@ -907,15 +754,15 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 <li><code>*.backward()</code> computes gradient</li>
 </ul></li>
 </ul>
-<div id="04e6df34" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>x <span class="op">=</span> torch.ones(<span class="dv">5</span>)  <span class="co"># input tensor</span></span>
-<span id="cb13-2"><a></a>y <span class="op">=</span> torch.zeros(<span class="dv">3</span>)  <span class="co"># expected output</span></span>
-<span id="cb13-3"><a></a>w <span class="op">=</span> torch.randn(<span class="dv">5</span>, <span class="dv">3</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb13-4"><a></a>b <span class="op">=</span> torch.randn(<span class="dv">3</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb13-5"><a></a>z <span class="op">=</span> torch.matmul(x, w)<span class="op">+</span>b</span>
-<span id="cb13-6"><a></a>loss <span class="op">=</span> torch.nn.functional.binary_cross_entropy_with_logits(z, y)</span>
-<span id="cb13-7"><a></a></span>
-<span id="cb13-8"><a></a>loss.backward()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e07fff7f" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>x <span class="op">=</span> torch.ones(<span class="dv">5</span>)  <span class="co"># input tensor</span></span>
+<span id="cb5-2"><a></a>y <span class="op">=</span> torch.zeros(<span class="dv">3</span>)  <span class="co"># expected output</span></span>
+<span id="cb5-3"><a></a>w <span class="op">=</span> torch.randn(<span class="dv">5</span>, <span class="dv">3</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-4"><a></a>b <span class="op">=</span> torch.randn(<span class="dv">3</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-5"><a></a>z <span class="op">=</span> torch.matmul(x, w)<span class="op">+</span>b</span>
+<span id="cb5-6"><a></a>loss <span class="op">=</span> torch.nn.functional.binary_cross_entropy_with_logits(z, y)</span>
+<span id="cb5-7"><a></a></span>
+<span id="cb5-8"><a></a>loss.backward()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="tensors-3" class="slide level2">
@@ -925,16 +772,16 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 \frac{\partial \mathrm{loss}}{\partial \mathbf{w}},\quad \frac{\partial \mathrm{loss}}{\partial \mathbf{b}},
 \]</span></li>
 </ul>
-<div id="0378274a" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="bu">print</span>(w.grad)</span>
-<span id="cb14-2"><a></a><span class="bu">print</span>(b.grad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0176c629" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="bu">print</span>(w.grad)</span>
+<span id="cb6-2"><a></a><span class="bu">print</span>(b.grad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tensor([[0.0450, 0.0119, 0.0566],
-        [0.0450, 0.0119, 0.0566],
-        [0.0450, 0.0119, 0.0566],
-        [0.0450, 0.0119, 0.0566],
-        [0.0450, 0.0119, 0.0566]])
-tensor([0.0450, 0.0119, 0.0566])</code></pre>
+<pre><code>tensor([[0.3293, 0.1170, 0.3053],
+        [0.3293, 0.1170, 0.3053],
+        [0.3293, 0.1170, 0.3053],
+        [0.3293, 0.1170, 0.3053],
+        [0.3293, 0.1170, 0.3053]])
+tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </div>
 </div>
 </section>
@@ -951,33 +798,27 @@ tensor([0.0450, 0.0119, 0.0566])</code></pre>
 <ul>
 <li>This code will download the fashion-mnist dataset and prep it for use:</li>
 </ul>
-<div id="74c72422" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="im">import</span> torch</span>
-<span id="cb16-2"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
-<span id="cb16-3"><a></a><span class="im">from</span> torchvision <span class="im">import</span> datasets</span>
-<span id="cb16-4"><a></a><span class="im">from</span> torchvision.transforms <span class="im">import</span> ToTensor</span>
-<span id="cb16-5"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb16-6"><a></a></span>
-<span id="cb16-7"><a></a></span>
-<span id="cb16-8"><a></a>training_data <span class="op">=</span> datasets.FashionMNIST(</span>
-<span id="cb16-9"><a></a>    root<span class="op">=</span><span class="st">"data"</span>,</span>
-<span id="cb16-10"><a></a>    train<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb16-11"><a></a>    download<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb16-12"><a></a>    transform<span class="op">=</span>ToTensor()</span>
-<span id="cb16-13"><a></a>)</span>
-<span id="cb16-14"><a></a></span>
-<span id="cb16-15"><a></a>test_data <span class="op">=</span> datasets.FashionMNIST(</span>
-<span id="cb16-16"><a></a>    root<span class="op">=</span><span class="st">"data"</span>,</span>
-<span id="cb16-17"><a></a>    train<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb16-18"><a></a>    download<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb16-19"><a></a>    transform<span class="op">=</span>ToTensor()</span>
-<span id="cb16-20"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>  0%|          | 0.00/26.4M [00:00&lt;?, ?B/s]  0%|          | 65.5k/26.4M [00:00&lt;01:16, 346kB/s]  1%|          | 164k/26.4M [00:00&lt;00:59, 442kB/s]   1%|          | 295k/26.4M [00:00&lt;00:47, 555kB/s]  2%|▏         | 459k/26.4M [00:00&lt;00:33, 771kB/s]  3%|▎         | 819k/26.4M [00:00&lt;00:21, 1.21MB/s]  5%|▍         | 1.31M/26.4M [00:00&lt;00:12, 2.04MB/s]  7%|▋         | 1.87M/26.4M [00:01&lt;00:08, 2.90MB/s] 10%|█         | 2.72M/26.4M [00:01&lt;00:05, 4.32MB/s] 14%|█▍        | 3.80M/26.4M [00:01&lt;00:03, 6.02MB/s] 21%|██        | 5.57M/26.4M [00:01&lt;00:02, 9.01MB/s] 30%|██▉       | 7.90M/26.4M [00:01&lt;00:01, 12.7MB/s] 38%|███▊      | 9.93M/26.4M [00:01&lt;00:01, 14.1MB/s] 44%|████▍     | 11.7M/26.4M [00:01&lt;00:00, 15.0MB/s] 54%|█████▎    | 14.2M/26.4M [00:01&lt;00:00, 17.8MB/s] 64%|██████▍   | 16.9M/26.4M [00:01&lt;00:00, 20.4MB/s] 75%|███████▍  | 19.7M/26.4M [00:02&lt;00:00, 22.5MB/s] 85%|████████▌ | 22.5M/26.4M [00:02&lt;00:00, 19.0MB/s] 93%|█████████▎| 24.6M/26.4M [00:02&lt;00:00, 19.0MB/s]100%|██████████| 26.4M/26.4M [00:02&lt;00:00, 10.8MB/s]
-  0%|          | 0.00/29.5k [00:00&lt;?, ?B/s]100%|██████████| 29.5k/29.5k [00:00&lt;00:00, 312kB/s]
-  0%|          | 0.00/4.42M [00:00&lt;?, ?B/s]  1%|          | 32.8k/4.42M [00:00&lt;00:18, 242kB/s]  2%|▏         | 98.3k/4.42M [00:00&lt;00:14, 308kB/s]  4%|▍         | 197k/4.42M [00:00&lt;00:10, 406kB/s]   9%|▉         | 393k/4.42M [00:00&lt;00:06, 661kB/s] 14%|█▍        | 623k/4.42M [00:00&lt;00:03, 1.04MB/s] 23%|██▎       | 1.02M/4.42M [00:01&lt;00:02, 1.44MB/s] 39%|███▊      | 1.70M/4.42M [00:01&lt;00:01, 2.65MB/s] 61%|██████    | 2.69M/4.42M [00:01&lt;00:00, 4.39MB/s] 73%|███████▎  | 3.24M/4.42M [00:01&lt;00:00, 4.68MB/s] 86%|████████▌ | 3.80M/4.42M [00:01&lt;00:00, 4.88MB/s]100%|██████████| 4.42M/4.42M [00:01&lt;00:00, 3.12MB/s]
-  0%|          | 0.00/5.15k [00:00&lt;?, ?B/s]100%|██████████| 5.15k/5.15k [00:00&lt;00:00, 9.26MB/s]</code></pre>
-</div>
+<div id="50ac38f8" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> torch</span>
+<span id="cb8-2"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
+<span id="cb8-3"><a></a><span class="im">from</span> torchvision <span class="im">import</span> datasets</span>
+<span id="cb8-4"><a></a><span class="im">from</span> torchvision.transforms <span class="im">import</span> ToTensor</span>
+<span id="cb8-5"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-6"><a></a></span>
+<span id="cb8-7"><a></a></span>
+<span id="cb8-8"><a></a>training_data <span class="op">=</span> datasets.FashionMNIST(</span>
+<span id="cb8-9"><a></a>    root<span class="op">=</span><span class="st">"data"</span>,</span>
+<span id="cb8-10"><a></a>    train<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-11"><a></a>    download<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-12"><a></a>    transform<span class="op">=</span>ToTensor()</span>
+<span id="cb8-13"><a></a>)</span>
+<span id="cb8-14"><a></a></span>
+<span id="cb8-15"><a></a>test_data <span class="op">=</span> datasets.FashionMNIST(</span>
+<span id="cb8-16"><a></a>    root<span class="op">=</span><span class="st">"data"</span>,</span>
+<span id="cb8-17"><a></a>    train<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb8-18"><a></a>    download<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-19"><a></a>    transform<span class="op">=</span>ToTensor()</span>
+<span id="cb8-20"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="constructing-a-neural-network" class="slide level2 smaller">
@@ -985,40 +826,40 @@ tensor([0.0450, 0.0119, 0.0566])</code></pre>
 <ul>
 <li>Neural Network architectures are constructed using the nn.Module class</li>
 </ul>
-<div id="6b9b3175" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
-<span id="cb18-2"><a></a><span class="im">import</span> torch.nn.functional <span class="im">as</span> F</span>
-<span id="cb18-3"><a></a><span class="im">import</span> torch.optim <span class="im">as</span> optim</span>
-<span id="cb18-4"><a></a></span>
-<span id="cb18-5"><a></a></span>
-<span id="cb18-6"><a></a><span class="co"># The network class contains the intializer and some methods for our neural network</span></span>
-<span id="cb18-7"><a></a><span class="co"># You create a network by calling Network([Nodes_Input,Nodes_2,Nodes_3,...,Nodes_Output]) </span></span>
-<span id="cb18-8"><a></a></span>
-<span id="cb18-9"><a></a><span class="kw">class</span> Network(nn.Module):</span>
-<span id="cb18-10"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, sizes):</span>
-<span id="cb18-11"><a></a>        <span class="bu">super</span>(Network, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
-<span id="cb18-12"><a></a>        <span class="va">self</span>.sizes <span class="op">=</span> sizes</span>
-<span id="cb18-13"><a></a>        <span class="va">self</span>.num_layers <span class="op">=</span> <span class="bu">len</span>(sizes)</span>
-<span id="cb18-14"><a></a>        </span>
-<span id="cb18-15"><a></a>        <span class="va">self</span>.layers <span class="op">=</span> nn.ModuleList()</span>
-<span id="cb18-16"><a></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.num_layers <span class="op">-</span> <span class="dv">1</span>):</span>
-<span id="cb18-17"><a></a>            layer <span class="op">=</span> nn.Linear(sizes[i], sizes[i<span class="op">+</span><span class="dv">1</span>])</span>
-<span id="cb18-18"><a></a>            nn.init.xavier_normal_(layer.weight)   <span class="co"># Good initialization for shallow/sigmoid nets</span></span>
-<span id="cb18-19"><a></a>            <span class="co">#nn.init.kaiming_normal_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus</span></span>
-<span id="cb18-20"><a></a>            <span class="co">#nn.init.kaiming_uniform_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus and deep nets</span></span>
-<span id="cb18-21"><a></a></span>
-<span id="cb18-22"><a></a>            nn.init.zeros_(layer.bias)               <span class="co"># initialize the bias to 0</span></span>
-<span id="cb18-23"><a></a>            <span class="va">self</span>.layers.append(layer)</span>
-<span id="cb18-24"><a></a>    </span>
-<span id="cb18-25"><a></a>    <span class="co"># Forward is the method that calculates the value of the neural network. Basically we recursively apply the activations in each</span></span>
-<span id="cb18-26"><a></a>    <span class="co"># layer</span></span>
-<span id="cb18-27"><a></a>    </span>
-<span id="cb18-28"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
-<span id="cb18-29"><a></a>        <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers[:<span class="op">-</span><span class="dv">1</span>]:</span>
-<span id="cb18-30"><a></a>            x <span class="op">=</span> F.sigmoid(layer(x))   <span class="co"># sigmoid layers</span></span>
-<span id="cb18-31"><a></a>            <span class="co">#x = F.relu(layer(x)) # You will try the relu layer in the last problem</span></span>
-<span id="cb18-32"><a></a>        x <span class="op">=</span> <span class="va">self</span>.layers[<span class="op">-</span><span class="dv">1</span>](x) </span>
-<span id="cb18-33"><a></a>        <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4ad800cf" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb9-2"><a></a><span class="im">import</span> torch.nn.functional <span class="im">as</span> F</span>
+<span id="cb9-3"><a></a><span class="im">import</span> torch.optim <span class="im">as</span> optim</span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a><span class="co"># The network class contains the intializer and some methods for our neural network</span></span>
+<span id="cb9-7"><a></a><span class="co"># You create a network by calling Network([Nodes_Input,Nodes_2,Nodes_3,...,Nodes_Output]) </span></span>
+<span id="cb9-8"><a></a></span>
+<span id="cb9-9"><a></a><span class="kw">class</span> Network(nn.Module):</span>
+<span id="cb9-10"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, sizes):</span>
+<span id="cb9-11"><a></a>        <span class="bu">super</span>(Network, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb9-12"><a></a>        <span class="va">self</span>.sizes <span class="op">=</span> sizes</span>
+<span id="cb9-13"><a></a>        <span class="va">self</span>.num_layers <span class="op">=</span> <span class="bu">len</span>(sizes)</span>
+<span id="cb9-14"><a></a>        </span>
+<span id="cb9-15"><a></a>        <span class="va">self</span>.layers <span class="op">=</span> nn.ModuleList()</span>
+<span id="cb9-16"><a></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.num_layers <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb9-17"><a></a>            layer <span class="op">=</span> nn.Linear(sizes[i], sizes[i<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-18"><a></a>            nn.init.xavier_normal_(layer.weight)   <span class="co"># Good initialization for shallow/sigmoid nets</span></span>
+<span id="cb9-19"><a></a>            <span class="co">#nn.init.kaiming_normal_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus</span></span>
+<span id="cb9-20"><a></a>            <span class="co">#nn.init.kaiming_uniform_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus and deep nets</span></span>
+<span id="cb9-21"><a></a></span>
+<span id="cb9-22"><a></a>            nn.init.zeros_(layer.bias)               <span class="co"># initialize the bias to 0</span></span>
+<span id="cb9-23"><a></a>            <span class="va">self</span>.layers.append(layer)</span>
+<span id="cb9-24"><a></a>    </span>
+<span id="cb9-25"><a></a>    <span class="co"># Forward is the method that calculates the value of the neural network. Basically we recursively apply the activations in each</span></span>
+<span id="cb9-26"><a></a>    <span class="co"># layer</span></span>
+<span id="cb9-27"><a></a>    </span>
+<span id="cb9-28"><a></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb9-29"><a></a>        <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers[:<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="cb9-30"><a></a>            x <span class="op">=</span> nn.sigmoid(layer(x))   <span class="co"># sigmoid layers</span></span>
+<span id="cb9-31"><a></a>            <span class="co">#x = F.relu(layer(x)) # You will try the relu layer in the last problem</span></span>
+<span id="cb9-32"><a></a>        x <span class="op">=</span> <span class="va">self</span>.layers[<span class="op">-</span><span class="dv">1</span>](x) </span>
+<span id="cb9-33"><a></a>        <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="initializing-a-network" class="slide level2">
@@ -1026,9 +867,9 @@ tensor([0.0450, 0.0119, 0.0566])</code></pre>
 <ul>
 <li>Can call the constructor to make your network:</li>
 </ul>
-<div id="427792c7" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>Network([<span class="dv">784</span>,<span class="dv">100</span>,<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div id="680bde7a" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>Network([<span class="dv">784</span>,<span class="dv">100</span>,<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>Network(
   (layers): ModuleList(
     (0): Linear(in_features=784, out_features=100, bias=True)
@@ -1043,85 +884,22 @@ tensor([0.0450, 0.0119, 0.0566])</code></pre>
 <ul>
 <li>Define Training Function</li>
 </ul>
-<div id="0ebbd77e" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="kw">def</span> train(network, train_data, epochs, eta, test_data<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb21-2"><a></a> </span>
-<span id="cb21-3"><a></a>    optimizer <span class="op">=</span> optim.SGD(network.parameters(),momentum<span class="op">=</span><span class="fl">0.8</span>,nesterov<span class="op">=</span><span class="va">True</span>, lr<span class="op">=</span>eta,weight_decay<span class="op">=</span><span class="fl">1e-5</span>)</span>
-<span id="cb21-4"><a></a>    loss_fn <span class="op">=</span> nn.CrossEntropyLoss()</span>
-<span id="cb21-5"><a></a>    </span>
-<span id="cb21-6"><a></a>    loss_history <span class="op">=</span> []      </span>
-<span id="cb21-7"><a></a>    accuracy_history <span class="op">=</span> []  </span>
-<span id="cb21-8"><a></a>    train_accuracy_history <span class="op">=</span> []</span>
-<span id="cb21-9"><a></a></span>
-<span id="cb21-10"><a></a>    <span class="co"># We are going to loop over the epochs</span></span>
-<span id="cb21-11"><a></a>    <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
-<span id="cb21-12"><a></a>        <span class="co"># This puts the network into training mode</span></span>
-<span id="cb21-13"><a></a>        network.train()</span>
-<span id="cb21-14"><a></a>        running_loss <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb21-15"><a></a>        batch_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb21-16"><a></a></span>
-<span id="cb21-17"><a></a>        <span class="co"># Now we loop through the batches to train</span></span>
-<span id="cb21-18"><a></a>        <span class="cf">for</span> data, target <span class="kw">in</span> train_data:</span>
-<span id="cb21-19"><a></a>            optimizer.zero_grad() <span class="co"># This clears the internally stored gradients</span></span>
-<span id="cb21-20"><a></a>            output <span class="op">=</span> network(data) <span class="co"># evaluate the neural network on the minibatch, we will compare this to the target</span></span>
-<span id="cb21-21"><a></a>            <span class="co"># Here we calculate the loss function and then use backpropagation</span></span>
-<span id="cb21-22"><a></a>            <span class="co"># to calculate the gradient</span></span>
-<span id="cb21-23"><a></a>            loss <span class="op">=</span> loss_fn(output, target) </span>
-<span id="cb21-24"><a></a>            loss.backward()</span>
-<span id="cb21-25"><a></a>        </span>
-<span id="cb21-26"><a></a>            <span class="co"># Update the weights</span></span>
-<span id="cb21-27"><a></a>            optimizer.step()</span>
-<span id="cb21-28"><a></a>            </span>
-<span id="cb21-29"><a></a>            running_loss <span class="op">+=</span> loss.item()</span>
-<span id="cb21-30"><a></a>            batch_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb21-31"><a></a>            </span>
-<span id="cb21-32"><a></a>        <span class="co"># Track our metrics</span></span>
-<span id="cb21-33"><a></a>        avg_loss <span class="op">=</span> running_loss <span class="op">/</span> batch_count</span>
-<span id="cb21-34"><a></a>        loss_history.append(avg_loss)</span>
-<span id="cb21-35"><a></a>        <span class="co"># Compute our training set accuracy</span></span>
-<span id="cb21-36"><a></a>        train_acc <span class="op">=</span> evaluate(network,train_data)</span>
-<span id="cb21-37"><a></a>        train_accuracy_history.append(train_acc)</span>
-<span id="cb21-38"><a></a>        </span>
-<span id="cb21-39"><a></a>        <span class="co"># Compute our test set accuracy</span></span>
-<span id="cb21-40"><a></a>        acc <span class="op">=</span> evaluate(network, test_data)</span>
-<span id="cb21-41"><a></a>        accuracy_history.append(acc)</span>
-<span id="cb21-42"><a></a>        </span>
-<span id="cb21-43"><a></a>        <span class="co"># Update the status of our run at this epoch</span></span>
-<span id="cb21-44"><a></a>        <span class="bu">print</span>(<span class="ss">f"Epoch </span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: Avg loss: </span><span class="sc">{</span>avg_loss<span class="sc">:.4f}</span><span class="ss"> | Test Accuracy: </span><span class="sc">{</span>acc<span class="sc">:.4f}</span><span class="ss"> | Train Accuracy: </span><span class="sc">{</span>train_acc<span class="sc">:.4f}</span><span class="ss"> "</span>)</span>
-<span id="cb21-45"><a></a>    </span>
-<span id="cb21-46"><a></a>    <span class="cf">return</span> loss_history, train_accuracy_history, accuracy_history</span>
-<span id="cb21-47"><a></a></span>
-<span id="cb21-48"><a></a></span>
-<span id="cb21-49"><a></a><span class="kw">def</span> evaluate(network, test_data):</span>
-<span id="cb21-50"><a></a>    network.<span class="bu">eval</span>()</span>
-<span id="cb21-51"><a></a>    correct <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb21-52"><a></a>    total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb21-53"><a></a>    <span class="co"># We have the "with torch.no_grad()" line for efficiency purposes</span></span>
-<span id="cb21-54"><a></a>    <span class="cf">with</span> torch.no_grad():</span>
-<span id="cb21-55"><a></a>        <span class="cf">for</span> data, target <span class="kw">in</span> test_data:</span>
-<span id="cb21-56"><a></a>            output <span class="op">=</span> network(data)</span>
-<span id="cb21-57"><a></a>            pred <span class="op">=</span> output.argmax(dim<span class="op">=</span><span class="dv">1</span>, keepdim<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb21-58"><a></a>            correct <span class="op">+=</span> pred.eq(target.view_as(pred)).<span class="bu">sum</span>().item()</span>
-<span id="cb21-59"><a></a>            total <span class="op">+=</span> data.size(<span class="dv">0</span>)</span>
-<span id="cb21-60"><a></a>    acc <span class="op">=</span> correct <span class="op">/</span> total</span>
-<span id="cb21-61"><a></a>    <span class="cf">return</span> acc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="3b31d487" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">def</span> train(network, train_data, epochs, eta, test_data<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb22-2"><a></a> </span>
-<span id="cb22-3"><a></a>    optimizer <span class="op">=</span> optim.SGD(network.parameters(),momentum<span class="op">=</span><span class="fl">0.8</span>,nesterov<span class="op">=</span><span class="va">True</span>, lr<span class="op">=</span>eta,weight_decay<span class="op">=</span><span class="fl">1e-5</span>)</span>
-<span id="cb22-4"><a></a>    loss_fn <span class="op">=</span> nn.CrossEntropyLoss()</span>
-<span id="cb22-5"><a></a>    </span>
-<span id="cb22-6"><a></a>    loss_history <span class="op">=</span> []      </span>
-<span id="cb22-7"><a></a>    accuracy_history <span class="op">=</span> []  </span>
-<span id="cb22-8"><a></a>    train_accuracy_history <span class="op">=</span> []</span>
-<span id="cb22-9"><a></a></span>
-<span id="cb22-10"><a></a>    <span class="co"># We are going to loop over the epochs</span></span>
-<span id="cb22-11"><a></a>    <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
-<span id="cb22-12"><a></a>        <span class="co"># This puts the network into training mode</span></span>
-<span id="cb22-13"><a></a>        network.train()</span>
-<span id="cb22-14"><a></a>        running_loss <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb22-15"><a></a>        batch_count <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b90bebe5" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> train(network, train_data, epochs, eta, test_data<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb12-2"><a></a> </span>
+<span id="cb12-3"><a></a>    optimizer <span class="op">=</span> optim.SGD(network.parameters(),momentum<span class="op">=</span><span class="fl">0.8</span>,nesterov<span class="op">=</span><span class="va">True</span>, lr<span class="op">=</span>eta,weight_decay<span class="op">=</span><span class="fl">1e-5</span>)</span>
+<span id="cb12-4"><a></a>    loss_fn <span class="op">=</span> nn.CrossEntropyLoss()</span>
+<span id="cb12-5"><a></a>    </span>
+<span id="cb12-6"><a></a>    loss_history <span class="op">=</span> []      </span>
+<span id="cb12-7"><a></a>    accuracy_history <span class="op">=</span> []  </span>
+<span id="cb12-8"><a></a>    train_accuracy_history <span class="op">=</span> []</span>
+<span id="cb12-9"><a></a></span>
+<span id="cb12-10"><a></a>    <span class="co"># We are going to loop over the epochs</span></span>
+<span id="cb12-11"><a></a>    <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
+<span id="cb12-12"><a></a>        <span class="co"># This puts the network into training mode</span></span>
+<span id="cb12-13"><a></a>        network.train()</span>
+<span id="cb12-14"><a></a>        running_loss <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb12-15"><a></a>        batch_count <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="training-a-network-1" class="slide level2">
@@ -1129,68 +907,298 @@ tensor([0.0450, 0.0119, 0.0566])</code></pre>
 <ul>
 <li>Loop over batches of training examples</li>
 </ul>
-<div id="38d96de5" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>        <span class="co"># Now we loop through the batches to train</span></span>
-<span id="cb23-2"><a></a>        <span class="cf">for</span> data, target <span class="kw">in</span> train_data:</span>
-<span id="cb23-3"><a></a>            optimizer.zero_grad() <span class="co"># This clears the internally stored gradients</span></span>
-<span id="cb23-4"><a></a>            output <span class="op">=</span> network(data) <span class="co"># evaluate the neural network on the minibatch, we will compare this to the target</span></span>
-<span id="cb23-5"><a></a>            <span class="co"># Here we calculate the loss function and then use backpropagation</span></span>
-<span id="cb23-6"><a></a>            <span class="co"># to calculate the gradient</span></span>
-<span id="cb23-7"><a></a>            loss <span class="op">=</span> loss_fn(output, target) </span>
-<span id="cb23-8"><a></a>            loss.backward()</span>
-<span id="cb23-9"><a></a>        </span>
-<span id="cb23-10"><a></a>            <span class="co"># Update the weights</span></span>
-<span id="cb23-11"><a></a>            optimizer.step()</span>
-<span id="cb23-12"><a></a>            </span>
-<span id="cb23-13"><a></a>            running_loss <span class="op">+=</span> loss.item()</span>
-<span id="cb23-14"><a></a>            batch_count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ebe908e7" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>        <span class="co"># Now we loop through the batches to train</span></span>
+<span id="cb13-2"><a></a>        <span class="cf">for</span> data, target <span class="kw">in</span> train_data:</span>
+<span id="cb13-3"><a></a>            optimizer.zero_grad() <span class="co"># This clears the internally stored gradients</span></span>
+<span id="cb13-4"><a></a>            output <span class="op">=</span> network(data) <span class="co"># evaluate the neural network on the minibatch, we will compare this to the target</span></span>
+<span id="cb13-5"><a></a>            <span class="co"># Here we calculate the loss function and then use backpropagation</span></span>
+<span id="cb13-6"><a></a>            <span class="co"># to calculate the gradient</span></span>
+<span id="cb13-7"><a></a>            loss <span class="op">=</span> loss_fn(output, target) </span>
+<span id="cb13-8"><a></a>            loss.backward()</span>
+<span id="cb13-9"><a></a>        </span>
+<span id="cb13-10"><a></a>            <span class="co"># Update the weights</span></span>
+<span id="cb13-11"><a></a>            optimizer.step()</span>
+<span id="cb13-12"><a></a>            </span>
+<span id="cb13-13"><a></a>            running_loss <span class="op">+=</span> loss.item()</span>
+<span id="cb13-14"><a></a>            batch_count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="loading-data" class="slide level2">
 <h2>Loading Data</h2>
-<div id="ae6c3c4b" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="im">from</span> torchvision <span class="im">import</span> datasets, transforms</span>
-<span id="cb24-2"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
-<span id="cb24-3"><a></a></span>
-<span id="cb24-4"><a></a>transform <span class="op">=</span> transforms.Compose([transforms.ToTensor(), transforms.Lambda(<span class="kw">lambda</span> x: x.view(<span class="op">-</span><span class="dv">1</span>))])</span>
-<span id="cb24-5"><a></a></span>
-<span id="cb24-6"><a></a></span>
-<span id="cb24-7"><a></a>train_dataset <span class="op">=</span> datasets.FashionMNIST(<span class="st">'data/'</span>, train<span class="op">=</span><span class="va">True</span>, download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span>transform)</span>
-<span id="cb24-8"><a></a>test_dataset <span class="op">=</span> datasets.FashionMNIST(<span class="st">'data/'</span>, train<span class="op">=</span><span class="va">False</span>, transform<span class="op">=</span>transform)</span>
-<span id="cb24-9"><a></a></span>
-<span id="cb24-10"><a></a>img, label <span class="op">=</span> training_data[<span class="dv">100</span>]</span>
-<span id="cb24-11"><a></a></span>
-<span id="cb24-12"><a></a>plt.imshow(img.squeeze(),cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d69984e0" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">from</span> torchvision <span class="im">import</span> datasets, transforms</span>
+<span id="cb14-2"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
+<span id="cb14-3"><a></a></span>
+<span id="cb14-4"><a></a>transform <span class="op">=</span> transforms.Compose([transforms.ToTensor(), transforms.Lambda(<span class="kw">lambda</span> x: x.view(<span class="op">-</span><span class="dv">1</span>))])</span>
+<span id="cb14-5"><a></a></span>
+<span id="cb14-6"><a></a></span>
+<span id="cb14-7"><a></a>train_dataset <span class="op">=</span> datasets.FashionMNIST(<span class="st">'data/'</span>, train<span class="op">=</span><span class="va">True</span>, download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span>transform)</span>
+<span id="cb14-8"><a></a>test_dataset <span class="op">=</span> datasets.FashionMNIST(<span class="st">'data/'</span>, train<span class="op">=</span><span class="va">False</span>, transform<span class="op">=</span>transform)</span>
+<span id="cb14-9"><a></a></span>
+<span id="cb14-10"><a></a>img, label <span class="op">=</span> training_data[<span class="dv">100</span>]</span>
+<span id="cb14-11"><a></a></span>
+<span id="cb14-12"><a></a>plt.imshow(img.squeeze(),cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="meetup-12_files/figure-revealjs/cell-17-output-1.png" class="r-stretch"></section>
+<section id="train" class="slide level2">
+<h2>Train</h2>
+<div id="7187de37" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>train_loader <span class="op">=</span> DataLoader(train_dataset, batch_size<span class="op">=</span><span class="dv">10</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-2"><a></a>test_loader <span class="op">=</span> DataLoader(test_dataset, batch_size<span class="op">=</span><span class="dv">10</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a><span class="co"># Initialize network</span></span>
+<span id="cb15-5"><a></a>net <span class="op">=</span> Network([<span class="dv">784</span>, <span class="dv">30</span>, <span class="dv">10</span>])</span>
+<span id="cb15-6"><a></a></span>
+<span id="cb15-7"><a></a><span class="co"># Train</span></span>
+<span id="cb15-8"><a></a>train(net, train_loader, epochs<span class="op">=</span><span class="dv">1</span>, eta<span class="op">=</span><span class="fl">0.01</span>, test_data<span class="op">=</span>test_loader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="optimization-basics" class="slide level2">
+<h2>Optimization Basics</h2>
+<ul>
+<li>Simplified loss landscape:</li>
+</ul>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-21-output-1.png" class="r-stretch"></section>
+<section id="gradient-descent" class="slide level2">
+<h2>Gradient Descent</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="a19cbe96" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="meetup-12_files/figure-html/cell-18-output-1.png" width="415" height="411"></p>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-22-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Start at <span class="math inline">\(\mathbf{x}_0\)</span></li>
+<li>Find gradient <span class="math inline">\(\nabla \mathrm{loss}(\mathbf{x})\)</span></li>
+<li><span class="math inline">\(\mathbf{x}_n = \mathbf{x}_{n-1} - \kappa \nabla\mathrm{loss}(\mathbf{x}_{n-1})\)</span></li>
+<li><span class="math inline">\(\kappa\)</span> is <em>learning rate</em></li>
+</ul>
+</div></div>
+</section>
+<section id="what-learning-rate-to-pick" class="slide level2">
+<h2>What Learning Rate to Pick?</h2>
+<ul>
+<li>High learning rate trains faster</li>
+<li>Too high and don’t converge at all</li>
+<li>Limit is set by algorithm and ellipticity of well</li>
+</ul>
+</section>
+<section id="what-learning-rate-to-pick-1" class="slide level2">
+<h2>What Learning Rate to Pick?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="b43c9a6f" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-23-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="momentum" class="slide level2">
+<h2>Momentum</h2>
+<ul>
+<li>Advanced algos use momentum, gives “memory” of past gradient</li>
+<li>Reduces effect of valley oscillation</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="aef344d1" class="cell" data-execution_count="24">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-25-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="4e491b2f" class="cell" data-execution_count="25">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-26-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="hyperparameter-problems" class="slide level2">
+<h2>Hyperparameter Problems</h2>
+<ul>
+<li>We don’t know the shape of the loss landscape to pick <span class="math inline">\(\kappa\)</span></li>
+<li>We handle this several ways:
+<ul>
+<li>Experimentation</li>
+<li>Heuristics</li>
+<li>Adaptive Methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="stochastic-gradient-descent" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+<ul>
+<li>Common for optimization algorithms to “get stuck”</li>
+</ul>
+<div id="2cadae33" class="cell" data-execution_count="26">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-27-output-1.png"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="train" class="slide level2">
-<h2>Train</h2>
-<div id="8c4ee92d" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>train_loader <span class="op">=</span> DataLoader(train_dataset, batch_size<span class="op">=</span><span class="dv">10</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb25-2"><a></a>test_loader <span class="op">=</span> DataLoader(test_dataset, batch_size<span class="op">=</span><span class="dv">10</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb25-3"><a></a></span>
-<span id="cb25-4"><a></a><span class="co"># Initialize network</span></span>
-<span id="cb25-5"><a></a>net <span class="op">=</span> Network([<span class="dv">784</span>, <span class="dv">30</span>, <span class="dv">10</span>])</span>
-<span id="cb25-6"><a></a></span>
-<span id="cb25-7"><a></a><span class="co"># Train</span></span>
-<span id="cb25-8"><a></a>train(net, train_loader, epochs<span class="op">=</span><span class="dv">1</span>, eta<span class="op">=</span><span class="fl">0.01</span>, test_data<span class="op">=</span>test_loader)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="stochastic-gradient-descent-1" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+<ul>
+<li>In low-D local minima are problematic</li>
+</ul>
+<div id="4b086a03" class="cell" data-execution_count="27">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-28-output-1.png"></p>
+</figure>
 </div>
+</div>
+</div>
+</section>
+<section id="stochastic-gradient-descent-2" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+<ul>
+<li>Trajectories get Stuck</li>
+</ul>
+<div id="cd460295" class="cell" data-execution_count="28">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-29-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="stochastic-gradient-descent-3" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+<ul>
+<li>The barriers in high dimensions likely more complex</li>
+<li>Stochastic Gradient Descent modifies gradient descent style methods
+<ul>
+<li>Compute the gradient of loss using only part of the data</li>
+<li>Called a “mini-batch”</li>
+<li>Smaller the mini-batch, the more the noise</li>
+</ul></li>
+</ul>
+</section>
+<section id="stochastic-gradient-descent-4" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+<div id="2783af43" class="cell" data-execution_count="29">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-30-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="stochastic-gradient-descent-5" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+<ul>
+<li>In 2D, can just add noise</li>
+</ul>
+<div id="3a348415" class="cell" data-execution_count="30">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-31-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="annealing" class="slide level2">
+<h2>Annealing</h2>
+<ul>
+<li>Noise can deflect you from the minimum when you are close</li>
+<li>Common practice is to start with noise high, reduce it later
+<ul>
+<li>Simulated annealing (from metallurgy)</li>
+</ul></li>
+<li>Even more common to start with high learning rate and gradually decrease it
+<ul>
+<li>Whereas in some ML applications increasing batch-size could cause overfitting</li>
+</ul></li>
+</ul>
+</section>
+<section id="adaptive-methods" class="slide level2">
+<h2>Adaptive Methods</h2>
+<ul>
+<li>We saw that hyper-parameters are hard to pick at outset</li>
+<li>Ideal learning rate depends on condition number and also magnitude of gradients</li>
+<li>Concept: Change Learning Rate as we go
+<ul>
+<li>Keep memory of gradient in each variable</li>
+<li>Step in the direction of the average gradient</li>
+<li>Decrease learning rate if variance is high</li>
+<li>Increase learning rate if variance is low</li>
+</ul></li>
+</ul>
+</section>
+<section id="adam" class="slide level2">
+<h2>ADAM</h2>
+<ul>
+<li>Adaptive Moment Estimation</li>
+<li>Have a local estimate of average gradient <span class="math inline">\(\hat{\mathbf{v}}_i\)</span></li>
+<li>Have a local estimate of squared gradient <span class="math inline">\(\hat{G}_{s,i}\)</span></li>
+<li>Adjusted learning rate based on both: <span class="math display">\[
+\mathbf{x}_{i+1} = \mathbf{x}_i -\kappa \frac{\hat{\mathbf{v}}_i}{\sqrt{\hat{G}_{s,i}+\epsilon}}
+\]</span></li>
+</ul>
+</section>
+<section id="when-and-why-is-adam-good" class="slide level2">
+<h2>When and Why is ADAM good?</h2>
+<ul>
+<li><p>ADAM is much more robust to learning rate choices</p></li>
+<li><p>ADAM is excellent when the gradient is sparse</p></li>
+<li><p>ADAM is often the best in initial training stages</p>
+<p><img data-src="adam_paper.png"></p></li>
+</ul>
+</section>
+<section id="when-is-adam-bad" class="slide level2">
+<h2>When is ADAM bad?</h2>
+<ul>
+<li>ADAM is perhaps the most widely used optimizer, the default for deep learning</li>
+<li>However, it is not even guaranteed to converge on easy problems</li>
+<li>Can generalize worse (need more regularization)</li>
+<li>Less memory efficient</li>
+<li>It is very heuristic in nature, can be improved</li>
+</ul>
 </section>
 <section id="thanks" class="slide level2">
 <h2>Thanks</h2>
 
 <div class="quarto-auto-generated-content">
+<p><img src="../../images/CUNY_SPS_Logo_Wide.png" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p>DATA 622</p>
 </div>
 </div>
+</section>
+</div></div>
 </section>
     </div>
   </div>

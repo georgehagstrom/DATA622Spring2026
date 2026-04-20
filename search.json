@@ -69,7 +69,7 @@
     "href": "posts/2026-04-20-Week-12-Neural-Networks.html",
     "title": "Week 12 Info: Neural Networks",
     "section": "",
-    "text": "Hello class, spring break has ended and week 12 is here.\nWe are going to begin three weeks of study of neural networks. We will begin by learning the simplest neural network architecture, the multi-layer perceptron, and about common techniques for fitting neural networks and the key hyperparameters, such as optimization algorithms, learning rate, dropout, activation functions, and more. We will talk about the data requirements for neural networks and the types of problems which they are best suited for. We will begin discussing alternative architectures, starting with convolutional neural nets.\nIf you have not contacted me with your group to schedule your MVP demo please do so immediately.\nYou can read more about the plan for the week and the reading/resources in Module 12.\nLab 7 is available, due Sunday May 3rd at midnight."
+    "text": "Week 12 has arrived!\nWe are going to begin three weeks of study of neural networks. We will begin by learning the simplest neural network architecture, the multi-layer perceptron, and about common techniques for fitting neural networks and the key hyperparameters, such as optimization algorithms, learning rate, dropout, activation functions, and more. We will talk about the data requirements for neural networks and the types of problems which they are best suited for. We will begin discussing alternative architectures, starting with convolutional neural nets.\nIf you have not contacted me with your group to schedule your MVP demo please do so immediately.\nYou can read more about the plan for the week and the reading/resources in Module 12.\nLab 7 is available, due Sunday May 3rd at midnight."
   },
   {
     "objectID": "posts/2026-03-15-Week-8-Trees-And-Ensembles.html",
@@ -3967,296 +3967,408 @@
   {
     "objectID": "meetups/meetup-12/meetup-12.html#week-summary",
     "href": "meetups/meetup-12/meetup-12.html#week-summary",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Week Summary",
-    "text": "Week Summary\n\nLab 7 and Final Project\nMotivation and Basics of Neural Networks\nIntroduction to pytorch\n\ntorch also exists for R\n\nReading:\n\nNeural Networks and Deep Learning, Chapter 1 and 3\npytorch basics\npytorch recipes"
+    "text": "Week Summary\n\nContact me ASAP if you haven’t scheduled MVP demo\nLab 7 due Sunday May 3rd\nYou will want a Google Colab Pro student account!!!\nVignette on neural networks in Colab"
   },
   {
-    "objectID": "meetups/meetup-12/meetup-12.html#ny-open-statistical-computing-meetup",
-    "href": "meetups/meetup-12/meetup-12.html#ny-open-statistical-computing-meetup",
-    "title": "DATA 609 Meetup 14: Neural Networks",
-    "section": "NY Open Statistical Computing Meetup",
-    "text": "NY Open Statistical Computing Meetup\n\nThis Wednesday!"
+    "objectID": "meetups/meetup-12/meetup-12.html#neural-network-gameplan",
+    "href": "meetups/meetup-12/meetup-12.html#neural-network-gameplan",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Neural Network Gameplan",
+    "text": "Neural Network Gameplan\n\nWeek 12: Basics, pytorch, activation functions, optimization algos\nWeek 13: CNNs, RNNs, Deep Learning Considerations, vision applications\nWeek 14: Pretrained Networks, Transfer Learning, text applications"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#introduction-to-neural-networks",
     "href": "meetups/meetup-12/meetup-12.html#introduction-to-neural-networks",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Introduction to Neural Networks",
     "text": "Introduction to Neural Networks\n\nInvented originally to understand how the brain works\n\n\nSource: wikipedia"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#introduction-to-neural-networks-1",
     "href": "meetups/meetup-12/meetup-12.html#introduction-to-neural-networks-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Introduction to Neural Networks",
     "text": "Introduction to Neural Networks\n\nWas found to have an enormous number of applications\n\nClassification\nPattern Recognition\nGenerative Models"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#introduction-to-neural-networks-2",
     "href": "meetups/meetup-12/meetup-12.html#introduction-to-neural-networks-2",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Introduction to Neural Networks",
     "text": "Introduction to Neural Networks\n\nInteresting objects in their own right\n\nPeople study them as they would any other complex systems"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#what-is-a-neuron",
     "href": "meetups/meetup-12/meetup-12.html#what-is-a-neuron",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "What is a Neuron?",
     "text": "What is a Neuron?\n\nNeurons send and receive electrical signals\n\n\nwikipedia"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#connected-neurons",
     "href": "meetups/meetup-12/meetup-12.html#connected-neurons",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Connected Neurons",
     "text": "Connected Neurons\n\n\n\nThey are connected to other neurons"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#connected-neurons-1",
     "href": "meetups/meetup-12/meetup-12.html#connected-neurons-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Connected Neurons",
     "text": "Connected Neurons\n\n\n\nThey are connected to other neurons\nThey respond to stimulus from senses and other neurons"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#connected-neurons-2",
     "href": "meetups/meetup-12/meetup-12.html#connected-neurons-2",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Connected Neurons",
     "text": "Connected Neurons\n\n\n\nThey are connected to other neurons\nThey respond to stimulus from senses and other neurons"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#connected-neurons-3",
     "href": "meetups/meetup-12/meetup-12.html#connected-neurons-3",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Connected Neurons",
     "text": "Connected Neurons\n\n\n\nThey are connected to other neurons\nThey respond to stimulus from senses and other neurons\nCross a threshold before firing"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#connected-neurons-4",
     "href": "meetups/meetup-12/meetup-12.html#connected-neurons-4",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Connected Neurons",
     "text": "Connected Neurons\n\n\n\nThey are connected to other neurons\nThey respond to stimulus from senses and other neurons\nCross a threshold before firing"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#connected-neurons-5",
     "href": "meetups/meetup-12/meetup-12.html#connected-neurons-5",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Connected Neurons",
     "text": "Connected Neurons\n\n\n\nThey are connected to other neurons\nThey respond to stimulus from senses and other neurons\nCross a threshold before firing\nNeuronal Cascade is part of cognition"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#single-neuron",
     "href": "meetups/meetup-12/meetup-12.html#single-neuron",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Single Neuron",
     "text": "Single Neuron\n\nSingle Neuron converts several inputs into an output:\n\n\nNielson"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#single-neuron-1",
     "href": "meetups/meetup-12/meetup-12.html#single-neuron-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Single Neuron",
     "text": "Single Neuron\n\nIntegrates over the input signals using weights: \\[\nx_{\\mathrm{out}} = \\phi\\left(\\sum_{i=1}^n w_ix_i + c\\right)\n\\]"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#single-neuron-2",
     "href": "meetups/meetup-12/meetup-12.html#single-neuron-2",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Single Neuron",
     "text": "Single Neuron\n\nIntegrates over the input signals using weights: \\[\nx_{\\mathrm{out}} = \\phi\\left(\\sum_{i=1}^n w_ix_i + c\\right)\n\\]\n\\(\\phi\\) is called the activation function\n\\(w_i\\) are the weights\n\\(c\\) is the bias"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#activation-functions",
     "href": "meetups/meetup-12/meetup-12.html#activation-functions",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Activation Functions",
-    "text": "Activation Functions\n\nBiology intuition:\n\n\\(\\phi=1\\) when integrated inputs positive\n\\(\\phi=0\\) or \\(\\phi=-1\\) (doesn’t matter) when integrated input negative\n\nLeads to step/sigmoid functions:\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nxvec = np.linspace(-10,10,100)\nyvec = np.tanh(xvec)\n\nplt.figure(figsize=(6, 3))\nplt.plot(xvec, yvec, color='dodgerblue', linewidth=2)\nplt.title('Activation Function', fontsize=16)\nplt.xlabel('x', fontsize=14)\nplt.ylabel('$\\phi(x)$', fontsize=14)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.axhline(0, color='gray', linewidth=1)\nplt.axvline(0, color='gray', linewidth=1)\nplt.legend()\nplt.tight_layout()\nplt.show()\n\n/tmp/ipykernel_790799/3506477847.py:14: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.\n  plt.legend()"
+    "text": "Activation Functions\n\nBiology intuition:\n\n\\(\\phi=1\\) when integrated inputs positive\n\\(\\phi=0\\) or \\(\\phi=-1\\) (doesn’t matter) when integrated input negative\n\nLeads to step/sigmoid functions:"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#activation-functions-to-know",
     "href": "meetups/meetup-12/meetup-12.html#activation-functions-to-know",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Activation Functions to Know",
-    "text": "Activation Functions to Know\n\nPerceptron \\[\n\\phi(x) = \\cases{1& \\text{if} \\quad x\\geq 0 \\\\\n              0& \\text{if} \\quad x&lt;0}\n\\]\n\n\nxvec = np.linspace(-10,10,100)\nyvec = np.heaviside(xvec,0)\n\nplt.figure(figsize=(8, 4))\nplt.plot(xvec, yvec, color='dodgerblue', linewidth=2)\nplt.title('Perceptron', fontsize=16)\nplt.xlabel('x', fontsize=14)\nplt.ylabel('$\\phi(x)$', fontsize=14)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.axhline(0, color='gray', linewidth=1)\nplt.axvline(0, color='gray', linewidth=1)\nplt.tight_layout()\nplt.show()"
+    "text": "Activation Functions to Know\n\nPerceptron \\[\n\\phi(x) = \\cases{1& \\text{if} \\quad x\\geq 0 \\\\\n              0& \\text{if} \\quad x&lt;0}\n\\]"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#activation-functions-to-know-1",
     "href": "meetups/meetup-12/meetup-12.html#activation-functions-to-know-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Activation Functions to Know",
-    "text": "Activation Functions to Know\n\nSigmoid Function\n\n\\[\n\\phi(x) = \\frac{1}{1+e^{-x}}\n\\]\n\nxvec = np.linspace(-10,10,100)\nyvec = 1.0/(1+np.exp(-xvec))\n\nplt.figure(figsize=(8, 4))\nplt.plot(xvec, yvec, color='dodgerblue', linewidth=2)\nplt.title('Sigmoid', fontsize=16)\nplt.xlabel('x', fontsize=14)\nplt.ylabel('$\\phi(x)$', fontsize=14)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.axhline(0, color='gray', linewidth=1)\nplt.axvline(0, color='gray', linewidth=1)\nplt.tight_layout()\nplt.show()"
+    "text": "Activation Functions to Know\n\nSigmoid Function\n\n\\[\n\\phi(x) = \\frac{1}{1+e^{-x}}\n\\]"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#activation-functions-to-know-2",
     "href": "meetups/meetup-12/meetup-12.html#activation-functions-to-know-2",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Activation Functions to Know",
-    "text": "Activation Functions to Know\n\nHyperbolic Tangent\n\n\\[\n\\phi(x) = \\frac{e^x - e^{-x}}{e^x +e^{-x}}\n\\]\n\nxvec = np.linspace(-10,10,100)\nyvec = np.tanh(xvec)\n\nplt.figure(figsize=(8, 4))\nplt.plot(xvec, yvec, color='dodgerblue', linewidth=2)\nplt.title('Hyperbolic Tangent', fontsize=16)\nplt.xlabel('x', fontsize=14)\nplt.ylabel('$\\phi(x)$', fontsize=14)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.axhline(0, color='gray', linewidth=1)\nplt.axvline(0, color='gray', linewidth=1)\nplt.tight_layout()\nplt.show()"
+    "text": "Activation Functions to Know\n\nHyperbolic Tangent\n\n\\[\n\\phi(x) = \\frac{e^x - e^{-x}}{e^x +e^{-x}}\n\\]"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#activation-functions-to-know-3",
     "href": "meetups/meetup-12/meetup-12.html#activation-functions-to-know-3",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Activation Functions to Know",
-    "text": "Activation Functions to Know\n\nRectified Linear Unit (ReLU)\n\n\\[\n\\phi(x) = \\cases{0& \\text{if} \\quad x\\geq 0 \\\\\n                x& \\text{if} \\quad x&lt;0}\n\\]\n\nxvec = np.linspace(-10,10,100)\nyvec = np.heaviside(xvec,0)*xvec\n\nplt.figure(figsize=(8, 4))\nplt.plot(xvec, yvec, color='dodgerblue', linewidth=2)\nplt.title('ReLU', fontsize=16)\nplt.xlabel('x', fontsize=14)\nplt.ylabel('$\\phi(x)$', fontsize=14)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.axhline(0, color='gray', linewidth=1)\nplt.axvline(0, color='gray', linewidth=1)\nplt.tight_layout()\nplt.show()"
+    "text": "Activation Functions to Know\n\nRectified Linear Unit (ReLU)\n\n\\[\n\\phi(x) = \\cases{0& \\text{if} \\quad x\\geq 0 \\\\\n                x& \\text{if} \\quad x&lt;0}\n\\]"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#feedforward-neural-networks",
     "href": "meetups/meetup-12/meetup-12.html#feedforward-neural-networks",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Feedforward Neural Networks",
     "text": "Feedforward Neural Networks\n\nInput layer, one neuron per input variable\nOne neuron per target function\nNeurons organized in layers"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#feedforward-examples",
     "href": "meetups/meetup-12/meetup-12.html#feedforward-examples",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Feedforward Examples",
     "text": "Feedforward Examples\n\nImage Recognition\n\nInput Neurons are pixels\nOutput neurons correspond to each category\nInner Layers Represent Features\nCan use a softmax layer at the end to determine category"
   },
   {
-    "objectID": "meetups/meetup-12/meetup-12.html#feedforward-examples-1",
-    "href": "meetups/meetup-12/meetup-12.html#feedforward-examples-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
-    "section": "Feedforward Examples",
-    "text": "Feedforward Examples\n\nImage Recognition\n\nInput Neurons are pixels\nOutput neurons correspond to each category\nInner Layers Represent Features\nCan use a softmax layer at the end to determine category"
+    "objectID": "meetups/meetup-12/meetup-12.html#neural-network-considerations",
+    "href": "meetups/meetup-12/meetup-12.html#neural-network-considerations",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Neural Network Considerations",
+    "text": "Neural Network Considerations\n\nEven a small NN can be huge:\n\n\n\nNeed lots of data\nLots of different regularization"
   },
   {
-    "objectID": "meetups/meetup-12/meetup-12.html#universal-function-approximation",
-    "href": "meetups/meetup-12/meetup-12.html#universal-function-approximation",
-    "title": "DATA 609 Meetup 14: Neural Networks",
-    "section": "Universal Function Approximation",
-    "text": "Universal Function Approximation\n\nChapter 3 of Nielson\nCan Represent any function to arbitrary accuracy with a neural network\n\n\ndef f_s(x):\n  return 0.2 + 0.4*x**2 + 0.3*x*np.sin(15*x) + 0.05*np.cos(50*x)\n\nxvec = np.linspace(0,1,100)\nyvec = f_s(xvec)\n\nplt.figure(figsize=(8, 4))\nplt.plot(xvec, yvec, color='dodgerblue', linewidth=2)\nplt.title('Challenging Function', fontsize=16)\nplt.xlabel('x', fontsize=14)\nplt.ylabel('$f(x)$', fontsize=14)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.legend()\nplt.tight_layout()\nplt.show()\n\n/tmp/ipykernel_790799/4261977703.py:13: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.\n  plt.legend()"
-  },
-  {
-    "objectID": "meetups/meetup-12/meetup-12.html#universal-function-idea",
-    "href": "meetups/meetup-12/meetup-12.html#universal-function-idea",
-    "title": "DATA 609 Meetup 14: Neural Networks",
-    "section": "Universal Function Idea",
-    "text": "Universal Function Idea\n\n\n\nHidden Layer Represents Intervals on x-axis\nPairs of neurons implement step functions\nMatch Amplitude\nIncrease Intervals"
+    "objectID": "meetups/meetup-12/meetup-12.html#what-are-nns-used-for",
+    "href": "meetups/meetup-12/meetup-12.html#what-are-nns-used-for",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "What are NNs used for?",
+    "text": "What are NNs used for?\n\nAnything where the features are abstract\n\nImages\nAudio\nText\n\nLarge amounts of data\nTabular data problems decision trees often just as good but with less trouble"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#how-would-you-train-one",
     "href": "meetups/meetup-12/meetup-12.html#how-would-you-train-one",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "How would you train one?",
     "text": "How would you train one?\n\nHave set of training data \\(\\mathbf{x}_i\\) and target \\(y_i\\)\nHave settled on an architecture:\n\n\\(n_i\\) neurons in layer \\(i\\)\n\\(m\\) total layers\n\\(w_{jk,i}\\) is weight of neuron \\(j\\) in layer \\(i-1\\) on neuron \\(k\\) in layer \\(i\\)\n\\(b_{ki}\\) is bias of neuron \\(k\\) in layer \\(i\\)"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#how-would-you-train-one-1",
     "href": "meetups/meetup-12/meetup-12.html#how-would-you-train-one-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "How would you train one?",
     "text": "How would you train one?\n\nOverall neural network generates a function: \\[\ny_{\\mathrm{pred}} = F(\\mathbf{x})\n\\]\nEvaluate function by stepping through the layers in order\nCan define a loss minimization problem: \\[\n\\min_{\\mathbf{w},\\mathbf{b}} \\sum_{l=1}^N \\Phi(y_l,F(\\mathbf{x},\\mathbf{w},\\mathbf{b}))\n\\]"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#backpropagation",
     "href": "meetups/meetup-12/meetup-12.html#backpropagation",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Backpropagation",
     "text": "Backpropagation\n\nIn order to optimize, compute the gradient\nRepeated application of the chain rule\nNN packages use the network structure to efficiently compute the gradients\nReferred to as backpropagation\nRelated technique of automatic differentiation"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#pytorch",
     "href": "meetups/meetup-12/meetup-12.html#pytorch",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "pytorch",
     "text": "pytorch\n\nOpen Source Machine Learning Library from Meta/FB\nPyTorch optimizes usability while maintaining good performance\n\nNo small task when dealing with GPUs\n\nPyTorch favors simple over easy\n\nA little bit harder at first when working with GPUs\nBut easier to debug when you build complex models\n\nPython First"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#tensors",
     "href": "meetups/meetup-12/meetup-12.html#tensors",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "tensors",
     "text": "tensors\n\nPrimary data object in pytorch is called a tensor\n\n\nimport torch\nimport numpy as np\n\ndata = [[1, 2],[3, 4]]\nx_data = torch.tensor(data)\nx_data\n\ntensor([[1, 2],\n        [3, 4]])"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#tensors-1",
     "href": "meetups/meetup-12/meetup-12.html#tensors-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "tensors",
     "text": "tensors\n\nTensors are like magic numpy arrays\n\nThey live on a particular device:\n\n\n\nprint(f\"Device tensor is stored on: {x_data.device}\")\n\nDevice tensor is stored on: cpu\n\n\n\nWhen programming with GPUs, you must manually control the movement of tensor data across the cluster"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#tensors-2",
     "href": "meetups/meetup-12/meetup-12.html#tensors-2",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "tensors",
     "text": "tensors\n\nTensors are like magic numpy arrays\n\nThey come with automatic gradient tracking\nWhen you perform a computation with a tensor, pytorch stores the computational graph\n*.backward() computes gradient\n\n\n\nx = torch.ones(5)  # input tensor\ny = torch.zeros(3)  # expected output\nw = torch.randn(5, 3, requires_grad=True)\nb = torch.randn(3, requires_grad=True)\nz = torch.matmul(x, w)+b\nloss = torch.nn.functional.binary_cross_entropy_with_logits(z, y)\n\nloss.backward()"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#tensors-3",
     "href": "meetups/meetup-12/meetup-12.html#tensors-3",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "tensors",
-    "text": "tensors\n\nloss.backward() updated the tensors w and b to include the gradient with respect to loss \\[\n\\frac{\\partial \\mathrm{loss}}{\\partial \\mathbf{w}},\\quad \\frac{\\partial \\mathrm{loss}}{\\partial \\mathbf{b}},\n\\]\n\n\nprint(w.grad)\nprint(b.grad)\n\ntensor([[0.0450, 0.0119, 0.0566],\n        [0.0450, 0.0119, 0.0566],\n        [0.0450, 0.0119, 0.0566],\n        [0.0450, 0.0119, 0.0566],\n        [0.0450, 0.0119, 0.0566]])\ntensor([0.0450, 0.0119, 0.0566])"
+    "text": "tensors\n\nloss.backward() updated the tensors w and b to include the gradient with respect to loss \\[\n\\frac{\\partial \\mathrm{loss}}{\\partial \\mathbf{w}},\\quad \\frac{\\partial \\mathrm{loss}}{\\partial \\mathbf{b}},\n\\]\n\n\nprint(w.grad)\nprint(b.grad)\n\ntensor([[0.3293, 0.1170, 0.3053],\n        [0.3293, 0.1170, 0.3053],\n        [0.3293, 0.1170, 0.3053],\n        [0.3293, 0.1170, 0.3053],\n        [0.3293, 0.1170, 0.3053]])\ntensor([0.3293, 0.1170, 0.3053])"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#dataloaders",
     "href": "meetups/meetup-12/meetup-12.html#dataloaders",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Dataloaders",
     "text": "Dataloaders\n\npytorch is written to separate model building/training and dataset management\ntorch.utils.data.Dataset enables built in datasets\ntorch.utils.data.DataLoader is for managing and iterating over datasets"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#dataloaders-1",
     "href": "meetups/meetup-12/meetup-12.html#dataloaders-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "DataLoaders",
-    "text": "DataLoaders\n\nThis code will download the fashion-mnist dataset and prep it for use:\n\n\nimport torch\nfrom torch.utils.data import Dataset\nfrom torchvision import datasets\nfrom torchvision.transforms import ToTensor\nimport matplotlib.pyplot as plt\n\n\ntraining_data = datasets.FashionMNIST(\n    root=\"data\",\n    train=True,\n    download=True,\n    transform=ToTensor()\n)\n\ntest_data = datasets.FashionMNIST(\n    root=\"data\",\n    train=False,\n    download=True,\n    transform=ToTensor()\n)\n\n  0%|          | 0.00/26.4M [00:00&lt;?, ?B/s]  0%|          | 65.5k/26.4M [00:00&lt;01:16, 346kB/s]  1%|          | 164k/26.4M [00:00&lt;00:59, 442kB/s]   1%|          | 295k/26.4M [00:00&lt;00:47, 555kB/s]  2%|▏         | 459k/26.4M [00:00&lt;00:33, 771kB/s]  3%|▎         | 819k/26.4M [00:00&lt;00:21, 1.21MB/s]  5%|▍         | 1.31M/26.4M [00:00&lt;00:12, 2.04MB/s]  7%|▋         | 1.87M/26.4M [00:01&lt;00:08, 2.90MB/s] 10%|█         | 2.72M/26.4M [00:01&lt;00:05, 4.32MB/s] 14%|█▍        | 3.80M/26.4M [00:01&lt;00:03, 6.02MB/s] 21%|██        | 5.57M/26.4M [00:01&lt;00:02, 9.01MB/s] 30%|██▉       | 7.90M/26.4M [00:01&lt;00:01, 12.7MB/s] 38%|███▊      | 9.93M/26.4M [00:01&lt;00:01, 14.1MB/s] 44%|████▍     | 11.7M/26.4M [00:01&lt;00:00, 15.0MB/s] 54%|█████▎    | 14.2M/26.4M [00:01&lt;00:00, 17.8MB/s] 64%|██████▍   | 16.9M/26.4M [00:01&lt;00:00, 20.4MB/s] 75%|███████▍  | 19.7M/26.4M [00:02&lt;00:00, 22.5MB/s] 85%|████████▌ | 22.5M/26.4M [00:02&lt;00:00, 19.0MB/s] 93%|█████████▎| 24.6M/26.4M [00:02&lt;00:00, 19.0MB/s]100%|██████████| 26.4M/26.4M [00:02&lt;00:00, 10.8MB/s]\n  0%|          | 0.00/29.5k [00:00&lt;?, ?B/s]100%|██████████| 29.5k/29.5k [00:00&lt;00:00, 312kB/s]\n  0%|          | 0.00/4.42M [00:00&lt;?, ?B/s]  1%|          | 32.8k/4.42M [00:00&lt;00:18, 242kB/s]  2%|▏         | 98.3k/4.42M [00:00&lt;00:14, 308kB/s]  4%|▍         | 197k/4.42M [00:00&lt;00:10, 406kB/s]   9%|▉         | 393k/4.42M [00:00&lt;00:06, 661kB/s] 14%|█▍        | 623k/4.42M [00:00&lt;00:03, 1.04MB/s] 23%|██▎       | 1.02M/4.42M [00:01&lt;00:02, 1.44MB/s] 39%|███▊      | 1.70M/4.42M [00:01&lt;00:01, 2.65MB/s] 61%|██████    | 2.69M/4.42M [00:01&lt;00:00, 4.39MB/s] 73%|███████▎  | 3.24M/4.42M [00:01&lt;00:00, 4.68MB/s] 86%|████████▌ | 3.80M/4.42M [00:01&lt;00:00, 4.88MB/s]100%|██████████| 4.42M/4.42M [00:01&lt;00:00, 3.12MB/s]\n  0%|          | 0.00/5.15k [00:00&lt;?, ?B/s]100%|██████████| 5.15k/5.15k [00:00&lt;00:00, 9.26MB/s]"
+    "text": "DataLoaders\n\nThis code will download the fashion-mnist dataset and prep it for use:\n\n\nimport torch\nfrom torch.utils.data import Dataset\nfrom torchvision import datasets\nfrom torchvision.transforms import ToTensor\nimport matplotlib.pyplot as plt\n\n\ntraining_data = datasets.FashionMNIST(\n    root=\"data\",\n    train=True,\n    download=True,\n    transform=ToTensor()\n)\n\ntest_data = datasets.FashionMNIST(\n    root=\"data\",\n    train=False,\n    download=True,\n    transform=ToTensor()\n)"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#constructing-a-neural-network",
     "href": "meetups/meetup-12/meetup-12.html#constructing-a-neural-network",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Constructing a Neural Network",
-    "text": "Constructing a Neural Network\n\nNeural Network architectures are constructed using the nn.Module class\n\n\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport torch.optim as optim\n\n\n# The network class contains the intializer and some methods for our neural network\n# You create a network by calling Network([Nodes_Input,Nodes_2,Nodes_3,...,Nodes_Output]) \n\nclass Network(nn.Module):\n    def __init__(self, sizes):\n        super(Network, self).__init__()\n        self.sizes = sizes\n        self.num_layers = len(sizes)\n        \n        self.layers = nn.ModuleList()\n        for i in range(self.num_layers - 1):\n            layer = nn.Linear(sizes[i], sizes[i+1])\n            nn.init.xavier_normal_(layer.weight)   # Good initialization for shallow/sigmoid nets\n            #nn.init.kaiming_normal_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus\n            #nn.init.kaiming_uniform_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus and deep nets\n\n            nn.init.zeros_(layer.bias)               # initialize the bias to 0\n            self.layers.append(layer)\n    \n    # Forward is the method that calculates the value of the neural network. Basically we recursively apply the activations in each\n    # layer\n    \n    def forward(self, x):\n        for layer in self.layers[:-1]:\n            x = F.sigmoid(layer(x))   # sigmoid layers\n            #x = F.relu(layer(x)) # You will try the relu layer in the last problem\n        x = self.layers[-1](x) \n        return x"
+    "text": "Constructing a Neural Network\n\nNeural Network architectures are constructed using the nn.Module class\n\n\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport torch.optim as optim\n\n\n# The network class contains the intializer and some methods for our neural network\n# You create a network by calling Network([Nodes_Input,Nodes_2,Nodes_3,...,Nodes_Output]) \n\nclass Network(nn.Module):\n    def __init__(self, sizes):\n        super(Network, self).__init__()\n        self.sizes = sizes\n        self.num_layers = len(sizes)\n        \n        self.layers = nn.ModuleList()\n        for i in range(self.num_layers - 1):\n            layer = nn.Linear(sizes[i], sizes[i+1])\n            nn.init.xavier_normal_(layer.weight)   # Good initialization for shallow/sigmoid nets\n            #nn.init.kaiming_normal_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus\n            #nn.init.kaiming_uniform_(layer.weight, mode='fan_out', nonlinearity='relu') initialization for relus and deep nets\n\n            nn.init.zeros_(layer.bias)               # initialize the bias to 0\n            self.layers.append(layer)\n    \n    # Forward is the method that calculates the value of the neural network. Basically we recursively apply the activations in each\n    # layer\n    \n    def forward(self, x):\n        for layer in self.layers[:-1]:\n            x = nn.sigmoid(layer(x))   # sigmoid layers\n            #x = F.relu(layer(x)) # You will try the relu layer in the last problem\n        x = self.layers[-1](x) \n        return x"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#initializing-a-network",
     "href": "meetups/meetup-12/meetup-12.html#initializing-a-network",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Initializing a Network",
     "text": "Initializing a Network\n\nCan call the constructor to make your network:\n\n\nNetwork([784,100,10])\n\nNetwork(\n  (layers): ModuleList(\n    (0): Linear(in_features=784, out_features=100, bias=True)\n    (1): Linear(in_features=100, out_features=10, bias=True)\n  )\n)"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#training-a-network",
     "href": "meetups/meetup-12/meetup-12.html#training-a-network",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Training a network",
-    "text": "Training a network\n\nDefine Training Function\n\n\ndef train(network, train_data, epochs, eta, test_data=None):\n \n    optimizer = optim.SGD(network.parameters(),momentum=0.8,nesterov=True, lr=eta,weight_decay=1e-5)\n    loss_fn = nn.CrossEntropyLoss()\n    \n    loss_history = []      \n    accuracy_history = []  \n    train_accuracy_history = []\n\n    # We are going to loop over the epochs\n    for epoch in range(epochs):\n        # This puts the network into training mode\n        network.train()\n        running_loss = 0.0\n        batch_count = 0\n\n        # Now we loop through the batches to train\n        for data, target in train_data:\n            optimizer.zero_grad() # This clears the internally stored gradients\n            output = network(data) # evaluate the neural network on the minibatch, we will compare this to the target\n            # Here we calculate the loss function and then use backpropagation\n            # to calculate the gradient\n            loss = loss_fn(output, target) \n            loss.backward()\n        \n            # Update the weights\n            optimizer.step()\n            \n            running_loss += loss.item()\n            batch_count += 1\n            \n        # Track our metrics\n        avg_loss = running_loss / batch_count\n        loss_history.append(avg_loss)\n        # Compute our training set accuracy\n        train_acc = evaluate(network,train_data)\n        train_accuracy_history.append(train_acc)\n        \n        # Compute our test set accuracy\n        acc = evaluate(network, test_data)\n        accuracy_history.append(acc)\n        \n        # Update the status of our run at this epoch\n        print(f\"Epoch {epoch+1}: Avg loss: {avg_loss:.4f} | Test Accuracy: {acc:.4f} | Train Accuracy: {train_acc:.4f} \")\n    \n    return loss_history, train_accuracy_history, accuracy_history\n\n\ndef evaluate(network, test_data):\n    network.eval()\n    correct = 0\n    total = 0\n    # We have the \"with torch.no_grad()\" line for efficiency purposes\n    with torch.no_grad():\n        for data, target in test_data:\n            output = network(data)\n            pred = output.argmax(dim=1, keepdim=True)\n            correct += pred.eq(target.view_as(pred)).sum().item()\n            total += data.size(0)\n    acc = correct / total\n    return acc\n\n\ndef train(network, train_data, epochs, eta, test_data=None):\n \n    optimizer = optim.SGD(network.parameters(),momentum=0.8,nesterov=True, lr=eta,weight_decay=1e-5)\n    loss_fn = nn.CrossEntropyLoss()\n    \n    loss_history = []      \n    accuracy_history = []  \n    train_accuracy_history = []\n\n    # We are going to loop over the epochs\n    for epoch in range(epochs):\n        # This puts the network into training mode\n        network.train()\n        running_loss = 0.0\n        batch_count = 0"
+    "text": "Training a network\n\nDefine Training Function\n\n\ndef train(network, train_data, epochs, eta, test_data=None):\n \n    optimizer = optim.SGD(network.parameters(),momentum=0.8,nesterov=True, lr=eta,weight_decay=1e-5)\n    loss_fn = nn.CrossEntropyLoss()\n    \n    loss_history = []      \n    accuracy_history = []  \n    train_accuracy_history = []\n\n    # We are going to loop over the epochs\n    for epoch in range(epochs):\n        # This puts the network into training mode\n        network.train()\n        running_loss = 0.0\n        batch_count = 0"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#training-a-network-1",
     "href": "meetups/meetup-12/meetup-12.html#training-a-network-1",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Training a Network",
     "text": "Training a Network\n\nLoop over batches of training examples\n\n\n        # Now we loop through the batches to train\n        for data, target in train_data:\n            optimizer.zero_grad() # This clears the internally stored gradients\n            output = network(data) # evaluate the neural network on the minibatch, we will compare this to the target\n            # Here we calculate the loss function and then use backpropagation\n            # to calculate the gradient\n            loss = loss_fn(output, target) \n            loss.backward()\n        \n            # Update the weights\n            optimizer.step()\n            \n            running_loss += loss.item()\n            batch_count += 1"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#loading-data",
     "href": "meetups/meetup-12/meetup-12.html#loading-data",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Loading Data",
     "text": "Loading Data\n\nfrom torchvision import datasets, transforms\nfrom torch.utils.data import DataLoader\n\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Lambda(lambda x: x.view(-1))])\n\n\ntrain_dataset = datasets.FashionMNIST('data/', train=True, download=True, transform=transform)\ntest_dataset = datasets.FashionMNIST('data/', train=False, transform=transform)\n\nimg, label = training_data[100]\n\nplt.imshow(img.squeeze(),cmap=\"gray\")"
   },
   {
     "objectID": "meetups/meetup-12/meetup-12.html#train",
     "href": "meetups/meetup-12/meetup-12.html#train",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Train",
     "text": "Train\n\ntrain_loader = DataLoader(train_dataset, batch_size=10, shuffle=True)\ntest_loader = DataLoader(test_dataset, batch_size=10, shuffle=False)\n\n# Initialize network\nnet = Network([784, 30, 10])\n\n# Train\ntrain(net, train_loader, epochs=1, eta=0.01, test_data=test_loader)"
   },
   {
+    "objectID": "meetups/meetup-12/meetup-12.html#optimization-basics",
+    "href": "meetups/meetup-12/meetup-12.html#optimization-basics",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Optimization Basics",
+    "text": "Optimization Basics\n\nSimplified loss landscape:"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#gradient-descent",
+    "href": "meetups/meetup-12/meetup-12.html#gradient-descent",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Gradient Descent",
+    "text": "Gradient Descent\n\n\n\n\n\n\n\n\n\n\n\n\n\nStart at \\(\\mathbf{x}_0\\)\nFind gradient \\(\\nabla \\mathrm{loss}(\\mathbf{x})\\)\n\\(\\mathbf{x}_n = \\mathbf{x}_{n-1} - \\kappa \\nabla\\mathrm{loss}(\\mathbf{x}_{n-1})\\)\n\\(\\kappa\\) is learning rate"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#what-learning-rate-to-pick",
+    "href": "meetups/meetup-12/meetup-12.html#what-learning-rate-to-pick",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "What Learning Rate to Pick?",
+    "text": "What Learning Rate to Pick?\n\nHigh learning rate trains faster\nToo high and don’t converge at all\nLimit is set by algorithm and ellipticity of well"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#what-learning-rate-to-pick-1",
+    "href": "meetups/meetup-12/meetup-12.html#what-learning-rate-to-pick-1",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "What Learning Rate to Pick?",
+    "text": "What Learning Rate to Pick?\n\n\n\n\n\n\n\n\n\n\n\n\nMomentum\n\nAdvanced algos use momentum, gives “memory” of past gradient\nReduces effect of valley oscillation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperparameter Problems\n\nWe don’t know the shape of the loss landscape to pick \\(\\kappa\\)\nWe handle this several ways:\n\nExperimentation\nHeuristics\nAdaptive Methods\n\n\n\n\nStochastic Gradient Descent\n\nCommon for optimization algorithms to “get stuck”\n\n\n\n\n\n\n\n\n\n\n\n\nStochastic Gradient Descent\n\nIn low-D local minima are problematic\n\n\n\n\n\n\n\n\n\n\n\n\nStochastic Gradient Descent\n\nTrajectories get Stuck\n\n\n\n\n\n\n\n\n\n\n\n\nStochastic Gradient Descent\n\nThe barriers in high dimensions likely more complex\nStochastic Gradient Descent modifies gradient descent style methods\n\nCompute the gradient of loss using only part of the data\nCalled a “mini-batch”\nSmaller the mini-batch, the more the noise\n\n\n\n\nStochastic Gradient Descent\n\n\n\n\n\n\n\n\n\n\n\nStochastic Gradient Descent\n\nIn 2D, can just add noise\n\n\n\n\n\n\n\n\n\n\n\n\nAnnealing\n\nNoise can deflect you from the minimum when you are close\nCommon practice is to start with noise high, reduce it later\n\nSimulated annealing (from metallurgy)\n\nEven more common to start with high learning rate and gradually decrease it\n\nWhereas in some ML applications increasing batch-size could cause overfitting\n\n\n\n\nAdaptive Methods\n\nWe saw that hyper-parameters are hard to pick at outset\nIdeal learning rate depends on condition number and also magnitude of gradients\nConcept: Change Learning Rate as we go\n\nKeep memory of gradient in each variable\nStep in the direction of the average gradient\nDecrease learning rate if variance is high\nIncrease learning rate if variance is low\n\n\n\n\nADAM\n\nAdaptive Moment Estimation\nHave a local estimate of average gradient \\(\\hat{\\mathbf{v}}_i\\)\nHave a local estimate of squared gradient \\(\\hat{G}_{s,i}\\)\nAdjusted learning rate based on both: \\[\n\\mathbf{x}_{i+1} = \\mathbf{x}_i -\\kappa \\frac{\\hat{\\mathbf{v}}_i}{\\sqrt{\\hat{G}_{s,i}+\\epsilon}}\n\\]\n\n\n\nWhen and Why is ADAM good?\n\nADAM is much more robust to learning rate choices\nADAM is excellent when the gradient is sparse\nADAM is often the best in initial training stages\n\n\n\n\nWhen is ADAM bad?\n\nADAM is perhaps the most widely used optimizer, the default for deep learning\nHowever, it is not even guaranteed to converge on easy problems\nCan generalize worse (need more regularization)\nLess memory efficient\nIt is very heuristic in nature, can be improved\n\n\n\nThanks\n\n\n\n\nDATA 622"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#momentum",
+    "href": "meetups/meetup-12/meetup-12.html#momentum",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Momentum",
+    "text": "Momentum\n\nAdvanced algos use momentum, gives “memory” of past gradient\nReduces effect of valley oscillation"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#hyperparameter-problems",
+    "href": "meetups/meetup-12/meetup-12.html#hyperparameter-problems",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Hyperparameter Problems",
+    "text": "Hyperparameter Problems\n\nWe don’t know the shape of the loss landscape to pick \\(\\kappa\\)\nWe handle this several ways:\n\nExperimentation\nHeuristics\nAdaptive Methods"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent",
+    "href": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent\n\nCommon for optimization algorithms to “get stuck”"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-1",
+    "href": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-1",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent\n\nIn low-D local minima are problematic"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-2",
+    "href": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-2",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent\n\nTrajectories get Stuck"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-3",
+    "href": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-3",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent\n\nThe barriers in high dimensions likely more complex\nStochastic Gradient Descent modifies gradient descent style methods\n\nCompute the gradient of loss using only part of the data\nCalled a “mini-batch”\nSmaller the mini-batch, the more the noise"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-4",
+    "href": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-4",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-5",
+    "href": "meetups/meetup-12/meetup-12.html#stochastic-gradient-descent-5",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent\n\nIn 2D, can just add noise"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#annealing",
+    "href": "meetups/meetup-12/meetup-12.html#annealing",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Annealing",
+    "text": "Annealing\n\nNoise can deflect you from the minimum when you are close\nCommon practice is to start with noise high, reduce it later\n\nSimulated annealing (from metallurgy)\n\nEven more common to start with high learning rate and gradually decrease it\n\nWhereas in some ML applications increasing batch-size could cause overfitting"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#adaptive-methods",
+    "href": "meetups/meetup-12/meetup-12.html#adaptive-methods",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "Adaptive Methods",
+    "text": "Adaptive Methods\n\nWe saw that hyper-parameters are hard to pick at outset\nIdeal learning rate depends on condition number and also magnitude of gradients\nConcept: Change Learning Rate as we go\n\nKeep memory of gradient in each variable\nStep in the direction of the average gradient\nDecrease learning rate if variance is high\nIncrease learning rate if variance is low"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#adam",
+    "href": "meetups/meetup-12/meetup-12.html#adam",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "ADAM",
+    "text": "ADAM\n\nAdaptive Moment Estimation\nHave a local estimate of average gradient \\(\\hat{\\mathbf{v}}_i\\)\nHave a local estimate of squared gradient \\(\\hat{G}_{s,i}\\)\nAdjusted learning rate based on both: \\[\n\\mathbf{x}_{i+1} = \\mathbf{x}_i -\\kappa \\frac{\\hat{\\mathbf{v}}_i}{\\sqrt{\\hat{G}_{s,i}+\\epsilon}}\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#when-and-why-is-adam-good",
+    "href": "meetups/meetup-12/meetup-12.html#when-and-why-is-adam-good",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "When and Why is ADAM good?",
+    "text": "When and Why is ADAM good?\n\nADAM is much more robust to learning rate choices\nADAM is excellent when the gradient is sparse\nADAM is often the best in initial training stages"
+  },
+  {
+    "objectID": "meetups/meetup-12/meetup-12.html#when-is-adam-bad",
+    "href": "meetups/meetup-12/meetup-12.html#when-is-adam-bad",
+    "title": "DATA 622 Meetup 12: Neural Networks",
+    "section": "When is ADAM bad?",
+    "text": "When is ADAM bad?\n\nADAM is perhaps the most widely used optimizer, the default for deep learning\nHowever, it is not even guaranteed to converge on easy problems\nCan generalize worse (need more regularization)\nLess memory efficient\nIt is very heuristic in nature, can be improved"
+  },
+  {
     "objectID": "meetups/meetup-12/meetup-12.html#thanks",
     "href": "meetups/meetup-12/meetup-12.html#thanks",
-    "title": "DATA 609 Meetup 14: Neural Networks",
+    "title": "DATA 622 Meetup 12: Neural Networks",
     "section": "Thanks",
-    "text": "Thanks"
+    "text": "Thanks\n\n\n\n\nDATA 622"
   },
   {
     "objectID": "meetups/meetup-4/LR-live.html",
