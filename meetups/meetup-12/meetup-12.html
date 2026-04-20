@@ -713,7 +713,7 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 <ul>
 <li>Primary data object in <code>pytorch</code> is called a <code>tensor</code></li>
 </ul>
-<div id="1b579ce3" class="cell" data-execution_count="6">
+<div id="f9666e45" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a></a></span>
@@ -734,7 +734,7 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 <li>They live on a particular device:</li>
 </ul></li>
 </ul>
-<div id="24b0570b" class="cell" data-execution_count="7">
+<div id="fd4ca7b1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(<span class="ss">f"Device tensor is stored on: </span><span class="sc">{</span>x_data<span class="sc">.</span>device<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Device tensor is stored on: cpu</code></pre>
@@ -742,6 +742,21 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 </div>
 <ul>
 <li>When programming with GPUs, you must manually control the movement of tensor data across the cluster</li>
+</ul>
+</section>
+<section id="what-is-a-gpu" class="slide level2">
+<h2>What is a GPU</h2>
+<ul>
+<li>Normal computers have several (~20) very powerful cores
+<ul>
+<li>Each core can do complex operations sequentially</li>
+</ul></li>
+<li>GPU has huge number (~10,000) of very basic cores
+<ul>
+<li>Cores can just multiply and add</li>
+<li>Cores work in parallel</li>
+<li>Perfect for Neural Networks</li>
+</ul></li>
 </ul>
 </section>
 <section id="tensors-2" class="slide level2">
@@ -754,7 +769,7 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 <li><code>*.backward()</code> computes gradient</li>
 </ul></li>
 </ul>
-<div id="e07fff7f" class="cell" data-execution_count="8">
+<div id="de924705" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>x <span class="op">=</span> torch.ones(<span class="dv">5</span>)  <span class="co"># input tensor</span></span>
 <span id="cb5-2"><a></a>y <span class="op">=</span> torch.zeros(<span class="dv">3</span>)  <span class="co"># expected output</span></span>
 <span id="cb5-3"><a></a>w <span class="op">=</span> torch.randn(<span class="dv">5</span>, <span class="dv">3</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
@@ -772,16 +787,16 @@ y_{\mathrm{pred}} = F(\mathbf{x})
 \frac{\partial \mathrm{loss}}{\partial \mathbf{w}},\quad \frac{\partial \mathrm{loss}}{\partial \mathbf{b}},
 \]</span></li>
 </ul>
-<div id="0176c629" class="cell" data-execution_count="9">
+<div id="5422b577" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="bu">print</span>(w.grad)</span>
 <span id="cb6-2"><a></a><span class="bu">print</span>(b.grad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tensor([[0.3293, 0.1170, 0.3053],
-        [0.3293, 0.1170, 0.3053],
-        [0.3293, 0.1170, 0.3053],
-        [0.3293, 0.1170, 0.3053],
-        [0.3293, 0.1170, 0.3053]])
-tensor([0.3293, 0.1170, 0.3053])</code></pre>
+<pre><code>tensor([[0.2809, 0.0311, 0.2834],
+        [0.2809, 0.0311, 0.2834],
+        [0.2809, 0.0311, 0.2834],
+        [0.2809, 0.0311, 0.2834],
+        [0.2809, 0.0311, 0.2834]])
+tensor([0.2809, 0.0311, 0.2834])</code></pre>
 </div>
 </div>
 </section>
@@ -798,7 +813,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <ul>
 <li>This code will download the fashion-mnist dataset and prep it for use:</li>
 </ul>
-<div id="50ac38f8" class="cell" data-execution_count="10">
+<div id="74e512f3" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> torch</span>
 <span id="cb8-2"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset</span>
 <span id="cb8-3"><a></a><span class="im">from</span> torchvision <span class="im">import</span> datasets</span>
@@ -826,7 +841,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <ul>
 <li>Neural Network architectures are constructed using the nn.Module class</li>
 </ul>
-<div id="4ad800cf" class="cell" data-execution_count="11">
+<div id="9afd5927" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb9-2"><a></a><span class="im">import</span> torch.nn.functional <span class="im">as</span> F</span>
 <span id="cb9-3"><a></a><span class="im">import</span> torch.optim <span class="im">as</span> optim</span>
@@ -867,7 +882,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <ul>
 <li>Can call the constructor to make your network:</li>
 </ul>
-<div id="680bde7a" class="cell" data-execution_count="12">
+<div id="9ce40944" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>Network([<span class="dv">784</span>,<span class="dv">100</span>,<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>Network(
@@ -884,7 +899,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <ul>
 <li>Define Training Function</li>
 </ul>
-<div id="b90bebe5" class="cell" data-execution_count="14">
+<div id="8c5bd569" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> train(network, train_data, epochs, eta, test_data<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb12-2"><a></a> </span>
 <span id="cb12-3"><a></a>    optimizer <span class="op">=</span> optim.SGD(network.parameters(),momentum<span class="op">=</span><span class="fl">0.8</span>,nesterov<span class="op">=</span><span class="va">True</span>, lr<span class="op">=</span>eta,weight_decay<span class="op">=</span><span class="fl">1e-5</span>)</span>
@@ -907,7 +922,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <ul>
 <li>Loop over batches of training examples</li>
 </ul>
-<div id="ebe908e7" class="cell" data-execution_count="15">
+<div id="aee636ad" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>        <span class="co"># Now we loop through the batches to train</span></span>
 <span id="cb13-2"><a></a>        <span class="cf">for</span> data, target <span class="kw">in</span> train_data:</span>
 <span id="cb13-3"><a></a>            optimizer.zero_grad() <span class="co"># This clears the internally stored gradients</span></span>
@@ -926,7 +941,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </section>
 <section id="loading-data" class="slide level2">
 <h2>Loading Data</h2>
-<div id="d69984e0" class="cell" data-execution_count="16">
+<div id="daecfcc1" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">from</span> torchvision <span class="im">import</span> datasets, transforms</span>
 <span id="cb14-2"><a></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
 <span id="cb14-3"><a></a></span>
@@ -944,7 +959,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <img data-src="meetup-12_files/figure-revealjs/cell-17-output-1.png" class="r-stretch"></section>
 <section id="train" class="slide level2">
 <h2>Train</h2>
-<div id="7187de37" class="cell" data-execution_count="17">
+<div id="d3386e2f" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>train_loader <span class="op">=</span> DataLoader(train_dataset, batch_size<span class="op">=</span><span class="dv">10</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb15-2"><a></a>test_loader <span class="op">=</span> DataLoader(test_dataset, batch_size<span class="op">=</span><span class="dv">10</span>, shuffle<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb15-3"><a></a></span>
@@ -957,16 +972,29 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </section>
 <section id="optimization-basics" class="slide level2">
 <h2>Optimization Basics</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
 <ul>
 <li>Simplified loss landscape:</li>
+<li>Imagine more dimensions</li>
 </ul>
-
-<img data-src="meetup-12_files/figure-revealjs/cell-21-output-1.png" class="r-stretch"></section>
+</div><div class="column" style="width:65%;">
+<div id="e1aacbc0" class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="meetup-12_files/figure-revealjs/cell-21-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
 <section id="gradient-descent" class="slide level2">
 <h2>Gradient Descent</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="a19cbe96" class="cell" data-execution_count="21">
+<div id="bb477b06" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -996,7 +1024,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <h2>What Learning Rate to Pick?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="b43c9a6f" class="cell" data-execution_count="22">
+<div id="db7f7358" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1005,6 +1033,13 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </div>
 </div>
 </div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Steepness discrepancy limits learning rate</li>
+<li>Most of the step is in wrong direction</li>
+</ul>
+</div></div>
+</section>
 <section id="momentum" class="slide level2">
 <h2>Momentum</h2>
 <ul>
@@ -1013,7 +1048,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="aef344d1" class="cell" data-execution_count="24">
+<div id="7b82f017" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1023,7 +1058,7 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="4e491b2f" class="cell" data-execution_count="25">
+<div id="9ef589bf" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1051,46 +1086,22 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <ul>
 <li>Common for optimization algorithms to “get stuck”</li>
 </ul>
-<div id="2cadae33" class="cell" data-execution_count="26">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-revealjs/cell-27-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-27-output-1.png" class="r-stretch"></section>
 <section id="stochastic-gradient-descent-1" class="slide level2">
 <h2>Stochastic Gradient Descent</h2>
 <ul>
 <li>In low-D local minima are problematic</li>
 </ul>
-<div id="4b086a03" class="cell" data-execution_count="27">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-revealjs/cell-28-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-28-output-1.png" class="r-stretch"></section>
 <section id="stochastic-gradient-descent-2" class="slide level2">
 <h2>Stochastic Gradient Descent</h2>
 <ul>
 <li>Trajectories get Stuck</li>
 </ul>
-<div id="cd460295" class="cell" data-execution_count="28">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-revealjs/cell-29-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-29-output-1.png" class="r-stretch"></section>
 <section id="stochastic-gradient-descent-3" class="slide level2">
 <h2>Stochastic Gradient Descent</h2>
 <ul>
@@ -1105,31 +1116,15 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 </section>
 <section id="stochastic-gradient-descent-4" class="slide level2">
 <h2>Stochastic Gradient Descent</h2>
-<div id="2783af43" class="cell" data-execution_count="29">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-revealjs/cell-30-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-30-output-1.png" class="r-stretch"></section>
 <section id="stochastic-gradient-descent-5" class="slide level2">
 <h2>Stochastic Gradient Descent</h2>
 <ul>
 <li>In 2D, can just add noise</li>
 </ul>
-<div id="3a348415" class="cell" data-execution_count="30">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="meetup-12_files/figure-revealjs/cell-31-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="meetup-12_files/figure-revealjs/cell-31-output-1.png" class="r-stretch"></section>
 <section id="annealing" class="slide level2">
 <h2>Annealing</h2>
 <ul>
@@ -1197,8 +1192,6 @@ tensor([0.3293, 0.1170, 0.3053])</code></pre>
 <p>DATA 622</p>
 </div>
 </div>
-</section>
-</div></div>
 </section>
     </div>
   </div>
