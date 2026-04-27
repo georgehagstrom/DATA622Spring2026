@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -341,6 +406,18 @@ George I. Hagstrom
 
   <p class="date">2026-04-27</p>
 </section>
+<section id="week-summary" class="slide level2">
+<h2>Week Summary</h2>
+<ul>
+<li>Focus this week is convolutionary neural networks (CNNs)</li>
+<li>Secondary focus:
+<ul>
+<li>Heuristics for training Neural Networks</li>
+<li>Deep Neural Network Issues</li>
+</ul></li>
+<li>Lab 7 Due this week</li>
+</ul>
+</section>
 <section id="optimization-basics" class="slide level2">
 <h2>Optimization Basics</h2>
 <div class="columns">
@@ -350,7 +427,7 @@ George I. Hagstrom
 <li>Imagine more dimensions</li>
 </ul>
 </div><div class="column" style="width:65%;">
-<div id="6814a63b" class="cell" data-execution_count="3">
+<div id="0fff31ac" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -365,7 +442,7 @@ George I. Hagstrom
 <h2>Gradient Descent</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="6182d4ed" class="cell" data-execution_count="4">
+<div id="4cc19b62" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -395,7 +472,7 @@ George I. Hagstrom
 <h2>What Learning Rate to Pick?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="4885bb18" class="cell" data-execution_count="5">
+<div id="2d09367c" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -419,7 +496,7 @@ George I. Hagstrom
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="445e212e" class="cell" data-execution_count="7">
+<div id="87d1aabd" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -429,7 +506,7 @@ George I. Hagstrom
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="8f428f99" class="cell" data-execution_count="8">
+<div id="b1e26331" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -654,23 +731,281 @@ George I. Hagstrom
 <li>The convolution ‘kernel’ is like a pattern that is applied all over the target image</li>
 </ul>
 
-<img data-src="convolution.svg" class="r-stretch"></section>
+<img data-src="convolution.png" class="r-stretch"></section>
 <section id="convolution-in-practice" class="slide level2">
 <h2>Convolution in Practice</h2>
 
 <img data-src="meetup-13_files/figure-revealjs/cell-16-output-1.png" class="r-stretch"></section>
 <section id="convolutional-neural-networks" class="slide level2">
 <h2>Convolutional Neural Networks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li></li>
+<li>CNN Architecture:
+<ul>
+<li>Layers are small, learned filters</li>
+<li>Feature map per layer</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="CNN1.png"></p>
+</div></div>
+</section>
+<section id="convolutional-neural-networks-1" class="slide level2">
+<h2>Convolutional Neural Networks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>CNN Architecture:
+<ul>
+<li>Layers are small, learned filters</li>
+<li>Feature map per layer</li>
+<li>Apply ReLU to feature maps</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="CNN2.png"></p>
+</div></div>
+</section>
+<section id="convolutional-neural-networks-2" class="slide level2">
+<h2>Convolutional Neural Networks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>CNN Architecture:
+<ul>
+<li>Layers are small, learned filters</li>
+<li>Feature map per layer</li>
+<li>Apply ReLU to feature maps</li>
+<li>Stack Conv layers</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="conv_deep.png.png"></p>
+</div></div>
+</section>
+<section id="pooling" class="slide level2">
+<h2>Pooling</h2>
+<ul>
+<li>Convolutional layers dramatically increase the size of outputs</li>
+<li>Max pooling layers reduce the spatial size</li>
+<li>Look at 2x2 or 3x3 grid and pick maximum value</li>
+</ul>
+
+<img data-src="max_pool.png" class="r-stretch"></section>
+<section id="full-architecture" class="slide level2">
+<h2>Full Architecture</h2>
+<ul>
+<li>CNNs mix 1-3 Conv layers between max pooling layers</li>
+<li>Have some fully connected layers at the end for classification</li>
+</ul>
+
+<img data-src="vgg_diagram.png" class="r-stretch"></section>
+<section id="cnns-outperform-fully-connected-for-images" class="slide level2">
+<h2>CNNs Outperform Fully Connected for Images</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Fully Connected:</p>
+<p><img data-src="FC_summary.png"></p>
+</div><div class="column" style="width:50%;">
+<p>Fully Connected:</p>
+<p><img data-src="CNN_summary.png"></p>
+</div></div>
+</section>
+<section id="cnns-outperform-fully-connected-for-images-1" class="slide level2">
+<h2>CNNs Outperform Fully Connected for Images</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Fully Connected:</p>
+<p><img data-src="CNN_acc.png"></p>
+</div><div class="column" style="width:50%;">
+<p>Fully Connected:</p>
+<p><img data-src="FC_acc.png"></p>
+</div></div>
+</section>
+<section id="more-inductive-biases" class="slide level2">
+<h2>More Inductive Biases</h2>
+<ul>
+<li>Translation and Rotation
+<ul>
+<li>Convolution effectively reuses weights to handle translations</li>
+</ul></li>
+<li>Slight change in colors, lightness/darkness</li>
+<li>Image being partially obscured</li>
 </ul>
 </section>
-<section id="deep-neural-networks" class="slide level2">
-<h2>Deep Neural Networks</h2>
+<section id="data-augmentation" class="slide level2">
+<h2>Data Augmentation</h2>
+<ul>
+<li>Instead of modifying models, we modify training set with transformations!</li>
+</ul>
+<div id="0444306e" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>transform_train <span class="op">=</span> transforms.Compose([</span>
+<span id="cb1-2"><a></a>    transforms.RandomHorizontalFlip(),</span>
+<span id="cb1-3"><a></a>    transforms.RandomCrop(<span class="dv">32</span>, padding<span class="op">=</span><span class="dv">4</span>),</span>
+<span id="cb1-4"><a></a>    transforms.ColorJitter(brightness<span class="op">=</span><span class="fl">0.2</span>, contrast<span class="op">=</span><span class="fl">0.2</span>, saturation<span class="op">=</span><span class="fl">0.2</span>),</span>
+<span id="cb1-5"><a></a>    transforms.RandomRotation(<span class="dv">5</span>),</span>
+<span id="cb1-6"><a></a>    transforms.ToTensor(),</span>
+<span id="cb1-7"><a></a>    transforms.Normalize((<span class="fl">0.4914</span>, <span class="fl">0.4822</span>, <span class="fl">0.4465</span>),</span>
+<span id="cb1-8"><a></a>                         (<span class="fl">0.2470</span>, <span class="fl">0.2435</span>, <span class="fl">0.2616</span>)),</span>
+<span id="cb1-9"><a></a>    transforms.RandomErasing(p<span class="op">=</span><span class="fl">0.5</span>, scale<span class="op">=</span>(<span class="fl">0.02</span>, <span class="fl">0.2</span>))</span>
+<span id="cb1-10"><a></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="recurrent-neural-networks" class="slide level2">
-<h2>Recurrent Neural Networks</h2>
+<section id="data-augmentation-1" class="slide level2">
+<h2>Data Augmentation</h2>
+<ul>
+<li>Instead of modifying models, we modify training set with transformations!</li>
+<li>Data augmentation is one of the most powerful “tricks” out there</li>
+</ul>
+
+<img data-src="cifar10-full.png" class="r-stretch"></section>
+<section id="regularization-dropout" class="slide level2">
+<h2>Regularization: Dropout</h2>
+<ul>
+<li>To prevent memorization, randomly zero out a fraction of neuron weights during training:</li>
+</ul>
+<div id="92887dc5" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>    <span class="va">self</span>.output <span class="op">=</span> nn.Sequential(</span>
+<span id="cb2-2"><a></a>        nn.Dropout(<span class="fl">0.5</span>),</span>
+<span id="cb2-3"><a></a>        nn.Linear(<span class="dv">2</span><span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="dv">512</span>, <span class="dv">512</span>),</span>
+<span id="cb2-4"><a></a>        nn.ReLU(),</span>
+<span id="cb2-5"><a></a>        nn.Linear(<span class="dv">512</span>, <span class="dv">100</span>)</span>
+<span id="cb2-6"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="regularization-early-stopping" class="slide level2">
+<h2>Regularization: Early Stopping</h2>
+<ul>
+<li>Overfitting: Training loss decreases, validation loss is constant</li>
+<li>Solution: Stop training if validation loss has stopped improving</li>
+</ul>
+<div id="458060f9" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>early_stopper <span class="op">=</span> EarlyStopping(</span>
+<span id="cb3-2"><a></a>    monitor<span class="op">=</span><span class="st">'valid_loss'</span>,</span>
+<span id="cb3-3"><a></a>    patience<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb3-4"><a></a>    mode<span class="op">=</span><span class="st">'min'</span></span>
+<span id="cb3-5"><a></a>)</span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a>cifar_trainer <span class="op">=</span> Trainer(</span>
+<span id="cb3-8"><a></a>    max_epochs<span class="op">=</span><span class="dv">300</span>,</span>
+<span id="cb3-9"><a></a>    callbacks<span class="op">=</span>[early_stopper, ...]</span>
+<span id="cb3-10"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="what-is-deep-learning" class="slide level2">
+<h2>What is Deep Learning?</h2>
+<ul>
+<li>Networks we implemented last week had one hidden layer <img data-src="shallow.png" alt="Nielson"></li>
+</ul>
+</section>
+<section id="what-is-deep-learning-1" class="slide level2">
+<h2>What is Deep Learning?</h2>
+<ul>
+<li>But you can use more layers <img data-src="deep.png" alt="Nielson"></li>
+</ul>
+</section>
+<section id="empirical-advantage" class="slide level2">
+<h2>Empirical Advantage</h2>
+<ul>
+<li>Over time, networks have become deeper</li>
+<li>Empirically, they lead to higher accuracy</li>
+</ul>
+
+<img data-src="depth_error.png" class="r-stretch quarto-figure-center"><p class="caption">Goodfellow et al</p></section>
+<section id="empirical-advantage-1" class="slide level2">
+<h2>Empirical Advantage</h2>
+<ul>
+<li>Over time, networks have become deeper</li>
+<li>Empirically, they lead to higher accuracy</li>
+</ul>
+
+<img data-src="image_net.png" class="r-stretch quarto-figure-center"><p class="caption">ImageNet Challenge</p></section>
+<section id="different-than-more-neurons" class="slide level2">
+<h2>Different than more neurons</h2>
+<ul>
+<li>Scaling up neurons often doesn’t help in shallow nets</li>
+</ul>
+
+<img data-src="neurons_error.png" class="r-stretch quarto-figure-center"><p class="caption">Goodfellow</p></section>
+<section id="vashing-gradients" class="slide level2">
+<h2>Vashing Gradients</h2>
+<ul>
+<li>Landscape of deep network varies by layer:</li>
+</ul>
+
+<img data-src="training_speed.png" style="width:50.0%" class="r-stretch quarto-figure-center"><p class="caption">Nielson</p></section>
+<section id="why-vanishing-gradients" class="slide level2">
+<h2>Why Vanishing Gradients?</h2>
+<ul>
+<li>Consider a deep network with one neuron per layer: <img data-src="very_deep.png"></li>
+<li>If activation function is <span class="math inline">\(\phi\)</span> can write it as: <span class="math display">\[
+f(x_1) = \phi \circ (w_n x + b_n) \circ \phi \circ (w_{n-1}x + b_{n-1}) \circ \\
+\phi\circ \cdots\circ \phi \circ(w_1 x +b_1) (x_1)
+\]</span></li>
+</ul>
+</section>
+<section id="taking-derivatives" class="slide level2">
+<h2>Taking Derivatives</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The close to the output, the fewer “terms” in the derivative:</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Chain_rule_en.png"></p>
+<figcaption>wikpedia</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="solution-activations" class="slide level2">
+<h2>Solution: Activations</h2>
+<ul>
+<li>Rectified Linear Unit (ReLU)</li>
+</ul>
+<p><span class="math display">\[
+\phi(x) = \cases{0&amp; \text{if} \quad x\leq 0 \\
+                x&amp; \text{if} \quad x&gt;0}
+\]</span></p>
+
+<img data-src="meetup-13_files/figure-revealjs/cell-20-output-1.png" class="r-stretch"></section>
+<section id="spiky-loss-landscape" class="slide level2">
+<h2>Spiky Loss Landscape</h2>
+<ul>
+<li>Ideally, as you move in the direction of the gradient the loss smoothly decreases</li>
+</ul>
+
+<img data-src="spiky_loss.png" class="r-stretch"></section>
+<section id="batch-norm" class="slide level2">
+<h2>Batch Norm</h2>
+<ul>
+<li>Idea: Rescale the outputs of previous layer so that roughly 50% of neurons are active in subsequent layer</li>
+<li>At each batch, and each forward step, rescale data so that mean = 0 and variance is 1</li>
+<li>Learn an additional scaling parameter per layer</li>
+<li>For evaluation, using running tally of activations at each layer for normalization</li>
+</ul>
+</section>
+<section id="batch-norm-is-a-type-of-layer" class="slide level2">
+<h2>Batch Norm is a Type of Layer</h2>
+<div id="450bfeda" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>    <span class="va">self</span>.conv1 <span class="op">=</span> nn.Conv2d(in_channels, out_channels, kernel_size<span class="op">=</span><span class="dv">3</span>, padding<span class="op">=</span><span class="st">'same'</span>)</span>
+<span id="cb4-2"><a></a>    <span class="va">self</span>.bn1 <span class="op">=</span> nn.BatchNorm2d(out_channels)</span>
+<span id="cb4-3"><a></a>    <span class="va">self</span>.conv2 <span class="op">=</span> nn.Conv2d(out_channels, out_channels, kernel_size<span class="op">=</span><span class="dv">3</span>, padding<span class="op">=</span><span class="st">'same'</span>)</span>
+<span id="cb4-4"><a></a>    <span class="va">self</span>.bn2 <span class="op">=</span> nn.BatchNorm2d(out_channels)</span>
+<span id="cb4-5"><a></a>    <span class="va">self</span>.conv3 <span class="op">=</span> nn.Conv2d(out_channels, out_channels, kernel_size<span class="op">=</span><span class="dv">3</span>, padding<span class="op">=</span><span class="st">'same'</span>)</span>
+<span id="cb4-6"><a></a>    <span class="va">self</span>.bn3 <span class="op">=</span> nn.BatchNorm2d(out_channels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="batch-norm-enables-training-deep-networks" class="slide level2">
+<h2>Batch Norm Enables Training Deep Networks</h2>
+<ul>
+<li>Batch Norm makes the loss landscape much smoother</li>
+</ul>
+
+<img data-src="batch_normalization.png" class="r-stretch"></section>
 <section id="thanks" class="slide level2">
 <h2>Thanks</h2>
 

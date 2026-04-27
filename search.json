@@ -4420,6 +4420,13 @@
     "text": "Thanks!\n\n\n\n\nDATA 622"
   },
   {
+    "objectID": "meetups/meetup-13/meetup-13.html#week-summary",
+    "href": "meetups/meetup-13/meetup-13.html#week-summary",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Week Summary",
+    "text": "Week Summary\n\nFocus this week is convolutionary neural networks (CNNs)\nSecondary focus:\n\nHeuristics for training Neural Networks\nDeep Neural Network Issues\n\nLab 7 Due this week"
+  },
+  {
     "objectID": "meetups/meetup-13/meetup-13.html#optimization-basics",
     "href": "meetups/meetup-13/meetup-13.html#optimization-basics",
     "title": "DATA 622 Meetup 13: Neural Networks",
@@ -4634,21 +4641,175 @@
     "href": "meetups/meetup-13/meetup-13.html#convolutional-neural-networks",
     "title": "DATA 622 Meetup 13: Neural Networks",
     "section": "Convolutional Neural Networks",
-    "text": "Convolutional Neural Networks"
+    "text": "Convolutional Neural Networks\n\n\n\nCNN Architecture:\n\nLayers are small, learned filters\nFeature map per layer"
   },
   {
-    "objectID": "meetups/meetup-13/meetup-13.html#deep-neural-networks",
-    "href": "meetups/meetup-13/meetup-13.html#deep-neural-networks",
+    "objectID": "meetups/meetup-13/meetup-13.html#convolutional-neural-networks-1",
+    "href": "meetups/meetup-13/meetup-13.html#convolutional-neural-networks-1",
     "title": "DATA 622 Meetup 13: Neural Networks",
-    "section": "Deep Neural Networks",
-    "text": "Deep Neural Networks"
+    "section": "Convolutional Neural Networks",
+    "text": "Convolutional Neural Networks\n\n\n\nCNN Architecture:\n\nLayers are small, learned filters\nFeature map per layer\nApply ReLU to feature maps"
   },
   {
-    "objectID": "meetups/meetup-13/meetup-13.html#recurrent-neural-networks",
-    "href": "meetups/meetup-13/meetup-13.html#recurrent-neural-networks",
+    "objectID": "meetups/meetup-13/meetup-13.html#convolutional-neural-networks-2",
+    "href": "meetups/meetup-13/meetup-13.html#convolutional-neural-networks-2",
     "title": "DATA 622 Meetup 13: Neural Networks",
-    "section": "Recurrent Neural Networks",
-    "text": "Recurrent Neural Networks"
+    "section": "Convolutional Neural Networks",
+    "text": "Convolutional Neural Networks\n\n\n\nCNN Architecture:\n\nLayers are small, learned filters\nFeature map per layer\nApply ReLU to feature maps\nStack Conv layers"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#pooling",
+    "href": "meetups/meetup-13/meetup-13.html#pooling",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Pooling",
+    "text": "Pooling\n\nConvolutional layers dramatically increase the size of outputs\nMax pooling layers reduce the spatial size\nLook at 2x2 or 3x3 grid and pick maximum value"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#full-architecture",
+    "href": "meetups/meetup-13/meetup-13.html#full-architecture",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Full Architecture",
+    "text": "Full Architecture\n\nCNNs mix 1-3 Conv layers between max pooling layers\nHave some fully connected layers at the end for classification"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#cnns-outperform-fully-connected-for-images",
+    "href": "meetups/meetup-13/meetup-13.html#cnns-outperform-fully-connected-for-images",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "CNNs Outperform Fully Connected for Images",
+    "text": "CNNs Outperform Fully Connected for Images\n\n\nFully Connected:\n\n\nFully Connected:"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#cnns-outperform-fully-connected-for-images-1",
+    "href": "meetups/meetup-13/meetup-13.html#cnns-outperform-fully-connected-for-images-1",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "CNNs Outperform Fully Connected for Images",
+    "text": "CNNs Outperform Fully Connected for Images\n\n\nFully Connected:\n\n\nFully Connected:"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#more-inductive-biases",
+    "href": "meetups/meetup-13/meetup-13.html#more-inductive-biases",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "More Inductive Biases",
+    "text": "More Inductive Biases\n\nTranslation and Rotation\n\nConvolution effectively reuses weights to handle translations\n\nSlight change in colors, lightness/darkness\nImage being partially obscured"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#data-augmentation",
+    "href": "meetups/meetup-13/meetup-13.html#data-augmentation",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Data Augmentation",
+    "text": "Data Augmentation\n\nInstead of modifying models, we modify training set with transformations!\n\n\ntransform_train = transforms.Compose([\n    transforms.RandomHorizontalFlip(),\n    transforms.RandomCrop(32, padding=4),\n    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),\n    transforms.RandomRotation(5),\n    transforms.ToTensor(),\n    transforms.Normalize((0.4914, 0.4822, 0.4465),\n                         (0.2470, 0.2435, 0.2616)),\n    transforms.RandomErasing(p=0.5, scale=(0.02, 0.2))\n])"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#data-augmentation-1",
+    "href": "meetups/meetup-13/meetup-13.html#data-augmentation-1",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Data Augmentation",
+    "text": "Data Augmentation\n\nInstead of modifying models, we modify training set with transformations!\nData augmentation is one of the most powerful “tricks” out there"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#regularization-dropout",
+    "href": "meetups/meetup-13/meetup-13.html#regularization-dropout",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Regularization: Dropout",
+    "text": "Regularization: Dropout\n\nTo prevent memorization, randomly zero out a fraction of neuron weights during training:\n\n\n    self.output = nn.Sequential(\n        nn.Dropout(0.5),\n        nn.Linear(2*2*512, 512),\n        nn.ReLU(),\n        nn.Linear(512, 100)\n    )"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#regularization-early-stopping",
+    "href": "meetups/meetup-13/meetup-13.html#regularization-early-stopping",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Regularization: Early Stopping",
+    "text": "Regularization: Early Stopping\n\nOverfitting: Training loss decreases, validation loss is constant\nSolution: Stop training if validation loss has stopped improving\n\n\nearly_stopper = EarlyStopping(\n    monitor='valid_loss',\n    patience=20,\n    mode='min'\n)\n\ncifar_trainer = Trainer(\n    max_epochs=300,\n    callbacks=[early_stopper, ...]\n)"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#what-is-deep-learning",
+    "href": "meetups/meetup-13/meetup-13.html#what-is-deep-learning",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "What is Deep Learning?",
+    "text": "What is Deep Learning?\n\nNetworks we implemented last week had one hidden layer"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#what-is-deep-learning-1",
+    "href": "meetups/meetup-13/meetup-13.html#what-is-deep-learning-1",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "What is Deep Learning?",
+    "text": "What is Deep Learning?\n\nBut you can use more layers"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#empirical-advantage",
+    "href": "meetups/meetup-13/meetup-13.html#empirical-advantage",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Empirical Advantage",
+    "text": "Empirical Advantage\n\nOver time, networks have become deeper\nEmpirically, they lead to higher accuracy\n\n\nGoodfellow et al"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#empirical-advantage-1",
+    "href": "meetups/meetup-13/meetup-13.html#empirical-advantage-1",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Empirical Advantage",
+    "text": "Empirical Advantage\n\nOver time, networks have become deeper\nEmpirically, they lead to higher accuracy\n\n\nImageNet Challenge"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#different-than-more-neurons",
+    "href": "meetups/meetup-13/meetup-13.html#different-than-more-neurons",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Different than more neurons",
+    "text": "Different than more neurons\n\nScaling up neurons often doesn’t help in shallow nets\n\n\nGoodfellow"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#vashing-gradients",
+    "href": "meetups/meetup-13/meetup-13.html#vashing-gradients",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Vashing Gradients",
+    "text": "Vashing Gradients\n\nLandscape of deep network varies by layer:\n\n\nNielson"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#why-vanishing-gradients",
+    "href": "meetups/meetup-13/meetup-13.html#why-vanishing-gradients",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Why Vanishing Gradients?",
+    "text": "Why Vanishing Gradients?\n\nConsider a deep network with one neuron per layer: \nIf activation function is \\(\\phi\\) can write it as: \\[\nf(x_1) = \\phi \\circ (w_n x + b_n) \\circ \\phi \\circ (w_{n-1}x + b_{n-1}) \\circ \\\\\n\\phi\\circ \\cdots\\circ \\phi \\circ(w_1 x +b_1) (x_1)\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#taking-derivatives",
+    "href": "meetups/meetup-13/meetup-13.html#taking-derivatives",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Taking Derivatives",
+    "text": "Taking Derivatives\n\n\n\nThe close to the output, the fewer “terms” in the derivative:\n\n\n\n\n\nwikpedia"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#solution-activations",
+    "href": "meetups/meetup-13/meetup-13.html#solution-activations",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Solution: Activations",
+    "text": "Solution: Activations\n\nRectified Linear Unit (ReLU)\n\n\\[\n\\phi(x) = \\cases{0& \\text{if} \\quad x\\leq 0 \\\\\n                x& \\text{if} \\quad x&gt;0}\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#spiky-loss-landscape",
+    "href": "meetups/meetup-13/meetup-13.html#spiky-loss-landscape",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Spiky Loss Landscape",
+    "text": "Spiky Loss Landscape\n\nIdeally, as you move in the direction of the gradient the loss smoothly decreases"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#batch-norm",
+    "href": "meetups/meetup-13/meetup-13.html#batch-norm",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Batch Norm",
+    "text": "Batch Norm\n\nIdea: Rescale the outputs of previous layer so that roughly 50% of neurons are active in subsequent layer\nAt each batch, and each forward step, rescale data so that mean = 0 and variance is 1\nLearn an additional scaling parameter per layer\nFor evaluation, using running tally of activations at each layer for normalization"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#batch-norm-is-a-type-of-layer",
+    "href": "meetups/meetup-13/meetup-13.html#batch-norm-is-a-type-of-layer",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Batch Norm is a Type of Layer",
+    "text": "Batch Norm is a Type of Layer\n\n    self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding='same')\n    self.bn1 = nn.BatchNorm2d(out_channels)\n    self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding='same')\n    self.bn2 = nn.BatchNorm2d(out_channels)\n    self.conv3 = nn.Conv2d(out_channels, out_channels, kernel_size=3, padding='same')\n    self.bn3 = nn.BatchNorm2d(out_channels)"
+  },
+  {
+    "objectID": "meetups/meetup-13/meetup-13.html#batch-norm-enables-training-deep-networks",
+    "href": "meetups/meetup-13/meetup-13.html#batch-norm-enables-training-deep-networks",
+    "title": "DATA 622 Meetup 13: Neural Networks",
+    "section": "Batch Norm Enables Training Deep Networks",
+    "text": "Batch Norm Enables Training Deep Networks\n\nBatch Norm makes the loss landscape much smoother"
   },
   {
     "objectID": "meetups/meetup-13/meetup-13.html#thanks",
@@ -5503,7 +5664,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\n\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
