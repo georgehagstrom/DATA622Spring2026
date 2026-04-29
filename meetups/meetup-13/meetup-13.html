@@ -427,7 +427,7 @@ George I. Hagstrom
 <li>Imagine more dimensions</li>
 </ul>
 </div><div class="column" style="width:65%;">
-<div id="0fff31ac" class="cell" data-execution_count="3">
+<div id="bd638d2c" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -442,7 +442,7 @@ George I. Hagstrom
 <h2>Gradient Descent</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="4cc19b62" class="cell" data-execution_count="4">
+<div id="2ea1277e" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -472,7 +472,7 @@ George I. Hagstrom
 <h2>What Learning Rate to Pick?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="2d09367c" class="cell" data-execution_count="5">
+<div id="7fa2bd33" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -496,7 +496,7 @@ George I. Hagstrom
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="87d1aabd" class="cell" data-execution_count="7">
+<div id="49685d8d" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -506,7 +506,7 @@ George I. Hagstrom
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="b1e26331" class="cell" data-execution_count="8">
+<div id="c2a9debb" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -781,7 +781,7 @@ George I. Hagstrom
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="conv_deep.png.png"></p>
+<p><img data-src="conv_deep.png"></p>
 </div></div>
 </section>
 <section id="pooling" class="slide level2">
@@ -839,7 +839,7 @@ George I. Hagstrom
 <ul>
 <li>Instead of modifying models, we modify training set with transformations!</li>
 </ul>
-<div id="0444306e" class="cell" data-execution_count="16">
+<div id="6ed61b45" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>transform_train <span class="op">=</span> transforms.Compose([</span>
 <span id="cb1-2"><a></a>    transforms.RandomHorizontalFlip(),</span>
 <span id="cb1-3"><a></a>    transforms.RandomCrop(<span class="dv">32</span>, padding<span class="op">=</span><span class="dv">4</span>),</span>
@@ -865,7 +865,7 @@ George I. Hagstrom
 <ul>
 <li>To prevent memorization, randomly zero out a fraction of neuron weights during training:</li>
 </ul>
-<div id="92887dc5" class="cell" data-execution_count="17">
+<div id="72ceed9f" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>    <span class="va">self</span>.output <span class="op">=</span> nn.Sequential(</span>
 <span id="cb2-2"><a></a>        nn.Dropout(<span class="fl">0.5</span>),</span>
 <span id="cb2-3"><a></a>        nn.Linear(<span class="dv">2</span><span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="dv">512</span>, <span class="dv">512</span>),</span>
@@ -880,7 +880,7 @@ George I. Hagstrom
 <li>Overfitting: Training loss decreases, validation loss is constant</li>
 <li>Solution: Stop training if validation loss has stopped improving</li>
 </ul>
-<div id="458060f9" class="cell" data-execution_count="18">
+<div id="316147ac" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>early_stopper <span class="op">=</span> EarlyStopping(</span>
 <span id="cb3-2"><a></a>    monitor<span class="op">=</span><span class="st">'valid_loss'</span>,</span>
 <span id="cb3-3"><a></a>    patience<span class="op">=</span><span class="dv">20</span>,</span>
@@ -893,28 +893,16 @@ George I. Hagstrom
 <span id="cb3-10"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="what-is-deep-learning" class="slide level2">
-<h2>What is Deep Learning?</h2>
-<ul>
-<li>Networks we implemented last week had one hidden layer <img data-src="shallow.png" alt="Nielson"></li>
-</ul>
-</section>
-<section id="what-is-deep-learning-1" class="slide level2">
-<h2>What is Deep Learning?</h2>
-<ul>
-<li>But you can use more layers <img data-src="deep.png" alt="Nielson"></li>
-</ul>
-</section>
-<section id="empirical-advantage" class="slide level2">
-<h2>Empirical Advantage</h2>
+<section id="deep-learning" class="slide level2">
+<h2>Deep Learning</h2>
 <ul>
 <li>Over time, networks have become deeper</li>
 <li>Empirically, they lead to higher accuracy</li>
 </ul>
 
 <img data-src="depth_error.png" class="r-stretch quarto-figure-center"><p class="caption">Goodfellow et al</p></section>
-<section id="empirical-advantage-1" class="slide level2">
-<h2>Empirical Advantage</h2>
+<section id="deep-learning-1" class="slide level2">
+<h2>Deep Learning</h2>
 <ul>
 <li>Over time, networks have become deeper</li>
 <li>Empirically, they lead to higher accuracy</li>
@@ -990,7 +978,7 @@ f(x_1) = \phi \circ (w_n x + b_n) \circ \phi \circ (w_{n-1}x + b_{n-1}) \circ \\
 </section>
 <section id="batch-norm-is-a-type-of-layer" class="slide level2">
 <h2>Batch Norm is a Type of Layer</h2>
-<div id="450bfeda" class="cell" data-execution_count="20">
+<div id="2da33973" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>    <span class="va">self</span>.conv1 <span class="op">=</span> nn.Conv2d(in_channels, out_channels, kernel_size<span class="op">=</span><span class="dv">3</span>, padding<span class="op">=</span><span class="st">'same'</span>)</span>
 <span id="cb4-2"><a></a>    <span class="va">self</span>.bn1 <span class="op">=</span> nn.BatchNorm2d(out_channels)</span>
 <span id="cb4-3"><a></a>    <span class="va">self</span>.conv2 <span class="op">=</span> nn.Conv2d(out_channels, out_channels, kernel_size<span class="op">=</span><span class="dv">3</span>, padding<span class="op">=</span><span class="st">'same'</span>)</span>

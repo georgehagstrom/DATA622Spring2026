@@ -4721,32 +4721,18 @@
     "text": "Regularization: Early Stopping\n\nOverfitting: Training loss decreases, validation loss is constant\nSolution: Stop training if validation loss has stopped improving\n\n\nearly_stopper = EarlyStopping(\n    monitor='valid_loss',\n    patience=20,\n    mode='min'\n)\n\ncifar_trainer = Trainer(\n    max_epochs=300,\n    callbacks=[early_stopper, ...]\n)"
   },
   {
-    "objectID": "meetups/meetup-13/meetup-13.html#what-is-deep-learning",
-    "href": "meetups/meetup-13/meetup-13.html#what-is-deep-learning",
+    "objectID": "meetups/meetup-13/meetup-13.html#deep-learning",
+    "href": "meetups/meetup-13/meetup-13.html#deep-learning",
     "title": "DATA 622 Meetup 13: Neural Networks",
-    "section": "What is Deep Learning?",
-    "text": "What is Deep Learning?\n\nNetworks we implemented last week had one hidden layer"
+    "section": "Deep Learning",
+    "text": "Deep Learning\n\nOver time, networks have become deeper\nEmpirically, they lead to higher accuracy\n\n\nGoodfellow et al"
   },
   {
-    "objectID": "meetups/meetup-13/meetup-13.html#what-is-deep-learning-1",
-    "href": "meetups/meetup-13/meetup-13.html#what-is-deep-learning-1",
+    "objectID": "meetups/meetup-13/meetup-13.html#deep-learning-1",
+    "href": "meetups/meetup-13/meetup-13.html#deep-learning-1",
     "title": "DATA 622 Meetup 13: Neural Networks",
-    "section": "What is Deep Learning?",
-    "text": "What is Deep Learning?\n\nBut you can use more layers"
-  },
-  {
-    "objectID": "meetups/meetup-13/meetup-13.html#empirical-advantage",
-    "href": "meetups/meetup-13/meetup-13.html#empirical-advantage",
-    "title": "DATA 622 Meetup 13: Neural Networks",
-    "section": "Empirical Advantage",
-    "text": "Empirical Advantage\n\nOver time, networks have become deeper\nEmpirically, they lead to higher accuracy\n\n\nGoodfellow et al"
-  },
-  {
-    "objectID": "meetups/meetup-13/meetup-13.html#empirical-advantage-1",
-    "href": "meetups/meetup-13/meetup-13.html#empirical-advantage-1",
-    "title": "DATA 622 Meetup 13: Neural Networks",
-    "section": "Empirical Advantage",
-    "text": "Empirical Advantage\n\nOver time, networks have become deeper\nEmpirically, they lead to higher accuracy\n\n\nImageNet Challenge"
+    "section": "Deep Learning",
+    "text": "Deep Learning\n\nOver time, networks have become deeper\nEmpirically, they lead to higher accuracy\n\n\nImageNet Challenge"
   },
   {
     "objectID": "meetups/meetup-13/meetup-13.html#different-than-more-neurons",
@@ -5664,7 +5650,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\n\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\nMeetup 13 Video\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
