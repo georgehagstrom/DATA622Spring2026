@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 14 - Unsupervised Learning – DATA 622 Spring 2026</title>
+<title>Module 14 - RNNs and NLP – DATA 622 Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4704,7 +4704,7 @@ vertical-align: -.125em;
 <script type="text/javascript" src="../fullcalendar-lib/main.js"></script>
 
 
-<meta property="og:title" content="Module 14 - Unsupervised Learning – DATA 622 Spring 2026">
+<meta property="og:title" content="Module 14 - RNNs and NLP – DATA 622 Spring 2026">
 <meta property="og:description" content="DATA 622 - Machine Learning and Big Data - CUNY School of Professional Studies">
 <meta property="og:site_name" content="DATA 622 Spring 2026">
 </head>
@@ -4963,7 +4963,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/module1.html">Topics</a></li><li class="breadcrumb-item"><a href="../modules/module14.html">14 - Unsupervised Learning</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Module 14 - Unsupervised Learning</h1>
+<h1 class="title">Module 14 - RNNs and NLP</h1>
 </div>
 
 
@@ -5001,21 +5001,21 @@ MathJax.Hub.Config({
 </script>
 <section id="overview" class="level3">
 <h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<p>So far in this class we have focused primarily on supervised learning, which is the most heavily studied type of machine learning. Here we introduce unsupervised learning, a learning problem in which class labels do not exist and in which neither the number of classes nor their identities are known. Unsupervised learning involves using a distance metric and a learning algorithm to cluster nearby data points into clusters. Simple algorithms for clustering include k-means, and we have already seen some dimensionality reduction techniques (PCA). We will further our study of PCA and then learn about matrix completion, which was key to the winning entry in the Netflix movie review prediction contest. Finally, we will show two methods for clustering, k-means and hierarchical clustering.</p>
+<p>Recurrent Neural Networks are a class of architectures that are used to perform machine learning on sequential data, such as time-series, biological sequences including DNA and Proteins, state transitions of machines, customer behavior, audio signals, and written language. RNNs efficiently share weights by applying the same network architecture each element of the sequence and the activations of the network on the previous sequence, enabling them to take advantage of the inductive bias in the data. We will focus on applications to language, which have become pivotal in technological advancement in the past decade plus. This week we will learn about basic RNN architecture, including Long Short Term Memory networks (LSTMs). In order to use these networks for NLP tasks, we will need to use word embeddings, which can either be learned as the network is trained or imported from external libraries and potentially fine-tuned in the training process. The material covered this week will build up to next week where we will study transformers and pre-trained models.</p>
 </section>
 <section id="learning-objectives" class="level3">
 <h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
 <ul>
-<li>Unsupervised learning basics</li>
-<li>PCA and Dimensionality Reduction</li>
-<li>Matrix Completion and Missing Values</li>
-<li>Hierarchical Clustering and k-means</li>
+<li>RNNs and Sequential Data</li>
+<li>Word Embeddings and Dimensionality Reduction</li>
+<li>LSTMs</li>
 </ul>
 </section>
 <section id="readings" class="level3">
 <h3 class="anchored" data-anchor-id="readings">Readings</h3>
 <ul>
-<li><strong>ISLP</strong> (Introduction to Statistical Learning): <a href="https://www.statlearning.com/">12</a></li>
+<li><strong>ISLP</strong> (Introduction to Statistical Learning): <a href="https://www.statlearning.com/">10.5</a></li>
+<li><strong>Word Embeddings Blog</strong> <a href="https://jalammar.github.io/illustrated-word2vec/">Word2Vec Illustrated</a></li>
 </ul>
 </section>
 <section id="videos" class="level3">
