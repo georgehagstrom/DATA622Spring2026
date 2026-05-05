@@ -1409,6 +1409,27 @@
     "text": "Week Summary\n\nCIFAR100 problem: Lab 7 Due 5/10\n\nLab 8 shortened, available soon\n\nSchedule Final Presentations Next Week\nRNNs and Text this week\nPretrained Models next week"
   },
   {
+    "objectID": "meetups/meetup-14/meetup-14.html#nyhackr-thursday-may-14th",
+    "href": "meetups/meetup-14/meetup-14.html#nyhackr-thursday-may-14th",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "nyhackr Thursday May 14th!",
+    "text": "nyhackr Thursday May 14th!"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#nyhackr-thursday-may-14th-1",
+    "href": "meetups/meetup-14/meetup-14.html#nyhackr-thursday-may-14th-1",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "nyhackr Thursday May 14th!",
+    "text": "nyhackr Thursday May 14th!\n\nChristian Martinez\nR package for interacting with NYCOpenData"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#end-of-semester-gathering",
+    "href": "meetups/meetup-14/meetup-14.html#end-of-semester-gathering",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "End of Semester Gathering?",
+    "text": "End of Semester Gathering?\n\nPost in the Slack if you are interested!"
+  },
+  {
     "objectID": "meetups/meetup-14/meetup-14.html#sequential-data",
     "href": "meetups/meetup-14/meetup-14.html#sequential-data",
     "title": "DATA 622 Meetup 14: RNNs and Text",
@@ -1434,46 +1455,39 @@
     "href": "meetups/meetup-14/meetup-14.html#rnn-architecture",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "RNN Architecture",
-    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed weights for the inputs \\(X_{il}\\):\n\n\\[\nA_{lk} = g\\left(\\sum_{j=1}^p w_{jk} X_{lj} + \\cdots \\right)\n\\]\n\nNeed weights for the old activations \\(A_{(l-1),s}\\):\n\n\\[\nA_{lk} = g\\left(\\sum_{j=1}^p w_{jk} X_{lj} + \\sum_{s=1}^K u_{sk} A_{(l-1),s} + \\cdots \\right)\n\\]\n\nNeed a bias:\n\n\\[\nA_{lk} = g\\left(w_{0k} +\\sum_{j=1}^p w_{jk} X_{lj} + \\sum_{s=1}^K u_{sk} A_{(l-1),s} \\right)\n\\]"
+    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed weights for the inputs \\(X_{il}\\):\n\n\\[\nA_{lk} = g\\left(\\sum_{j=1}^p w_{jk} X_{lj} + \\cdots \\right)\n\\]"
   },
   {
     "objectID": "meetups/meetup-14/meetup-14.html#rnn-architecture-1",
     "href": "meetups/meetup-14/meetup-14.html#rnn-architecture-1",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "RNN Architecture",
-    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed weights for the inputs \\(X_{il}\\):\n\n\\[\nA_{lk} = g\\left(\\sum_{j=1}^p w_{jk} X_{lj} + \\cdots \\right)\n\\]"
+    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed weights for the old activations \\(A_{(l-1),s}\\):\n\n\\[\nA_{lk} = g\\left(\\sum_{j=1}^p w_{jk} X_{lj} + \\sum_{s=1}^K u_{sk} A_{(l-1),s} + \\cdots \\right)\n\\]"
   },
   {
     "objectID": "meetups/meetup-14/meetup-14.html#rnn-architecture-2",
     "href": "meetups/meetup-14/meetup-14.html#rnn-architecture-2",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "RNN Architecture",
-    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed weights for the old activations \\(A_{(l-1),s}\\):\n\n\\[\nA_{lk} = g\\left(\\sum_{j=1}^p w_{jk} X_{lj} + \\sum_{s=1}^K u_{sk} A_{(l-1),s} + \\cdots \\right)\n\\]"
+    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed a bias:\n\n\\[\nA_{lk} = g\\left(w_{0k} +\\sum_{j=1}^p w_{jk} X_{lj} + \\sum_{s=1}^K u_{sk} A_{(l-1),s} \\right)\n\\]"
   },
   {
     "objectID": "meetups/meetup-14/meetup-14.html#rnn-architecture-3",
     "href": "meetups/meetup-14/meetup-14.html#rnn-architecture-3",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "RNN Architecture",
-    "text": "RNN Architecture\n\nNetwork has \\(K\\) internal layers\nActivations \\(A_{lk}\\) at sequence point \\(l\\)\nNeed a bias:\n\n\\[\nA_{lk} = g\\left(w_{0k} +\\sum_{j=1}^p w_{jk} X_{lj} + \\sum_{s=1}^K u_{sk} A_{(l-1),s} \\right)\n\\]"
+    "text": "RNN Architecture\n\nNeed to Calculate Output \\(O_l\\):\nRegression:\n\n\\[\nO_l = \\beta_0 + \\sum_k=1^K \\beta_k A_{lk}\n\\]"
   },
   {
     "objectID": "meetups/meetup-14/meetup-14.html#rnn-architecture-4",
     "href": "meetups/meetup-14/meetup-14.html#rnn-architecture-4",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "RNN Architecture",
-    "text": "RNN Architecture\n\nNeed to Calculate Output \\(O_l\\):\nRegression:\n\n\\[\nO_l = \\beta_0 + \\sum_k=1^K \\beta_k A_{lk}\n\\]"
+    "text": "RNN Architecture\n\nNeed to Calculate Output \\(O_l\\):\nClassification:\n\n\\[\nO_l = g(\\beta_0 + \\sum_k=1^K \\beta_k A_{lk})\n\\]"
   },
   {
     "objectID": "meetups/meetup-14/meetup-14.html#rnn-architecture-5",
     "href": "meetups/meetup-14/meetup-14.html#rnn-architecture-5",
-    "title": "DATA 622 Meetup 14: RNNs and Text",
-    "section": "RNN Architecture",
-    "text": "RNN Architecture\n\nNeed to Calculate Output \\(O_l\\):\nClassification:\n\n\\[\nO_l = g(\\beta_0 + \\sum_k=1^K \\beta_k A_{lk})\n\\]"
-  },
-  {
-    "objectID": "meetups/meetup-14/meetup-14.html#rnn-architecture-6",
-    "href": "meetups/meetup-14/meetup-14.html#rnn-architecture-6",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "RNN Architecture",
     "text": "RNN Architecture\n\nNeed to Calculate Output \\(O_l\\):\nCan also calculate \\(O_l\\) using some additional layers"
@@ -1500,18 +1514,11 @@
     "text": "How Can a Neural Network Read?\n\nNLP always involves feature engineering:\n\nTokenize into words or n-grams\nUse Sentiment Lexicon\nOne-Hot Encode and use ML?"
   },
   {
-    "objectID": "meetups/meetup-14/meetup-14.html#one-hot-rnns",
-    "href": "meetups/meetup-14/meetup-14.html#one-hot-rnns",
+    "objectID": "meetups/meetup-14/meetup-14.html#one-hot-and-meaning",
+    "href": "meetups/meetup-14/meetup-14.html#one-hot-and-meaning",
     "title": "DATA 622 Meetup 14: RNNs and Text",
-    "section": "One-Hot RNNs?",
-    "text": "One-Hot RNNs?\n\nSuppose we made our feature vector One-Hot Encoded text\nInput Token is a vector in 10,000 dimensional space!\nIf input layer has 64 neurons, need 64x10,000 weights"
-  },
-  {
-    "objectID": "meetups/meetup-14/meetup-14.html#one-hot-is-wasteful",
-    "href": "meetups/meetup-14/meetup-14.html#one-hot-is-wasteful",
-    "title": "DATA 622 Meetup 14: RNNs and Text",
-    "section": "One-Hot is Wasteful",
-    "text": "One-Hot is Wasteful\n\nConsider words “angry” and “mad”\n\nAlmost the same word\nTraining treats them as independent\n\nWord meaning is a type of “inductive bias” that we want"
+    "section": "One-Hot and Meaning?",
+    "text": "One-Hot and Meaning?\n\nConsider words “angry” and “mad”\n\nAlmost the same word\nTraining treats them as independent\n\nWord meaning is a type of “inductive bias” that we want"
   },
   {
     "objectID": "meetups/meetup-14/meetup-14.html#solution-low-dimensional-embedding",
@@ -1539,7 +1546,154 @@
     "href": "meetups/meetup-14/meetup-14.html#dimension-reduction",
     "title": "DATA 622 Meetup 14: RNNs and Text",
     "section": "Dimension Reduction",
-    "text": "Dimension Reduction\n\nEach word is now a vector in \\(m\\)-dimensional space\n\n\n\n\nJay Alamar\n\n\n\n\n\n\nDATA 622"
+    "text": "Dimension Reduction\n\nEach word is now a vector in \\(m\\)-dimensional space\n\n\nJay Alammar"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#how-to-embed",
+    "href": "meetups/meetup-14/meetup-14.html#how-to-embed",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "How to Embed?",
+    "text": "How to Embed?\n\nDIY Option:\n\nPick a dimension \\(m\\)\nLearn \\(10000 \\times m\\) weights\n\n\n\nclass LSTMModel(nn.Module):\n    def __init__(self, input_size):\n        super(LSTMModel, self).__init__()\n        self.embedding = nn.Embedding(input_size, 64)"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#how-to-embed-1",
+    "href": "meetups/meetup-14/meetup-14.html#how-to-embed-1",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "How to Embed?",
+    "text": "How to Embed?\n\nDIY Option:\n\nPick a dimension \\(m\\)\nLearn \\(10000 \\times m\\) weights\nWeights are trained from scratch each time\nEmbedding is unsophisticated, but optimized to your problem"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#how-to-embed-2",
+    "href": "meetups/meetup-14/meetup-14.html#how-to-embed-2",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "How to Embed?",
+    "text": "How to Embed?\n\nPretrained Options\n\nGlobal Vectors for word representation (GloVe)\nTrained on wikipedia text, up to 300 dimensions:"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#how-to-embed-3",
+    "href": "meetups/meetup-14/meetup-14.html#how-to-embed-3",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "How to Embed?",
+    "text": "How to Embed?\n\nPretrained Options\n\nGlobal Vectors for word representation (GloVe)\nTrained on wikipedia text, up to 300 dimensions:"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#how-to-embed-4",
+    "href": "meetups/meetup-14/meetup-14.html#how-to-embed-4",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "How to Embed?",
+    "text": "How to Embed?\n\nPretrained Options\n\nGloVe\nWord2Vec\nBERT (though it is more complicated)\n\n\n\nclass LSTMModel(nn.Module):\n    def __init__(self, input_size):\n        super(LSTMModel, self).__init__()\n        self.embedding = nn.Embedding.from_pretrained(\n            glove_embeddings,\n            freeze=True\n            )"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#fine-tuning",
+    "href": "meetups/meetup-14/meetup-14.html#fine-tuning",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Fine Tuning",
+    "text": "Fine Tuning\n\nPre-trained embeddings have been trained on huge corpuses of data\nSimilar networks exist in other domains, ResNet for images\nfreeze=False fine-tunes those weights\nFine-tuning allows you to adapt part or the whole of a sophisticated model to your particular task"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#vanishing-gradients-in-rnns",
+    "href": "meetups/meetup-14/meetup-14.html#vanishing-gradients-in-rnns",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Vanishing Gradients in RNNs",
+    "text": "Vanishing Gradients in RNNs\n\n\n\nRNNs cause vanishing gradients\nReLU can’t be used!\nSequence length compounds it\nRNNs lose key information\n\n\n\n\n\nwikipedia"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#long-short-term-memory",
+    "href": "meetups/meetup-14/meetup-14.html#long-short-term-memory",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Long Short Term Memory",
+    "text": "Long Short Term Memory\n\nLSTM was invented to handle this\nRNN just has activations \\(A\\)\n\nRenamed \\(h\\) for LSTM\n\nLSTM has a “memory” called \\(C\\) (Cell State)"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#cell-state-updates",
+    "href": "meetups/meetup-14/meetup-14.html#cell-state-updates",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Cell State Updates",
+    "text": "Cell State Updates\n\nEach new token, update \\(C_l\\)\nForget part of \\(C_{l-1}\\)\nAdd new info from \\(X_{l}\\) and \\(h_{l-1}\\)\n\n\\[\nC_l = f_l C_{l-1} + i_l \\tilde{C}_l\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#forgetting",
+    "href": "meetups/meetup-14/meetup-14.html#forgetting",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Forgetting",
+    "text": "Forgetting\n\nForgetting is number between 0 and 1\nDepends on \\(h_{l-1}\\) and \\(X_l\\)\n\n\nChristopher Olah"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#input",
+    "href": "meetups/meetup-14/meetup-14.html#input",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Input",
+    "text": "Input\n\nInput is number between 0 and 1\nCandidate state is new info to add\n\n\nChristopher Olah"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#cell-state-update-diagram",
+    "href": "meetups/meetup-14/meetup-14.html#cell-state-update-diagram",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Cell State Update Diagram",
+    "text": "Cell State Update Diagram\n\nReady for the update\n\n\nChristopher Olah"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#update-hidden-state",
+    "href": "meetups/meetup-14/meetup-14.html#update-hidden-state",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Update Hidden State",
+    "text": "Update Hidden State\n\nThe hidden state is calculated from the cell state\n\n\nChristopher Olah"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#pytorch-implementation",
+    "href": "meetups/meetup-14/meetup-14.html#pytorch-implementation",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "PyTorch Implementation",
+    "text": "PyTorch Implementation\n\nclass LSTMModel(nn.Module):\n    def __init__(self, input_size):\n        super(LSTMModel, self).__init__()\n        self.embedding = nn.Embedding(input_size, 64)\n        self.lstm = nn.LSTM(input_size=64,\n                            hidden_size=64,\n                            batch_first=True)\n        self.dense = nn.Linear(64, 1)\n    def forward(self, x):\n        val, (h_n, c_n) = self.lstm(self.embedding(x))\n        return torch.flatten(self.dense(val[:,-1]))"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#lstm-architecture-tips",
+    "href": "meetups/meetup-14/meetup-14.html#lstm-architecture-tips",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "LSTM Architecture Tips",
+    "text": "LSTM Architecture Tips\n\nHidden Layers Become Harmful Fast\n\nLSTM doesn’t totally eliminate vanishing gradients\n\nWidth depends on your training data\nDropout, weight decay, layer norm, early stopping, data augmentation\n\nWeight Freezing for Embedding"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#optuna",
+    "href": "meetups/meetup-14/meetup-14.html#optuna",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Optuna",
+    "text": "Optuna\n\n\nHow do we systematically search to find the best hyperparameters when there are many?\nGrid Search is ineffcient when there are many parameters\nBetter: Sample parameters randomly, bias to where you have been getting better results"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#optuna-code",
+    "href": "meetups/meetup-14/meetup-14.html#optuna-code",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Optuna Code",
+    "text": "Optuna Code\n\nChoose your hyperparameters and their ranges:\n\n\ndef lstm_objective(trial):\n    # Hyperparameters to optimize over\n    embedding_dim = trial.suggest_categorical(\"embedding_dim\", [16, 32, 64, 128])\n    hidden_size = trial.suggest_categorical(\"hidden_size\", [32, 64, 128])\n    num_layers = trial.suggest_int(\"num_layers\", 1, 3)\n    dropout = trial.suggest_float(\"dropout\", 0.0, 0.5)\n    learning_rate = trial.suggest_float(\"learning_rate\", 1e-4, 1e-2, log=True)\n    weight_decay = trial.suggest_float(\"weight_decay\", 1e-6, 1e-2, log=True)\n    batch_size = trial.suggest_categorical(\"batch_size\", [128, 256, 512])"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#optuna-code-1",
+    "href": "meetups/meetup-14/meetup-14.html#optuna-code-1",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Optuna Code",
+    "text": "Optuna Code\n\nMake you NN class depend on the values\n\n\nclass TrialLSTMModel(nn.Module):\n        def __init__(self, input_size):\n            super(TrialLSTMModel, self).__init__()\n            self.embedding = nn.Embedding(input_size, embedding_dim)\n            self.drop1 = nn.Dropout(dropout)\n            self.lstm = nn.LSTM(input_size=embedding_dim,\n                                hidden_size=hidden_size,\n                                num_layers=num_layers,\n                                dropout=dropout if num_layers &gt; 1 else 0,\n                                batch_first=True)\n            self.drop2 = nn.Dropout(dropout)\n            self.dense = nn.Linear(hidden_size, 1)"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#optuna-code-2",
+    "href": "meetups/meetup-14/meetup-14.html#optuna-code-2",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Optuna Code",
+    "text": "Optuna Code\n\nRun the trial!\n\n\nstudy = optuna.create_study(direction=\"maximize\")\nstudy.optimize(lstm_objective, n_trials=20)\n\n\nYou will need a bit more boilerplate but its not bad\nThere are a lot of sophisticated features"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#get-a-small-boost",
+    "href": "meetups/meetup-14/meetup-14.html#get-a-small-boost",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Get a small boost",
+    "text": "Get a small boost\n\nBefore tuning 86% \nAfter tuning 88%"
+  },
+  {
+    "objectID": "meetups/meetup-14/meetup-14.html#thanks",
+    "href": "meetups/meetup-14/meetup-14.html#thanks",
+    "title": "DATA 622 Meetup 14: RNNs and Text",
+    "section": "Thanks",
+    "text": "Thanks\n\n\n\n\nDATA 622"
   },
   {
     "objectID": "meetups/meetup-2/MLPipelineVignette.html",
@@ -5860,7 +6014,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\nMeetup 13 Video\nLab 7\n\n\nMay 4\n06:45PM\nUnsupervised Learning\n\n\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\nMeetup 13 Video\nLab 7\n\n\nMay 4\n06:45PM\nRNNs and NLP\nMeetup 14\nMeetup 14 Video\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
