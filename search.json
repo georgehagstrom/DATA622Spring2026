@@ -527,6 +527,293 @@
     "text": "Continuous Overlap\n\nRegression instead of classification to predict treatment dosage\nOverlap Criterion: \\(R^2\\) of nuisance model for treatment less than say 0.95\n\n\n\n\n\nDATA 622"
   },
   {
+    "objectID": "meetups/meetup-15/meetup-15.html#week-summary",
+    "href": "meetups/meetup-15/meetup-15.html#week-summary",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Week Summary",
+    "text": "Week Summary\n\nOptional Lab 8\nPresentations!\nPretrained Models: Different Reading\nCoding Vignette Posted (without video)"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#nyhackr-thursday-may-14th",
+    "href": "meetups/meetup-15/meetup-15.html#nyhackr-thursday-may-14th",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "nyhackr Thursday May 14th!",
+    "text": "nyhackr Thursday May 14th!"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lab-comments",
+    "href": "meetups/meetup-15/meetup-15.html#lab-comments",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Lab Comments",
+    "text": "Lab Comments\n\nNo ridge regression without using the standard scaler!!!\nPick CausalML Hyperparameters to Make things Smooth\n\n\nest = CausalForestDML(\n    model_y=LassoCV(cv=3),\n    model_t=LogisticRegressionCV(cv=3),\n    n_estimators=8000,\n    min_samples_leaf=50,\n    #max_depth=5,\n    max_samples=0.02,\n    discrete_treatment=True,\n    random_state=123\n)"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lab-comments-1",
+    "href": "meetups/meetup-15/meetup-15.html#lab-comments-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Lab Comments",
+    "text": "Lab Comments\n\nNo ridge regression without using the standard scaler!!!\nPick CausalML Hyperparameters to Make things Smooth"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lab-comments-2",
+    "href": "meetups/meetup-15/meetup-15.html#lab-comments-2",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Lab Comments",
+    "text": "Lab Comments\n\nNo ridge regression without using the standard scaler!!!\nAggressive Choices Lead to Aggressive Fits\n\n\nest = CausalForestDML(\n    model_y=LassoCV(cv=3),\n    model_t=LogisticRegressionCV(cv=3),\n    n_estimators=8000,\n    min_samples_leaf=10,\n    max_depth=40,\n    max_samples=0.45,\n    discrete_treatment=True,\n    random_state=123\n)"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lab-comments-3",
+    "href": "meetups/meetup-15/meetup-15.html#lab-comments-3",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Lab Comments",
+    "text": "Lab Comments\n\nNo ridge regression without using the standard scaler!!!\nAggressive Choices Lead to Aggressive Fits"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#contextual-meaning",
+    "href": "meetups/meetup-15/meetup-15.html#contextual-meaning",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Contextual Meaning",
+    "text": "Contextual Meaning\n\nConsider an LSTM Processing this Text"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#contextual-meaning-1",
+    "href": "meetups/meetup-15/meetup-15.html#contextual-meaning-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Contextual Meaning",
+    "text": "Contextual Meaning\n\nPronouns embedded as vectors, but mean specific things"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#contextual-meaning-2",
+    "href": "meetups/meetup-15/meetup-15.html#contextual-meaning-2",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Contextual Meaning",
+    "text": "Contextual Meaning\n\nLSTM incorporates their meaning via long-range states"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#contextual-meaning-3",
+    "href": "meetups/meetup-15/meetup-15.html#contextual-meaning-3",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Contextual Meaning",
+    "text": "Contextual Meaning\n\nLater, same pronouns may occur"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#contextual-meaning-4",
+    "href": "meetups/meetup-15/meetup-15.html#contextual-meaning-4",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Contextual Meaning",
+    "text": "Contextual Meaning\n\nLSTM’s understanding too compressed to remember previous context"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#context",
+    "href": "meetups/meetup-15/meetup-15.html#context",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Context",
+    "text": "Context\n\nDistant words hold key context"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention",
+    "href": "meetups/meetup-15/meetup-15.html#attention",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nAttention is a mechanism to “update” the meaning of a word based on the surrounding context"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention-1",
+    "href": "meetups/meetup-15/meetup-15.html#attention-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nConsider simple sentence"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention-2",
+    "href": "meetups/meetup-15/meetup-15.html#attention-2",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nEach token has an embedding"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention-3",
+    "href": "meetups/meetup-15/meetup-15.html#attention-3",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nNearby tokens give context, change embedding in next layer"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention-4",
+    "href": "meetups/meetup-15/meetup-15.html#attention-4",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nAccumulate changes to embedding in next layer"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention-5",
+    "href": "meetups/meetup-15/meetup-15.html#attention-5",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nAccumulate changes to embedding in next layer"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#attention-6",
+    "href": "meetups/meetup-15/meetup-15.html#attention-6",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Attention",
+    "text": "Attention\n\nAccumulate changes to embedding in next layer"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#transformer-achitecture",
+    "href": "meetups/meetup-15/meetup-15.html#transformer-achitecture",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Transformer Achitecture",
+    "text": "Transformer Achitecture\n\nA transformer is an architecture containing layers of transformer blocks."
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#transformer-layer",
+    "href": "meetups/meetup-15/meetup-15.html#transformer-layer",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Transformer Layer",
+    "text": "Transformer Layer\n\nTransformer Layer has two parts:\n\nAttention Mechanism\nMLP layer betweem"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#allocating-attention",
+    "href": "meetups/meetup-15/meetup-15.html#allocating-attention",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Allocating Attention",
+    "text": "Allocating Attention\n\nEach attention head within a layer has several projections:\n\n‘q_proj’ and ‘k_proj’ determine which other tokens are relevant\n‘v_proj’ determines what information gets added if relevant\n‘o_proj’ combines the added info for each token"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#encoder-models-bert",
+    "href": "meetups/meetup-15/meetup-15.html#encoder-models-bert",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Encoder Models: BERT",
+    "text": "Encoder Models: BERT\n\n22 Transformer Layers\n150M paramters\nHead is trained to predict masked words"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#encoder-models-bert-1",
+    "href": "meetups/meetup-15/meetup-15.html#encoder-models-bert-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Encoder Models: BERT",
+    "text": "Encoder Models: BERT\n\n22 Transformer Layers\n150M paramters\nHead is trained to predict masked words"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#encoder-models",
+    "href": "meetups/meetup-15/meetup-15.html#encoder-models",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Encoder Models",
+    "text": "Encoder Models\n\nExcel at all non-generative tasks\n\nClassification\nNamed Entity Recognition\nSimilarity\n\nFast\nCannot Generate Text\nLess Efficient Training"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#decoder-models",
+    "href": "meetups/meetup-15/meetup-15.html#decoder-models",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Decoder Models",
+    "text": "Decoder Models\n\nChatGPT, Claude, Gemini, Qwen, etc\nHead is configured to predict next token probability"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#decoder-models-1",
+    "href": "meetups/meetup-15/meetup-15.html#decoder-models-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Decoder Models",
+    "text": "Decoder Models\n\nCan sort of do anything\nEasier to train\n\nCan get bigger\nPeople think they show more ‘emergence’"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tuning-large-models",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tuning-large-models",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tuning Large Models",
+    "text": "Fine Tuning Large Models\n\nLLMs start life as “Base Models”\nThey just produce text:"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tuning-large-models-1",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tuning-large-models-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tuning Large Models",
+    "text": "Fine Tuning Large Models\n\nTo make LLMs useful, they must be specified to a task\nTrain them on examples of what you are looking for!\n\n\n{\"messages\": [\n  {\"role\": \"user\", \"content\": \"What are the main risks of investing in bonds?\"},\n  {\"role\": \"assistant\", \"content\": \"The main risks include interest rate risk, credit risk, and inflation risk...\"},\n  {\"role\": \"user\", \"content\": \"Can you explain interest rate risk more?\"},\n  {\"role\": \"assistant\", \"content\": \"When interest rates rise, existing bond prices fall because...\"},\n  {\"role\": \"user\", \"content\": \"So should I avoid bonds when rates are rising?\"},\n  {\"role\": \"assistant\", \"content\": \"Not necessarily. Short-duration bonds are less affected...\"}\n]}"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tuning",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tuning",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tuning",
+    "text": "Fine Tuning\n\nFine tuning works like regular training but:\n\nSmaller Dataset\nFewer epochs\nSometimes only modify part of the network"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tuning-bert",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tuning-bert",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tuning BERT",
+    "text": "Fine Tuning BERT\n\nThe entire thing:\n\n\n# Extarct the BERT model\nbert_model = AutoModelForSequenceClassification.from_pretrained(\n    \"answerdotai/ModernBERT-base\", num_labels=3)\n\n# Setup the training, this is the analog of the pytorch lightning trainer\n\nbert_trainer = HFTrainer(\n    model=bert_model,\n    args=bert_training_args,\n    train_dataset=hf_train_tok,\n    eval_dataset=hf_val_tok,\n    data_collator=DataCollatorWithPadding(bert_tokenizer), # Trick to save computation time\n    compute_metrics=compute_metrics,\n)\n\n# Perform training\nbert_trainer.train()"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tuning-bert-1",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tuning-bert-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tuning BERT",
+    "text": "Fine Tuning BERT\n\nLoop through and freeze/unfreeze!\n\n\n    # Freeze lhe first N transformer layers via a loop\n    \n    for layer in bert_model.model.layers[:-N]:\n        for param in layer.parameters():\n            param.requires_grad = False"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tuning-bert-2",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tuning-bert-2",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tuning BERT",
+    "text": "Fine Tuning BERT\n\nLoop through and freeze/unfreeze!\nTypical to fine-tune layers near the top"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#fine-tune-big-models",
+    "href": "meetups/meetup-15/meetup-15.html#fine-tune-big-models",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Fine Tune Big Models?",
+    "text": "Fine Tune Big Models?\n\nBERT has 150M parameters\nQwen 0.5B\nOthers have much more, some approach 1T parameters\nWill NOT fit in your GPU RAM"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lora",
+    "href": "meetups/meetup-15/meetup-15.html#lora",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "LoRA",
+    "text": "LoRA\n\nLoRA stands for Low Rank Adaptation\nFor the Linear Algebra Knowers:\n\n\\[\nL = M_1 \\times M_2^t\n\\]\n\n\\(M_1\\) and \\(M_2\\) are \\(N\\times r\\) matrices\nWay of generating full size matrix with small number of parameters to learn"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lora-1",
+    "href": "meetups/meetup-15/meetup-15.html#lora-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "LoRA",
+    "text": "LoRA\n\nLoRA stands for Low Rank Adaptation\nFor the Linear Algebra Knowers:\n\n\\[\nQ_{FT} = Q + \\alpha L\n\\]"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lora-2",
+    "href": "meetups/meetup-15/meetup-15.html#lora-2",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "LoRA",
+    "text": "LoRA\n\nLoRA is standard technique to fine-tune large transformers\nKey hyperparameters:\n\nRank \\(r\\): Higher \\(r\\) is more complex and costlier\nHigher \\(\\alpha\\): \\(\\alpha\\) is “size” of perturbation\nComponents: ‘q_proj’ and ‘v_proj’, ‘MLP’ layer\n\nApply LoRA to every layer"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lora-implementation",
+    "href": "meetups/meetup-15/meetup-15.html#lora-implementation",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "LoRA Implementation",
+    "text": "LoRA Implementation\n\nHugging Faces has great tools for this\n\n\n#Get model\nqwen_model = AutoModelForCausalLM.from_pretrained(\n    qwen_model_id,\n    quantization_config=bnb_config,\n    torch_dtype=torch.float16,  # force all non-quantized weights to float16\n    device_map=\"auto\"\n)\n\n# Setup LoRA\nlora_config = LoraConfig(\n    r=16, lora_alpha=32, lora_dropout=0.05,\n    target_modules=[\"q_proj\", \"v_proj\"],\n    task_type=\"CAUSAL_LM\", # Let it know that this model produces text recursively\n)"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lora-implementation-1",
+    "href": "meetups/meetup-15/meetup-15.html#lora-implementation-1",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "LoRA Implementation",
+    "text": "LoRA Implementation\n\nHugging Faces has great tools for this\n\n\n# Train/Fine Tune!!!\nqwen_trainer = SFTTrainer(\n    model=qwen_model,\n    args=qwen_training_args,\n    train_dataset=hf_train_fmt,\n    eval_dataset=hf_val_fmt,\n    peft_config=lora_config,\n)\n\nqwen_trainer.train()"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#lora-impact",
+    "href": "meetups/meetup-15/meetup-15.html#lora-impact",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "LoRA Impact",
+    "text": "LoRA Impact\n\nFine-Tuning leads to stunning performance improvements with relatively little effort\nOriginal Model:\n\n\n\nFine Tuned Model:"
+  },
+  {
+    "objectID": "meetups/meetup-15/meetup-15.html#thanks",
+    "href": "meetups/meetup-15/meetup-15.html#thanks",
+    "title": "DATA 622 Meetup 15: Pretrained Models",
+    "section": "Thanks!",
+    "text": "Thanks!\n\n\n\n\nDATA 622"
+  },
+  {
     "objectID": "meetups/meetup-7/meetup-7.html#week-summary",
     "href": "meetups/meetup-7/meetup-7.html#week-summary",
     "title": "DATA 622 Meetup 7: Regularization",
@@ -6028,7 +6315,7 @@
     "href": "course/schedule.html#meetup-link",
     "title": "DATA 622 Spring 2026",
     "section": "Meetup Link:",
-    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\nMeetup 13 Video\nLab 7\n\n\nMay 4\n06:45PM\nRNNs and NLP\nMeetup 14\nMeetup 14 Video\n\n\n\nMay 11\n06:45PM\nPretrained Models\n\n\nLab 8, Final project Writeup and Demo",
+    "text": "Meetup Link:\nClick Here to Join the Meetups on Zoom\n\nCourse Schedule\n\n\nDate\nStart Time\nModule\nSlides\nVideo\nMain Deliverables\n\n\n\n\nJan 26\n06:45PM\nIntroduction to Machine Learning\nMeetup 1 Slides\nMeetup 1 Video\n\n\n\nFeb 2\n06:45PM\nBias-Variance Trade-Off\nMeetup 2 Slides\nMeetup 2 Video\nLab 1\n\n\nFeb 9\n06:45PM\nThe Linear Model\nMeetup 3 Slides\nMeetup 3 Video\nLab 2\n\n\nFeb 16\n06:45PM\nClassification\nMeetup 4 Slides\nMeetup 4 Video\n\n\n\nFeb 23\n06:45PM\nGenerative Classification Models and Class Imbalance\nMeetup 5 Slides\nMeetup 5 Video\nLab 3\n\n\nMar 2\n06:45PM\nResampling and Cross-Validation\nMeetup 6 Slides\nMeetup 6 Video\nProject Proposal\n\n\nMar 9\n06:45PM\nRegularization and Model Selection\nMeetup 7 Slides\nMeetup 7 Video\nLab 4\n\n\nMar 16\n06:45PM\nTree Models\nMeetup 8 Slides\nMeetup 8 Video\n\n\n\nMar 23\n06:45M\nEnsemble Models\nMeetup 9 Slides\nMeetup 9 Videp\nLab 5\n\n\nMar 30\n06:45PM\nCausal Inference\nMeetup 10\nMeetup 10 Video\n\n\n\nApr 6\n\nNo Meetup (Spring Break)\n\n\nMinimal Viable Product Demo\n\n\nApr 13\n06:45PM\nModel Interpretation, Communication, and Ethics\nMeetup 11\nMeetup 11 Video\nLab 6\n\n\nApr 20\n06:45PM\nNeural Networks\nMeetup 12\nMeetup 12 Video\n\n\n\nApr 27\n06:45PM\nDeep Learning\nMeetup 13\nMeetup 13 Video\nLab 7\n\n\nMay 4\n06:45PM\nRNNs and NLP\nMeetup 14\nMeetup 14 Video\n\n\n\nMay 11\n06:45PM\nPretrained Models\nMeetup 15\n\nLab 8, Final project Writeup and Demo",
     "crumbs": [
       "Course information",
       "Schedule"
